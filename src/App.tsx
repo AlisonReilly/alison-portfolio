@@ -8,6 +8,7 @@ function App() {
     <div>
       <ProfileHeader/>
       <NavBar/>
+      <div id='Hero'>Not Sure Yet ???</div>
     </div>
   );
 }

@@ -5,6 +5,12 @@
   padding: 10px;
 }
 
+/* temporary not sure of main section yet */
+#Hero {
+  background-image: url('../public/miscscidraw.jpg');
+  height: 800px;
+}
+
 .MainNav {
 
 }
