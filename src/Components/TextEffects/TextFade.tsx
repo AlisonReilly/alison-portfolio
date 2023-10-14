@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../Styles/TextFade.css';
+import '../../Styles/TextFade.css';
   
 
 

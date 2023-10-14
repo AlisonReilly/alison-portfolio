@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { TextFade } from '../TextEffects/TextFade';
+import { TextFade } from '../Components/TextEffects/TextFade';
 import '../Styles/Hero.css';
 import { BasicDiagram } from '../Components/Diagramming/BasicDiagram';
   

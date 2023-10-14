@@ -1,7 +1,8 @@
 import React from 'react';
 import { ProfileHeader } from '../Components/ProfileHeader';
-import { NavBar } from '../Components/NavBar/NavBar';
+import { NavBar } from '../Components/Navigation/NavBar';
 import '../Styles/Header.css';
+import { MobileNav } from '../Components/Navigation/MobileNav';
   
 
 type HeaderSectionProps = {
@@ -12,6 +13,7 @@ export const HeaderSection: React.FC<HeaderSectionProps & React.HTMLProps<HTMLDi
     return (
         <div>
             <ProfileHeader/>
+            <MobileNav/>
             <NavBar id='MainNav'/>
         </div>
     ); 

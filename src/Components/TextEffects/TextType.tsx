@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../Styles/TextType.css'
+import '../../Styles/TextType.css'
   
 
 type TextTypeProps = {
