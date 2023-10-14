@@ -1,0 +1,15 @@
+/* overall placement of large text intro features */
+.text-intro {
+    font-size: 60px;
+    padding-left: 200px;
+    padding-top: 100px;
+}
+/* todo will need adjustments */
+#Hero {
+    /* background-image: url('../../public/miscscidraw.jpg'); */
+    background-color: #343C55;
+    height: 800px;
+  
+  }
+
+  

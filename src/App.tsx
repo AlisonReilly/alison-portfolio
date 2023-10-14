@@ -1,14 +1,15 @@
 import React from 'react';
-import './App.css';
-import { ProfileHeader } from './ProfileHeader';
-import { NavBar } from './NavBar/NavBar';
+import './Styles/App.css';
+import { ProfileHeader } from './Components/ProfileHeader';
+import { NavBar } from './Components/NavBar/NavBar';
+import { HeroSection } from './Containers/HeroSection';
 
 function App() {
   return (
     <div>
       <ProfileHeader/>
       <NavBar/>
-      <div id='Hero'>Not Sure Yet ???</div>
+      <HeroSection/>
     </div>
   );
 }

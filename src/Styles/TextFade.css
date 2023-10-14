@@ -1,0 +1,29 @@
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+.fade-in-out-text {
+    animation: fadeInOut 3s ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.fade-in-only {
+    animation: fadeInOnly 3s ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.main-text {
+    font-size: 40px;
+}
+
+.support-text {
+    font-size: 20px;
+}
+
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes fadeInOnly {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

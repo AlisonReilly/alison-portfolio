@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop:ital@0;1&display=swap');
+
+#ProfileHeader {
+  background-color: #BC7258;
+  padding: 10px;
+}
+
+/* apply to anchor tags when no standard styling is needed */
+.modern-link, .modern-link:visited, .modern-link:hover, .modern-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* note applying to all uls, flex will be handy and typically not using bullet points */
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
