@@ -1,10 +1,10 @@
-export type MenuItem = {
+export type NavItem = {
     name: string;
     href?: string,
-    subItem?: MenuItem[]
+    subItem?: NavItem[]
 }
 
-export const MainNavItems: MenuItem[] = [
+export const MainNavItems: NavItem[] = [
     {name: 'Home', href: '/home'},
     {name: 'Experience', subItem: [
         {name: 'Projects', href: '/projects'}, {name: 'Experience', href: '/experience'}]

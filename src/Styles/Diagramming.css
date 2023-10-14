@@ -1,0 +1,20 @@
+.diagram-outline {
+    border: 1px solid #000000;
+    width: fit-content;
+    padding: 15px;
+}
+
+.diagram-text {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 1vw;
+}
+
+#logo-diagram {
+    margin-top: -5px;
+}
+
+.diagram-outline-smaller {
+    border: 1px solid #000000;
+    width: fit-content;
+    padding: 5px;
+}

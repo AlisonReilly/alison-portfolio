@@ -1,9 +1,13 @@
-/* overall horizontal navigation styling */
+/* overall horizontal navigation styling, if needing an additional horizontal nav, abstract this */
 .horizontal-nav {
+    border-radius: 3px;
     display: flex;
     flex-direction: row;
-    background-color: #B7A692;
+    /* background-color: #B7A692; */
+    background-image: linear-gradient(360deg, #B59C69 25%, #5C5240 100%);
+
     padding: 0 10px 10px 10px;
+    width: fit-content;
   }
 
   /* small, individual lines per each menu item, zen loop specifically provides a think '|' */
@@ -15,10 +19,12 @@
 
   /* how the text for each menu item will appear */
   #main-name {
+    color: #240e01;
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
-    font-family: 'Zen Loop', cursive;
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
     justify-content: center;
   }
 
@@ -27,6 +33,8 @@
     display: flex;
     flex-direction: column;
     border-left: 1px solid #000000;
+    background-color: #00000000;
+
   }
   
   #increment:last-child {

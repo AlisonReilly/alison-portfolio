@@ -9,14 +9,6 @@
     animation-iteration-count: 1;
 }
 
-.main-text {
-    font-size: 40px;
-}
-
-.support-text {
-    font-size: 20px;
-}
-
 
 @keyframes fadeInOut {
     0%, 100% { opacity: 0; }

@@ -1,0 +1,44 @@
+/* for a type effect to work this is apparently necessary */
+.container{
+    display: inline-flex;
+  }
+
+.remove-border {
+    border: unset;
+}
+
+.typed-out {
+    overflow: hidden;
+    border-right: 2px solid rgba(19, 18, 18, 0.75);
+    white-space: nowrap;
+    animation: 
+    typing 4s steps(44) 1s 1 normal forwards,
+    blinkCursor 1000ms steps(20) infinite;
+    width: 0;
+}
+
+.type-backspace {
+    overflow: hidden;
+    border-right: 2px solid rgba(19, 18, 18, 0.75);
+    white-space: nowrap;
+    animation: 
+    backspacing 1s steps(44) 1s 1 normal backwards,
+    blinkCursor 1000ms steps(20) infinite;
+    width: 0;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes backspacing {
+    from { width: 100% }
+    to { width: 0 }
+}
+
+@keyframes blinkCursor{
+    from{border-right-color: rgba(19, 18, 18, 0.75);}
+    to{border-right-color: transparent;}
+  }
+  

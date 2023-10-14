@@ -1,9 +1,9 @@
 import React, { useState } from 'react'; 
-import { MainNavItems, MenuItem } from '../../dataConstants';
+import { MainNavItems, NavItem } from '../../dataConstants';
 import '../../Styles/NavBar.css'
 
 type NavBarProps = {
-    menuItemData?: MenuItem[];
+    menuItemData?: NavItem[];
     styleClass?: string;
 }
 
@@ -15,7 +15,7 @@ export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = (
             {MainNavItems.map((i, k) =>
             <>
                 <li id='increment'>
-                    <span id='small-tick'>{'| '.repeat(i.name.replace(/\s/g, '').length * 1 + 2)}</span>
+                    <span id='small-tick'>{'| '.repeat(i.name.replace(/\s/g, '').length * 1.75 + 2)}</span>
                     <a id='main-name' className='modern-link' href={i.href}>{i.name}</a>
                 </li>
                 </>

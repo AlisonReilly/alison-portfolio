@@ -1,14 +1,52 @@
+/* font-family: 'Zen Loop', cursive; (thin, creative) */
 @import url('https://fonts.googleapis.com/css2?family=Zen+Loop:ital@0;1&display=swap');
 
-#ProfileHeader {
-  background-color: #BC7258;
-  padding: 10px;
+/* font-family: 'EB Garamond', serif; (basic old look, open 4, lining) */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap');
+
+/* font-family: 'Cormorant Garamond', serif; (basic old look, non-lining */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+/* font-family: 'Special Elite'; (looks actual typewriter-ish, lining */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+/* font-family: 'Old Standard TT', serif; (looks like a smoother old style, italic has open 4, lining) */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* font-family: 'Goudy Bookletter 1911', serif; (general old, non-lining, closed 4 */
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+
+/* font-family: 'Caveat', cursive; (creative, has handwriting like effect) */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+/* font-family: 'Orbitron', sans-serif; (futuristic looking font, a little funkier) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* font-family: 'Michroma', sans-serif; (futuristic looking, letters more narrow or squre, but wider overall */
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+/* note may change background color so remember this is applying to all body background */
+body {
+  background-color: #343C55;
 }
+
+
 
 /* apply to anchor tags when no standard styling is needed */
 .modern-link, .modern-link:visited, .modern-link:hover, .modern-link:active {
   text-decoration: none;
   color: inherit;
+}
+
+/* components that need a certain flex and direction applied */
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -20,3 +58,4 @@ ul {
   padding: 0;
 
 }
+

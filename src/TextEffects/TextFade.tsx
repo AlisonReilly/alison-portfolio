@@ -14,6 +14,6 @@ type TextFadeProps = {
 export const TextFade: React.FC<TextFadeProps & React.HTMLProps<HTMLDivElement>> = ({
     classNames, text, ...htmlProps}) => { 
     return (
-        <div className={classNames}>{text}</div>
+        <div id={htmlProps.id} className={classNames}>{text}</div>
     ); 
 } 
