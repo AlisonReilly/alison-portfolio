@@ -14,7 +14,7 @@ export const HeaderSection: React.FC<HeaderSectionProps & React.HTMLProps<HTMLDi
         <div>
             <ProfileHeader/>
             <MobileNav/>
-            <NavBar id='MainNav'/>
+            <NavBar />
         </div>
     ); 
 } 

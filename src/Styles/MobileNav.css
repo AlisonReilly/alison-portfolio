@@ -10,13 +10,28 @@
 }
 
 .glass {
-/* From https://css.glass */
-background: rgba(255, 255, 255, 0.01);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(1.9px);
--webkit-backdrop-filter: blur(1.9px);
-border: 1px solid rgba(255, 255, 255, 0.04);
-width: fit-content;
-padding: 10px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.9px);
+    -webkit-backdrop-filter: blur(1.9px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    width: fit-content;
+    padding: 10px;
+}
+
+.closed-menu {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+
+}
+
+@media only screen and (min-width: 775px) {
+    .mobile-nav {
+        display: none;
+    }
 }

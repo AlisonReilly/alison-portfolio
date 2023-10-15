@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; 
 import { MainNavItems, NavItem } from '../../dataConstants';
-import '../../Styles/NavBar.css'
+import '../../Styles/NavBar.css';
+
 
 type NavBarProps = {
     menuItemData?: NavItem[];
@@ -10,7 +11,7 @@ type NavBarProps = {
 export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = ({
     menuItemData, styleClass, ...htmlProps}) => { 
     return ( 
-        <nav className='' id={htmlProps.id}>
+        <nav className='desktop-nav' id='MainNav'>
             <ul className='main-menu horizontal-nav'>
             {MainNavItems.map((i, k) =>
             <>

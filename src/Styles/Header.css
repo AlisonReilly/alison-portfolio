@@ -1,9 +1,3 @@
-#MainNav {
-    display: flex;
-    justify-content: center;
-    margin-top: -15px;
-}
-
 #ProfileHeader {
     display: flex;
     background-color: #BC7258;
@@ -11,3 +5,9 @@
     font-family: 'Michroma', sans-serif;
     font-size: 3vw;
   }
+
+
+
+
+
+
