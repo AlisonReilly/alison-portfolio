@@ -55,6 +55,10 @@
     font-family: 'Michroma', sans-serif;
 }
 
+.bracket-text:hover {
+    color: white;
+}
+
 /* ul styling needs, position absolute keeps dropdown from interfering with other elements */
 .mobile-ul {    
     width: fit-content;
