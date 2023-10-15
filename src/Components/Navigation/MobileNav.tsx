@@ -20,13 +20,22 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
     return (
         <nav id='MobileNav' className='mobile-nav' role="navigation" aria-label="Main menu">
             <button id='mobile-nav-button' aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}/>
-            <ul className={`flexcolumn glass ${!isOpen ? 'closed-menu' : ''}`}>
+            <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
             {isOpen && MainNavItems.map((i, k) =>
             <>
-                <li>
-                    {i.name}
+                <li className='mobile-li submenu-ul-control'>
+                    <a className='mobile-a'><span className='bracket'>[</span><span className='bracket-text'>{i.name}</span></a>
+                    {i.subNav && i.subNav.map((sn, k) => 
+                    <ul className='flexcolumn'>
+                        <li className=' mobile-li sub'>
+                            <span className='bracket'>- </span><span className='bracket-text'>{sn.name}</span>
+                        </li>
+                    </ul>
+                ) }
                 </li>
-                </>
+
+                
+            </>
             )}
             </ul>
 </nav>

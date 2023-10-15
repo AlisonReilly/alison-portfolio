@@ -17,16 +17,60 @@
     backdrop-filter: blur(1.9px);
     -webkit-backdrop-filter: blur(1.9px);
     border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mobile-li {
+    cursor: pointer;
+}
+
+.mobile-a {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.sub {
+    margin-left: 10px;
+}
+
+  /* initially don't display the sub ul on hover of the main li */
+  li.submenu-ul-control > ul {
+    display: none;
+  }
+  
+  /* on hover of the main li, reveal the sub ul and li*/
+  li.submenu-ul-control:hover > ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+.bracket {
+    font-size: 35px;
+    font-family: 'Zen Loop', cursive;
+    margin-top: 5px;
+}
+
+.bracket-text {
+    align-self: center;
+    font-family: 'Michroma', sans-serif;
+}
+
+/* ul styling needs, position absolute keeps dropdown from interfering with other elements */
+.mobile-ul {    
     width: fit-content;
     padding: 10px;
+    position: absolute;
+    margin-top: 55px;
 }
 
 .closed-menu {
     display: none;
 }
 
+/* responsive */
 .mobile-nav {
     display: flex;
+    flex-direction: column;
 
 }
 

@@ -12,7 +12,8 @@ function App() {
   return (
     <div>
       <HeaderSection/>
-      <HeroSection/>
+      <div className='relative'><HeroSection/></div>
+      
       
     </div>
   );

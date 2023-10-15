@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; 
 import { MainNavItems, NavItem } from '../../dataConstants';
 import '../../Styles/NavBar.css';
+import '../../Styles/MobileNav.css'
 
 
 type NavBarProps = {
@@ -15,9 +16,19 @@ export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = (
             <ul className='main-menu horizontal-nav'>
             {MainNavItems.map((i, k) =>
             <>
-                <li id='increment'>
-                    <span id='small-tick'>{'| '.repeat(i.name.replace(/\s/g, '').length * 1.75 + 2)}</span>
+                <li id='increment' className='submenu-ul-control main-li'>
+                    <span id='small-tick'>{'| '.repeat(i.name.replace(/\s/g, '').length * 1.75 + 4)}</span>
                     <a id='main-name' className='modern-link' href={i.href}>{i.name}</a>
+                    {i.subNav && 
+                    <ul className='glass sub-nav-ul'>{i.subNav.map((si, k) => 
+                        <>
+                            <li className='flexrow'>
+                                <span className='bracket'>[</span><span className='bracket-text'>{si.name}</span>
+                            </li>
+                        </>
+                    )}
+
+                    </ul>}
                 </li>
                 </>
             )}
