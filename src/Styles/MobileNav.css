@@ -34,12 +34,12 @@
 }
 
   /* initially don't display the sub ul on hover of the main li */
-  .closed {
+  .closed-sub {
     display: none;
   }
   
   /* on hover of the main li, reveal the sub ul and li*/
-  .open {
+  .open-sub {
     display: flex;
     flex-direction: column;
   }
