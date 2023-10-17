@@ -24,9 +24,8 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     
     return (
         <li className='mobile-li' onClick={() => setIsSubOpen(!isSubOpen)}>
-            {/* <Link id='main-name' className='modern-link' to={i.href ? i.href  : ''}>{i.name}</Link> */}
             <Link className='mobile-a modern-link' to={navHref ? navHref : ''}>
-                <span className='bracket'>[</span>
+                <span className='bracket'>[ </span>
                 <span className='bracket-text'>{navName}</span>
             </Link>
             {navSubItems && isSubOpen && navSubItems.map((sn, k) => 

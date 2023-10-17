@@ -11,7 +11,7 @@ type HeaderSectionProps = {
 
 export const HeaderSection: React.FC<HeaderSectionProps & React.HTMLProps<HTMLDivElement>> = () => { 
     return (
-        <div>
+        <div id='HeaderSection'>
             <ProfileHeader/>
             <MobileNav/>
             <NavBar />

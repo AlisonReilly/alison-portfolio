@@ -20,13 +20,24 @@
 }
 
 .main-text {
-    font-size: 6vw;
+    font-size: 10vw;
     font-family: 'Michroma', sans-serif;
 }
 
 .support-text {
-    font-size: 2vw;
+    font-size: 3.5vw;
     font-family: 'Michroma', sans-serif;
 }
+
+@media only screen and (min-width: 775px) {
+    .main-text {
+        font-size: 6vw;
+    }
+
+    .support-text {
+        font-size: 2vw;
+    }
+}
+
 
   

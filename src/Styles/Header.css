@@ -1,11 +1,29 @@
 #ProfileHeader {
     display: flex;
     background-color: #BC7258;
-    padding: 20px;
+    padding: 15px 0 10px 10px;
     font-family: 'Michroma', sans-serif;
-    font-size: 3vw;
-    width: 100%;
+    font-size: 10vw;
+    width: 100vw;
   }
+
+#HeaderSection {
+    width: 100%;
+}
+
+@media only screen and (min-width: 775px) {
+    #ProfileHeader {
+        font-size: 6vw;
+        padding: 20px 0 20px 20px;
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    #ProfileHeader {
+        font-size: 4vw;
+        padding: 20px 0 20px 20px;
+    }
+}
 
 
 

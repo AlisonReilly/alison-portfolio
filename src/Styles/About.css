@@ -1,17 +1,37 @@
-.main-wrapper {
-    padding: 10px;
-    color: #D0BEAC;
-    margin-top: -30px;
-    font-family: 'Michroma', sans-serif;
-    background-color: #6d3e3d;
-    font-size: 1vw;
-    height: 100vh;
-    line-height: 200%;
-    width: 100vw;
-
-    
+#About {
+    background-color: #6D3E3D;
+    margin-top: -50px;
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
 }
 
 .main-content {
-        margin: 100px 300px 0 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    line-height: 175%;
+    font-family: 'Michroma', sans-serif;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 60px;
+    
 }
+
+
+@media only screen and (min-width: 775px) {
+    #About {
+        margin-top: -28px;
+    }
+
+    .main-content {
+        margin-left: 75px;
+        margin-right: 75px;
+        padding-top: 100px;
+        height: 100vh;
+       
+    
+    }
+}
+

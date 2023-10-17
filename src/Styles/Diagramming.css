@@ -6,7 +6,7 @@
 
 .diagram-text {
     font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 1vw;
+    font-size: 3vw;
 }
 
 #logo-diagram {
@@ -18,3 +18,12 @@
     width: fit-content;
     padding: 5px;
 }
+
+
+@media only screen and (min-width: 775px) {
+    .diagram-text {
+        font-size: 1vw;
+    }
+}
+
+
