@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MainNavItems, NavItem } from '../../dataConstants';
 import '../../Styles/NavBar.css';
 import '../../Styles/MobileNav.css'
+import { Link } from 'react-router-dom';
 
 
 type NavBarProps = {
@@ -18,7 +19,7 @@ export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = (
             <>
                 <li id='increment' className='submenu-ul-control main-li'>
                     <span id='small-tick'>{'| '.repeat(i.name.replace(/\s/g, '').length * 1.75 + 4)}</span>
-                    <a id='main-name' className='modern-link' href={i.href}>{i.name}</a>
+                    <Link id='main-name' className='modern-link' to={i.href ? i.href  : ''}>{i.name}</Link>
                     {i.subNav && 
                     <ul className='glass sub-nav-ul'>{i.subNav.map((si, k) => 
                         <>

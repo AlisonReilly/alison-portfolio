@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MainNavItems, NavItem } from '../../dataConstants';
 import '../../Styles/MobileNav.css';
+import { Link } from 'react-router-dom';
 
   
 
@@ -23,10 +24,11 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     
     return (
         <li className='mobile-li' onClick={() => setIsSubOpen(!isSubOpen)}>
-            <a className='mobile-a'>
+            {/* <Link id='main-name' className='modern-link' to={i.href ? i.href  : ''}>{i.name}</Link> */}
+            <Link className='mobile-a modern-link' to={navHref ? navHref : ''}>
                 <span className='bracket'>[</span>
                 <span className='bracket-text'>{navName}</span>
-            </a>
+            </Link>
             {navSubItems && isSubOpen && navSubItems.map((sn, k) => 
                 <ul className={`flexcolumn`} >
                     <li className='mobile-li sub'>

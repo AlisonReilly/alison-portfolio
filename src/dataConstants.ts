@@ -5,7 +5,7 @@ export type NavItem = {
 }
 
 export const MainNavItems: NavItem[] = [
-    {name: 'Home', href: '/home'},
+    {name: 'Home', href: '/'},
     {name: 'Experience', subNav: [
         {name: 'Resume', href: '/projects'}, {name: 'Proficiencies', href: '/proficiencies'}]
     },
