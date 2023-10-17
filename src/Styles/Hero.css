@@ -5,8 +5,9 @@
     align-items: center;
     /* background-color: #343C55; */
     /* background: linear-gradient(330deg, #343C55  60%, #6A77A0), url(https://grainy-gradients.vercel.app/noise.svg); */
-    height: 100%;
-    margin-top: 100px;
+    height: 100vh;
+    /* margin-top: 100px; */
+    padding-top: 100px;
 
 
   

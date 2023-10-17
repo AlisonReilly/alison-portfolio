@@ -3,13 +3,43 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import ErrorPage from './Components/ErrorPage';
+import { HeroSection } from './Containers/HeroSection';
+import { About } from './Containers/About';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/",
+        element: <HeroSection />
+      },
+    ]
+  },
+  // as example to note while working - this will just take you to a new page and not reflect a persisting component like a header or nav
+  // {
+  //   path: "/home",
+  //   element: <HeroSection />
+  // }
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

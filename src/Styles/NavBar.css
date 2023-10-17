@@ -3,6 +3,7 @@
 #MainNav {
   height: 43px;
   position: relative;
+  z-index: 1;
 }
 
 .horizontal-nav {

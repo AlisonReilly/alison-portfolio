@@ -1,0 +1,17 @@
+.main-wrapper {
+    padding: 10px;
+    color: #D0BEAC;
+    margin-top: -30px;
+    font-family: 'Michroma', sans-serif;
+    background-color: #6d3e3d;
+    font-size: 1vw;
+    height: 100vh;
+    line-height: 200%;
+    width: 100vw;
+
+    
+}
+
+.main-content {
+        margin: 100px 300px 0 300px;
+}
