@@ -1,16 +1,14 @@
-
-  /* set a ul main menu height to ensure dropdowns don't alter original size */
+/* set a ul main menu height to ensure dropdowns don't alter original size, set display none for larger screens */
 #MainNav {
   height: 43px;
   position: relative;
-  z-index: 1;
+  display: none
 }
 
 .horizontal-nav {
     border-radius: 3px;
     display: flex;
     flex-direction: row;
-    /* background-image: linear-gradient(350deg, #413520, #c0994a); */
     background-image: linear-gradient(360deg, #9c6b5c 10%, #e5b7a7 100%);
     width: fit-content;
     height: 100%;
@@ -26,7 +24,7 @@
   }
 
   /* how the text for each menu item will appear */
-  #main-name {
+  #main-name-link {
     color: #53311a;
     text-shadow: 0 2px #ddb3a6;
     display: flex;
@@ -34,16 +32,29 @@
     font-size: 20px;
     font-weight: 700;
     justify-content: center;
-
     padding: 0 10px 15px 10px;
   }
 
-  #main-name:hover {
+  #main-name-button {
+    color: #53311a;
+    text-shadow: 0 2px #ddb3a6;
+    display: flex;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    justify-content: center;
+    padding: 0 10px 15px 10px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  #main-name-button:hover, #main-name-link:hover{
     color: #dab5aa;
     text-shadow: 0 2px #a37567;
   }
 
-  /* designate each lis increment styling, column to align small ticks with text underneath */
+  /* designate each li increment styling, column to align small ticks with text underneath */
   #increment {
     display: flex;
     flex-direction: column;
@@ -56,20 +67,17 @@
   #increment:last-child {
     border-right: 1px solid #94685a;
   }
-
-  /* initially don't display the sub ul on hover of the main li */
-
   
   /* on hover of the main li, reveal the sub ul and li*/
-  .submenu-ul-control:hover .submenu-ul-control a:hover .sub-nav-ul {
-    display: flex;
-    flex-direction: column;
+  .main-li:hover, .main-li:focus {
+    & .sub-nav-ul {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  .submenu-ul-control > ul {
-    /* margin-top: -2px; */
-  }
 
+    /* initially don't display the sub ul on hover of the main li */
   .sub-nav-ul {
     width: fit-content;
     padding: 10px;
@@ -79,14 +87,9 @@
   }
 
 
-/* full nav bar not shown until 775 */
-.desktop-nav {
-    display: none;
-
-}
-
+/* responsive, full nav bar not shown until 775 */
 @media only screen and (min-width: 775px) {
-    .desktop-nav {
+    #MainNav {
         display: flex;
         justify-content: center;
         margin-top: -15px;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MainNavItems, NavItem } from '../../dataConstants';
 import '../../Styles/MobileNav.css';
+
 import { MobileNavItem } from './MoblieNavItem';
 
   
