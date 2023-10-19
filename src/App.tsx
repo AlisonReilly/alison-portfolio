@@ -8,7 +8,9 @@ import { HeaderSection } from './Containers/HeaderSection';
 import { TextType } from './Components/TextEffects/TextType';
 import { Outlet } from 'react-router-dom';
 
+
 function App() {
+
   console.log('screen size: ', window.innerWidth)
   return (
     <div id='app-inner-div'>

@@ -19,12 +19,17 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     navHref, navName, navSubItems, ...htmlProps}) => { 
     const [isSubOpen, setIsSubOpen] = useState<boolean>(false);
 
+    const handleKeyNav = (e: any) => {
+        console.log('key: ', e.key)
+
+    }
+
     useEffect(() => {
 
     }, [])
     
     return (
-        <li className={`mobile-li ${navSubItems ? '' : 'bracket-wrapper'}`} onClick={() => setIsSubOpen(!isSubOpen)}>
+        <li className={`mobile-li ${navSubItems ? '' : 'bracket-wrapper'}`} onKeyDown={(e) => handleKeyNav(e)}onClick={() => setIsSubOpen(!isSubOpen)}>
             <Link className='mobile-a modern-link' to={navHref ? navHref : ''}>
                 <span className='bracket'>[ </span>
                 <span className='bracket-text'>{navName}</span>

@@ -7,9 +7,33 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import firebase from "firebase/app";
+import { initializeApp } from "firebase/app";
+
+import { getAnalytics } from "firebase/analytics";
+
 import ErrorPage from './Components/ErrorPage';
 import { HeroSection } from './Containers/HeroSection';
 import { About } from './Containers/About';
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyAtgN1KMPZALqbqDERLZhy4O46g5-F-Ooc",
+
+  authDomain: "alison-portfolio-site.firebaseapp.com",
+
+  projectId: "alison-portfolio-site",
+
+  storageBucket: "alison-portfolio-site.appspot.com",
+
+  messagingSenderId: "969752895738",
+
+  appId: "1:969752895738:web:cb53efac3424b0fcb82943",
+
+  measurementId: "G-Y489XN9GDK"
+
+};
+
 
 const router = createBrowserRouter([
   {
@@ -47,3 +71,7 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);

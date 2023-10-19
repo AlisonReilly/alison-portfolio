@@ -12,6 +12,8 @@ type MobileNavProps = {
 }
 
 
+
+
 export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement>> = ({
     menuItemData, text, ...htmlProps}) => { 
     const [isOpen, setIsOpen] = useState<boolean>(false);
