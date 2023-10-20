@@ -1,0 +1,42 @@
+.shelf{
+
+}
+
+.trapezoid {
+    border-bottom: 25px solid #4d2305;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	height: 0;
+	width: 900px;
+
+
+}
+
+.front {
+    height: 10px;
+    width: 1000px;
+    background-color: #331601;
+}
+
+.project-row {
+    display: flex;
+    flex-direction: row;
+    padding: 0 60px;
+}
+
+.display-row {
+    margin-left: 50px;
+    margin-top: 100px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.youtube {
+
+}
+
+.youtubeIframe {
+    border: none;
+    border-radius: 15px;
+}

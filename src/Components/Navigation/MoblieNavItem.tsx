@@ -8,21 +8,19 @@ import { Link } from 'react-router-dom';
 
 type MobileNavItemProps = {
     isOpen: boolean;
-    setIsOpen: any;
-
     navName?: string;
     navSubItems?: NavItem[];
     navHref?: string;
-
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 
 export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDivElement>> = ({
     isOpen,
-    setIsOpen,
     navHref, 
     navName, 
-    navSubItems, 
+    navSubItems,
+    setIsOpen,
     ...htmlProps}) => { 
     const [isSubOpen, setIsSubOpen] = useState<boolean>(false);
 

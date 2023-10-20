@@ -15,6 +15,7 @@ import { getAnalytics } from "firebase/analytics";
 import ErrorPage from './Components/ErrorPage';
 import { HeroSection } from './Containers/HeroSection';
 import { About } from './Containers/About';
+import { Projects } from './Containers/Projects';
 
 const firebaseConfig = {
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <HeroSection />
       },
+      {
+        path: "/projects",
+        element: <Projects />
+      }
     ]
   },
   // as example to note while working - this will just take you to a new page and not reflect a persisting component like a header or nav
