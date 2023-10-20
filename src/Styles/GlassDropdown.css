@@ -20,5 +20,42 @@
 }
 
 .bracket-wrapper:hover {
+    /* color: #E49273; */
+}
+
+#MainNavColor {
+    color: #E49273;
+}
+
+#MainNavColor:hover {
     color: white;
+}
+
+#has-mobile-sub-items {
+    color: #E49273;
+    
+}
+
+#has-mobile-sub-items:hover {
+    color: white;
+}
+
+#mobile-li-no-subs {
+    color: #E49273;
+
+}
+
+#mobile-li-no-subs:hover {
+    color: white;
+    
+}
+
+#mobile-sub-item {
+    color: #E49273;
+
+}
+
+#mobile-sub-item:hover {
+    color: white;
+    
 }

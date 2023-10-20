@@ -1,10 +1,11 @@
-/* set a ul main menu height to ensure dropdowns don't alter original size, set display none for larger screens */
-#MainNav {
+/* Overall css for the Main Ruler Navigation */
+#PrimarySiteNav {
   height: 43px;
   position: relative;
   display: none
 }
 
+/* the first ul of this nav */
 .horizontal-nav {
     border-radius: 3px;
     display: flex;
@@ -35,6 +36,7 @@
     padding: 0 10px 15px 10px;
   }
 
+  /* when there is dropdown content available using button */
   #main-name-button {
     color: #53311a;
     text-shadow: 0 2px #ddb3a6;
@@ -49,6 +51,7 @@
     cursor: pointer;
   }
 
+  /* change the color on hover of all */
   #main-name-button:hover, #main-name-link:hover{
     color: #dab5aa;
     text-shadow: 0 2px #a37567;
@@ -77,7 +80,7 @@
   }
 
 
-    /* initially don't display the sub ul on hover of the main li */
+  /* initially don't display the sub ul on hover of the main li */
   .sub-nav-ul {
     width: fit-content;
     padding: 10px;
@@ -89,7 +92,7 @@
 
 /* responsive, full nav bar not shown until 775 */
 @media only screen and (min-width: 775px) {
-    #MainNav {
+    #PrimarySiteNav {
         display: flex;
         justify-content: center;
         margin-top: -15px;

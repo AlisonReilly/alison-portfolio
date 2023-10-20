@@ -29,14 +29,14 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     }, [])
     
     return (
-        <li className={`mobile-li ${navSubItems ? '' : 'bracket-wrapper'}`} onKeyDown={(e) => handleKeyNav(e)}onClick={() => setIsSubOpen(!isSubOpen)}>
+        <li id={`${navSubItems ? '' : 'mobile-li-no-subs'}`} className={`mobile-li ${navSubItems ? '' : 'bracket-wrapper'}`} onKeyDown={(e) => handleKeyNav(e)}onClick={() => setIsSubOpen(!isSubOpen)}>
             <Link className='mobile-a modern-link' to={navHref ? navHref : ''}>
                 <span className='bracket'>[ </span>
-                <span className='bracket-text'>{navName}</span>
+                <span id={`${navSubItems ? 'has-mobile-sub-items' : ''}`} className='bracket-text'>{navName}</span>
             </Link>
             {navSubItems && isSubOpen && navSubItems.map((sn, k) => 
                 <ul className={`flexcolumn`} >
-                    <li className='mobile-li sub bracket-wrapper'>
+                    <li id='mobile-sub-item' className='mobile-li sub bracket-wrapper'>
                         <span className='bracket'>- </span>
                         <span className='bracket-text'>{sn.name}</span>
                     </li>

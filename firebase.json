@@ -7,6 +7,11 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
+    "headers": [
+      {
+        "source": "/service-worker.js", 
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
+    ],
     "public": "build",
     "ignore": [
       "firebase.json",
@@ -19,8 +24,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "emulators": {
-    "singleProjectMode": true
   }
 }

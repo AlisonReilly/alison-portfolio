@@ -19,7 +19,7 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
     const [isOpen, setIsOpen] = useState<boolean>(false);
     
     return (
-        <nav id='MobileNav' className='mobile-nav' role="navigation" aria-label="Main menu">
+        <nav id='PrimaryMobileNav' className='mobile-nav' role="navigation" aria-label="Main menu">
             <button id='mobile-nav-button' aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}/>
             <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
             {isOpen && MainNavItems.map((i, k) =>

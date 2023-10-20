@@ -9,6 +9,7 @@
     font-size: 3vw;
 }
 
+/* the diagram in the logo needs a different margin */
 #logo-diagram {
     margin-top: -5px;
 }

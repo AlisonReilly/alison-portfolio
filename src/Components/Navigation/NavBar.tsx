@@ -11,9 +11,9 @@ type NavBarProps = {
 }
 
 export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = ({
-    menuItemData, styleClass, ...htmlProps}) => { 
+    menuItemData, styleClass, ...htmlProps }) => { 
     return ( 
-        <nav id='MainNav'>
+        <nav id='PrimarySiteNav'>
             <ul className='horizontal-nav'>
             {MainNavItems.map((i, k) =>
             <>
@@ -27,7 +27,7 @@ export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = (
                     {i.subNav && 
                     <ul className='glass sub-nav-ul'>{i.subNav.map((si, k) => 
                         <>
-                            <li className='flexrow bracket-wrapper'>
+                            <li id='MainNavColor' className='flexrow bracket-wrapper'>
                                 <span className='bracket'>[</span><span className='bracket-text'>{si.name}</span>
                             </li>
                         </>
