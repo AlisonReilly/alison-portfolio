@@ -28,11 +28,10 @@ export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = (
                     <ul className='glass sub-nav-ul'>{i.subNav.map((si, k) => 
                         <>
                             <li id='MainNavColor' className='flexrow bracket-wrapper'>
-                                <span className='bracket'>[</span><span className='bracket-text'>{si.name}</span>
+                                <Link className='modern-link flexrow' to={si.href!}><span className='bracket'>[ </span><span className='bracket-text'>{si.name}</span></Link>    
                             </li>
                         </>
                     )}
-
                     </ul>}
                 </li>
                 </>
