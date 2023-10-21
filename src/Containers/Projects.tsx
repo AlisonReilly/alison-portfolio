@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { TextFade } from '../Components/TextEffects/TextFade';
 import '../Styles/Projects.css';
 import { BasicDiagram } from '../Components/Diagramming/BasicDiagram';
+import { PortfolioItems } from '../dataConstants';
+import { ImageDisplay } from '../Components/ProjectComponents/ImageDisplay';
   
 
 type ProjectListProps = {
@@ -23,22 +25,32 @@ export const Projects: React.FC<ProjectListProps & React.HTMLProps<HTMLDivElemen
         <div id='Projects'>
             <div className="display-row">
                 <div className='project-row'>
-                    <div className='youtube'>
-                        <iframe 
-                            className='youtubeIframe'
-                            width="200" 
-                            height="200" 
-                            src="https://www.youtube.com/embed/G4u_KgDfBYI?si=DEHwJOfH4e8agIan" 
-                            title="YouTube video player" 
-                            allow="accelerometer; 
-                            autoplay; 
-                            clipboard-write; 
-                            encrypted-media; 
-                            gyroscope; 
-                            picture-in-picture; 
-                            web-share" 
-                            allowFullScreen />
-                    </div>
+                    { PortfolioItems.map((p, i) => 
+                        p.demoType === 'video' 
+                        ?
+                        <div className='youtube'>
+                            <iframe 
+                                className='youtubeIframe'
+                                width="200" 
+                                height="200" 
+                                // src="https://www.youtube.com/embed/IZuhB9wp3Wo"
+                                src={p.href}
+                                title="YouTube video player" 
+                                allow="accelerometer; 
+                                    autoplay; 
+                                    clipboard-write; 
+                                    encrypted-media; 
+                                    gyroscope; 
+                                    picture-in-picture; 
+                                    web-share" 
+                                allowFullScreen />
+                        </div>
+                        :
+                        <div className='project-image'>
+                            <ImageDisplay/>
+                        </div>
+                    )}
+
                 </div>
                 <div className='shelf'>
                     <div className='trapezoid'></div>
@@ -47,5 +59,6 @@ export const Projects: React.FC<ProjectListProps & React.HTMLProps<HTMLDivElemen
 
             </div>
         </div>
+
     ); 
 } 

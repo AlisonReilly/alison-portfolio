@@ -66,3 +66,14 @@ ul {
 }
 
 
+/* temporary - adding css here until next steps - work on sizing - also will need a 'thumbnail' and maybe a modal that will preview the image in and overlay */
+#ImageDisplay {
+  height: 100px;
+  width: 100px;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+
