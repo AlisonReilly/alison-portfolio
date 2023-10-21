@@ -49,3 +49,21 @@ export const Projects: React.FC<ProjectListProps & React.HTMLProps<HTMLDivElemen
         </div>
     ); 
 } 
+
+
+// the css for the trapezoid and front shelf:
+// .trapezoid {
+//     border-bottom: 25px solid #4d2305;
+// 	border-left: 50px solid transparent;
+// 	border-right: 50px solid transparent;
+// 	height: 0;
+// 	width: 900px;
+
+
+// }
+
+// .front {
+//     height: 10px;
+//     width: 1000px;
+//     background-color: #331601;
+// }

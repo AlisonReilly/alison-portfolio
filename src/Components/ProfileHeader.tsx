@@ -1,4 +1,3 @@
-import React, { useState } from 'react'; 
 import { BasicDiagram } from './Diagramming/BasicDiagram';
 import { TextType } from './TextEffects/TextType';
 import { Link } from 'react-router-dom';

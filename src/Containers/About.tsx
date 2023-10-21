@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
 import '../Styles/About.css';
-import { BasicDiagram } from '../Components/Diagramming/BasicDiagram';
+
   
 
 type AboutProps = {
     text?: string;
     classNames?: string;
-    removeMS?: number;
-    waitMS?: number;
-
 }
 
 export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, removeMS, text, waitMS, ...htmlProps}) => { 
-    const [welcomeTimingMet, setWelcomeTimingMet] = useState<boolean>(false);
-
-
-    useEffect(() => {
-
-    }, [])
-    
+    classNames, text, ...htmlProps}) => { 
+   
     return (
         <div id='About' className='main-wrapper'>
             <div className='main-content'>

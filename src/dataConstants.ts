@@ -1,3 +1,6 @@
+import WallMedCrop from './assets/images/WallMedCrop.png';
+
+
 export type NavItem = {
     name: string;
     href?: string,
@@ -44,8 +47,8 @@ export const PortfolioItems: PortfolioItem[] = [
     { 
         title: 'Fauxtel Hotels',
         href: "https://www.youtube.com/embed/G4u_KgDfBYI",
-        description: 'For Flatiron School\'s final project, I created a basic, theoretical, hotel brand web app featuring hotel details and ability to book a reservation/modify/cancel. ' +  
-        'Uses Active Mailer for user actions for confirmation, jwt token authentication, ' + 
+        description: 'For Flatiron School\'s final project, I created a theoretical hotel brand web app providing hotel details and ability to book a reservation/modify/cancel. ' +  
+        'Uses Active Mailer for email confirmations, jwt tokens for authentication, ' + 
         'React and Redux front end with Ruby on Rails backend.',
         tags: ['Flatiron School', 'Final Project', 'Ruby On Rails', 'REST API', 'CSS', 'Auths', 'JWT', 'CRUD', 'React', 'Redux'],
         githubURL: 'https://github.com/Tsunamins/FauxtelHotels',
@@ -109,7 +112,7 @@ export const PortfolioItems: PortfolioItem[] = [
     },
     { 
         title: 'The Wall',
-        href: "../public/TheWall.png",
+        href: WallMedCrop,
         description: 'Learned Python along with Python Flask for backend REST api creation. The project demonstrates authentication/authorization and basic CRUD operations, tied to a React UI.',
         tags: ['Self Study', 'Python', 'Flask', 'REST API', 'Auths', 'React'],
         githubURL: ['https://github.com/Tsunamins/wall-client', 'https://github.com/Tsunamins/wall-back'],
@@ -118,3 +121,26 @@ export const PortfolioItems: PortfolioItem[] = [
         demoType: 'image'
     },
 ]
+
+
+export const AlphaDiagramMap: Record<number, string> = {
+    0: 'a',
+    1: 'b',
+    2: 'c',
+    3: 'd',
+    4: 'e',
+    5: 'f',
+    6: 'g',
+    7: 'h',
+    8: 'i',
+    9: 'j',
+    10: 'k',
+    11: 'l',
+    12: 'm',
+    13: 'n',
+    14: 'o',
+    15: 'p',
+    16: 'q',
+    17: 'r',
+    18: 's',
+};

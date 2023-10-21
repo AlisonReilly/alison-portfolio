@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MainNavItems, NavItem } from '../../dataConstants';
+import { NavItem } from '../../dataConstants';
 import '../../Styles/MobileNav.css';
 import '../../Styles/GlassDropdown.css';
 import { Link } from 'react-router-dom';
@@ -28,13 +28,6 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     const firstLIID = !navSubItems ? 'mobile-li-no-subs' : '';
     const hasSubItems = navSubItems ? 'has-mobile-sub-items' : '';
 
-    
-
-    const handleKeyNav = (e: any) => {
-        console.log('key: ', e.key)
-
-    }
-
     const handleClick = () => {
         setIsSubOpen(!isSubOpen)
         if (!navSubItems) {
@@ -49,7 +42,7 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     }, [])
     
     return (
-        <li id={firstLIID} className='mobile-li' onKeyDown={(e) => handleKeyNav(e)} onClick={handleClick}>
+        <li id={firstLIID} className='mobile-li' onClick={handleClick}>
             <Link className='mobile-a modern-link' to={navHref ? navHref : ''}>
                 <span id={hasSubItems} className='bracket'>[ </span>
                 <span id={hasSubItems} className='bracket-text'>{navName}</span>
