@@ -16,6 +16,7 @@ export type PortfolioItem = {
     blogURL?: string;
     projectAssociation?: string;
     demoType: 'video' | 'image' | 'live'
+    youTubeURL?: string;
 }
 
 export const MainNavItems: NavItem[] = [
@@ -54,7 +55,8 @@ export const PortfolioItems: PortfolioItem[] = [
         githubURL: 'https://github.com/Tsunamins/FauxtelHotels',
         blogURL: 'https://tsunamins.github.io/fauxtel_hotels_-_the_final_project',
         projectAssociation: 'Flatiron School',
-        demoType: 'video'
+        demoType: 'video',
+        youTubeURL: "https://www.youtube.com/G4u_KgDfBYI"
     },
     { 
         title: 'In Theory Blog',
@@ -64,7 +66,8 @@ export const PortfolioItems: PortfolioItem[] = [
         tags: ['Self Study', 'MERN', 'CRUD', 'REST API', 'CSS', 'Authentication', 'JWT', 'Bootstrap', 'MongoDB', 'Node', 'Express', 'React', 'Mongoose'],
         githubURL: 'https://github.com/Tsunamins/InTheoryBlog',
         projectAssociation: 'Self Study',
-        demoType: 'video'
+        demoType: 'video',
+        youTubeURL: "https://www.youtube.com/DHfhT9ddKp4"
     },
     { 
         title: 'Miami Rooftop Pools',
@@ -74,7 +77,8 @@ export const PortfolioItems: PortfolioItem[] = [
         githubURL: 'https://github.com/Tsunamins/miami_rooftop_pools',
         blogURL: 'https://tsunamins.github.io/sinatra_project_-_miami_rooftop_pools',
         projectAssociation: 'Flatiron School',
-        demoType: 'video'
+        demoType: 'video',
+        youTubeURL: "https://www.youtube.com/rlPety4CSeY"
     },
     { 
         title: 'Prototype One: A Cat\'s Dream',
@@ -85,7 +89,8 @@ export const PortfolioItems: PortfolioItem[] = [
         githubURL: 'https://github.com/Tsunamins/a-cats-dream',
         blogURL: '',
         projectAssociation: 'Flatiron School',
-        demoType: 'video'
+        demoType: 'video',
+        youTubeURL: "https://www.youtube.com/MamqFgSoqq8"
     },
     { 
         title: 'Amateur Wine Reviewer',
@@ -97,7 +102,8 @@ export const PortfolioItems: PortfolioItem[] = [
         githubURL: 'https://github.com/Tsunamins/amateur_wine_reviewer',
         blogURL: '',
         projectAssociation: 'Flatiron School',
-        demoType: 'video'
+        demoType: 'video',
+        youTubeURL: "https://www.youtube.com/chD6oSrJplk"
     },
     { 
         title: 'Miami Venues CLI Web Scraping',
@@ -108,7 +114,8 @@ export const PortfolioItems: PortfolioItem[] = [
         githubURL: 'https://github.com/Tsunamins/miami_venues.git',
         blogURL: 'https://tsunamins.github.io/cli_project_noteworthy_points',
         projectAssociation: 'Flatiron School',
-        demoType: 'video'
+        demoType: 'video',
+        youTubeURL: "https://www.youtube.com/IZuhB9wp3Wo"
     },
     { 
         title: 'The Wall',
@@ -116,7 +123,6 @@ export const PortfolioItems: PortfolioItem[] = [
         description: 'Learned Python along with Python Flask for backend REST api creation. The project demonstrates authentication/authorization and basic CRUD operations, tied to a React UI.',
         tags: ['Self Study', 'Python', 'Flask', 'REST API', 'Auths', 'React'],
         githubURL: ['https://github.com/Tsunamins/wall-client', 'https://github.com/Tsunamins/wall-back'],
-        blogURL: '',
         projectAssociation: 'Self Study',
         demoType: 'image'
     },
