@@ -1,4 +1,5 @@
-import WallMedCrop from './assets/images/WallMedCrop.png';
+// import WallMedCrop from './assets/images/WallMedCrop.png';
+import WallMedCrop from '../assets/images/WallMedCrop.png';
 
 
 export type NavItem = {

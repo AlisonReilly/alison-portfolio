@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/Projects.css';
-import { AlphaDiagramMap, PortfolioItems } from '../dataConstants';
+import { AlphaDiagramMap, PortfolioItems } from '../constants/dataConstants';
 import { ImageDisplay } from '../Components/ProjectComponents/ImageDisplay';
 import { VideoDisplay } from '../Components/ProjectComponents/VideoDisplay';
 import { ButtonImage } from '../Components/ToggleComponents/ButtonImage';

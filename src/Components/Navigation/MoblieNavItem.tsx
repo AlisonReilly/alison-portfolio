@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavItem } from '../../dataConstants';
+import { NavItem } from '../../constants/dataConstants';
 import '../../Styles/MobileNav.css';
 import '../../Styles/GlassDropdown.css';
 import { Link } from 'react-router-dom';
