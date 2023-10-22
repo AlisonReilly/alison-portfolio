@@ -1,3 +1,7 @@
+#PrimaryMobileNav {
+    z-index: 1;
+}
+
 #mobile-nav-button {
     background-image: url('../../public/compass-removebg-preview.png');
     background-color: #12022E;
@@ -44,6 +48,7 @@
     padding: 10px;
     position: absolute;
     margin-top: 55px;
+    z-index: 1;
 }
 
 .closed-menu {

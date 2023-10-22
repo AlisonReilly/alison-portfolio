@@ -15,6 +15,7 @@ import ErrorPage from './Components/ErrorPage';
 import { HeroSection } from './Containers/HeroSection';
 import { About } from './Containers/About';
 import { Projects } from './Containers/Projects';
+import { Blog } from './Containers/Blog';
 
 const firebaseConfig = {
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/projects",
         element: <Projects />
+      },
+      {
+        path: "/blog",
+        element: <Blog />
       }
     ]
   },

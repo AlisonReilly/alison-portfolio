@@ -1,0 +1,47 @@
+#Blog {
+    /* background-image: url('../../public/greendamaskpreview.jpeg'); */
+    /* width: 100vw; */
+    /* height: 100vh; */
+    background-color: #0F151C;
+    background-size: fill;
+    /* background-repeat: no-repeat; */
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* the individual preview item going into the main list */
+#BlogListItem {
+    padding: 50px;
+
+}
+
+.blog-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 9; 
+    /* white-space: nowrap; */
+    height: 205px;
+
+}
+
+/* the whole list view with reading samples */
+.main-blog-list {
+    font-family: 'Michroma', sans-serif;
+    padding-top: 100px;
+    width: 50vw;
+    color: white;
+}
+
+.glassBlog {
+    /* From https://css.glass */
+    background: rgba(15, 226, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(15, 227, 255, 0.471);
+}

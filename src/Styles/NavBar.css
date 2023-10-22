@@ -2,7 +2,10 @@
 #PrimarySiteNav {
   height: 43px;
   position: relative;
-  display: none
+  display: none;
+  /* justify-content: space-around; */
+  /* width: fit-content; */
+  z-index: 1;
 }
 
 /* the first ul of this nav */
@@ -96,5 +99,6 @@
         display: flex;
         justify-content: center;
         margin-top: -15px;
+        /* position: absolute; */
     }
 }
