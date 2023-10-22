@@ -59,7 +59,7 @@ export const PortfolioItems: PortfolioItem[] = [
     { 
         title: 'In Theory Blog',
         href: "https://www.youtube.com/embed/DHfhT9ddKp4",
-        description: 'A project shortly after leaving the Flatiron School to learn how to hook up a Node based backend to a React FrontEnd. A basic MERN CRUD web app using MongoDB, Express, Node and React.  Idea was, ' + 
+        description: 'A project after completing the Flatiron School to learn how to hook up a Node based backend to a React FrontEnd. A basic MERN CRUD web app using MongoDB, Express, Node and React.  Idea was, ' + 
         'to familiarize with node.js/express.js in conjunction with React.  Uses JWT authentication, bootstrap and mongoose, for a basic introduction of use.',
         tags: ['Self Study', 'MERN', 'CRUD', 'REST API', 'CSS', 'Authentication', 'JWT', 'Bootstrap', 'MongoDB', 'Node', 'Express', 'React', 'Mongoose'],
         githubURL: 'https://github.com/Tsunamins/InTheoryBlog',

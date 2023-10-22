@@ -3,12 +3,15 @@
     flex-direction: column;
     margin-top: 40px;
     justify-content: center;
+    background-color: #12022E;
+    margin-top: -50px;
 }
 
 .project-list {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 60px;
     /* row-gap: 20px; */
 }
 
@@ -16,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .youtubeIframe {
@@ -27,8 +30,10 @@
 .project-title {
     font-family: 'Special Elite';
     font-size: 20px;
+    color: #EDDEA4;
 }
 .project-diagram-vertical {
+    color: #EDDEA4;
 
 }
 
@@ -36,6 +41,11 @@
     font-family: 'Special Elite';
     padding: 5px 20px;
     line-height: 25px;
+    color: #9A94BC;
+}
+
+.tech-highlight {
+    color: #F18F01;
 }
 
 
@@ -57,5 +67,14 @@
     #Projects {
         display: flex;
         flex-direction: column;
+        margin-top: -28px;
+    }
+
+    .project-list {
+        margin-top: 100px;
+    }
+
+    .project-description {
+        width: 400px;
     }
 }
