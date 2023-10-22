@@ -4,7 +4,7 @@
     /* height: 100vh; */
     /* background-color: #0F151C; */
     background-size: fill;
-    /* background-repeat: no-repeat; */
+    background-repeat: repeat;
     margin-top: -30px;
     display: flex;
     flex-direction: column;
