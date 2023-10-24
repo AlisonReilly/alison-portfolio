@@ -16,6 +16,7 @@ import { HeroSection } from './Containers/HeroSection';
 import { About } from './Containers/About';
 import { Projects } from './Containers/Projects';
 import { Blog } from './Containers/Blog';
+import { GameDemo } from './Containers/GameDemo';
 
 const firebaseConfig = {
 
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />
+      },
+      // todo this is temporary - change to live-demos/game-demo later or similar distinction
+      {
+        path: "/live-demos",
+        element: <GameDemo />
       }
     ]
   },
@@ -71,9 +77,10 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // strict mode causes phaser scene to render twice so leaving off for now
+  // <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
