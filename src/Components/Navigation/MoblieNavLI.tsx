@@ -34,12 +34,6 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
             setIsOpen(!isOpen)
         }
     }
-
-
-
-    useEffect(() => {
-
-    }, [])
     
     return (
         <li id={firstLIID} className='mobile-li' onClick={handleClick}>

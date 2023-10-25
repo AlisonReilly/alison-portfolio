@@ -76,20 +76,22 @@
   
   /* on hover of the main li, reveal the sub ul and li*/
   .main-li:hover, .main-li:focus {
-    & .sub-nav-ul {
-      display: flex;
-      flex-direction: column;
-    }
+
+  }
+
+  .sub-nav-ul-closed {
+    display: none;
   }
 
 
   /* initially don't display the sub ul on hover of the main li */
-  .sub-nav-ul {
+  .sub-nav-ul-open {
     width: fit-content;
     padding: 10px;
     position: absolute;
     margin-top: 55px;
-    display: none;
+    display: flex;
+    flex-direction: column
   }
 
 

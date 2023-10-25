@@ -1,8 +1,9 @@
-import React, { useState } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import { MainNavItems, NavItem } from '../../constants/dataConstants';
 import '../../Styles/NavBar.css';
 import '../../Styles/GlassDropdown.css'
 import { Link } from 'react-router-dom';
+import { NavBarLI } from './NavBarLI';
 
 
 type NavBarProps = {
@@ -12,29 +13,19 @@ type NavBarProps = {
 
 export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = ({
     menuItemData, styleClass, ...htmlProps }) => { 
+    const [displayedClass, setDisplayedClass] = useState({Experience: 'none', Projects: 'none'});
+
+    const handleClick = (e: any) => {
+        console.log('e: ', e.target.outerContext)
+    }
+
     return ( 
         <nav id='PrimarySiteNav'>
             <ul className='horizontal-nav'>
             {MainNavItems.map((i, k) =>
             <>
-                <li id='increment' className='main-li' tabIndex={i.subNav ? 0 : -1}>
-                    <span id='small-tick'>{'| '.repeat(i.name.replace(/\s/g, '').length * 1.75 + 4)}</span>
-                    {i.href 
-                    ? <Link id='main-name-link' className='modern-link' to={i.href}>{i.name}</Link> 
-                    : <button id='main-name-button' tabIndex={-1}>{i.name}</button>}
-
-                    
-                    {i.subNav && 
-                    <ul className='glass sub-nav-ul'>{i.subNav.map((si, k) => 
-                        <>
-                            <li id='MainNavColor' className='flexrow bracket-wrapper'>
-                                <Link className='modern-link flexrow' to={si.href!}><span className='bracket'>[ </span><span className='bracket-text'>{si.name}</span></Link>    
-                            </li>
-                        </>
-                    )}
-                    </ul>}
-                </li>
-                </>
+                <NavBarLI mainNav={i} />
+            </>
             )}
             </ul>
         </nav>

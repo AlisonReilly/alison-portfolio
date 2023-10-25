@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MainNavItems, NavItem } from '../../constants/dataConstants';
 import '../../Styles/MobileNav.css';
-import { MobileNavItem } from './MoblieNavItem';
+import { MobileNavItem } from './MoblieNavLI';
 
 type MobileNavProps = {
     menuItemData?: NavItem[];
