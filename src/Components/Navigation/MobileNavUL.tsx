@@ -11,12 +11,12 @@ type MobileNavProps = {
 export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement>> = ({
     menuItemData, text, ...htmlProps}) => { 
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const ButtonRef = createRef<HTMLElement>();
+    const NavRef = createRef<HTMLElement>();
 
     useEffect(() => {
         const handleClickOutside = (event: any) => {
-            if (ButtonRef.current && !ButtonRef.current.contains(event.target)) {
-            setIsOpen(false)
+            if (NavRef.current && !NavRef.current.contains(event.target)) {
+                setIsOpen(false)
             }
         }
         document.addEventListener('click', handleClickOutside, true);
@@ -24,10 +24,10 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
             document.removeEventListener('click', handleClickOutside, true);
         };
 
-    }, [ButtonRef])
+    }, [NavRef])
     
     return (
-        <nav ref={ButtonRef} id='PrimaryMobileNav' className='mobile-nav' role="navigation" aria-label="Main menu">
+        <nav ref={NavRef} id='PrimaryMobileNav' className='mobile-nav' role="navigation" aria-label="Main menu">
             <button  id='mobile-nav-button' aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}/>
             <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
             {isOpen && MainNavItems.map((i, k) =>
