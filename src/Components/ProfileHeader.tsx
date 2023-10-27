@@ -11,7 +11,7 @@ export const ProfileHeader = () => {
                     <BasicDiagram className='diagram-text' figureNumber='1'/>
                 </span>
                 <div id='logo-text-after' className='flexrow'>
-                    <TextType removeCursor={true} typeEffect='type-backspace' text='lison Reilly - Software Engineer'/>
+                    <TextType removeCursor={true} typeEffect='type-backspace' text='lison Reilly'/>
                 </div>
             </div>
         </header> 
