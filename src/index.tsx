@@ -2,21 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
-
 import { getAnalytics } from "firebase/analytics";
-
-import ErrorPage from './Components/ErrorPage';
-import { HeroSection } from './Containers/HeroSection';
-import { About } from './Containers/About';
-import { Projects } from './Containers/Projects';
-import { Blog } from './Containers/Blog';
-import { GameDemo } from './Containers/GameDemo';
 
 const firebaseConfig = {
 
@@ -36,50 +25,13 @@ const firebaseConfig = {
 
 };
 
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/about",
-        element: <About />
-      },
-      {
-        path: "/",
-        element: <HeroSection />
-      },
-      {
-        path: "/projects",
-        element: <Projects />
-      },
-      {
-        path: "/blog",
-        element: <Blog />
-      },
-      // todo this is temporary - change to live-demos/game-demo later or similar distinction
-      {
-        path: "/live-demos",
-        element: <GameDemo />
-      }
-    ]
-  },
-  // as example to note while working - this will just take you to a new page and not reflect a persisting component like a header or nav
-  // {
-  //   path: "/home",
-  //   element: <HeroSection />
-  // }
-]);
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   // strict mode causes phaser scene to render twice so leaving off for now
   // <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter><App /></BrowserRouter>
   // </React.StrictMode>
 );
 

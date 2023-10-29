@@ -42,7 +42,7 @@ body {
 /* apply to anchor tags when no standard styling is needed */
 .modern-link, .modern-link:visited, .modern-link:hover, .modern-link:active {
   text-decoration: none;
-  color: inherit;
+  /* color: unset; */
 }
 
 /* components that need a certain flex and direction applied */

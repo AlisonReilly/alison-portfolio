@@ -23,7 +23,11 @@
     color: #E49273;
 }
 
-#MainNavColor:hover {
+#MainNavColor:visited {
+    color: #E49273;
+}
+
+#MainNavColor:hover, #MainNavColor:active {
     color: white;
 }
 

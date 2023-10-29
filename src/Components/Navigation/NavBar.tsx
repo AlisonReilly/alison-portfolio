@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'; 
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { MainNavItems, NavItem } from '../../constants/dataConstants';
 import '../../Styles/NavBar.css';
 import '../../Styles/GlassDropdown.css'
@@ -13,19 +14,15 @@ type NavBarProps = {
 
 export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = ({
     menuItemData, styleClass, ...htmlProps }) => { 
-    const [displayedClass, setDisplayedClass] = useState({Experience: 'none', Projects: 'none'});
-
-    const handleClick = (e: any) => {
-        console.log('e: ', e.target.outerContext)
-    }
+    let location = useLocation();
 
     return ( 
         <nav id='PrimarySiteNav'>
-            <ul className='horizontal-nav'>
+            <ul className={`horizontal-nav ${location.pathname === '/blog' ? 'blog-style' : 'primary-style'}`}>
             {MainNavItems.map((i, k) =>
-            <>
-                <NavBarLI mainNav={i} />
-            </>
+                <>
+                    <NavBarLI key={`${k}-top-nav`} mainNav={i} />
+                </>
             )}
             </ul>
         </nav>

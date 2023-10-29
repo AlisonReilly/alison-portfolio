@@ -7,6 +7,10 @@
     width: auto;
   }
 
+#ProfileHeader a {
+    color: black;
+}
+
 #HeaderSection {
     width: 100%;
 }

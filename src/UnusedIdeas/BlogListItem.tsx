@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/Blog.css';
 import { Link } from 'react-router-dom';
-import { CurrentBlogPosts } from '../../constants/blogConstants';
+import { CurrentBlogPosts } from '../constants/blogConstants';
 
 type BlogListItemProps = {
     altText?: string;
@@ -19,7 +19,7 @@ export const BlogListItem: React.FC<BlogListItemProps & React.HTMLProps<HTMLDivE
     return (
         <div id='BlogListItem' className='glassBlog'>
             <h3 className='blog-title'>{testBlog.title}</h3>
-            <div className='blog-content'>{testBlog.content}
+            <div className='blog-preview-content'>{testBlog.content}
 
 
             </div>
