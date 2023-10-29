@@ -9,6 +9,7 @@ import { About } from './Containers/About';
 import { Projects } from './Containers/Projects';
 import { GameDemo } from './Containers/GameDemo';
 import ErrorPage from './Components/ErrorPage';
+import { Resume } from './Containers/Resume';
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
         <Route path="/about" element={<About />}/>
         <Route path="/projects" element={<Projects />}/>
         <Route path="/live-demos" element={<GameDemo />}/>
+        <Route path="/resume" element={<Resume/>}/>
         <Route path="/blog" element={<Blog posts={CurrentBlogPosts}/>}/>
-
         {CurrentBlogPosts && CurrentBlogPosts.map((p, i) => 
             <Route path={`/${p.blogURL}`} element={<BlogRead title={p.title} blogContent={p.content}/>}/>
         )}
