@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/About.css';
 
+
   
 
 type AboutProps = {
@@ -13,7 +14,7 @@ export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = ({
    
     return (
         <div id='About' className='main-wrapper'>
-            <div className='main-content'>
+            <div className='main-content glassAbout'>
                 <div className='p-div'>
                     After dabbling with a WordPress site, once upon a time, with a free stock template, I realized I wanted to learn 
                     more on how to take control of a webpage with html and css. Soon after, I realized I really liked the concept of 

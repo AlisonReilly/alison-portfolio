@@ -43,6 +43,9 @@
 /* reading views */
 .blog-read-container {
     /* padding: 100px 200px 200px 10px; */
+    display: flex;
+    flex-direction: column;
+    padding: 100px 200px 50px 200px;
 }
 
 
