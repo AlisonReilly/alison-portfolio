@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { NavItem } from '../../constants/dataConstants';
 import '../../Styles/MobileNav.css';
 import '../../Styles/GlassDropdown.css';
+import '../../Styles/NavBar.css';
 import { Link } from 'react-router-dom';
 
   
@@ -52,7 +53,7 @@ export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>>
                     {mainNav.subNav.map((si, k) => 
                         <>
                             <li key={`${si.name}-sub`}  id='MainNavColor' className='flexrow bracket-wrapper'>
-                                <Link className='modern-link flexrow' to={si.href ? si.href : ''}><span className='bracket'>[ </span><span className='bracket-text'>{si.name}</span></Link>    
+                                <Link className='modern-link flexrow primary-sub' to={si.href ? si.href : ''}><span className='bracket'>[ </span><span className='bracket-text'>{si.name}</span></Link>    
                             </li>
                         </>
                     )}

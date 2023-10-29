@@ -44,7 +44,7 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
             {navSubItems && isSubOpen && navSubItems.map((sn, k) => 
                 <ul className='flexcolumn'>
                     <li id='mobile-sub-item' className='mobile-li sub bracket-wrapper' onClick={() => setIsOpen(!isOpen)}>
-                        <Link className='modern-link' to={sn.href!}>
+                        <Link className='modern-link mobile-sub' to={sn.href!}>
                             <span className='bracket'>- </span>
                             <span className='bracket-text'>{sn.name}</span>
                         </Link>

@@ -22,23 +22,38 @@
 .mobile-a {
     display: flex;
     flex-direction: row;
+    color: #E49273;
 }
 
+.mobile-a:hover {
+    color: white;
+    
+}
 
 .sub {
     margin-left: 10px;
 }
 
-  /* initially don't display the sub ul on hover of the main li */
-  .closed-sub {
+
+
+.mobile-sub {
+    color: #E49273;
+}
+
+.mobile-sub:hover {
+    color: white;
+}
+
+/* initially don't display the sub ul on hover of the main li */
+.closed-sub {
     display: none;
-  }
+}
   
-  /* on hover of the main li, reveal the sub ul and li*/
-  .open-sub {
-    display: flex;
-    flex-direction: column;
-  }
+/* on hover of the main li, reveal the sub ul and li*/
+.open-sub {
+display: flex;
+flex-direction: column;
+}
 
 
 

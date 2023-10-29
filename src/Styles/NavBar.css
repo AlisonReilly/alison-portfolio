@@ -111,6 +111,14 @@
     display: none;
   }
 
+  .primary-sub {
+    color: #E49273;
+  }
+
+  .primary-sub:hover {
+    color: white;
+  }
+
 
   /* initially don't display the sub ul on hover of the main li */
   .sub-nav-ul-open {
