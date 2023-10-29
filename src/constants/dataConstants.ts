@@ -25,7 +25,7 @@ export const MainNavItems: NavItem[] = [
     {
         name: 'Experience', 
         subNav: [
-            { name: 'Resume', href: '/projects' }, 
+            { name: 'Resume', href: '/resume' }, 
             { name: 'Proficiencies', href: '/proficiencies' }
         ]
     },
