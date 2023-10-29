@@ -1,11 +1,22 @@
 #ProfileHeader {
     display: flex;
-    background-color: #BC7258;
+    /* background-color: #BC7258; */
     padding: 15px 0 10px 10px;
     font-family: 'Michroma', sans-serif;
     font-size: 10vw;
     width: auto;
   }
+
+.primary-header-bg {
+
+    background-color: #BC7258;
+
+}
+
+.blog-header-bg {
+    background-color: #594157;
+
+}
 
 #ProfileHeader a {
     color: black;

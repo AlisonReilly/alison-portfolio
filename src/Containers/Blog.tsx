@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/Blog.css';
-import { BlogListItem } from '../UnusedIdeas/BlogListItem';
 import { BlogPreview } from '../Components/Blog/BlogPreview';
-import { BlogPost, CurrentBlogPosts } from '../constants/blogConstants';
-import { Route, Routes } from 'react-router-dom';
-import { BlogRead } from '../Components/Blog/BlogRead';
+import { BlogPost } from '../constants/blogConstants';
+
 
   
 

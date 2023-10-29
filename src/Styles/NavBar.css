@@ -21,7 +21,9 @@
   }
 
   .blog-style {
-    background-image: linear-gradient(360deg, #7f7b8b 10%, #393944 100%);
+    /* background-image: linear-gradient(360deg, #423f30 10%, #7B7554 100%); */
+    background-image: linear-gradient(360deg, #726da8 10%, #4e5469 100%);
+
   }
 
   .primary-style-text {

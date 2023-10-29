@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { MainNavItems, NavItem } from '../../constants/dataConstants';
 import '../../Styles/NavBar.css';
 import '../../Styles/GlassDropdown.css'
-import { Link } from 'react-router-dom';
 import { NavBarLI } from './NavBarLI';
 
 
