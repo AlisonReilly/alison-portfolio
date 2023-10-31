@@ -20,6 +20,18 @@ export type PortfolioItem = {
     youTubeURL?: string;
 }
 
+export type ResumeEntry = {
+    organization: string;
+    orgURL?: string;
+    skills?: string[];
+    achieved?: string[];
+    description?: string;
+    date?: string;
+    title?: string;
+    concentration?: string;
+    location?: string;
+}
+
 export const MainNavItems: NavItem[] = [
     { name: 'Home', href: '/' },
     {
@@ -130,8 +142,130 @@ export const PortfolioItems: PortfolioItem[] = [
 ]
 
 
+export const ResumeEntries: ResumeEntry[] = [
+    {
+        organization: 'Parchment',
+        title: 'Software Engineer I',
+        date: '9/2022 - present',
+        orgURL: 'https://www.parchment.com/',
+        skills: ['TypeScript', 'React', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook'],
+        achieved: [
+            'Built a front end component library with React and Typescript, improving development speed and UI standardization',
+            'Increased reliability and safeguarded future changes by writing unit tests with React testing-library and Jest',
+            'Demoed components in Storybook and added documentation to communicate updates and implementation instructions',
+            'Promoted and further developed engineer adoption by attending other team meetings to consult on needs and concerns'
+        ],
+        description: 'Created a company wide, front end, component libray for an electronic and automated credentialing organization.',
+        location: 'remote'
+    },
+    {
+        organization: 'American Express',
+        title: 'Software Engineer I',
+        date: '12/2021 - 9/2022',
+        orgURL: 'https://www.americanexpress.com/',
+        skills: ['JavaScript', 'React', 'Python', 'Flask', 'Golang', 'Redis', 'Selenium', 'Jest', 'Enzyme', 'Docker', 'Kafka'],
+        achieved: [
+            'Added new frontend features for internal enterprise automations platform using React and company design library',
+            'Implemented API routes in both Python with Flask and Golang, concentrating on reporting for leadership demonstrating the value add of the product for the company',
+            'Integrated a Redis Client into backend services speeding up reporting and other endpoint times',
+            'Improved automated UI testing coverage by introducing Selenium Browser tests run through automated gitlab pipeline'
+        ],
+        description: 'A team focusing on building a robust automations platform for the company wide adoption.',
+        location: 'remote'    
+    },
+    {
+        organization: 'ServiceNow',
+        title: 'Technical Support Engineer',
+        date: '3/2021 - 12/2021',
+        orgURL: 'https://www.servicenow.com/',
+        skills: ['JavaScript', 'Platform Debugging', 'Java', 'ServiceNow', 'Platform as a Service', 'ServiceNow Administration', 'Troubleshooting'],
+        achieved: [
+            'Utilized platform debugging tools to identify conflicting security rules and other platform settings ',
+            'Employed Chrome Dev Tools, platform tools and other techniques for client side and server side debugging',
+            'Increased ticket resolution speed by coordinating consultations with Customers, team members and developers',
+            'Created knowledge base articles on findings enhancing the available support documentation for users and employees'
+        ],
+        description: 'A team focusing on building a robust automations platform for the company wide adoption.',
+        location: 'remote'
+    },
+    {
+        organization: '1909 Coworking',
+        title: 'Backend Developer Intern',
+        date: '8/2020 - 3/2021',
+        orgURL: 'https://www.weare1909.org/',
+        skills: ['JavaScript', 'Node', 'Integrations', 'Salesforce API', 'Firebase', 'Webhooks', 'ExpressJS'],
+        achieved: [
+            'Integrated OfficeRnd & Salesforce REST APIs using NodeJS and Firebase functions',
+            'Routed web hook response of OfficeRnd with ExpressJS ensuring separation of concerns',
+            'Increased ticket resolution speed by coordinating consultations with Customers, team members and developers',
+            'Communicated goals with product owner and other company associates on a bi-weekly basis to sync goals '
+        ],
+        description: 'An internship project building middleware and integrations for a local co-working space.',
+        location: 'remote'
+    },
+    {
+        organization: 'Shuckers',
+        title: 'Server',
+        date: '5/2019 - 3/2020',
+        skills: ['Team Work', 'Communication', 'Product Knowledge', 'Multi-tasking', 'Math', 'Prioritization', 'Work under pressure', 'Sales'],
+        achieved: [
+            'Ensured smooth operation during high volume service hours by multi-tasking and teamwork',
+            'Navigated challenging people by adapting to personality and negotiating positive outcomes',
+            'Met and exceeded high pressure demands of restaurant pace and volume by organizing tasks'
+        ],
+        description: 'Fast paced casual restuarant with a focus on seafood.',
+        location: 'Miami Beach, FL'
+    },
+    {
+        organization: 'Smith & Wollensky',
+        title: 'Server',
+        date: '11/2017 - 5/2019',
+        skills: ['Team Work', 'Communication', 'Product Knowledge', 'Multi-tasking', 'Math', 'Prioritization', 'Sales'],
+        achieved: [
+            'Ensured smooth operation during high volume service hours by multi-tasking and teamwork',
+            'Navigated challenging people by adapting to personality and negotiating positive outcomes',
+            'Effectively communicated with other departments to gain efficiency and speed, increasing section revenue'
+        ],
+        description: 'High end steak house focusing on classic dining experiences.',
+        location: 'Miami Beach, FL'
+    },
+    {
+        organization: 'Quality Meats',
+        title: 'Server',
+        date: '11/2017 - 10/2017',
+        skills: ['Team Work', 'Communication', 'Product Knowledge', 'Multi-tasking', 'Math', 'Prioritization', 'Wine Knowledge', 'Sales'],
+        achieved: [
+            'Professional wine knowledge increased personal and restaurant wine sales, average of 40% of sales',
+            'Presented menu strategically to guide guests to food choices decreasing order, table and wait times',
+            'Met and exceeded high pressure demands of restaurant pace and volume by organizing tasks'
+        ],
+        description: 'High end steak house with a modern twist.',
+        location: 'New York, NY'
+    },
+]
+
+export const Education: ResumeEntry[] = [
+    {
+        organization: 'Flatiron School',
+        date: '1/2019 - 3/2020',
+        description: 'Learned Full Stack Software Engineering with Ruby on Rails, JavaScript, React and Redux',
+        concentration: 'Full Stack Software Engineering',
+        skills: ['Ruby on Rails', 'React', 'Redux', 'JavaScript']
+
+    },
+    {
+        organization: 'LaGuardia Community college',
+        date: '3/2013 - 8/2017',
+        description: 'Enrolled in a variety of science and math courses while working full time',
+        concentration: 'Math and Science',
+        skills: ['Anatomy and Physiology', 'Biology', 'Chemistry', 'Calculus', 'C++', 'Writing intensive courses']
+
+    }
+]
+
 export const AlphaDiagramMap: Record<number, string> = {
     0: 'a',
+
     1: 'b',
     2: 'c',
     3: 'd',
