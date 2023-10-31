@@ -1,15 +1,51 @@
 #Resume {
     background-color: #465F6E;
-    height: 100vh;
+    height: 100%;
     margin-top: -50px;
+    display: flex;
+    font-family: 'Goudy Bookletter 1911', serif;
+}
+
+.entry {
+    /* row-gap: 25px; */
+    margin-bottom: 25px;
 }
 
 .resume-content {
     padding-top: 75px;
-    display: flex;
-    flex-direction: column;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
+.org {
+    font-weight: 900;
+}
+
+.org-details {
+    column-gap: 10px;
+    justify-content: space-between;
+}
+
+.org-details-stretch {
+    justify-content: space-between;
+}
+
+.bullets {
+    list-style-type: circle;
+}
+
+.skills {
+    column-gap: 20px;
+}
+
+.details {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.section-header {
+    align-self: center;
+}
 
 
 

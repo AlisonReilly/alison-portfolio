@@ -14,13 +14,12 @@ type ResumeProps = {
 export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = () => { 
     return (
         <div id='Resume'>
-            <div className='resume-content'>
-                <h4>Experience</h4>
+            <div className='resume-content flexcolumn'>
+                <h3 className='section-header'>Experience</h3>
                 <ResumeExperience/>
-                <h4>Education</h4>
+                <h3 className='section-header'>Education</h3>
                 <ResumeEducation/>
             </div>
-
         </div>
     ); 
 } 

@@ -148,7 +148,7 @@ export const ResumeEntries: ResumeEntry[] = [
         title: 'Software Engineer I',
         date: '9/2022 - present',
         orgURL: 'https://www.parchment.com/',
-        skills: ['TypeScript', 'React', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook'],
+        skills: ['TypeScript', 'React', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook', 'Accessibility'],
         achieved: [
             'Built a front end component library with React and Typescript, improving development speed and UI standardization',
             'Increased reliability and safeguarded future changes by writing unit tests with React testing-library and Jest',
@@ -156,7 +156,7 @@ export const ResumeEntries: ResumeEntry[] = [
             'Promoted and further developed engineer adoption by attending other team meetings to consult on needs and concerns'
         ],
         description: 'Created a company wide, front end, component libray for an electronic and automated credentialing organization.',
-        location: 'remote'
+        location: 'Remote'
     },
     {
         organization: 'American Express',
@@ -171,14 +171,14 @@ export const ResumeEntries: ResumeEntry[] = [
             'Improved automated UI testing coverage by introducing Selenium Browser tests run through automated gitlab pipeline'
         ],
         description: 'A team focusing on building a robust automations platform for the company wide adoption.',
-        location: 'remote'    
+        location: 'Remote'    
     },
     {
         organization: 'ServiceNow',
         title: 'Technical Support Engineer',
         date: '3/2021 - 12/2021',
         orgURL: 'https://www.servicenow.com/',
-        skills: ['JavaScript', 'Platform Debugging', 'Java', 'ServiceNow', 'Platform as a Service', 'ServiceNow Administration', 'Troubleshooting'],
+        skills: ['JavaScript', 'Platform Debugging', 'Java', 'ServiceNow', 'Platform as a Service', 'ServiceNow Administration', 'Troubleshooting', 'Accessibility'],
         achieved: [
             'Utilized platform debugging tools to identify conflicting security rules and other platform settings ',
             'Employed Chrome Dev Tools, platform tools and other techniques for client side and server side debugging',
@@ -186,7 +186,7 @@ export const ResumeEntries: ResumeEntry[] = [
             'Created knowledge base articles on findings enhancing the available support documentation for users and employees'
         ],
         description: 'A team focusing on building a robust automations platform for the company wide adoption.',
-        location: 'remote'
+        location: 'Remote'
     },
     {
         organization: '1909 Coworking',
@@ -201,7 +201,7 @@ export const ResumeEntries: ResumeEntry[] = [
             'Communicated goals with product owner and other company associates on a bi-weekly basis to sync goals '
         ],
         description: 'An internship project building middleware and integrations for a local co-working space.',
-        location: 'remote'
+        location: 'Remote'
     },
     {
         organization: 'Shuckers',
@@ -222,8 +222,8 @@ export const ResumeEntries: ResumeEntry[] = [
         date: '11/2017 - 5/2019',
         skills: ['Team Work', 'Communication', 'Product Knowledge', 'Multi-tasking', 'Math', 'Prioritization', 'Sales'],
         achieved: [
-            'Ensured smooth operation during high volume service hours by multi-tasking and teamwork',
-            'Navigated challenging people by adapting to personality and negotiating positive outcomes',
+            'Facilitated restaurant demands as a team member of both banquet and a la carte shifts',
+            'Lead trainees in a one week, new hire orientation covering food, beverage & service',
             'Effectively communicated with other departments to gain efficiency and speed, increasing section revenue'
         ],
         description: 'High end steak house focusing on classic dining experiences.',
@@ -232,12 +232,12 @@ export const ResumeEntries: ResumeEntry[] = [
     {
         organization: 'Quality Meats',
         title: 'Server',
-        date: '11/2017 - 10/2017',
+        date: '6/2010 - 10/2017',
         skills: ['Team Work', 'Communication', 'Product Knowledge', 'Multi-tasking', 'Math', 'Prioritization', 'Wine Knowledge', 'Sales'],
         achieved: [
             'Professional wine knowledge increased personal and restaurant wine sales, average of 40% of sales',
             'Presented menu strategically to guide guests to food choices decreasing order, table and wait times',
-            'Met and exceeded high pressure demands of restaurant pace and volume by organizing tasks'
+            'Trained new hires on company steps of service, side duties and ensured menu knowledge'
         ],
         description: 'High end steak house with a modern twist.',
         location: 'New York, NY'
@@ -250,7 +250,8 @@ export const Education: ResumeEntry[] = [
         date: '1/2019 - 3/2020',
         description: 'Learned Full Stack Software Engineering with Ruby on Rails, JavaScript, React and Redux',
         concentration: 'Full Stack Software Engineering',
-        skills: ['Ruby on Rails', 'React', 'Redux', 'JavaScript']
+        skills: ['Ruby on Rails', 'React', 'Redux', 'JavaScript'],
+        location: 'Remote'
 
     },
     {
@@ -258,7 +259,8 @@ export const Education: ResumeEntry[] = [
         date: '3/2013 - 8/2017',
         description: 'Enrolled in a variety of science and math courses while working full time',
         concentration: 'Math and Science',
-        skills: ['Anatomy and Physiology', 'Biology', 'Chemistry', 'Calculus', 'C++', 'Writing intensive courses']
+        skills: ['Anatomy and Physiology', 'Biology', 'Chemistry', 'Calculus', 'C++', 'Writing intensive courses'],
+        location: 'Long Island City, NY'
 
     }
 ]

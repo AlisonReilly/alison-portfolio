@@ -14,20 +14,20 @@ export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDi
     return (
         <div id='Experience'>
             {ResumeEntries.map((r, i) => 
-                <div>
-                    <div>
-                        <span>{r.title}</span>
-                        <span>{r.organization}</span>
-                        <span>{r.location}</span>
-                        <span>{r.date}</span>
+                <div className='flexcolumn entry'>
+                    <div className='flexrow org-details'>
+                        <div>{r.title}</div>
+                        <div className='org'>{r.organization}</div>
+                        <div>{r.location}</div>
+                        <div>{r.date}</div>
                     </div>
                     <div>{r.description}</div>       
-                    <ul>{r.achieved && r.achieved.map((a, i) => 
+                    <ul className='flexcolumn bullets details'>{r.achieved && r.achieved.map((a, i) => 
                         <li>{a}</li>
                     )}
                     </ul>
                     
-                    <ul>{r.skills && r.skills.map((s, i) => 
+                    <ul className='flexrow bullets skills'>{r.skills && r.skills.map((s, i) => 
                         <li>{s}</li>
                     )}
                     </ul>
