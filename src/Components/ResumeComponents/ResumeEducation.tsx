@@ -16,9 +16,9 @@ export const ResumeEducation: React.FC<EduProps & React.HTMLProps<HTMLDivElement
             {Education.map((r, i) => 
                 <div className='flexcolumn entry'>
                     <div className='flexrow org-details-stretch'>
-                        <div className='org'>{r.organization}</div>
-                        <div>{r.location}</div>
-                        <div>{r.date}</div>
+                        <div className='org single-line'>{r.organization}</div>
+                        <div className='single-line'>{r.location}</div>
+                        <div className='single-line'>{r.date}</div>
                     </div>
                     <div>{r.description}</div>       
                     <ul className='flexcolumn bullets details'>{r.achieved && r.achieved.map((a, i) => 
@@ -26,7 +26,7 @@ export const ResumeEducation: React.FC<EduProps & React.HTMLProps<HTMLDivElement
                     )}
                     </ul>
                     
-                    <ul className='flexrow bullets skills'>{r.skills && r.skills.map((s, i) => 
+                    <ul className='flexrow skills'>{r.skills && r.skills.map((s, i) => 
                         <li>{s}</li>
                     )}
                     </ul>

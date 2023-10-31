@@ -25,6 +25,9 @@
 /* font-family: 'Michroma', sans-serif; (futuristic looking, letters more narrow or squre, but wider overall */
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
+/* font-family: 'Exo 2', sans-serif; (oldy but goody) */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,400;0,900;1,200;1,400;1,900&display=swap');
+
 /* note may change background color so remember this is applying to all body background */
 body {
   /* background-color: #343C55; */

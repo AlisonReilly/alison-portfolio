@@ -16,10 +16,10 @@ export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDi
             {ResumeEntries.map((r, i) => 
                 <div className='flexcolumn entry'>
                     <div className='flexrow org-details'>
-                        <div>{r.title}</div>
-                        <div className='org'>{r.organization}</div>
-                        <div>{r.location}</div>
-                        <div>{r.date}</div>
+                        <div className='single-line'>{r.title}</div>
+                        <div className='org single-line'>{r.organization}</div>
+                        <div className='single-line no-mobile'>{r.location}</div>
+                        <div className='single-line'>{r.date}</div>
                     </div>
                     <div>{r.description}</div>       
                     <ul className='flexcolumn bullets details'>{r.achieved && r.achieved.map((a, i) => 
@@ -27,8 +27,8 @@ export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDi
                     )}
                     </ul>
                     
-                    <ul className='flexrow bullets skills'>{r.skills && r.skills.map((s, i) => 
-                        <li>{s}</li>
+                    <ul className='flexrow skills'>{r.skills && r.skills.map((s, i) => 
+                        <li className='each-skill'>{s}</li>
                     )}
                     </ul>
                 </div>
