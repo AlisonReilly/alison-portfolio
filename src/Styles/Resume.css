@@ -20,6 +20,8 @@
 }
 
 .resume-content {
+    display: flex;
+    flex-direction: column;
     padding-top: 50px;
     margin-left: 20px;
     margin-right: 20px;
@@ -33,12 +35,12 @@
 }
 
 .org-details {
-    column-gap: 20px;
+    column-gap: 50px;
     justify-content: flex-start;
 }
 
 .org-details-stretch {
-    column-gap: 75px;
+    column-gap: 150px;
     justify-content: flex-start;
 }
 
@@ -49,6 +51,10 @@
 .skills {
     column-gap: 20px;
     /* color: #F18F01; */
+    max-width: 800px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    row-gap: 10px;
 
 
 }
@@ -58,10 +64,11 @@
     border: 1px solid #F18F01
 }
 
-.details {
+.experience-details {
     margin-left: 20px;
     margin-right: 20px;
     display: block;
+    max-width: 800px;
 
 }
 
@@ -86,10 +93,13 @@
     }
 
     .resume-content {
+        display: flex;
+        flex-direction: column;
         padding-top: 75px;
-        margin-left: 200px;
-        margin-right: 200px;
-        justify-content: center; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
     }
 
     .no-mobile {

@@ -17,17 +17,17 @@ export const ResumeEducation: React.FC<EduProps & React.HTMLProps<HTMLDivElement
                 <div className='flexcolumn entry'>
                     <div className='flexrow org-details-stretch'>
                         <div className='org single-line'>{r.organization}</div>
-                        <div className='single-line'>{r.location}</div>
+                        <div className='single-line no-mobile'>{r.location}</div>
                         <div className='single-line'>{r.date}</div>
                     </div>
                     <div>{r.description}</div>       
-                    <ul className='flexcolumn bullets details'>{r.achieved && r.achieved.map((a, i) => 
+                    <ul className='flexcolumn bullets experience-details'>{r.achieved && r.achieved.map((a, i) => 
                         <li>{a}</li>
                     )}
                     </ul>
                     
                     <ul className='flexrow skills'>{r.skills && r.skills.map((s, i) => 
-                        <li>{s}</li>
+                        <li className='single-line'>{s}</li>
                     )}
                     </ul>
                 </div>
