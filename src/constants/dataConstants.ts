@@ -35,13 +35,12 @@ export type ResumeEntry = {
 export const MainNavItems: NavItem[] = [
     { name: 'Home', href: '/' },
     {
-        name: 'Experience', 
-        subNav: [
-            { name: 'Resume', href: '/resume' }, 
-            { name: 'Proficiencies', href: '/proficiencies' }
-        ]
+        name: 'Experience', href: '/resume'
+        // subNav: [
+        //     { name: 'Resume', href: '/resume' }, 
+        //     { name: 'Proficiencies', href: '/proficiencies' }
+        // ]
     },
-    { name: 'Blog', href: '/blog' },
     {
         name: 'Projects', 
         subNav: [
@@ -49,8 +48,12 @@ export const MainNavItems: NavItem[] = [
             { name: 'Live Demos', href: '/live-demos' }
         ]
     },
-    { name: 'Contractible Services', href: '/contract' },
+    { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+
+    // { name: 'Contractible Services', href: '/contract' },
+
 
 
 ]
