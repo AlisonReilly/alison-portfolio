@@ -97,7 +97,23 @@
     font-size: 25px;
 }
 
+.resume-links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    margin-bottom: 40px;
+}
 
+.download img {
+    width: 96px;
+    height: 96px;
+    background-color: white;
+}
+
+
+.resume-header-title {
+    margin-bottom: 30px;
+}
 
 @media only screen and (min-width: 775px) {
 

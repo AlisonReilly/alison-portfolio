@@ -168,10 +168,10 @@ export const ResumeEntries: ResumeEntry[] = [
         orgURL: 'https://www.americanexpress.com/',
         skills: ['JavaScript', 'React', 'Python', 'Flask', 'Golang', 'Redis', 'Selenium', 'Jest', 'Enzyme', 'Docker', 'Kafka'],
         achieved: [
-            'Added new frontend features for internal enterprise automations platform using React and company design library',
-            'Implemented API routes in both Python with Flask and Golang, concentrating on reporting for leadership demonstrating the value add of the product for the company',
-            'Integrated a Redis Client into backend services speeding up reporting and other endpoint times',
-            'Improved automated UI testing coverage by introducing Selenium Browser tests run through automated gitlab pipeline'
+            'Added frontend features for enterprise automations platform using React and company design library',
+            'Implemented API routes in Golang and Python with Flask, concentrating on value add reporting for leadership',
+            'Integrated a Redis Client into backend, speeding up reporting and other endpoint times',
+            'Improved automated UI testing coverage by adding pipeline Selenium Browser tests through automated gitlab pipeline'
         ],
         description: 'A team focusing on building a robust automations platform for the company wide adoption.',
         location: 'Remote'    
