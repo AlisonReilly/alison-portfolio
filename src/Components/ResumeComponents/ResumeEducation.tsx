@@ -12,22 +12,25 @@ type EduProps = {
 
 export const ResumeEducation: React.FC<EduProps & React.HTMLProps<HTMLDivElement>> = () => { 
     return (
-        <div id='Education'>
+        <div id='Experience'>
             {Education.map((r, i) => 
-                <div className='flexcolumn entry'>
-                    <div className='flexrow org-details-stretch'>
-                        <div className='org single-line'>{r.organization}</div>
-                        <div className='single-line no-mobile'>{r.location}</div>
-                        <div className='single-line'>{r.date}</div>
+                <div className='entry'>
+                    <div className='org-details'>
+                        <div className='single-line job-title left'>{r.title}</div>
+                        <div className='org single-line company'>{r.organization}</div>
                     </div>
-                    <div>{r.description}</div>       
-                    <ul className='flexcolumn bullets experience-details'>{r.achieved && r.achieved.map((a, i) => 
+                    <div className='supplementary'>
+                        <div className='single-line date left'>{r.date}</div>
+                        <div className='single-line location'>{r.location}</div>
+                    </div>
+                    <div className='whole-grid description'>{r.description}</div>       
+                    <ul className='bullets experience-details whole-grid'>{r.achieved && r.achieved.map((a, i) => 
                         <li>{a}</li>
                     )}
                     </ul>
                     
-                    <ul className='flexrow skills'>{r.skills && r.skills.map((s, i) => 
-                        <li className='single-line'>{s}</li>
+                    <ul className='skills whole-grid'>{r.skills && r.skills.map((s, i) => 
+                        <li className='each-skill single-line'>{s}</li>
                     )}
                     </ul>
                 </div>

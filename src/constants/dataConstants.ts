@@ -247,6 +247,7 @@ export const ResumeEntries: ResumeEntry[] = [
 export const Education: ResumeEntry[] = [
     {
         organization: 'Flatiron School',
+        title: 'Software Engineering',
         date: '1/2019 - 3/2020',
         description: 'Learned Full Stack Software Engineering with Ruby on Rails, JavaScript, React and Redux',
         concentration: 'Full Stack Software Engineering',
@@ -257,6 +258,7 @@ export const Education: ResumeEntry[] = [
     {
         organization: 'LaGuardia Community college',
         date: '3/2013 - 8/2017',
+        title: 'Math & Science',
         description: 'Enrolled in a variety of science and math courses while working full time',
         concentration: 'Math and Science',
         skills: ['Anatomy and Physiology', 'Biology', 'Chemistry', 'Calculus', 'C++', 'Writing intensive courses'],
@@ -267,7 +269,6 @@ export const Education: ResumeEntry[] = [
 
 export const AlphaDiagramMap: Record<number, string> = {
     0: 'a',
-
     1: 'b',
     2: 'c',
     3: 'd',

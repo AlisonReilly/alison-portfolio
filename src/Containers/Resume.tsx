@@ -15,9 +15,9 @@ export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = (
     return (
         <div id='Resume'>
             <div className='resume-content flexcolumn'>
-                <h3 className='section-header'>Experience</h3>
+                <h2 className='section-header'>Experience</h2>
                 <ResumeExperience/>
-                <h3 className='section-header'>Education</h3>
+                <h2 className='section-header'>Education</h2>
                 <ResumeEducation/>
             </div>
         </div>

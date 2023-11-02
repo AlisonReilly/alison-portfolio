@@ -1,21 +1,23 @@
 #Resume {
-    /* background-color: #465F6E; */
-    /* background-color: #4C5F6B;
-    color: #12022E; */
     background-color: #465F6E;
     color: #BCA0BC;
     height: 100%;
     margin-top: -50px;
     display: flex;
     font-family: 'Exo 2', sans-serif;
+}
 
-/* 
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 18px; */
+#Education {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    min-width: 850px;
 }
 
 .entry {
-    /* row-gap: 25px; */
     margin-bottom: 25px;
 }
 
@@ -31,12 +33,22 @@
 
 .org {
     font-weight: 900;
+    font-size: 18px;
     width: 100px;
 }
 
-.org-details {
-    column-gap: 50px;
-    justify-content: flex-start;
+.org-details div {
+    display: inline-block;
+}
+
+.supplementary {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 300px;
+
 }
 
 .org-details-stretch {
@@ -55,6 +67,7 @@
     flex-wrap: wrap;
     margin-top: 5px;
     row-gap: 10px;
+    display: none;
 
 
 }
@@ -81,7 +94,7 @@
     display: none;
 }
 .section-header {
-
+    font-size: 25px;
 }
 
 
@@ -102,8 +115,22 @@
 
     }
 
+    .skills {
+       display: inline-block; 
+    }
+
+    .skills li {
+        display: inline-block;
+    }
+
+    .each-skill {
+        width: fit-content;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
     .no-mobile {
-        display: inherit;
+        display: unset;
     }
 
 }
