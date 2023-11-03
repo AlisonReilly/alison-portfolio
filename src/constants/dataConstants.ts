@@ -99,7 +99,7 @@ export const PortfolioItems: PortfolioItem[] = [
     { 
         title: 'Prototype One: A Cat\'s Dream',
         href: "https://www.youtube.com/embed/MamqFgSoqq8",
-        description: 'Fourth project for the Flatiron School. A JavaScript front end with Rails API back end, video demo of a single page web application project for the fourthli Project at Flatiron School. ' + 
+        description: 'Fourth project for the Flatiron School. A JavaScript front end with Rails API back end, video demo of a single page web application project for the fourth Project at Flatiron School. ' + 
         'User stats are tracked after providing a name and added to the DOM via Vanilla JS only, player uses arrow keys and space bar to maneuver and complete the game.',
         tags: ['Flatiron School', 'JavaScript', 'Ruby on Rails', 'Phaser3', 'Tiled'],
         githubURL: 'https://github.com/Tsunamins/a-cats-dream',
