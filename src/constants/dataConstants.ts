@@ -50,7 +50,7 @@ export const MainNavItems: NavItem[] = [
     },
     { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Connect', href: '/connect' },
 
     // { name: 'Contractible Services', href: '/contract' },
 

@@ -24,6 +24,7 @@
 .resume-content {
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
     padding-top: 50px;
     margin-left: 20px;
     margin-right: 20px;
@@ -107,9 +108,8 @@
 .download img {
     width: 96px;
     height: 96px;
-    background-color: white;
+    border-radius: 50%;
 }
-
 
 .resume-header-title {
     margin-bottom: 30px;
