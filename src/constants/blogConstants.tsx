@@ -1539,7 +1539,7 @@ br
 
             <p>In either case I started by filling an empty array of n length and filled it with 0's</p>
         </div>,
-        date: '6/20/2020',
+        date: '6/28/2020',
         tags: ['JavaScript', 'practice'],
         blogURL: 'interview-prep-arrays',
     },

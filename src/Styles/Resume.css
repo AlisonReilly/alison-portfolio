@@ -111,6 +111,10 @@
     border-radius: 50%;
 }
 
+.download {
+    cursor: pointer;
+}
+
 .resume-header-title {
     margin-bottom: 30px;
 }
