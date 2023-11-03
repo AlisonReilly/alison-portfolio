@@ -158,7 +158,7 @@ export const ResumeEntries: ResumeEntry[] = [
             'Demoed components in Storybook and added documentation to communicate updates and implementation instructions',
             'Promoted and further developed engineer adoption by attending other team meetings to consult on needs and concerns'
         ],
-        description: 'Created a company wide, front end, component libray for an electronic and automated credentialing organization.',
+        description: 'Created a company wide, front end, component library for an electronic and automated credentialing organization.',
         location: 'Remote'
     },
     {
@@ -216,7 +216,7 @@ export const ResumeEntries: ResumeEntry[] = [
             'Navigated challenging people by adapting to personality and negotiating positive outcomes',
             'Met and exceeded high pressure demands of restaurant pace and volume by organizing tasks'
         ],
-        description: 'Fast paced casual restuarant with a focus on seafood.',
+        description: 'Fast paced casual restaurant with a focus on seafood.',
         location: 'Miami Beach, FL'
     },
     {

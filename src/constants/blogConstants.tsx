@@ -953,34 +953,69 @@ export const CurrentBlogPosts: BlogPost[] = [
             <h4>Reflection on problem solving</h4>
 
             <div  className="">
-                <figure  className="alignleft size-large is-resized">
+                <figure  className="">
                     {/* todo add image */}
                 </figure>
             </div>
 
-            <p>I didn't get enough practice in on coding exercises found on <em><a href="https://marketing.hackerrank.com/">Hacker Rank</a></em> and <em><a href="https://www.codewars.com/">Codewars</a> </em>during the length of my self-paced bootcamp.  The work-school game, plus labs and projects hanging over my head, often left me with a lack of dedicated time, or semantically, anxiety of time dedication. However, now that I am graduated, I have more time!  Coding exercise can be fun again, and a necessary step in light of potential, upcoming interviews.  The idea of my posts from here on out will be to reflect on some technical aspect of code and thought coding exercises and challenges a good place to focus, as a start.</p>
+            <p>
+                I found I didn't get as much practice as I would have liked in my bootcamp like the coding exercises found on <em>
+                <a href="https://marketing.hackerrank.com/">Hacker Rank</a>
+                </em> and <em><a href="https://www.codewars.com/">Codewars</a> </em>during the length of my self-paced bootcamp.  
+                The work-school game, plus labs and projects hanging over my head, often left me with a lack of dedicated time, 
+                or semantically, anxiety of time dedication. However, now that I am graduated, I have more time!  Coding exercise 
+                can be fun again, and a necessary step in light of potential, upcoming interviews.  The idea of my posts from 
+                here on out will be to reflect on some technical aspect of code and thought coding exercises and challenges a 
+                good place to focus, as a start.
+            </p>
 
-            <p>So, anyway, I dabbled some in Hacker Rank's <em>10 Days of JavaScript</em> and then moved onto <em>Interview Prep</em>, starting with the <em><a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges">Warm-Up Challenges</a></em>.  So I thought I would highlight any setbacks, key points, maybe some initial thinking vs. finalized thinking, etc.  I suppose my plan with these types of posts will be to go in and occasionally optimize code or add more content to the process here, something like that!</p>
+            <p>
+                So, anyway, I dabbled some in Hacker Rank's <em>10 Days of JavaScript</em> and then moved onto 
+                <em>Interview Prep</em>, starting with the 
+                <em>
+                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges">Warm-Up Challenges</a>
+                </em>.  
+                So I thought I would highlight any setbacks, key points, maybe some initial thinking vs. finalized 
+                thinking, etc.  I suppose my plan with these types of posts will be to go in and occasionally optimize code or 
+                add more content to the process here, something like that!
+            </p>
 
-            <h3><a href="https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">Sock Merchant</a></h3>
+            <h3>
+                <a href="https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                    Sock Merchant
+                </a>
+            </h3>
 
-            <p>See the full description by visiting the link above in the section header.  In summary, the problem presents a pile of socks, unmatched, and numbers representing colors provided in the form of an array.  The idea is to find how many pairs of matching socks are in the array.  The exercise also provides the total number of socks in the pile.</p>
+            <p>
+                See the full description by visiting the link above in the section header.  In summary, the problem presents a 
+                pile of socks, unmatched, and numbers representing colors provided in the form of an array.  The idea is to 
+                find how many pairs of matching socks are in the array.  The exercise also provides the total number of socks 
+                in the pile.
+            </p>
 
             <h4>Initial Thoughts...</h4>
 
             <p>This one was pretty straightforward, my initial thoughts were:</p>
 
-            <ul><li>I'll need to provide some count of each sock color/number</li><li>Once I have that number I'll need to divide by 2 and subsequently round down</li><li>I'll need to isolate each color type</li></ul>
+            <ul>
+                <li>I'll need to provide some count of each sock color/number</li>
+                <li>Once I have that number I'll need to divide by 2 and subsequently round down</li>
+                <li>I'll need to isolate each color type</li>
+            </ul>
 
             <h4>What I used...</h4>
 
             <p>Isolate each color type, by filtering unique numbers with <strong>Set</strong>:</p>
 
-            <pre  className="code-block"><code>let unique = &#091;...new Set(ar)]</code></pre>
+            <pre className="code-block"><code>let unique = &#091;...new Set(ar)]</code></pre>
 
             <p>Count occurrence of each unique sock color with <strong>reducer</strong>:</p>
 
-            <pre  className="code-block"><code>(array, number) =&gt; array.reduce((acc, val) =&gt; (val === number ? acc + 1 : acc), 0);</code></pre>
+            <pre className="code-block">
+                <code>
+                    (array, number) =&gt; array.reduce((acc, val) =&gt; (val === number ? acc + 1 : acc), 0);
+                </code>
+            </pre>
 
             <p>Add the reducer to a <strong>for loop</strong>, passing in the iterated unique socks array:</p>
 
@@ -1018,25 +1053,58 @@ export const CurrentBlogPosts: BlogPost[] = [
             (val === number ? acc + 1 : acc), 0); */}
             </pre>
 
-            <h3><a href="https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">Counting Valleys</a></h3>
+            <h3>
+                <a href="https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                    Counting Valleys
+                </a>
+            </h3>
 
-            <p>The exercise presents the idea of creating a hiking tracker, so not just amount of steps during a hike but the type of step in terms of it being uphill or downhill.  The challenge gives a string of letters, denoting the journey, indicating "U" or "D" for the type of step taken.  The rules, thankfully, state a hike will always begin and end at sea level and the goal of the exercise is to determine the amount of valleys entered and exited.</p>
+            <p>
+                The exercise presents the idea of creating a hiking tracker, so not just amount of steps during a hike but the type of 
+                step in terms of it being uphill or downhill.  The challenge gives a string of letters, denoting the journey, 
+                indicating "U" or "D" for the type of step taken.  The rules, thankfully, state a hike will always begin and end at 
+                sea level and the goal of the exercise is to determine the amount of valleys entered and exited.
+            </p>
 
             <h4>Initial thoughts...</h4>
 
-            <ul><li>Will probably want to use an array instead of a string</li><li>Something seemed like I would need to keep track of the reference to sea level</li><li>I would probably need a separate array to track and identify elevation</li><li>I may need something to identify being above or below sea level</li><li>Maybe some logic after this to demonstrate entering into a valley based on these ideas of elevation, altitude, sea level, etc.</li></ul>
+            <ul>
+                <li>Will probably want to use an array instead of a string</li>
+                <li>Something seemed like I would need to keep track of the reference to sea level</li>
+                <li>I would probably need a separate array to track and identify elevation</li>
+                <li>I may need something to identify being above or below sea level</li>
+                <li>Maybe some logic after this to demonstrate entering into a valley based on these ideas of elevation, altitude, sea 
+                    level, etc.
+                </li>
+            </ul>
 
-            <p>With this exercise, I got the idea well, but had a million notes and a million ideas of things I would need, kind of like the above notes.  I also got caught up in some worry over what if it doesn't go back up to where it came from in the data given is that considered an exit from a valley?  Oops, forgot what the instructions said, hikes given will begin and end at sea level.</p>
+            <p>
+                With this exercise, I got the idea well, but had a million notes and a million ideas of things I would need, kind of like 
+                the above notes.  I also got caught up in some worry over what if it doesn't go back up to where it came from in the data 
+                given is that considered an exit from a valley?  Oops, forgot what the instructions said, hikes given will begin and end 
+                at sea level.
+            </p>
 
             <h4>What I used...</h4>
 
-            <p>Most important things to address, in the end, was, yes, keeping track of altitude in some way, (I didn't need all the ways I was originally thinking), but also establishing a distinction of what it means to at least enter a valley or exit a valley.</p>
+            <p>
+                Most important things to address, in the end, was, yes, keeping track of altitude in some way, (I didn't need all the ways 
+                I was originally thinking), but also establishing a distinction of what it means to at least enter a valley or exit a 
+                valley.
+            </p>
 
-            <p>I kept a working reference to number of times a valley was entered, to be incremented, tracked altitude to be modified based on movement in the array steps, also ended up going with splitting the string into an array with <strong>.split()</strong>:</p>
+            <p>
+                I kept a working reference to number of times a valley was entered, to be incremented, tracked altitude to be modified 
+                based on movement in the array steps, also ended up going with splitting the string into an array with 
+                <strong>.split()</strong>:
+            </p>
 
-            <pre  className="code-block"><code>let enteredValley = 0
-            let altitude = 0
-            let steps = s.split("");</code></pre>
+            <pre  className="code-block">
+                <code>let enteredValley = 0
+                    let altitude = 0
+                    let steps = s.split("");
+                    </code>
+            </pre>
 
             <p>I used a helper function to track altitude:</p>
 
@@ -1053,7 +1121,10 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </code>
             </pre>
 
-            <p>Then I tracked the steps in a <strong>for loop</strong> incrementing 'enteredValley' when altitude was at 0 &amp;&amp; the next step === "D"</p>
+            <p>
+                Then I tracked the steps in a <strong>for loop</strong> incrementing 'enteredValley' when altitude was at 0 &amp;&amp; 
+                the next step === "D"
+            </p>
 
             <pre  className="code-block">
                 <code>
@@ -1090,21 +1161,58 @@ export const CurrentBlogPosts: BlogPost[] = [
             } */}
             </pre>
 
-            <h3><a href="https://www.hackerrank.com/challenges/repeated-string/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">Repeated String</a></h3>
+            <h3>
+                <a href="https://www.hackerrank.com/challenges/repeated-string/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                    Repeated String
+                </a>
+            </h3>
 
-            <p>In repeated string, a number is given (i.e. n = 15), along with a string of characters, always including at least one a (i.e. 'acdca').  The goal is to find, as this string repeats infinitely (i.e. 'acdcaacdcaacdcaacdcaacdca....'), the number of a's within the first n characters (i.e. the amount of a's occurring within the first 15 characters of the, above repeated string, in this case that would be 6 a's).</p>
+            <p>
+                In repeated string, a number is given (i.e. n = 15), along with a string of characters, always including at least one a 
+                (i.e. 'acdca').  The goal is to find, as this string repeats infinitely (i.e. 'acdcaacdcaacdcaacdcaacdca....'), the 
+                umber of a's within the first n characters (i.e. the amount of a's occurring within the first 15 characters of the, 
+                above repeated string, in this case that would be 6 a's).
+            </p>
 
             <h4>My initial thoughts...</h4>
 
-            <ul><li>The string is to be extended at least to mock in finitely for the needed character quantity so I'll probably need .concat()</li><li>It involves finding occurrences, maybe it will be better to .split() and .join() at times</li><li>could use a regex</li><li>maybe some reducing</li><li>ohhhh, but wait, this problem offers the possibility of the string going up to 100 characters and n with the possibility of equaling up to 10^12, so scratch concat(ing), I'm sure HackerRank's tests don't have all day to see if I'm right</li><li>Also, some quick match should demonstrate how many a's would occur.  The given string is 5 letters and contains 2 a's, n = 15; with string.length, some regex to count a's, followed by some math basics: 15/5 = 3, 3 *2 = 6; that should help me solve</li></ul>
+            <ul>
+                <li>The string is to be extended at least to mock in finitely for the needed character quantity so I'll probably need .
+                    concat()
+                </li>
+                <li>It involves finding occurrences, maybe it will be better to .split() and .join() at times</li>
+                <li>could use a regex</li>
+                <li>maybe some reducing</li>
+                <li>ohhhh, but wait, this problem offers the possibility of the string going up to 100 characters and n with the 
+                    possibility of equaling up to 10^12, so scratch concat(ing), I'm sure HackerRank's tests don't have all day to 
+                    see if I'm right</li><li>Also, some quick match should demonstrate how many a's would occur.  The given string 
+                        is 5 letters and contains 2 a's, n = 15; with string.length, some regex to count a's, followed by some math 
+                        basics: 15/5 = 3, 3 *2 = 6; that should help me solve
+                </li>
+            </ul>
 
             <h4>next...</h4>
 
-            <p>In my first attempt, I was correct, dividing n by the string length and multiplying by the a count in the initial string passed a lot of tests.  However, many other tests failed, oops!  I had only been considering where n % string.length === 0 (where it divides evenly, with no remainder, just in case).  Oh of course, nothing said they were going to give me evenly divisible data.  I came up with a mini example to explain to myself what was needed next:</p>
+            <p>
+                In my first attempt, I was correct, dividing n by the string length and multiplying by the a count in the 
+                initial string passed a lot of tests.  However, many other tests failed, oops!  I had only been considering 
+                where n % string.length === 0 (where it divides evenly, with no remainder, just in case).  Oh of course, nothing 
+                said they were going to give me evenly divisible data.  I came up with a mini example to explain to myself what 
+                was needed next:
+            </p>
 
-            <p>Take n = 10 and string = 'aba', if this string were to be considered infinitely, or at least, in this case, repeated to cover 10 characters, I would have 'abaabaabaaba...'.  At 10/3, I have 3.3333, rounded down to 3, I have 6 a's + some overflow into the next 'aba' set.</p>
+            <p>
+                Take n = 10 and string = 'aba', if this string were to be considered infinitely, or at least, in this case, 
+                repeated to cover 10 characters, I would have 'abaabaabaaba...'.  At 10/3, I have 3.3333, rounded down to 3, 
+                I have 6 a's + some overflow into the next 'aba' set.
+            </p>
 
-            <p>abaabaaba | aba     So, I've worked with 9/10 characters, I need to consider, 10 - 9 = 1 more character.  So I need abaabaaba + a, in this case.  So I need the sub-string to position 1 of the next string set 'a', had the string been 'aaba', I would have gotten to 8/10 characters and need the sub-string up to position '2' of the next set, etc.</p>
+            <p>
+                abaabaaba | aba     So, I've worked with 9/10 characters, I need to consider, 10 - 9 = 1 more character.  So I 
+                need abaabaaba + a, in this case.  So I need the sub-string to position 1 of the next string set 'a', had the 
+                string been 'aaba', I would have gotten to 8/10 characters and need the sub-string up to position '2' of the next 
+                set, etc.
+            </p>
 
             <h4>What I Used</h4>
 
@@ -1112,7 +1220,10 @@ export const CurrentBlogPosts: BlogPost[] = [
             
             <pre  className="code-block"><code>const a_Count = (s.match(/a/g)||&#091;]).length</code></pre>
 
-            <p>Used an if/else to go ahead and calculate if n % string.length === 0 and called the following external function, calculateA() if it was:</p>
+            <p>
+                Used an if/else to go ahead and calculate if n % string.length === 0 and called the following external function, 
+                calculateA() if it was:
+            </p>
 
             <pre  className="code-block">
                 <code>
@@ -1127,20 +1238,41 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             <p></p>
 
-            <p>To tackle when n % string.length !== 0, first rounded down the division, multiplied by string.length (here defined it as sLength) and subtracted that from n, to find how many characters into the next string set would be needed, keeping it in the variable leftOver:</p>
+            <p>
+                To tackle when n % string.length !== 0, first rounded down the division, multiplied by string.length 
+                (here defined it as sLength) and subtracted that from n, to find how many characters into the next string set 
+                would be needed, keeping it in the variable leftOver:
+            </p>
 
-            <pre  className="code-block"><code>const roundRepeat = Math.floor(n / sLength)
-                    const leftOver = n - (roundRepeat * sLength)</code></pre>
+            <pre className="code-block">
+                <code>const roundRepeat = Math.floor(n / sLength)
+                    const leftOver = n - (roundRepeat * sLength)
+                </code>
+            </pre>
 
-            <p>I then used .slice(start, end), to cut string segment to the needed portion and followed up with another regex/match to count the a's within the new string:</p>
+            <p>
+                I then used .slice(start, end), to cut string segment to the needed portion and followed up with another 
+                regex/match to count the a's within the new string:
+            </p>
 
-            <pre  className="code-block"><code>const addPortion = s.slice(0, leftOver)
-                    const additionalAs = (addPortion.match(/a/g)||&#091;]).length</code></pre>
+            <pre className="code-block">
+                <code>
+                    const addPortion = s.slice(0, leftOver)
+                    const additionalAs = (addPortion.match(/a/g)||&#091;]).length
+                </code>
+            </pre>
 
-            <p>Then called stored the returned value of calculateA() in a variable, followed by adding the amount of addtionalAs to the answer:</p>
+            <p>
+                Then called stored the returned value of calculateA() in a variable, followed by adding the amount of 
+                additional As to the answer:
+            </p>
 
-            <pre  className="code-block"><code>let roundedAnswer = calculateA(n, sLength, a_Count)
-                    answer = additionalAs + roundedAnswer</code></pre>
+            <pre className="code-block">
+                <code>
+                    let roundedAnswer = calculateA(n, sLength, a_Count)
+                    answer = additionalAs + roundedAnswer
+                </code>
+            </pre>
 
             <p>So that, is, my version of this exercise and the whole code below:</p>
 
@@ -1169,15 +1301,45 @@ export const CurrentBlogPosts: BlogPost[] = [
             } */}
             </pre>
 br
-            <h3><a href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">Jumping on Clouds</a></h3>
+            <h3>
+                <a href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                    Jumping on Clouds
+                </a>
+            </h3>
 
-            <p>This problem, gives an array of 0's and 1's, the idea is the 0's are safe clouds to jump on, while the 1's are not safe to jump on.  The array always starts and ends with 0 and 1's always have a 0 immediately before or after themselves.  Given an array as the example highlights: c=[0, 1, 0, 0, 0, 1, 0], the idea would be to avoid jumping onto indices 1 and 5.  The current cloud number a player is on, is the current element number, a player can then jump to clouds that equal the current cloud number plus 1 or 2, whichever would be more helpful in that move.  Player starts at cloud 0, for example, has the choice of jumping to cloud with a number of 0 + 1 or 0 + 2, for the first jump the player must jump 0 + 2 to skip 1.</p>
+            <p>
+                This problem, gives an array of 0's and 1's, the idea is the 0's are safe clouds to jump on, while the 1's are not safe 
+                to jump on.  The array always starts and ends with 0 and 1's always have a 0 immediately before or after themselves.  
+                Given an array as the example highlights: c=[0, 1, 0, 0, 0, 1, 0], the idea would be to avoid jumping onto indices 1 and 5.
+                  The current cloud number a player is on, is the current element number, a player can then jump to clouds that equal the 
+                  current cloud number plus 1 or 2, whichever would be more helpful in that move.  Player starts at cloud 0, for example, 
+                  has the choice of jumping to cloud with a number of 0 + 1 or 0 + 2, for the first jump the player must jump 0 + 2 to 
+                  skip 1.
+            </p>
 
             <h4>My initial thoughts...</h4>
 
-            <p>My initial thoughts were that, before I iterate through arrays and establish positions and jumps and path's 1 vs. 2 and all I anticipated, shouldn't I be able to apply some math principle to always get to the right number?  Well I don't know, I sort of figured that out, there is a pattern regarding how many 0's and how many jumps might take place, but the 1's and the variation of their placement, weren't becoming a clear pattern.  So...besides that I thought I may need to have a function to calculate the player cloud number plus options 1 or 2.  I thought I might need to go to the trouble of defining whether a move was possible or not.  I thought I might need to compare one path to another, which seemed excessive.  I thought I might need to keep track of the "player position."  I thought I might need to keep track of what happens in array iteration at and the next potential values in iteration at array[i] and array[i + 1] and if array[i+1] be the better result, then to go with that from an if statement  In the end I spend a lot of time on this one, got some things to pass with my first answer, but not enough of them to pass. </p>
+            <p>
+                My initial thoughts were that, before I iterate through arrays and establish positions and jumps and path's 1 vs. 
+                2 and all I anticipated, shouldn't I be able to apply some math principle to always get to the right number?  
+                Well I don't know, I sort of figured that out, there is a pattern regarding how many 0's and how many jumps 
+                might take place, but the 1's and the variation of their placement, weren't becoming a clear pattern.  
+                So...besides that I thought I may need to have a function to calculate the player cloud number plus options 
+                1 or 2.  I thought I might need to go to the trouble of defining whether a move was possible or not.  
+                I thought I might need to compare one path to another, which seemed excessive.  I thought I might need to 
+                keep track of the "player position."  I thought I might need to keep track of what happens in array iteration 
+                at and the next potential values in iteration at array[i] and array[i + 1] and if array[i+1] be the better 
+                result, then to go with that from an if statement  In the end I spend a lot of time on this one, got some things 
+                to pass with my first answer, but not enough of them to pass. 
+            </p>
 
-            <p>I was sort of on the right track, but after some review of the discussions I realized: 1) I had worked on problems too long that day. 2) I wasn't considering the right + 1 or + 2 moves during the correct iteration. 3) Player position was something to keep track of, but better to do so relative to iteration. 4) The total number of jumps could simply just be incremented based on checking for the availability of a +2 jump before a +1 jump.  That would end up reflecting the minimum number of jumps.</p>
+            <p>
+                I was sort of on the right track, but after some review of the discussions I realized: 1) I had worked on 
+                problems too long that day. 2) I wasn't considering the right + 1 or + 2 moves during the correct iteration. 3) 
+                Player position was something to keep track of, but better to do so relative to iteration. 4) The total number 
+                of jumps could simply just be incremented based on checking for the availability of a +2 jump before a +1 jump. 
+                That would end up reflecting the minimum number of jumps.
+            </p>
 
             <h4>What I used:</h4>
 
@@ -1194,7 +1356,11 @@ br
                 </code>
                 </pre>
 
-            <p>I checked for the ability to change position with a jump of 2 first, and if not a jump of 1, during each logic check, I incremented a jump by 1, and thus the rest of the code.  Break keyword I don't think is actually necessary, but in the discussions many used continue or break, so I thought I'd give it a try:</p>
+            <p>
+                I checked for the ability to change position with a jump of 2 first, and if not a jump of 1, during each logic 
+                check, I incremented a jump by 1, and thus the rest of the code.  Break keyword I don't think is actually 
+                necessary, but in the discussions many used continue or break, so I thought I'd give it a try:
+            </p>
 
 
             <pre  className="code-block">
@@ -1231,14 +1397,15 @@ br
 
             <blockquote className="block-quote">
                 <p>
-                    Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each of the array element 
-                    between two given indices, inclusive. Once all operations have been performed, return the maximum value in your array.
+                    Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each 
+                    of the array element between two given indices, inclusive. Once all operations have been performed, return 
+                    the maximum value in your array.
                 </p>
             </blockquote>
 
             <p>
-                Hmmm, ok.....After first reading through the intro, I wasn't sure what it was saying.  So I continued onto the illustrated 
-                example, which usually clarifies things:
+                Hmmm, ok.....After first reading through the intro, I wasn't sure what it was saying.  So I continued onto the 
+                illustrated example, which usually clarifies things:
             </p>
 
             <blockquote className="block-quote">
@@ -1278,8 +1445,8 @@ br
             </blockquote>
 
             <p>
-                For whatever reason, when I first read through all this I didn't understand what it was saying.  So, just in case I 
-                thought I'd provide my own explanation to elaborate on the examples illustration:
+                For whatever reason, when I first read through all this I didn't understand what it was saying.  So, just in case 
+                I thought I'd provide my own explanation to elaborate on the examples illustration:
             </p>
 
 
@@ -1315,7 +1482,9 @@ br
             <figure className="">
                 {/* todo add image */}
                 <figcaption>
-                    The reference to the 1-indexed array, meaning, in theory, if the array was indexed starting at 1 instead of 0. The second line, referred to what the problem would be "Starting with a 1-indexed array of zeros...," this being defined in the problem by n.
+                    The reference to the 1-indexed array, meaning, in theory, if the array was indexed starting at 1 instead of 0. The second 
+                    line, referred to what the problem would be "Starting with a 1-indexed array of zeros...," this being defined in the 
+                    problem by n.
                 </figcaption>
             </figure>
 
@@ -1353,9 +1522,18 @@ br
 
             <h4>My Initial thoughts...</h4>
 
-            <p>Once I figured out what the problem meant the solution seemed simple.  I would need some means of looping through each sub array, iterating through each sub arrays indices and adding on the value of k to that index.</p>
+            <p>
+                Once I figured out what the problem meant the solution seemed simple.  I would need some means of looping through 
+                each sub array, iterating through each sub arrays indices and adding on the value of k to that index.
+            </p>
 
-            <p>My first solution, passed the initial tests and half of the tests or so in the final submission.  The rest of the tests failed, because my code processing exceeded the time limits.  I went back to the drawing board and came up with a completely different solution, that also passed half the tests, and failed for time.  I kind of didn't think the second solution would have passed for time either, but I thought it was fun that I had two different approaches work, not sure why I find that fun since it didn't pass all the tests, but in case you want to know more:</p>
+            <p>
+                My first solution, passed the initial tests and half of the tests or so in the final submission. The rest of the 
+                tests failed, because my code processing exceeded the time limits.  I went back to the drawing board and came up 
+                with a completely different solution, that also passed half the tests, and failed for time.  I kind of didn't think 
+                the second solution would have passed for time either, but I thought it was fun that I had two different approaches 
+                work, not sure why I find that fun since it didn't pass all the tests, but in case you want to know more:
+            </p>
 
             <h4>What I used #1:</h4>
 
