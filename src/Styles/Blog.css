@@ -40,12 +40,28 @@
 
 
 /* reading views */
+
+/* data wrapper, coming from blogConstants or, eventually, coming from fetch */
+
+.blog-content-read-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* BlogRead Component */
 .blog-read-container {
     display: flex;
     flex-direction: column;
     padding: 50px 20px 50px 20px;
+    /* width: 95vw; */
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
 }
 
+.blog-read-content p {
+    /* width: 100%; */
+}
 
 
 @media only screen and (min-width: 775px) {

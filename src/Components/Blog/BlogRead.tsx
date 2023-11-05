@@ -17,9 +17,9 @@ export const BlogRead: React.FC<BlogReadProps & React.HTMLProps<HTMLDivElement>>
         console.log('title: ', title)
     return (
         <div id={blogURL} className='blog-read-container'>
-        <h3 className='blog-read-title'>{title}</h3>
-        <div className='blog-read-date'>{date}</div>
-        <div className='blog-read-content'>{blogContent}</div>
+            <h3 className='blog-read-title'>{title}</h3>
+            <div className='blog-read-date'>{date}</div>
+            <div className='blog-read-content'>{blogContent}</div>
     </div>
     ); 
 } 

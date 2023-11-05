@@ -12,7 +12,7 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'Why Software Development - Blog Post 1',   
         content: 
-        <div>
+        <div className='blog-content-read-wrapper'>
             <p>Over time, I have tried a few different industries to excel at and immerse in: writing, nursing, politics, 
             massage therapy, etc. When none of those were panning out for a variety of life reasons, I wondered what is next then? 
             I will keep taking classes in something, but ultimately, what do I want to do in terms of a professional career?</p>
@@ -63,7 +63,7 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'Randomness',
         content:
-        <div>
+        <div className='blog-content-read-wrapper'>
             <p>
                 For this blog, I really wanted to do some reading and interpreting of philosophical and mathematical significance 
                 of the concept of something being random and make a nice, healthy introduction to computer code - random. Such a 
@@ -223,7 +223,8 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'CLI Project, Noteworthy Points',
         content:
-        <div>
+        <div className='blog-content-read-wrapper'>
+
             <p>The idea of my CLI project was a quick search for things to do in Miami today (or another date specified), 
                 scraping from Perez Art Museum and the Frost Science Museum’s Laser Friday’s page. Of course there are many 
                 more things to do in Miami on any given day, but the trick of this project was to demonstrate web scraping, 
@@ -369,7 +370,7 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'Sinatra Project: Miami Rooftop Pools',
         content:
-        <div>
+        <div className='blog-content-read-wrapper'>
             <p>
                 “Something to keep track of,” the project mode page described on Flatiron School curriculum, well I had a million 
                 thoughts on things I could use to keep track of, some too simple some too complex. I thought, not that it is a 
@@ -509,7 +510,7 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'Bcrypt Mysteries',
         content:
-        <div>
+        <div className='blog-content-read-wrapper'>
             <p>
                 Sometimes, while working through my coursework on Flatiron School, I have a tendency to generalize topics, methods, 
                 dependencies etc., in order to keep moving along at a somewhat efficient pace. And such generalization is likely 
@@ -726,7 +727,7 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'Prototype I: A Cat\'s Dream - JS/Rails Project',
         content:
-        <div>
+        <div className='blog-content-read-wrapper'>
             <p>
                 JavaScript was a little weird at first after spending so much time on Rails. Eventually it all became clearer, so 
                 that’s fine.  I equated it to how I usually think about thinking about my thoughts stemming from some other 
@@ -852,7 +853,7 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'Fauxtel Hotels - The Final Project',
         content:
-        <div>
+        <div className='blog-content-read-wrapper'>
             <p>
                 Well, I said I wanted to be finished with my bootcamp, when I first started, in 4 months or so. Since then, I’ve 
                 had a million soul draining restaurant shifts, two moves to a new apartment, a handful of car troubles, financial 
@@ -949,7 +950,7 @@ export const CurrentBlogPosts: BlogPost[] = [
     {
         title: 'Blog Inspiration, Interview Prep Warm-ups',
         content:
-        <div>
+        <div className='blog-content-read-wrapper'>
             <h4>Reflection on problem solving</h4>
 
             <div  className="">
@@ -1392,7 +1393,8 @@ br
     // {
     //     title: 'Blog Inspiration, Interview Prep - Array Manipulation',
     //     content:
-    //     <div>
+//         <div className='blog-content-read-wrapper'>
+
     //         <p>Well.............This is the intro to this problem:</p>
 
     //         <blockquote className="block-quote">
