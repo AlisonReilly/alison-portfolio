@@ -51,15 +51,15 @@
   
 /* on hover of the main li, reveal the sub ul and li*/
 .open-sub {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 
 
 /* ul styling needs, position absolute keeps dropdown from interfering with other elements */
 .mobile-ul {    
-    width: fit-content;
+    width: 95vw;
     padding: 10px;
     position: absolute;
     margin-top: 55px;

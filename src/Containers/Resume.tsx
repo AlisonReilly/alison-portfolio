@@ -14,7 +14,7 @@ type ResumeProps = {
 export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = () => { 
 
     const onDownload = () => {
-        const pdfUrl = "Sample.pdf";
+        const pdfUrl = "aReillyDownload.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
         link.download = "aReillyDownload.pdf"

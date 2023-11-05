@@ -10,6 +10,7 @@ import { Projects } from './Containers/Projects';
 import { GameDemo } from './Containers/GameDemo';
 import ErrorPage from './Components/ErrorPage';
 import { Resume } from './Containers/Resume';
+import { Connect } from './Containers/Connect';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="*" errorElement={<ErrorPage />} />
         <Route index path="/" element={<HeroSection />}/>
         <Route path="/about" element={<About />}/>
+        <Route path="/connect" element={<Connect />}/>
         <Route path="/projects" element={<Projects />}/>
         <Route path="/live-demos" element={<GameDemo />}/>
         <Route path="/resume" element={<Resume/>}/>
