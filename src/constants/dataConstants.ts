@@ -188,7 +188,7 @@ export const ResumeEntries: ResumeEntry[] = [
             'Increased ticket resolution speed by coordinating consultations with Customers, team members and developers',
             'Created knowledge base articles on findings enhancing the available support documentation for users and employees'
         ],
-        description: 'A team focusing on building a robust automations platform for the company wide adoption.',
+        description: 'Technical Support concentrating on debugging and finding root causes in the UI/UX features of the ServiceNow platform.',
         location: 'Remote'
     },
     {
