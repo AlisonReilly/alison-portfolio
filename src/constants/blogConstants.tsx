@@ -1,4 +1,5 @@
-
+import { CodeBlock } from 'react-code-blocks';
+import '../Styles/BlogReadView.css';
 export type BlogPost = {
     title: string;
     content: React.ReactNode;
@@ -951,37 +952,33 @@ export const CurrentBlogPosts: BlogPost[] = [
         title: 'Blog Inspiration, Interview Prep Warm-ups',
         content:
         <div className='blog-content-read-wrapper'>
-            <h4>Reflection on problem solving</h4>
+            <h2>Reflection on problem solving</h2>
 
-            <div  className="">
-                <figure  className="">
-                    {/* todo add image */}
-                </figure>
+            <div  className=''>
+                <img className='accent-image-right' src='keyboard.png' alt='backlit keyboard'></img>
+
+                <p className=''>
+                    I found I didn't get as much practice as I would have liked in my bootcamp like the coding exercises found on <em>
+                    <a href="https://marketing.hackerrank.com/">Hacker Rank</a>
+                    </em> and <em><a href="https://www.codewars.com/">Codewars</a> </em>during the length of my self-paced bootcamp.  
+                    The work-school game, plus labs and projects hanging over my head, often left me with a lack of dedicated time, 
+                    or semantically, anxiety of time dedication. However, now that I am graduated, I have more time!  Coding exercise 
+                    can be fun again, and a necessary step in light of potential, upcoming interviews.
+                </p>
             </div>
 
             <p>
-                I found I didn't get as much practice as I would have liked in my bootcamp like the coding exercises found on <em>
-                <a href="https://marketing.hackerrank.com/">Hacker Rank</a>
-                </em> and <em><a href="https://www.codewars.com/">Codewars</a> </em>during the length of my self-paced bootcamp.  
-                The work-school game, plus labs and projects hanging over my head, often left me with a lack of dedicated time, 
-                or semantically, anxiety of time dedication. However, now that I am graduated, I have more time!  Coding exercise 
-                can be fun again, and a necessary step in light of potential, upcoming interviews.  The idea of my posts from 
-                here on out will be to reflect on some technical aspect of code and thought coding exercises and challenges a 
-                good place to focus, as a start.
-            </p>
-
-            <p>
-                So, anyway, I dabbled some in Hacker Rank's <em>10 Days of JavaScript</em> and then moved onto 
-                <em>Interview Prep</em>, starting with the 
+                I dabbled in Hacker Rank's <em>10 Days of JavaScript</em> and then moved onto 
+                <em> Interview Prep</em>, starting with the 
                 <em>
-                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges">Warm-Up Challenges</a>
+                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges"> Warm-Up Challenges</a>
                 </em>.  
                 So I thought I would highlight any setbacks, key points, maybe some initial thinking vs. finalized 
                 thinking, etc.  I suppose my plan with these types of posts will be to go in and occasionally optimize code or 
                 add more content to the process here, something like that!
             </p>
 
-            <h3>
+            <h3 className='core-subsection'>
                 <a href="https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
                     Sock Merchant
                 </a>
@@ -994,42 +991,48 @@ export const CurrentBlogPosts: BlogPost[] = [
                 in the pile.
             </p>
 
-            <h4>Initial Thoughts...</h4>
+            <h3 className='core-subsection'>This one was pretty straightforward, my initial thoughts were:</h3>
 
-            <p>This one was pretty straightforward, my initial thoughts were:</p>
-
-            <ul>
-                <li>I'll need to provide some count of each sock color/number</li>
-                <li>Once I have that number I'll need to divide by 2 and subsequently round down</li>
-                <li>I'll need to isolate each color type</li>
+            <ul className='ul-squares'>
+                <li className='li-squares'>I'll need to provide some count of each sock color/number</li>
+                <li className='li-squares'>Once I have that number I'll need to divide by 2 and subsequently round down</li>
+                <li className='li-squares'>I'll need to isolate each color type</li>
             </ul>
 
-            <h4>What I used...</h4>
+            <h3 className='core-subsection'>What I used...</h3>
 
             <p>Isolate each color type, by filtering unique numbers with <strong>Set</strong>:</p>
 
-            <pre className="code-block"><code>let unique = &#091;...new Set(ar)]</code></pre>
+            <pre className="pre-code"><code className="code-block">let unique = &#091;...new Set(ar)]</code></pre>
 
             <p>Count occurrence of each unique sock color with <strong>reducer</strong>:</p>
 
-            <pre className="code-block">
-                <code>
+            <pre className="pre-code">
+                <code className="code-block">
                     (array, number) =&gt; array.reduce((acc, val) =&gt; (val === number ? acc + 1 : acc), 0);
                 </code>
             </pre>
 
             <p>Add the reducer to a <strong>for loop</strong>, passing in the iterated unique socks array:</p>
 
-            <pre  className="code-block">
-                <code>
-                    {/* for(let i = 0; i &lt; unique.length; i++){
-                    let count = (countUnique(ar, unique&#091;i])) */}
-                </code>
-            </pre>
+            <div className="pre-code code-block jsx">{
+            `for (let i = 0; i &lt; unique.length; i++) {
+
+                let count = (countUnique(ar, unique&#091;i]))
+            }`
+            }</div>
+            <CodeBlock
+                text='for (let i = 0; i &lt; unique.length; i++) {
+                    let count = (countUnique(ar, unique&#091;i]))
+                }'
+                language='javascript'
+                showLineNumbers={true}
+                //   theme={yourTheme}
+            />
 
             <p>Round down  unique sock count divided by 2, in case of an odd number with <strong>Math.floor()</strong></p>
 
-            <pre  className="code-block"><code>let detMatchQty = Math.floor(count/2)</code></pre>
+            <pre className="pre-code"><code className="code-block">let detMatchQty = Math.floor(count/2)</code></pre>
 
             <p>Cool! I have matching socks, unlike my sock drawer!</p>
 

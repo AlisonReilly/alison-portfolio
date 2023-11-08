@@ -3,13 +3,13 @@ import Phaser from 'phaser';
 import Player from './Player.js';
 import Magic from './Magic.js';
 //import Enemies from './Enemies.js';
-import Enemy from './Enemy.js';
-import pinktilesheet from '../assets/maps/pinktilesheet.png';
+// import Enemy from './Enemy.js';
+// import pinktilesheet from '../assets/maps/pinktilesheet.png';
 // import largermap from '../../../../public/largermap.json';
-import catspritesheet from '../assets/images/catspritesheet.png';
-import magicb from '../assets/images/magicb.png';
-import enemyspritesheet from '../assets/images/enemyspritesheet.png';
-import fireflyspritesheet from '../assets/images/fireflyspritesheet.png';
+// import catspritesheet from '../assets/images/catspritesheet.png';
+// import magicb from '../assets/images/magicb.png';
+// import enemyspritesheet from '../assets/images/enemyspritesheet.png';
+// import fireflyspritesheet from '../assets/images/fireflyspritesheet.png';
 
 
 class GameScene extends Phaser.Scene {
@@ -138,12 +138,12 @@ class GameScene extends Phaser.Scene {
         this.cameras.main.followOffset.set(-200, 100);
         this.cameras.main.setBounds(0, 0, cameraBoundsWidth, 640);
         
-        //create input
+        // create input
         this.pointer = this.input.activePointer;
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        
 
+    
         this.attackText = this.add.text(400, 0, `Enemies banished: ${this.attack}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
         this.collectText = this.add.text(0, 0, `Fireflies collected: ${this.collectff}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
         // this.scoreText = this.add.text(12, 12, `Score: `, { fontSize: '32px', fill: '#fff' });

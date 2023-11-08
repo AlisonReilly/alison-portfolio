@@ -16,7 +16,8 @@
 }
 
 .description {
-    min-width: 850px;
+    max-width: 90vw;
+    margin-right: 10px;
 }
 
 .entry {
@@ -47,6 +48,7 @@
 .supplementary {
     display: flex;
     flex-direction: row;
+    margin-right: 10px;
 }
 
 .left {
@@ -159,6 +161,10 @@
 
     .no-mobile {
         display: unset;
+    }
+
+    .description {
+        min-width: 850px;
     }
 
 }

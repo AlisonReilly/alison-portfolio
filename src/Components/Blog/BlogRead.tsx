@@ -1,5 +1,7 @@
 import React from 'react';
 import '../../Styles/Blog.css';
+import '../../Styles/BlogReadView.css';
+
 
 type BlogReadProps = {
     altText?: string;
@@ -17,7 +19,7 @@ export const BlogRead: React.FC<BlogReadProps & React.HTMLProps<HTMLDivElement>>
         console.log('title: ', title)
     return (
         <div id={blogURL} className='blog-read-container'>
-            <h3 className='blog-read-title'>{title}</h3>
+            <h1 className='blog-read-title'>{title}</h1>
             <div className='blog-read-date'>{date}</div>
             <div className='blog-read-content'>{blogContent}</div>
     </div>

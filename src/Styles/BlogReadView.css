@@ -1,0 +1,72 @@
+
+
+.header1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 25px;
+}
+
+.accent-image-right {
+    height: 300px;
+    width: 200px;
+    float: right;
+    margin-left: 15px;
+}
+
+.ul-squares {
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 25px;
+}
+
+.li-squares {
+    list-style: square;
+}
+
+.core-subsection {
+    font-size: 28px;
+}
+
+/* data wrapper, coming from blogConstants or, eventually, coming from fetch */
+.blog-content-read-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* BlogRead Component */
+.blog-read-container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px 50px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.blog-read-content p {
+
+}
+
+.pre-code {
+    padding: 10px;
+    background-color: grey;
+    width: fit-content;
+}
+
+.jsx {
+    
+}
+
+.code-block {
+    font-size: 22px;
+}
+
+
+@media only screen and (min-width: 775px) {
+    .blog-read-container {
+        padding: 100px 250px 50px 250px;
+
+    }
+}
