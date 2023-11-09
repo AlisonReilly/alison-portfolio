@@ -748,34 +748,35 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             <blockquote className="block-quote">
                 <p>
-                    JavaScript Teacher <code>https://www.youtube.com/channel/UCzQvgRgjjxhzEORvefubDPw</code>
+                    <a href='https://www.youtube.com/channel/UCzQvgRgjjxhzEORvefubDPw' target="_blank">JavaScript Teacher</a>
                 </p>
                 <p>
-                    Technologies4me <code>https://www.youtube.com/channel/UCHpHBzk4fz3oeQ31hmCreGg</code>
+                    <a href='https://www.youtube.com/channel/UCHpHBzk4fz3oeQ31hmCreGg' target="_blank">Technologies4me</a>
                 </p>
                 <p>
-                    PothOnProgramming <code>https://www.youtube.com/channel/UCdS3ojA8RL8t1r18Gj1cl6w</code>
+                    <a href='https://www.youtube.com/channel/UCdS3ojA8RL8t1r18Gj1cl6w' target="_blank">PothOnProgramming</a>
                 </p>
             </blockquote>
 
             <div className="">
-                <figure className="">
-                    {/* todo add image */}
-                    <figcaption>The Tilemap Result</figcaption>
+                <figure className="figure-image">
+                    <img className='accent-image-right' src='/blog/pinktilesheet-1.png' alt='fauxtel logo'></img>
+                    <figcaption className='caption'>The Tilemap Result</figcaption>
                 </figure>
-            </div>
-
-            <p>
+                <p>
                 During these tutorials, I discovered the process of converting a png image into a tile map based on parsing array 
                 values into pixel based coordinates of the png image. I discovered the use of Tiled to make a tile map with a 
                 little more ease, rather than typing in the array values needed, manually. Along with this I found a lot of 
                 details about animating images based on sprite sheets with different character positions. I found an excellent 
                 tutorial on the use of the program Tiled as well
             </p>
+            </div>
 
-            <blockquote className="block-quote"><p>GamesFromScratch </p>
+
+
+            <blockquote className="block-quote">
                 <p>
-                    <code>https://www.youtube.com/channel/UCr-5TdGkKszdbboXXsFZJTQ</code>
+                    <a href='https://www.youtube.com/channel/UCr-5TdGkKszdbboXXsFZJTQ' target="_blank">GamesFromScratch</a>
                 </p>
             </blockquote>
 
@@ -795,7 +796,7 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             <p>I eventually went onto Phaser’s website</p>
 
-            <blockquote className="block-quote"><p><code>https://phaser.io/</code></p></blockquote>
+            <blockquote className="block-quote"><p><a href='https://phaser.io/' target="_blank">Phaser</a></p></blockquote>
 
             <p>
                 They have a great introduction to their engine on their website including a very simple tutorial on how to make a 
@@ -803,7 +804,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             </p>
 
             <p>
-                Phaser already has collisions, overalaps, camera settings, scene settings, gravity attributes, colors, text 
+                Phaser already has collisions, overlaps, camera settings, scene settings, gravity attributes, colors, text 
                 setting, position getting/setting of every game component and a library of nearly every type of game need, 
                 organized and ready to go, and if you need something else you can add a custom class of whatever you feel like. 
                 Additionally, they have a great deal of user contributed tutorials and examples to get more ideas or see how 
@@ -814,9 +815,9 @@ export const CurrentBlogPosts: BlogPost[] = [
             </p>
 
             <p>I discovered other game making resources, free to use game art, for example, from 
-                <code>https://opengameart.org/</code>.<br/>However, I couldn’t help but want to make my own art, got a little 
+            <a href='https://opengameart.org/' target="_blank">Open Game Art</a>.<br/>However, I couldn’t help but want to make my own art, got a little 
                 stuck on what my game art theme and game may even be, so, while working through various phaser tutorials I 
-                started attempting my own game art, primarily on pixilart.com <code>https://www.pixilart.com/draw#</code><br/>I
+                started attempting my own game art, primarily on <a href='https://www.pixilart.com/draw#' target="_blank">PixilArt</a><br/>I
                  eventually decided to use a random image I drew with Krita drawing software, a pink night sky with silhouetted 
                  black grass and trees as sort of a game’s title scene or landing page and figured to make game art based on this 
                  image, thus I came up with my game art theme. I made my animation frames for the player, enemy and an item to 
@@ -831,7 +832,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             </p>
 
             <p>
-                Working through further Phaser tutorials with zenva <code>https://academy.zenva.com/</code><br/>I found a great 
+                Working through further Phaser tutorials with <a href='https://academy.zenva.com/' target="_blank">Zenva</a><br/>I found a great 
                 deal of tilemap based games with a great deal of examples of different elements to add to a game and different 
                 playing styles. I had planned to add a few more such as NPC’s and different scene or level transitions, but in the 
                 interest of time I left it to one, at least for now.
@@ -842,9 +843,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 the requirements, but I’m glad I ventured into some processes of game making in collaboration with web 
                 development.
             </p>
-            {/* todo anchors below - or move these outside the main blog area in the reading view*/}
-            <p>For a YouTube demonstration: https://youtu.be/MamqFgSoqq8</p>
-            <p>For the GitHub repository:  https://github.com/Tsunamins/a-cats-dream</p>
+            <a className='anchors' href='https://youtu.be/MamqFgSoqq8' target="_blank">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/a-cats-dream' target="_blank">GitHub</a>
         </div>,
         date: '1/4/2020',
         tags: ['Flatiron', 'Bootcamp', 'JavaScript', 'Ruby', 'Ruby on Rails', 'DOM', 'Vanilla JS', 'Phaser'],
@@ -878,30 +878,27 @@ export const CurrentBlogPosts: BlogPost[] = [
             </p>
 
             <div className="">
-                <figure className="">
-                    {/* todo add image */}
-                </figure>
+                <img className='accent-image-right' src='/blog/fauxtellogo2.png' alt='fauxtel logo'></img>
+                <p>It works, meets requirements and probably goes a little beyond.</p>
+
+                <p>For this blog I think I’m going to just do a simple listing of things accomplished or features used:</p>
+
+                <p>
+                    <strong><a href='https://www.npmjs.com/package/react-day-picker' target="_blank">React-day-picker:</a></strong> <br/>What seems most popular is 
+                    the integration of a calendar view with user selected dates or date ranges is airbnb’s react-dates npm package. And 
+                    yeah it’s fine. I tried 4 different calendar view packages in a separate program to see which one I liked working with 
+                    best. Another reason my project took so long, more than likely! I ended up choosing, what I think part of react-dates 
+                    uses actually is react-day-picker. I came across this while browsing hotel websites to see what they used, or to see 
+                    if I found any calendar integration that I favored, on <a href='https://www.loewshotels.com/' target="_blank">Loews Hotels</a>. The understanding of how to 
+                    style this calendar, enable the user to select a date range and, set dates disabled, I happened to find a little 
+                    more straightforward to use. Also with easy access and I plan to integrate it eventually, is the ability to add 
+                    data to each calendar day. The original Loew’s hotel calendar I stumbled upon had prices and hotel availability 
+                    embedded into the calendar view itself, fancy! I think, not sure, due to hotel closures those date previews have 
+                    been removed for the time being.
+                </p>
             </div>
 
-            <p>It works, meets requirements and probably goes a little beyond.</p>
-
-            <p>For this blog I think I’m going to just do a simple listing of things accomplished or features used:</p>
-
-            <p>
-                <strong>React-day-picker:</strong> https://www.npmjs.com/package/react-day-picker<br/>What seems most popular is 
-                the integration of a calendar view with user selected dates or date ranges is airbnb’s react-dates npm package. And 
-                yeah it’s fine. I tried 4 different calendar view packages in a separate program to see which one I liked working with 
-                best. Another reason my project took so long, more than likely! I ended up choosing, what I think part of react-dates 
-                uses actually is react-day-picker. I came across this while browsing hotel websites to see what they used, or to see 
-                if I found any calendar integration that I favored, on https://www.loewshotels.com/. The understanding of how to 
-                style this calendar, enable the user to select a date range and, set dates disabled, I happened to find a little 
-                more straightforward to use. Also with easy access and I plan to integrate it eventually, is the ability to add 
-                data to each calendar day. The original Loew’s hotel calendar I stumbled upon had prices and hotel availability 
-                embedded into the calendar view itself, fancy! I think, not sure, due to hotel closures those date previews have 
-                been removed for the time being.
-            </p>
-
-            <p><strong>Action Mailer:</strong> https://guides.rubyonrails.org/action_mailer_basics.html<br/>Action Mailer, is a 
+            <p><strong><a href='https://guides.rubyonrails.org/action_mailer_basics.html target="_blank"'>Action Mailer:</a></strong> <br/>Action Mailer, is a 
                 good time. A little tricky to get setup so you can see that you have actually sent out an email, once all the 
                 settings are correct, it is easily integrated into other actions in the controllers. It was a lot of fun after 
                 sitting at my computer for hours seeing an email that came from my localhost:3000. Currently, I have it set up 
@@ -937,9 +934,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 future!
             </p>
             
-            {/* todo anchors below - or move these outside the main blog area in the reading view*/}
-            <p>For a YouTube demonstration: https://www.youtube.com/G4u_KgDfBYI</p>
-            <p>For the GitHub repository:  https://github.com/Tsunamins/FauxtelHotels</p>
+            <a className='anchors' href='https://www.youtube.com/G4u_KgDfBYI' target="_blank">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/FauxtelHotels' target="_blank">GitHub Repo</a>
         </div>,
         date: '5/23/2020',
         tags: ['Flatiron', 'Bootcamp', 'JavaScript', 'Ruby', 'Ruby on Rails', 'DOM', 'React', 'Redux', 'Final Project' ],
@@ -952,12 +948,12 @@ export const CurrentBlogPosts: BlogPost[] = [
             <span>Reflection on problem solving</span>
 
             <div  className=''>
-                <img className='accent-image-right' src='keyboard.png' alt='backlit keyboard'></img>
+                <img className='accent-image-right' src='/blog/keyboard.png' alt='backlit keyboard'></img>
 
                 <p className=''>
                     I found I didn't get as much practice as I would have liked in my bootcamp like the coding exercises found on <em>
-                    <a href="https://marketing.hackerrank.com/">Hacker Rank</a>
-                    </em> and <em><a href="https://www.codewars.com/">Codewars</a> </em>during the length of my self-paced bootcamp.  
+                    <a href="https://marketing.hackerrank.com/" target="_blank">Hacker Rank</a>
+                    </em> and <em><a href="https://www.codewars.com/" target="_blank">Codewars</a> </em>during the length of my self-paced bootcamp.  
                     The work-school game, plus labs and projects hanging over my head, often left me with a lack of dedicated time, 
                     or semantically, anxiety of time dedication. However, now that I am graduated, I have more time!  Coding exercise 
                     can be fun again, and a necessary step in light of potential, upcoming interviews.
@@ -968,7 +964,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 I dabbled in Hacker Rank's <em>10 Days of JavaScript</em> and then moved onto 
                 <em> Interview Prep</em>, starting with the 
                 <em>
-                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges"> Warm-Up Challenges</a>
+                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges" target="_blank"> Warm-Up Challenges</a>
                 </em>.  
                 So I thought I would highlight any setbacks, key points, maybe some initial thinking vs. finalized 
                 thinking, etc.  I suppose my plan with these types of posts will be to go in and occasionally optimize code or 
@@ -976,7 +972,9 @@ export const CurrentBlogPosts: BlogPost[] = [
             </p>
 
             <h3 className='core-subsection'>
-                <a href="https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                <a 
+                    href="https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
+                    target="_blank">
                     Sock Merchant
                 </a>
             </h3>
@@ -1046,7 +1044,9 @@ array.reduce((acc, val) =&gt;
         }</pre>
 
             <h3 className='core-subsection'>
-                <a href="https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                <a 
+                    href="https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
+                    target="_blank">
                     Counting Valleys
                 </a>
             </h3>
@@ -1110,7 +1110,6 @@ array.reduce((acc, val) =&gt;
     }
     return alt++
 }`
-
                 }</pre>
 
             <p>
@@ -1154,7 +1153,9 @@ function handleAltitude(step, alt){
         }</pre>
 
             <h3 className='core-subsection'>
-                <a href="https://www.hackerrank.com/challenges/repeated-string/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                <a 
+                    href="https://www.hackerrank.com/challenges/repeated-string/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
+                    target="_blank">
                     Repeated String
                 </a>
             </h3>
@@ -1289,7 +1290,9 @@ function calculateA(n, sLength, a_Count){
         }</pre>
             
             <h3 className='core-subsection'>
-                <a href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
+                <a 
+                    href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
+                    target="_blank">
                     Jumping on Clouds
                 </a>
             </h3>

@@ -8,7 +8,7 @@ p {
 
 .accent-image-right {
     height: 300px;
-    width: 200px;
+    width: 300px;
     float: right;
     margin-left: 15px;
 }
@@ -57,8 +57,23 @@ p {
     
 }
 
+.anchors {
+    font-size: 25px;
+}
+
 .code-block {
     font-size: 22px;
+}
+
+.caption {
+    /* float: right; */
+    font-size: 20px;
+    text-align: center;
+}
+
+.figure-image {
+    display: block;
+    float: right;
 }
 
 

@@ -13,10 +13,11 @@
 }
 
 .blog-preview-content {
-    overflow: hidden;
-    height: 14.25em;
+    overflow: clip;
+    height: 300px;
     font-size: 25px;
-    line-height: 1.4em;
+    padding-bottom: 10px;
+
 }
 
 /* the whole list view with reading samples */
