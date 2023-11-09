@@ -72,7 +72,7 @@ export const PortfolioItems: PortfolioItem[] = [
         blogURL: 'https://tsunamins.github.io/fauxtel_hotels_-_the_final_project',
         projectAssociation: 'Flatiron School',
         demoType: 'video',
-        youTubeURL: "https://www.youtube.com/G4u_KgDfBYI"
+        youTubeURL: "https://www.youtube.com/G4u_KgDfBYI",
     },
     { 
         title: 'In Theory Blog',

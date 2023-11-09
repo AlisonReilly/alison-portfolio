@@ -29,8 +29,8 @@ export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = (
                 <h1 className='resume-header-title'>Resume</h1>
                 <div className='resume-links'>
                     <div className='download' role='button' onClick={onDownload}><img src="TempDownloadIcon.png"/></div>
-                    <a className='modern-link linkedin' href='https://www.linkedin.com/in/alisonreilly/' target="_blank"><img src="In-White-96.png" /></a>
-                    <a className='modern-link github' href='https://github.com/Tsunamins' target="_blank"><img src="github-mark-white.svg" /></a>
+                    <a className='modern-link linkedin' href='https://www.linkedin.com/in/alisonreilly/' target="_blank" rel='noreferrer'><img src="In-White-96.png" /></a>
+                    <a className='modern-link github' href='https://github.com/Tsunamins' target="_blank" rel='noreferrer'><img src="github-mark-white.svg" /></a>
                 </div>
                 <h2 className='section-header'>Experience</h2>
                 <ResumeExperience/>

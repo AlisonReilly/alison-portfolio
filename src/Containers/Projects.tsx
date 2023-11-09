@@ -23,7 +23,7 @@ export const Projects: React.FC<React.HTMLProps<HTMLDivElement>> = () => {
                         <div className='flexrow links-display'>
                             <ButtonImage className='project-button' image={buttonscale100} link={typeof p.githubURL === 'string' ? p.githubURL : p.githubURL[0]} linkText='GitHub' linkTextColor='#EDDEA4'/>
                             {p.blogURL && <ButtonImage className='project-button' image={buttonscale100} link={p.blogURL} linkText='Blog' linkTextColor='#EDDEA4'/>}
-                            {p.youTubeURL && <ButtonImage className='project-button' image={buttonscale100} link={p.youTubeURL} linkText='YouTube' linkTextColor='#EDDEA4'/>}
+                            {p.youTubeURL && <ButtonImage className='project-button' image={buttonscale100} link={p.youTubeURL} linkText='YouTube' linkTextColor='#EDDEA4' externalLink={true}/>}
                         </div>
                     </div>
                     )}
