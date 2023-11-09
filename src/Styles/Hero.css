@@ -1,9 +1,8 @@
-/* todo will need adjustments */
 #Hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     padding-top: 100px;
 
 
@@ -26,6 +25,37 @@
     font-family: 'Michroma', sans-serif;
 }
 
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-top: 40px;
+}
+
+.action-button {
+    box-sizing: border-box;
+    font-size: 30px;
+    background-color: transparent;
+    /* border: 1px solid black; */
+    cursor: pointer;
+    color: black;
+    font-family: 'Michroma', sans-serif;
+    padding: 10px 30px;
+    background-image: url('../../public/borderImage.png');
+    background-repeat: no-repeat;
+    background-size: 130%;
+
+}
+
+.action-button:visited, .action-button:active {
+    text-decoration: none;
+    color: black;
+}
+
+.action-button:hover {
+    color: white;
+}
+
 @media only screen and (min-width: 775px) {
     .main-text {
         font-size: 6vw;
@@ -33,6 +63,12 @@
 
     .support-text {
         font-size: 2vw;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
     }
 }
 
