@@ -358,10 +358,9 @@ export const CurrentBlogPosts: BlogPost[] = [
                 After all the various tricks and pondering of life my CLI project took I am glad to have experienced it. 
                 There were several other stuck points possibly worth highlighting but these seemed the most useful and interesting.
             </p>
-            
-            {/* todo anchors below - or move these outside the main blog area in the reading view*/}
-            <p>For a YouTube demonstration: https://youtu.be/IZuhB9wp3Wo</p>
-            <p>For the GitHub repository: https://github.com/Tsunamins/miami_venues.git</p>
+            <a className='anchors' href='https://youtu.be/IZuhB9wp3Wo' target="_blank">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/miami_venues.git' target="_blank">GitHub Repo</a>
+
         </div>,
         date: '2/12/2019',
         tags: ['Flatiron', 'Bootcamp', 'Ruby', 'CLI'],
@@ -379,7 +378,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 that hold special events often, or if you had to book a room for a night or two to relax at the pool’s site.
             </p>
             
-            <h4>File Setup - first things, first</h4>
+            <h3 className='core-subsection'>File Setup - first things, first</h3>
 
             <p className='quote-block or code-block'>
                 if ActiveRecord::Migrator.needs_migration?
@@ -430,7 +429,7 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             <p>It could start!! Celebration.</p>
 
-            <h4>Continuing the sinatra app setup, what was next?</h4>
+            <h3 className='core-subsection'>Continuing the sinatra app setup, what was next?</h3>
 
             <p>
                 All the labs had some paralleled example to work with, but I knew I may like some of my flow of controllers to work 
@@ -450,7 +449,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 and why it was happening, something I was not getting in the labs quite as much.
             </p>
 
-            <h4>Styling - an external css sheet and what to do with it:</h4>
+            <h3 className='core-subsection'>Styling - an external css sheet and what to do with it:</h3>
             
             <p>
                 Early on while making the pages I thought it best to get started on some styling. I added some initial style modifications 
@@ -461,7 +460,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 I then spent about 8 hours seeing how I could make my app look less 1996, semi-successfully.
             </p>            
             
-            <h4>Weird sinatra shotgun/terminal errors:</h4>
+            <h3 className='core-subsection'>Weird sinatra shotgun/terminal errors:</h3>
             <p>
                 I was working from VSCode via recommendation from one of Flatiron School's local environment setup guides and I got the 
                 following error after working a while, or something similar.
@@ -499,9 +498,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 errors working in my own environment, so I think the delay on the project to set up the environment will end up speeding 
                 me up in the end.
             </p>
-            {/* todo anchors below - or move these outside the main blog area in the reading view*/}
-            <p>For a YouTube demonstration: https://youtu.be/rlPety4CSeY</p>
-            <p>For the GitHub repository:  https://github.com/Tsunamins/miami_rooftop_pools</p>
+            <a className='anchors' href='https://youtu.be/rlPety4CSeY' target="_blank">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/miami_rooftop_pools' target="_blank">GitHub Repo</a>
         </div>,
         date: '6/12/2019',
         tags: ['Flatiron', 'Bootcamp', 'Sinatra', 'Ruby'],
@@ -524,17 +522,18 @@ export const CurrentBlogPosts: BlogPost[] = [
                 Bcrypt was another gem I generalized, to move forward, I knew the components and where they needed to be placed:
             </p>
 
-            <ol>
+            <ol className='numbered-blog'>
                 <li>
                     Including the <strong>gem 'bcrypt'</strong> in the Gemfile<br/>example:
-                    <br/><code>gem 'bcrypt', '~&gt; 3.1.7'</code>
+                    <br/>
+                    <pre className='pre-code'><code className='code-block'>gem 'bcrypt', '~&gt; 3.1.7'</code></pre>
                 </li>
                 <li>
                     Incorporating a string based attribute in the User table called “<strong>password_digest</strong>”
                     <br/>example:
                     <br/>within a migration file:
                     <br/>
-                    <code>t.string "password_digest"</code>
+                    <pre className='pre-code'><code className='code-block'>t.string "password_digest"</code></pre>
                 </li>
                 <li>
                     Adding/calling the method <strong>has_secure_password</strong> within the User model
@@ -542,26 +541,31 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </li>
             </ol>
 
-            <div className="code-block">
-                class User &lt; ActiveRecord::Base
-                has_secure_password
+            <pre className='pre-code'> <code className="code-block">
+                class User &lt; ActiveRecord::Base<br/>
+                    has_secure_password<br/>
                 end
-            </div>
+                </code> 
+            </pre>
 
-            <ol start={4}>
+            <ol className='numbered-blog' start={4}>
                 <li>
                     Using the method <strong>.authenticate()</strong> in a sessions controller while checking the validity of the password 
                     in combination with the user’s username or other identifier
-                    <br/>Example<br/>In the <code>def create</code> of a sessions controller:<br/><code>if @user &amp;&amp; 
-                        @user.authenticate(params[:user][:password])</code>
+                    <br/>Example<br/>In the <code className='code-block'>def create</code> of a sessions controller:<br/>
+                    <pre className='pre-code'>
+                        <code className='code-block'>if @user &amp;&amp; 
+                        @user.authenticate(params[:user][:password])
+                        </code>
+                    </pre>
                 </li>
             </ol>
              
-            <p>
+            <p className='quote-block'>
                 <em>What is happening behind all of these components? Bcrypt itself? passworddigest? hassecurepassword? .authenticate()?</em>
             </p>
 
-            <h3>What is bcrypt doing in the first place?</h3>
+            <h3 className='core-subsection'>What is bcrypt doing in the first place?</h3>
              
             <p>According to the gem description:</p>
 
@@ -569,7 +573,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 <p>
                     “bcrypt() is a sophisticated and secure hash algorithm designed by The OpenBSD project for hashing passwords. The 
                     bcrypt Ruby gem provides a simple wrapper for safely handling passwords” 
-                    (https://rubygems.org/gems/bcrypt/versions/3.1.12).
+                    (<a href='https://rubygems.org/gems/bcrypt/versions/3.1.12' target='_blank'>Bcrypt, Ruby Gem</a>).
                     </p>
             </blockquote>
 
@@ -579,7 +583,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             <blockquote className="block-quote">
                 <p>“Hash algorithms take a chunk of data (e.g., your user's password) and create a "digital fingerprint," or hash, 
                     of it. Because this process is not reversible, there's no way to go from the hash back to the password”
-                    <br/>(https://github.com/codahale/bcrypt-ruby).
+                    <br/>(<a href='https://github.com/codahale/bcrypt-ruby' target='_blank'>Codahale Github, Bcrypt</a>).
                 </p>
             </blockquote>
 
@@ -590,117 +594,124 @@ export const CurrentBlogPosts: BlogPost[] = [
             </p>
              
              
-            <p>The rest of that answer complexly comes from discrete mathematics and combinatorics, if one wants to dive in that 
+            <p>
+                The rest of that answer complexly comes from discrete mathematics and combinatorics, if one wants to dive in that 
                 far (I do but not in this blog). However, after some light reading, the process of hashing involves mapping 
                 (creating a relationship between objects), data of random size, to another object of a fixed size. The idea of 
                 these functions, or why they are advantageous to using within encryption, is that they are very difficult to 
-                reverse, the are considered “one-way functions” (https://en.wikipedia.org/wiki/Cryptographic_hash_function).
+                reverse, the are considered “one-way functions” (<a href='https://en.wikipedia.org/wiki/Cryptographic_hash_function' target='_blank'>Wiki Cryptographic Hash Function</a>).
             </p>
              
-            <p>So Bcrypt essentially uses a mathematical function called hashing to scramble up passwords, nearly irreversibly. 
+            <p>
+                So Bcrypt essentially uses a mathematical function called hashing to scramble up passwords, nearly irreversibly. 
                 There are several different types of hashing functions or techniques, mathematically speaking. Several are listed 
-                here: https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data. In this context, it doesn’t always 
+                here: <a href='https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data' target='_blank'>Wiki Hash function</a>. In this context, it doesn’t always 
                 refer to security encryption, but is relevant, or at least interesting to me, to read about some of these 
                 processes, but a bit too much to go into for this blog purpose.
             </p>
 
-            <h3>Why Password_digest?</h3>
+            <h3 className='core-subsection'>Why Password_digest?</h3>
              
-            <p><code>password_digest</code> is a requirement specific to bcrypt, likely a word chosen from and whatever way the 
+            <p><code className='code-block'>password_digest</code> is a requirement specific to bcrypt, likely a word chosen from and whatever way the 
                 developers of bcrypt wanted to name the handling of password attributes. However, it is interesting that the output 
                 of mathematical hash functions can be referred to as: hash values, hashes, digests or message digests, among others 
                 (https://en.wikipedia.org/wiki/Cryptographic_hash_function &amp; 
                 https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data). Also noteworthy, according to the 
-                documentation it has to be <code>someword_digest</code> in terms of calling has_secure_password, as it is looking 
-                for _digest, inparticular and is the topic of the next section (https://github.com/codahale/bcrypt-ruby).
+                documentation it has to be <code className='code-block'>someword_digest</code> in terms of calling has_secure_password, as it is looking 
+                for _digest, in particular and is the topic of the next section (https://github.com/codahale/bcrypt-ruby).
             </p>
              
-            <h3><code>has_secure_password</code>, is it really that easy, is that all I have to do?</h3>
+            <h3 className='core-subsection'><code className='code-block'>has_secure_password</code>, is it really that easy, is that all I have to do?</h3>
 
             <p>
                 There was a reading on it describing it, linking to documentation about it, etc. However, to move forward, I 
-                generalized <code>has_secure_password</code>, and put it on the back burner as something I should just go with 
+                generalized <code className='code-block'>has_secure_password</code>, and put it on the back burner as something I should just go with 
                 and place into a User model, accepted it and called it a day.
             </p>
              
             <p>
-                Reading further on bcrypts github page, I discovered that the initial way to incorporate bcrypt into ruby is 
-                described a bit more complexly than simply <code>has_secure_password</code>, for example:
+                Reading further on bcrypt's github page, I discovered that the initial way to incorporate bcrypt into ruby is 
+                described a bit more complexly than simply <code className='code-block'>has_secure_password</code>, for example:
             </p>
 
-            <pre className="code-block">require 'bcrypt'
+            <pre className="pre-code code-block jsx">{
+                `require 'bcrypt'
 
-            class User &lt; ActiveRecord::Base
-            #users.password_hash in the database is a :string
-            include BCrypt
+    class User &lt; ActiveRecord::Base
+        #users.password_hash in the database is a :string
+        include BCrypt
 
-            def password
-                @password ||= Password.new(password_hash)
-            end
+        def password
+            @password ||= Password.new(password_hash)
+        end
 
-            def password=(new_password)
-                @password = Password.create(new_password)
-                self.password_hash = @password
-            end
-            end</pre>
+        def password=(new_password)
+            @password = Password.create(new_password)
+            self.password_hash = @password
+        end
+    end`
+
+            }</pre>
              
-            <p>-From: https://github.com/codahale/bcrypt-ruby</p>
+            <p>-From: <a href='https://github.com/codahale/bcrypt-ruby' target='_blank'>Github Bcrypt</a></p>
              
             <p>
                 Their documentation goes onto mention, however, that later versions of rails incorporate this process within 
-                <code>ActiveModel::SecurePassword</code>, allowing usage of <code>has_secure_password</code>. Oh so that’s why, 
+                <code className='code-block'>ActiveModel::SecurePassword</code>, allowing usage of <code className='code-block'>has_secure_password</code>. Oh so that’s why, 
                 but how does that work exactly, what does it do?
             </p>
              
             <p>
-                The definition of <code>has_secure_password</code>, incorporates a great deal necessary for password handling, 
+                The definition of <code className='code-block'>has_secure_password</code>, incorporates a great deal necessary for password handling, 
                 including active record validations for the usage of an attribute with digest and password length, as there are 
                 limitations to the byte size a password should be for this algorithm. I found it a great deal more interesting to 
-                view the source/definition of <code>has_secure_password</code>, maybe that should be obvious, but I don't always 
+                view the source/definition of <code className='code-block'>has_secure_password</code>, maybe that should be obvious, but I don't always 
                 look:
             </p>
 
-            <div className='code-block'>
-                #File activemodel/lib/active_model/secure_password.rb, line 61
+            <pre className='code-block pre-code jsx'>{
+            `#File activemodel/lib/active_model/secure_password.rb, line 61
 
-            def has_secure_password(attribute = :password, validations: true)
-            #Load bcrypt gem only when has_secure_password is used.
-            #This is to avoid ActiveModel (and by extension the entire framework)
-            #being dependent on a binary library.
+    def has_secure_password(attribute = :password, validations: true)
+    #Load bcrypt gem only when has_secure_password is used.
+    #This is to avoid ActiveModel (and by extension the entire framework)
+    #being dependent on a binary library.
 
-                begin
-                require "bcrypt"
-            rescue LoadError
-                $stderr.puts "You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install"
-                raise
+        begin
+            require "bcrypt"
+        rescue LoadError
+            $stderr.puts "You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install"
+            raise
+        end
+
+        include InstanceMethodsOnActivation.new(attribute)
+
+        if validations
+            include ActiveModel::Validations
+
+            #This ensures the model has a password by checking whether the password_digest
+            #is present, so that this works with both new and existing records. However,
+            #when there is an error, the message is added to the password attribute instead
+            #so that the error message will make sense to the end-user.
+
+                validate do |record|
+            record.errors.add(attribute, :blank) unless record.send("#attribute_digest").present?
             end
 
-            include InstanceMethodsOnActivation.new(attribute)
-
-            if validations
-                include ActiveModel::Validations
-
-                #This ensures the model has a password by checking whether the password_digest
-                #is present, so that this works with both new and existing records. However,
-                #when there is an error, the message is added to the password attribute instead
-                #so that the error message will make sense to the end-user.
-
-                    validate do |record|
-                record.errors.add(attribute, :blank) unless record.send("#attribute_digest").present?
-                end
-
-                validates_length_of attribute, maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED
-                validates_confirmation_of attribute, allow_blank: true
-            end
-            end
-            </div>
+            validates_length_of attribute, maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED
+            validates_confirmation_of attribute, allow_blank: true
+        end
+    end`
+            }
+                
+            </pre>
              
             <p>
-                -From: https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password
+                -From: <a href='https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password' target='_blank'>Has Secure Password</a>
             </p>
             
 
-            <h3>.authenticate</h3>
+            <h3 className='core-subsection'>.authenticate</h3>
              
             <p>
                 I never thought about .authenticate either, and I didn't suppose it was just mysteriously picked up by bcrypt, so looking 
@@ -711,13 +722,18 @@ export const CurrentBlogPosts: BlogPost[] = [
                 Authenticating a session has one more reference to bcrypt, this built method also refers to bcrypt within its definition:
             </p>
             
-            <div className="code-block">#File activemodel/lib/active_model/secure_password.rb, line 96
-                def authenticate(unencrypted_password)
-                    BCrypt::Password.new(password_digest).is_password?(unencrypted_password) &amp;&amp; self
-                end
-            </div>
-  
-            <p>-From: https://apidock.com/rails/ActiveModel/SecurePassword/InstanceMethodsOnActivation/authenticate</p>
+            <pre className="code-block pre-code jsx">{
+            `#File activemodel/lib/active_model/secure_password.rb, line 96
+def authenticate(unencrypted_password)
+    BCrypt::Password.new(password_digest).is_password?(unencrypted_password) &amp;&amp; self
+end`
+            }</pre>
+            <p>
+                -From: 
+                <a href='https://apidock.com/rails/ActiveModel/SecurePassword/InstanceMethodsOnActivation/authenticate' target='_blank'>
+                    Secure Password Instance Methods
+                </a>
+            </p>
              
         </div>,
         date: '10/4/2019',
