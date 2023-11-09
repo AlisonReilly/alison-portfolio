@@ -1,4 +1,3 @@
-import { CodeBlock } from 'react-code-blocks';
 import '../Styles/BlogReadView.css';
 export type BlogPost = {
     title: string;
@@ -1015,20 +1014,11 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             <p>Add the reducer to a <strong>for loop</strong>, passing in the iterated unique socks array:</p>
 
-            <div className="pre-code code-block jsx">{
+            <pre className="pre-code code-block jsx">{
             `for (let i = 0; i &lt; unique.length; i++) {
-
-                let count = (countUnique(ar, unique&#091;i]))
-            }`
-            }</div>
-            <CodeBlock
-                text='for (let i = 0; i &lt; unique.length; i++) {
-                    let count = (countUnique(ar, unique&#091;i]))
-                }'
-                language='javascript'
-                showLineNumbers={true}
-                //   theme={yourTheme}
-            />
+    let count = (countUnique(ar, unique&#091;i]))
+}`
+            }</pre>
 
             <p>Round down  unique sock count divided by 2, in case of an odd number with <strong>Math.floor()</strong></p>
 
@@ -1038,26 +1028,26 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             <p>Full code if a reader might like:</p>
 
-            <pre  className="code-block">
-                {/* function sockMerchant(n, ar) {
-            let matchCount = 0
-                let unique = [...new Set(ar)]
-                for(let i = 0; i &lt; unique.length; i++){
-                    let count = (countUnique(ar, unique[i]))
-                    if(count &gt; 1){
-                        let detMatchQty = Math.floor(count/2)
-                        matchCount = matchCount + detMatchQty
-                    }
-                }
-                return matchCount
-            }
+            <pre className="pre-code code-block jsx">{
+            `function sockMerchant(n, ar) {
+    let matchCount = 0
+    let unique = [...new Set(ar)]
+    for(let i = 0; i &lt; unique.length; i++){
+        let count = (countUnique(ar, unique[i]))
+        if(count &gt; 1){
+            let detMatchQty = Math.floor(count/2)
+            matchCount = matchCount + detMatchQty
+        }
+    }
+    return matchCount
+}
 
-            const countUnique = (array, number) =&gt; 
-            array.reduce((acc, val) =&gt; 
-            (val === number ? acc + 1 : acc), 0); */}
-            </pre>
+const countUnique = (array, number) =&gt; 
+array.reduce((acc, val) =&gt; 
+(val === number ? acc + 1 : acc), 0);`
+        }</pre>
 
-            <h3>
+            <h3 className='core-subsection'>
                 <a href="https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
                     Counting Valleys
                 </a>
@@ -1070,14 +1060,14 @@ export const CurrentBlogPosts: BlogPost[] = [
                 sea level and the goal of the exercise is to determine the amount of valleys entered and exited.
             </p>
 
-            <h4>Initial thoughts...</h4>
+            <h3 className='core-subsection'>Initial thoughts...</h3>
 
-            <ul>
-                <li>Will probably want to use an array instead of a string</li>
-                <li>Something seemed like I would need to keep track of the reference to sea level</li>
-                <li>I would probably need a separate array to track and identify elevation</li>
-                <li>I may need something to identify being above or below sea level</li>
-                <li>Maybe some logic after this to demonstrate entering into a valley based on these ideas of elevation, altitude, sea 
+            <ul className='ul-squares'>
+                <li className='li-squares'>Will probably want to use an array instead of a string</li>
+                <li className='li-squares'>Something seemed like I would need to keep track of the reference to sea level</li>
+                <li className='li-squares'>I would probably need a separate array to track and identify elevation</li>
+                <li className='li-squares'>I may need something to identify being above or below sea level</li>
+                <li className='li-squares'>Maybe some logic after this to demonstrate entering into a valley based on these ideas of elevation, altitude, sea 
                     level, etc.
                 </li>
             </ul>
@@ -1089,7 +1079,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 at sea level.
             </p>
 
-            <h4>What I used...</h4>
+            <h3 className='core-subsection'>What I used...</h3>
 
             <p>
                 Most important things to address, in the end, was, yes, keeping track of altitude in some way, (I didn't need all the ways 
@@ -1100,72 +1090,72 @@ export const CurrentBlogPosts: BlogPost[] = [
             <p>
                 I kept a working reference to number of times a valley was entered, to be incremented, tracked altitude to be modified 
                 based on movement in the array steps, also ended up going with splitting the string into an array with 
-                <strong>.split()</strong>:
+                <strong> .split()</strong>:
             </p>
 
-            <pre  className="code-block">
-                <code>let enteredValley = 0
-                    let altitude = 0
+            <pre className='pre-code'>
+                <code className='code-block'>
+                    let enteredValley = 0;<br/>
+                    let altitude = 0;<br/>
                     let steps = s.split("");
-                    </code>
+                </code>
             </pre>
 
             <p>I used a helper function to track altitude:</p>
 
-            <pre  className="code-block">
-                <code>
-                        {/* function handleAltitude(step, alt){
-                        if(step === "D"){
-                            alt--
-                        } else {
-                            alt++
-                        }
-                        return alt++
-                    } */}
-                </code>
-            </pre>
+            <pre className="pre-code code-block jsx">{
+            `function handleAltitude(step, alt){
+    if(step === "D"){
+        alt--
+    } else {
+        alt++
+    }
+    return alt++
+}`
+
+                }</pre>
 
             <p>
                 Then I tracked the steps in a <strong>for loop</strong> incrementing 'enteredValley' when altitude was at 0 &amp;&amp; 
                 the next step === "D"
             </p>
 
-            <pre  className="code-block">
-                <code>
-                    {/* for(let i = 0; i &lt; steps.length; i++){
-                    if(altitude === 0 &amp;&amp; steps&#091;i] === "D"){
-                        enteredValley++ */}
-                </code>
-            </pre>
+            <pre className="pre-code code-block jsx">{
+            `for (let i = 0; i &lt; steps.length; i++){
+    if (altitude === 0 &amp;&amp; steps&#091;i] === "D"){
+        enteredValley++
+    }
+}`
+            }</pre>
 
             <p>And...eventually, I tracked some valley hiking!</p>
 
-            <pre className="">
-                {/* function countingValleys(n, s) {
-                let enteredValley = 0
-                let altitude = 0
-                let steps = s.split("");
+            <pre className="pre-code code-block jsx">{
+            `function countingValleys(n, s) {
+    let enteredValley = 0
+    let altitude = 0
+    let steps = s.split("");
             
-                for(let i = 0; i &lt; steps.length; i++){
-                    if(altitude === 0 &amp;&amp; steps[i] === "D"){
-                        enteredValley++
-                    }
-                    altitude = handleAltitude(steps[i], altitude)
-                }
-                return enteredValley
-            }
+    for (let i = 0; i &lt; steps.length; i++){
+        if (altitude === 0 &amp;&amp; steps[i] === "D"){
+            enteredValley++
+        }
+        altitude = handleAltitude(steps[i], altitude)
+    }
+    return enteredValley
+}
 
-            function handleAltitude(step, alt){
-                if(step === "D"){
-                    alt--
-                } else {
-                    alt++
-                }
-                return alt++
-            } */}
-            </pre>
+function handleAltitude(step, alt){
+    if (step === "D"){
+        alt--
+    } else {
+        alt++
+    }
+    return alt++
+}`
+        }</pre>
 
-            <h3>
+            <h3 className='core-subsection'>
                 <a href="https://www.hackerrank.com/challenges/repeated-string/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
                     Repeated String
                 </a>
@@ -1178,16 +1168,16 @@ export const CurrentBlogPosts: BlogPost[] = [
                 above repeated string, in this case that would be 6 a's).
             </p>
 
-            <h4>My initial thoughts...</h4>
+            <h3 className='core-subsection'>My initial thoughts...</h3>
 
-            <ul>
-                <li>The string is to be extended at least to mock in finitely for the needed character quantity so I'll probably need .
+            <ul className='ul-squares' >
+                <li className='li-squares'>The string is to be extended at least to mock in finitely for the needed character quantity so I'll probably need .
                     concat()
                 </li>
-                <li>It involves finding occurrences, maybe it will be better to .split() and .join() at times</li>
-                <li>could use a regex</li>
-                <li>maybe some reducing</li>
-                <li>ohhhh, but wait, this problem offers the possibility of the string going up to 100 characters and n with the 
+                <li className='li-squares'>It involves finding occurrences, maybe it will be better to .split() and .join() at times</li>
+                <li className='li-squares'>could use a regex</li>
+                <li className='li-squares'>maybe some reducing</li>
+                <li className='li-squares'>ohhhh, but wait, this problem offers the possibility of the string going up to 100 characters and n with the 
                     possibility of equaling up to 10^12, so scratch concat(ing), I'm sure HackerRank's tests don't have all day to 
                     see if I'm right</li><li>Also, some quick match should demonstrate how many a's would occur.  The given string 
                         is 5 letters and contains 2 a's, n = 15; with string.length, some regex to count a's, followed by some math 
@@ -1195,7 +1185,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </li>
             </ul>
 
-            <h4>next...</h4>
+            <h3 className='core-subsection'>next...</h3>
 
             <p>
                 In my first attempt, I was correct, dividing n by the string length and multiplying by the a count in the 
@@ -1218,29 +1208,23 @@ export const CurrentBlogPosts: BlogPost[] = [
                 set, etc.
             </p>
 
-            <h4>What I Used</h4>
+            <h3 className='core-subsection'>What I Used</h3>
 
             <p>I counted the a's in the given string with .match(regex) and .length</p>
             
-            <pre  className="code-block"><code>const a_Count = (s.match(/a/g)||&#091;]).length</code></pre>
+            <pre className="pre-code"><code className='code-block'>const a_Count = (s.match(/a/g)||&#091;]).length</code></pre>
 
             <p>
                 Used an if/else to go ahead and calculate if n % string.length === 0 and called the following external function, 
                 calculateA() if it was:
             </p>
 
-            <pre  className="code-block">
-                <code>
-                    {/* function calculateA(n, sLength, a_Count){
-                
-                    const stringRepeat = Math.floor(n / sLength)
-                        
-                    return a_Count * stringRepeat
-                    } */}
-                </code>
-            </pre>
-
-            <p></p>
+            <pre className="pre-code code-block jsx">{
+             `function calculateA(n, sLength, a_Count){
+    const stringRepeat = Math.floor(n / sLength) 
+    return a_Count * stringRepeat
+}`
+                }</pre>
 
             <p>
                 To tackle when n % string.length !== 0, first rounded down the division, multiplied by string.length 
@@ -1248,8 +1232,9 @@ export const CurrentBlogPosts: BlogPost[] = [
                 would be needed, keeping it in the variable leftOver:
             </p>
 
-            <pre className="code-block">
-                <code>const roundRepeat = Math.floor(n / sLength)
+            <pre className="pre-code">
+                <code className='code-block'>
+                    const roundRepeat = Math.floor(n / sLength) <br/>
                     const leftOver = n - (roundRepeat * sLength)
                 </code>
             </pre>
@@ -1259,9 +1244,9 @@ export const CurrentBlogPosts: BlogPost[] = [
                 regex/match to count the a's within the new string:
             </p>
 
-            <pre className="code-block">
-                <code>
-                    const addPortion = s.slice(0, leftOver)
+            <pre className="pre-code">
+                <code className='code-block'>
+                    const addPortion = s.slice(0, leftOver)<br/>
                     const additionalAs = (addPortion.match(/a/g)||&#091;]).length
                 </code>
             </pre>
@@ -1271,41 +1256,41 @@ export const CurrentBlogPosts: BlogPost[] = [
                 additional As to the answer:
             </p>
 
-            <pre className="code-block">
-                <code>
-                    let roundedAnswer = calculateA(n, sLength, a_Count)
+            <pre className="pre-code">
+                <code className='code-block'>
+                    let roundedAnswer = calculateA(n, sLength, a_Count)<br/>
                     answer = additionalAs + roundedAnswer
                 </code>
             </pre>
 
             <p>So that, is, my version of this exercise and the whole code below:</p>
 
-            <pre  className="">
-                {/* function repeatedString(s, n) {
-                let answer;
-                const sLength = s.length
-                const a_Count = (s.match(/a/g)||[]).length
+            <pre className="pre-code code-block jsx">{
+            `function repeatedString(s, n) {
+    let answer;
+    const sLength = s.length
+    const a_Count = (s.match(/a/g)||[]).length
             
-                if(n % sLength === 0){
-                    answer = calculateA(n, sLength, a_Count)
-                } else {
-                    const roundRepeat = Math.floor(n / sLength)
-                    const leftOver = n - (roundRepeat * sLength)
-                    const addPortion = s.slice(0, leftOver)
-                    const additionalAs = (addPortion.match(/a/g)||[]).length
-                    let roundedAnswer = calculateA(n, sLength, a_Count)
-                    answer = additionalAs + roundedAnswer
-                }
-            return answer
-            }
+    if(n % sLength === 0){
+        answer = calculateA(n, sLength, a_Count)
+    } else {
+        const roundRepeat = Math.floor(n / sLength)
+        const leftOver = n - (roundRepeat * sLength)
+        const addPortion = s.slice(0, leftOver)
+        const additionalAs = (addPortion.match(/a/g)||[]).length
+        let roundedAnswer = calculateA(n, sLength, a_Count)
+        answer = additionalAs + roundedAnswer
+    }
+    return answer
+}
 
-            function calculateA(n, sLength, a_Count){
-                const stringRepeat = Math.floor(n / sLength)
-                return a_Count * stringRepeat
-            } */}
-            </pre>
-br
-            <h3>
+function calculateA(n, sLength, a_Count){
+    const stringRepeat = Math.floor(n / sLength)
+    return a_Count * stringRepeat
+}`
+        }</pre>
+            
+            <h3 className='core-subsection'>
                 <a href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup">
                     Jumping on Clouds
                 </a>
@@ -1321,7 +1306,7 @@ br
                   skip 1.
             </p>
 
-            <h4>My initial thoughts...</h4>
+            <h3 className='core-subsection'>My initial thoughts...</h3>
 
             <p>
                 My initial thoughts were that, before I iterate through arrays and establish positions and jumps and path's 1 vs. 
@@ -1345,20 +1330,24 @@ br
                 That would end up reflecting the minimum number of jumps.
             </p>
 
-            <h4>What I used:</h4>
+            <h3 className='core-subsection'>What I used:</h3>
 
             <p>I set a jumps and position variable to 0 outside the loops:</p>
 
-            <pre  className="code-block"><code>let jumps = 0;
-            let position = 0;</code></pre>
+            <pre className="pre-code">
+                <code className='code-block'>
+                    let jumps = 0;<br/>
+                    let position = 0;
+                </code>
+            </pre>
 
             <p>I used a <strong>while loop</strong> that set iteration condition based on the changing position:</p>
 
-            <pre  className="code-block">
-                <code>
-                    {/* while (position &lt; c.length - 1) { */}
+            <pre className="pre-code">
+                <code className='code-block'>
+                    {`while (position &lt; c.length - 1) {`}
                 </code>
-                </pre>
+            </pre>
 
             <p>
                 I checked for the ability to change position with a jump of 2 first, and if not a jump of 1, during each logic 
@@ -1367,24 +1356,24 @@ br
             </p>
 
 
-            <pre  className="code-block">
-                {/* function jumpingOnClouds(c) {
-            let jumps = 0;
-            let position = 0;
-                while (position &lt; c.length - 1) {
-                    if (c[position + 2] == 0) {
-                        position = position + 2;
-                        jumps++;
-                    } else if (c[position + 1] == 0) {
-                        position = position + 1;
-                        jumps++;
-                    } else {
-                        break;
-                    }
-                }
-                return jumps;
-            } */}
-            </pre>
+            <pre className="pre-code code-block jsx">{
+            `function jumpingOnClouds(c) {
+    let jumps = 0;
+    let position = 0;
+    while (position &lt; c.length - 1) {
+        if (c[position + 2] == 0) {
+            position = position + 2;
+            jumps++;
+        } else if (c[position + 1] == 0) {
+            position = position + 1;
+            jumps++;
+        } else {
+            break;
+        }
+    }
+    return jumps;
+}`
+        }</pre>
 
             <p>So, that, was interview warm-ups!</p>
 
