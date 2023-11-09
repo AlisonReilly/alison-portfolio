@@ -200,7 +200,6 @@ export const ResumeEntries: ResumeEntry[] = [
         achieved: [
             'Integrated OfficeRnd & Salesforce REST APIs using NodeJS and Firebase functions',
             'Routed web hook response of OfficeRnd with ExpressJS ensuring separation of concerns',
-            'Increased ticket resolution speed by coordinating consultations with Customers, team members and developers',
             'Communicated goals with product owner and other company associates on a bi-weekly basis to sync goals '
         ],
         description: 'An internship project building middleware and integrations for a local co-working space.',
