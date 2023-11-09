@@ -32,6 +32,11 @@
     margin-top: 40px;
 }
 
+.half-a-border-on-top {
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, #000 50%, transparent 50%) 100% 1;
+}
+
 .action-button {
     box-sizing: border-box;
     font-size: 30px;
@@ -40,9 +45,11 @@
     color: black;
     font-family: 'Michroma', sans-serif;
     padding: 10px 30px;
-    background-image: url('../../public/borderImage.png');
-    background-repeat: no-repeat;
-    background-size: 130%;
+    /* border-bottom: 1px solid;
+    border-image: linear-gradient(to left, transparent 50%, #000 50%,) 1 100%; */
+    /* background-image: url('../../public/borderImage.png'); */
+    /* background-repeat: no-repeat;
+    background-size: 130%; */
 
 }
 
@@ -54,6 +61,53 @@
 .action-button:hover {
     color: white;
 }
+
+
+.partial-border-pseudo {
+    /* width: 150px; */
+    /* background: lightgray; */
+    position: relative;
+    border: none;
+    /* padding: 7px;
+    margin: 25px; */
+    text-align: center;
+  }
+  
+  .partial-border-pseudo::before,
+  .partial-border-pseudo::after {
+    position: absolute;
+    content: "";
+    width: 33px;
+    height: 20px;
+  }
+  
+  .partial-border-pseudo::before {
+    left: 0;
+    top: 0;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+  }
+  
+  .partial-border-pseudo::after {
+    right: 0;
+    bottom: 0;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .partial-border-pseudo:hover::before {
+    left: 0;
+    top: 0;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+  }
+
+  .partial-border-pseudo:hover::after {
+    right: 0;
+    bottom: 0;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+  }
 
 @media only screen and (min-width: 775px) {
     .main-text {

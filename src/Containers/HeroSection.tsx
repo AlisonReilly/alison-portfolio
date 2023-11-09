@@ -62,8 +62,8 @@ export const HeroSection: React.FC<HeroProps & React.HTMLProps<HTMLDivElement>> 
                     text='React TypeScript Python'/> : null
             }
             {actionTimingMet ? <div className='action-buttons'>
-                <Link className='modern-link action-button' to={'/resume'}>View Experience</Link>
-                <Link className='modern-link action-button' to={'/projects'}>View Foundations</Link>
+                <Link className='modern-link action-button partial-border-pseudo' to={'/resume'}>View Experience</Link>
+                <Link className='modern-link action-button partial-border-pseudo' to={'/projects'}>View Foundations</Link>
             </div> : null }
         </div>
     ); 
