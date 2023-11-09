@@ -270,8 +270,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 to utilize web scraping with nokogiri, the main focus of the project:
             </p>
             
-            <p className='quote-block or code-block'>
-                spec.add_development_dependency "pry" | spec.add_development_dependency "nokogiri"
+            <p>
+                <pre className='pre-code'><code className='code-block'>spec.add_development_dependency "pry" | spec.add_development_dependency "nokogiri"</code></pre>
             </p>
             
             
@@ -380,32 +380,38 @@ export const CurrentBlogPosts: BlogPost[] = [
             
             <h3 className='core-subsection'>File Setup - first things, first</h3>
 
-            <p className='quote-block or code-block'>
-                if ActiveRecord::Migrator.needs_migration?
-                    raise 'Migrations are pending.
-                    Run rake 'db:migrate' to resolve the issue.'
-                End
-            </p>
+            <pre className='pre-code jsx code-block'>{
+                `                if ActiveRecord::Migrator.needs_migration?
+                raise 'Migrations are pending.
+                Run rake 'db:migrate' to resolve the issue.'
+            End`
+            }
+
+            </pre>
 
             <p>To this:</p>
 
-            <p className='quote-block or code-block'>
-                if ActiveRecord::Base.connection.migration_context.needs_migration?
+            <pre className='pre-code jsx code-block'>{
+                `                if ActiveRecord::Base.connection.migration_context.needs_migration?
                 raise 'Migrations are pending. Run 'rake db:migrate' to resolve the issue.'
-                End
-            </p>
+                End`
+            }
+            </pre>
 
             <p>At the moment I don’t remember the error code, but if I can reproduce it or find it, I will add it here.</p>
             <p>Excellent, everything is setup and a little test to see that everything is in place:</p>
 
-            <p className='quote-block or code-block'>
-                get '/' do
+            <pre className='pre-code jsx code-block'>{
+
+                `get '/' do
                 "Hello World, Can this App Start?"
-                End 
-            </p>
+                End`}
+            </pre>
             
             <p>Run shotgun in the terminal and…No. It can't start.</p>
-            <p className='quote-block or code-block'>Run shotgun……and……Shotgun Error, or shotgun related error.</p>
+            <p className='example or emphasis-block'>
+                Run shotgun……and……Shotgun Error, or shotgun related error.
+            </p>
             
             <p>
                 After researching this further, I could not run shotgun on windows, or windows as is, I needed Linux or a Linux 
@@ -425,7 +431,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 I cloned my files, ran shotgun successfully and had a look at my ‘/’ route in the browser:
             </p>
 
-            <p className='quote-block or code-block'>Hello World, Can this App Start?</p>
+            <p className='quote-block'>Hello World, Can this App Start?</p>
 
             <p>It could start!! Celebration.</p>
 
@@ -466,7 +472,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 following error after working a while, or something similar.
             </p>
             
-            <p className='quote-block or code-block'>
+            <p className='quote-block'>
                 start_tcp_server': no acceptor (port is in use or requires root privileges) (RuntimeError)
             </p>
 
@@ -477,14 +483,14 @@ export const CurrentBlogPosts: BlogPost[] = [
                 A variety of solutions are presented to find the processes that are causing the problem within the terminal:
             </p>
             
-            <p className='quote-block or code-block'>$ ps</p>
-            <p className='quote-block or code-block'>$ ps ax | grep rails</p>
-            <p className='quote-block or code-block'>$ ps ax | grep thin</p>
-            <p className='quote-block or code-block'>$ ps ax | grep ruby</p>
+            <p className='pre-code code-block jsx'>$ ps</p>
+            <p className='pre-code code-block jsx'>$ ps ax | grep rails</p>
+            <p className='pre-code code-block jsx'>$ ps ax | grep thin</p>
+            <p className='pre-code code-block jsx'>$ ps ax | grep ruby</p>
 
             <p>All of these return some type of numbers, the solution next to enter in the terminal:</p>
 
-            <p className='quote-block or code-block'>$ kill -9 #one of the numbers here</p>
+            <p className='pre-code code-block jsx'>$ kill -9 #one of the numbers here</p>
 
             <p>
                 I ran into the problem a couple of times while working and found that the most relevant to my current setup was 
@@ -1424,9 +1430,11 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>
-                        rails new &lt;filename-here&gt;
-                    </code>
+                    <pre className='pre-code'>
+                        <code className='code-block'>
+                            rails new &lt;filename-here&gt;
+                        </code>
+                    </pre>
                 </p>
             </blockquote>
             
@@ -1454,14 +1462,14 @@ function calculateA(n, sLength, a_Count){
                 <li>git Commit command</li>
             </ol>
             
-            <p><code className='code-block'>git commit - m “message here”</code></p>
+            <p><pre className='pre-code'><code className='code-block'>git commit - m “message here”</code></pre></p>
             
             <ol className='numbered-blog' start={3}>
                 <li>
                     <em>Error message: untracked files</em>
                 </li>
                 <li>Git track files/add files command <br/>
-                    <code className='code-block'>git add &lt;filename&gt;/</code> <br/>
+                    <pre className='pre-code'><code className='code-block'>git add &lt;filename&gt;/</code></pre><br/>
                     (In this case I added all the files listed as untracked, individually)
                 </li>
             </ol>
@@ -1472,7 +1480,7 @@ function calculateA(n, sLength, a_Count){
                 </li>
             </ol>
             
-            <p><code className='code-block'>git push -u origin master</code></p>
+            <p><pre className='pre-code'><code className='code-block'>git push -u origin master</code></pre>v</p>
             
             <ul className='ul-squares'>
                 <li className='li-squares'>
@@ -1498,7 +1506,7 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>rake routes</code>
+                    <pre className='pre-code'><code className='code-block'>rake routes</code></pre>
                 </p>
             </blockquote>
             
@@ -1510,9 +1518,11 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>
-                        redirect_to &lt;some_named_path&gt;(optional variable depending)
-                    </code>
+                    <pre className='pre-code'>
+                        <code className='code-block'>
+                            redirect_to &lt;some_named_path&gt;(optional variable depending)
+                        </code>
+                    </pre>
                 </p>
             </blockquote>
             
@@ -1524,9 +1534,11 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>
-                        &lt;%= link_to “What you want the link to say”, &lt;some_named_path&gt;(variable depending) %&gt;
-                    </code>
+                    <pre className='pre-code'>
+                        <code className='code-block'>
+                            &lt;%= link_to “What you want the link to say”, &lt;some_named_path&gt;(variable depending) %&gt;
+                        </code>
+                    </pre>
                 </p>
             </blockquote>
             
@@ -1534,9 +1546,11 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="wp-block-quote">
                 <p>
-                    <code className='code-block'>
-                        &lt;%= link_to post.title, &lt;some_named_path&gt;(variable depending) %&gt;
-                    </code>
+                    <pre className='pre-code'>
+                        <code className='code-block'>
+                            &lt;%= link_to post.title, &lt;some_named_path&gt;(variable depending) %&gt;
+                        </code>
+                    </pre>
                 </p>
             </blockquote>
             
@@ -1569,27 +1583,27 @@ function calculateA(n, sLength, a_Count){
             <p>Drop table:</p>
             
             <blockquote className="block-quote">
-                <p><code className='code-block'>drop_table :table_name</code></p>
+                <p><pre className='pre-code'><code className='code-block'>drop_table :table_name</code></pre></p>
             </blockquote>
             
             <p>Add column:</p>
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>add_column :table_name, :column_name, :column_type</code>
+                    <pre className='pre-code'><code className='code-block'>add_column :table_name, :column_name, :column_type</code></pre>
                 </p>
             </blockquote>
             
             <p>Delete column:</p>
             
             <blockquote className="block-quote">
-                <p><code className='code-block'>remove_column :table_name, :column_name</code></p>
+                <p><pre className='pre-code'><code className='code-block'>remove_column :table_name, :column_name</code></pre></p>
             </blockquote>
             
             <p>Change column type:</p>
             
             <blockquote className="block-quote">
-                <p><code className='code-block'>change_column :table_name, :column_name, :new_type</code></p>
+                <p><pre className='pre-code'><code className='code-block'>change_column :table_name, :column_name, :new_type</code></pre></p>
             </blockquote>
             
             <h3 className='core-subsection'>
@@ -1598,11 +1612,11 @@ function calculateA(n, sLength, a_Count){
             
             <p>4 models were needed to ensure I was covering all the requirements, or so I thought, as I went along 
                 checking them off. The models are 
-                <code className='code-block'>wine</code>, 
+                <pre className='pre-code'><code className='code-block'>wine</code>, 
                 <code className='code-block'>review</code>, 
                 <code className='code-block'>user</code> and 
                 <code className='code-block'>liked_review</code>. 
-                <code className='code-block'>liked_review</code> 
+                <code className='code-block'>liked_review</code> </pre>
                 was added last in case review to user to wine was not sufficient enough for 2 of the 
                 requirements for the project<br/>
                 <em>I adapted this example from the following resource on stackoverflow: 
@@ -1644,22 +1658,23 @@ function calculateA(n, sLength, a_Count){
             
             <p>
                 I knew I had enough nearly enough association requirements met between 
-                <code className='code-block'>User</code>, 
+                <pre className='pre-code'><code className='code-block'>User</code>, 
                 <code className='code-block'>Wine</code> and 
                 <code className='code-block'>Review</code>, 
                 however, I wasn’t sure about user submittable attributes so I added in the dynamic source based associations 
-                with <code className='code-block'>LikedReview</code>, 
+                with <code className='code-block'>LikedReview</code>, </pre>
                 this allowed to change the tense of the has_many through 
-                the liked_reviews to allow a differentiation in chaining agains users vs. reviews themselves, 
+                the liked_reviews to allow a differentiation in chaining against users vs. reviews themselves, 
                 all via the opposite source.
             </p>
             
             <p>
                 <strong>This required a couple other modifications</strong><br/>
                 Instead of a 
+                <pre className='pre-code'>
                 <code className='code-block'>LikedReviews controller</code>, 
                 <code className='code-block'>#like</code> was added to the 
-                <code className='code-block'>ReviewsController</code> as its own method:
+                <code className='code-block'>ReviewsController</code> as its own method:</pre>
             </p>
             
             <pre className="pre-code code-block jsx">
@@ -1735,14 +1750,17 @@ function calculateA(n, sLength, a_Count){
             </ol>
             
             <blockquote className="block-quote">
-                <p><code className='code-block'>Gem ‘omniauth’</code></p>
-                <p><code className='code-block'>gem 'dotenv-rails'</code></p>
-                <p><code className='code-block'>Gem 'omniauth-google-oauth2'</code></p>
+                <p><pre className='pre-code'><code className='code-block'>Gem ‘omniauth’</code></pre></p>
+                <p><pre className='pre-code'><code className='code-block'>gem 'dotenv-rails'</code></pre></p>
+                <p><pre className='pre-code'><code className='code-block'>Gem 'omniauth-google-oauth2'</code></pre></p>
             </blockquote>
             
             <ol className='numbered-blog' start={4}>
                 <li>
-                    Create a <code className='code-block'>.env</code> file in the <code className='code-block'>root</code> of the app to add the google client_id and client_secret, found while setting new app within google developers console
+                    Create a <pre className='pre-code'>
+                        <code className='code-block'>.env</code> file in the 
+                        <code className='code-block'>root</code> of the app to add the google client_id and client_secret, 
+                        found while setting new app within google developers console</pre>
                 </li>
             </ol>
             
@@ -1758,7 +1776,7 @@ function calculateA(n, sLength, a_Count){
             
             <p>5) add .env to .gitignore file, just type in</p>
             
-            <blockquote className="block-quote"><p><code className='code-block'>.env</code></p></blockquote>
+            <blockquote className="block-quote"><p><pre className='pre-code'><code className='code-block'>.env</code></pre></p></blockquote>
             
             <ul className='ul-squares'><li className='li-squares'>add to the list of items ignored by github</li></ul>
             
@@ -1776,7 +1794,7 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>get '/auth/:provider/callback' =&gt; 'sessions#omniauth'</code>
+                <pre className='pre-code'><code className='code-block'>get '/auth/:provider/callback' =&gt; 'sessions#omniauth'</code></pre>
                 </p>
             </blockquote>
             
@@ -1818,9 +1836,11 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>
-                        &lt;%= link_to "Log In with Google", '/auth/google_oauth2' %&gt;
-                    </code>
+                    <pre className='pre-code'>
+                        <code className='code-block'>
+                            &lt;%= link_to "Log In with Google", '/auth/google_oauth2' %&gt;
+                        </code>
+                    </pre>
                 </p>
             </blockquote>
             
@@ -1836,7 +1856,7 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>has_secure_password</code>
+                <pre className='pre-code'><code className='code-block'>has_secure_password</code></pre>
                 </p>
             </blockquote>
             
