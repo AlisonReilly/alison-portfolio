@@ -19,10 +19,10 @@ export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivEle
 
     return (
         <div id='BlogPreview' className=''>
-            <h3 className='blog-preview-title'>{title}</h3>
+            <h2 className='blog-preview-title'>{title}</h2>
             <div className='blog-preview-date'>{date}</div>
             <div className='blog-preview-content'>{blogContent}</div>
-            <Link to={`/${blogURL}`}>...Read More</Link>
+            <Link className='read-more-link' to={`/${blogURL}`}>...Read More</Link>
         </div>
     ); 
 } 

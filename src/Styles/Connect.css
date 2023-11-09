@@ -8,8 +8,8 @@
 
 .connect-links {
     display: flex;
-    flex-direction: row;
-    column-gap: 20px;
+    flex-direction: column;
+    row-gap: 35px;
 }
 
 .connect-header {
@@ -25,5 +25,12 @@
     .connect-header {
         margin-left: unset;
     }
+
+    .connect-links {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+    }
+
 
 }

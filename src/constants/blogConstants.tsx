@@ -855,12 +855,10 @@ export const CurrentBlogPosts: BlogPost[] = [
         content:
         <div className='blog-content-read-wrapper'>
             <p>
-                Well, I said I wanted to be finished with my bootcamp, when I first started, in 4 months or so. Since then, I’ve 
-                had a million soul draining restaurant shifts, two moves to a new apartment, a handful of car troubles, financial 
+                When I first started my bootcamp I wanted to be done in 4 months or so. Since then, I’ve 
+                had a million soul draining restaurant shifts, two moves to new apartments, a handful of car troubles, financial 
                 worry over my restaurant based income, a viral pandemic and economic lockdown coupled with more anxious thoughts 
-                on financial stability. Four months came and went fast, then I said, well I’ll have it done in July, oh well in 
-                September then, ok maybe by the end of the year, so 18 months later, and right up until my administrative 
-                deadline for the program, I have finished my last project.
+                on financial stability. Four months came and went fast, considering, but finally the final project is ready.
             </p>
 
             <p>
@@ -951,7 +949,7 @@ export const CurrentBlogPosts: BlogPost[] = [
         title: 'Blog Inspiration, Interview Prep Warm-ups',
         content:
         <div className='blog-content-read-wrapper'>
-            <h2>Reflection on problem solving</h2>
+            <span>Reflection on problem solving</span>
 
             <div  className=''>
                 <img className='accent-image-right' src='keyboard.png' alt='backlit keyboard'></img>

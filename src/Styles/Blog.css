@@ -14,10 +14,9 @@
 
 .blog-preview-content {
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box; 
-    -webkit-box-orient: vertical; 
-    height: 205px;
+    height: 14.25em;
+    font-size: 25px;
+    line-height: 1.4em;
 }
 
 /* the whole list view with reading samples */
@@ -38,11 +37,19 @@
     border: 1px solid rgba(15, 227, 255, 0.471);
 }
 
+.blog-preview-title {
+    font-size: 30px;
+}
 
-/* reading views */
+.read-more-link {
+    font-size: 25px;
+}
 
-
-
+@media only screen and (min-width: 1250px) {
+    .main-blog-list {
+        width: 60vw;
+    }
+}
 
 @media only screen and (min-width: 775px) {
     #Blog {
@@ -55,7 +62,7 @@
     }
 
     .main-blog-list {
-        width: 50vw;
+        width: 75vw;
     }
 
     .blog-read-container {
