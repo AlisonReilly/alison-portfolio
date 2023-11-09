@@ -72,22 +72,22 @@ export const CurrentBlogPosts: BlogPost[] = [
                 well-rounded quotes and return to my in-depth introduction at a later time.
             </p>
 
-            <p className='quote'>
+            <p className='block-quote'>
                 From philosopher Eric Hoffer: “Creativity is the ability to introduce order into the randomness of nature.”
             </p>
 
-            <p className='quote'>I really enjoyed my higher level math courses, I had always thought of myself as being a 
+            <p className='block-quote'>I really enjoyed my higher level math courses, I had always thought of myself as being a 
                 little mediocre at math unless I had some phenomenal teacher which rarely exists. I decided I could definitely 
                 handle the rest of the math required for any major and continued on into Calculus I, which also went very well, 
                 it was like a math puzzle.
             </p>
 
-            <p className='quote'>
+            <p className='block-quote'>
                 From mathematician and computer scientist Robert R. Coveyou: “The generation of random numbers is too important 
                 to be left to chance.”
             </p>
             
-            <a className='quote-reference' href='www.random.org/quotations'>www.random.org/quotations</a>
+            <a className='reference' href='www.random.org/quotations' rel="noreferrer" target='_blank'>www.random.org/quotations</a>
 
             <p>
                 One of my first favorite topics and exercises in my Introduction to Computer Science class was producing a 
@@ -99,7 +99,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 learning, by exploring and reflecting on how random is accomplished in Ruby as well.
             </p>
             
-            <h4>C++ Random</h4>
+            <h3 className='core-subsection'>C++ Random</h3>
             
             <p>In C++, rand(), is used to generate seemingly random numbers. Below is the general code and result:</p>
             {/* <img>to do image with caption</img>
@@ -172,7 +172,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             
             <p>Wouldn’t it be wonderful now, to go off on some tangent regarding physics having no concept of time beyond elapsed time for calculation? That would be a lot of fun, but for now, I’ll have to move on to how random works in Ruby.</p>
             
-            <h4>Random Ruby</h4>
+            <h3 className='core-subsection'>Random Ruby</h3>
             
             <p>Of course, in ruby, there are methods on hand and ready to go simplifying the code involved. The primary method 
                 involves the use of <span className="code-example">#rand</span>. Calling 
@@ -210,7 +210,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 ideas at work within this post.
             </p>
 
-            <h4>Works Cited </h4>
+            <h3 className='core-subsection'>Works Cited </h3>
             {/* todo anchors below */}
             <p>Britt, James and Neurogami. “Random” Ruby-doc.org. https://ruby-doc.org/core-2.2.0/Random.html</p>
             <p>RANDOM.ORG. https://www.random.org/quotations/</p>
@@ -239,7 +239,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 in advance and upon project setup:
             </p>
 
-            <h4>Project naming:</h4>
+            <h3 className='core-subsection'>Project naming:</h3>
 
             <p>A different file structure is created with something such as miami_venues_today and miami_venues.</p>
 
@@ -275,7 +275,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             </p>
             
             
-            <h4>Config or environment files:</h4>
+            <h3 className='core-subsection'>Config or environment files:</h3>
             <p>
                 In the /lib directory, miami_venues.rb, was added as a means to ensure all the other files are incorporated, 
                 it is an environment or configuration type of file seen in other Ruby programs and setup. For example, I was 
@@ -287,7 +287,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 work together.
             </p>
 
-            <h4>Learned some new things – dates and ranges</h4>
+            <h3 className='core-subsection'>Learned some new things – dates and ranges</h3>
             <p>
                 The goals of the project were date focused, the CLI would have to ask for some user input and match today’s 
                 date or match some other specified date to what the user wants to find. The date specified would have to easily 
@@ -322,7 +322,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             {/* <img>to do image with caption</img>
             <img>to do image with caption</img> */}
             
-            <h4>Self.ishness:</h4>
+            <h3 className='core-subsection'>Self.ishness:</h3>
             <p>
                 So, at first I wasn’t thinking ahead and forgot all about the use of self and why it is used and how it is used 
                 and what the difference is, etc. I generally understood what it was doing in labs but hadn't yet put it into my 
@@ -338,7 +338,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 self.change_date_format, and making that modification within the call to itself fixed this quickly.
             </p>
 
-            <h4>I discovered an em dash:</h4>
+            <h3 className='core-subsection'>I discovered an em dash:</h3>
 
             <p>
                 Or was it an en dash? I’m not sure and I kind of find it upsetting there is some difference between a hyphen “-“ 
@@ -358,8 +358,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 After all the various tricks and pondering of life my CLI project took I am glad to have experienced it. 
                 There were several other stuck points possibly worth highlighting but these seemed the most useful and interesting.
             </p>
-            <a className='anchors' href='https://youtu.be/IZuhB9wp3Wo' target="_blank">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/miami_venues.git' target="_blank">GitHub Repo</a>
+            <a className='anchors' href='https://youtu.be/IZuhB9wp3Wo' target="_blank" rel="noreferrer">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/miami_venues.git' target="_blank" rel="noreferrer">GitHub Repo</a>
 
         </div>,
         date: '2/12/2019',
@@ -498,8 +498,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 errors working in my own environment, so I think the delay on the project to set up the environment will end up speeding 
                 me up in the end.
             </p>
-            <a className='anchors' href='https://youtu.be/rlPety4CSeY' target="_blank">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/miami_rooftop_pools' target="_blank">GitHub Repo</a>
+            <a className='anchors' href='https://youtu.be/rlPety4CSeY' target="_blank" rel="noreferrer">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/miami_rooftop_pools' target="_blank" rel="noreferrer">GitHub Repo</a>
         </div>,
         date: '6/12/2019',
         tags: ['Flatiron', 'Bootcamp', 'Sinatra', 'Ruby'],
@@ -573,7 +573,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 <p>
                     “bcrypt() is a sophisticated and secure hash algorithm designed by The OpenBSD project for hashing passwords. The 
                     bcrypt Ruby gem provides a simple wrapper for safely handling passwords” 
-                    (<a href='https://rubygems.org/gems/bcrypt/versions/3.1.12' target='_blank'>Bcrypt, Ruby Gem</a>).
+                    (<a href='https://rubygems.org/gems/bcrypt/versions/3.1.12' target='_blank' rel="noreferrer">Bcrypt, Ruby Gem</a>).
                     </p>
             </blockquote>
 
@@ -583,7 +583,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             <blockquote className="block-quote">
                 <p>“Hash algorithms take a chunk of data (e.g., your user's password) and create a "digital fingerprint," or hash, 
                     of it. Because this process is not reversible, there's no way to go from the hash back to the password”
-                    <br/>(<a href='https://github.com/codahale/bcrypt-ruby' target='_blank'>Codahale Github, Bcrypt</a>).
+                    <br/>(<a href='https://github.com/codahale/bcrypt-ruby' target='_blank' rel="noreferrer">Codahale Github, Bcrypt</a>).
                 </p>
             </blockquote>
 
@@ -599,13 +599,13 @@ export const CurrentBlogPosts: BlogPost[] = [
                 far (I do but not in this blog). However, after some light reading, the process of hashing involves mapping 
                 (creating a relationship between objects), data of random size, to another object of a fixed size. The idea of 
                 these functions, or why they are advantageous to using within encryption, is that they are very difficult to 
-                reverse, the are considered “one-way functions” (<a href='https://en.wikipedia.org/wiki/Cryptographic_hash_function' target='_blank'>Wiki Cryptographic Hash Function</a>).
+                reverse, the are considered “one-way functions” (<a href='https://en.wikipedia.org/wiki/Cryptographic_hash_function' target='_blank' rel="noreferrer">Wiki Cryptographic Hash Function</a>).
             </p>
              
             <p>
                 So Bcrypt essentially uses a mathematical function called hashing to scramble up passwords, nearly irreversibly. 
                 There are several different types of hashing functions or techniques, mathematically speaking. Several are listed 
-                here: <a href='https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data' target='_blank'>Wiki Hash function</a>. In this context, it doesn’t always 
+                here: <a href='https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data' target='_blank' rel="noreferrer">Wiki Hash function</a>. In this context, it doesn’t always 
                 refer to security encryption, but is relevant, or at least interesting to me, to read about some of these 
                 processes, but a bit too much to go into for this blog purpose.
             </p>
@@ -653,7 +653,7 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             }</pre>
              
-            <p>-From: <a href='https://github.com/codahale/bcrypt-ruby' target='_blank'>Github Bcrypt</a></p>
+            <p>-From: <a href='https://github.com/codahale/bcrypt-ruby' target='_blank' rel="noreferrer">Github Bcrypt</a></p>
              
             <p>
                 Their documentation goes onto mention, however, that later versions of rails incorporate this process within 
@@ -707,7 +707,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             </pre>
              
             <p>
-                -From: <a href='https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password' target='_blank'>Has Secure Password</a>
+                -From: <a href='https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password' target='_blank' rel="noreferrer">Has Secure Password</a>
             </p>
             
 
@@ -730,7 +730,7 @@ end`
             }</pre>
             <p>
                 -From: 
-                <a href='https://apidock.com/rails/ActiveModel/SecurePassword/InstanceMethodsOnActivation/authenticate' target='_blank'>
+                <a href='https://apidock.com/rails/ActiveModel/SecurePassword/InstanceMethodsOnActivation/authenticate' target='_blank' rel="noreferrer">
                     Secure Password Instance Methods
                 </a>
             </p>
@@ -764,13 +764,13 @@ end`
 
             <blockquote className="block-quote">
                 <p>
-                    <a href='https://www.youtube.com/channel/UCzQvgRgjjxhzEORvefubDPw' target="_blank">JavaScript Teacher</a>
+                    <a href='https://www.youtube.com/channel/UCzQvgRgjjxhzEORvefubDPw' target="_blank" rel="noreferrer">JavaScript Teacher</a>
                 </p>
                 <p>
-                    <a href='https://www.youtube.com/channel/UCHpHBzk4fz3oeQ31hmCreGg' target="_blank">Technologies4me</a>
+                    <a href='https://www.youtube.com/channel/UCHpHBzk4fz3oeQ31hmCreGg' target="_blank" rel="noreferrer">Technologies4me</a>
                 </p>
                 <p>
-                    <a href='https://www.youtube.com/channel/UCdS3ojA8RL8t1r18Gj1cl6w' target="_blank">PothOnProgramming</a>
+                    <a href='https://www.youtube.com/channel/UCdS3ojA8RL8t1r18Gj1cl6w' target="_blank" rel="noreferrer">PothOnProgramming</a>
                 </p>
             </blockquote>
 
@@ -792,7 +792,7 @@ end`
 
             <blockquote className="block-quote">
                 <p>
-                    <a href='https://www.youtube.com/channel/UCr-5TdGkKszdbboXXsFZJTQ' target="_blank">GamesFromScratch</a>
+                    <a href='https://www.youtube.com/channel/UCr-5TdGkKszdbboXXsFZJTQ' target="_blank" rel="noreferrer">GamesFromScratch</a>
                 </p>
             </blockquote>
 
@@ -812,7 +812,7 @@ end`
 
             <p>I eventually went onto Phaser’s website</p>
 
-            <blockquote className="block-quote"><p><a href='https://phaser.io/' target="_blank">Phaser</a></p></blockquote>
+            <blockquote className="block-quote"><p><a href='https://phaser.io/' target="_blank" rel="noreferrer">Phaser</a></p></blockquote>
 
             <p>
                 They have a great introduction to their engine on their website including a very simple tutorial on how to make a 
@@ -831,9 +831,9 @@ end`
             </p>
 
             <p>I discovered other game making resources, free to use game art, for example, from 
-            <a href='https://opengameart.org/' target="_blank">Open Game Art</a>.<br/>However, I couldn’t help but want to make my own art, got a little 
+            <a href='https://opengameart.org/' target="_blank" rel="noreferrer">Open Game Art</a>.<br/>However, I couldn’t help but want to make my own art, got a little 
                 stuck on what my game art theme and game may even be, so, while working through various phaser tutorials I 
-                started attempting my own game art, primarily on <a href='https://www.pixilart.com/draw#' target="_blank">PixilArt</a><br/>I
+                started attempting my own game art, primarily on <a href='https://www.pixilart.com/draw#' target="_blank" rel="noreferrer">PixilArt</a><br/>I
                  eventually decided to use a random image I drew with Krita drawing software, a pink night sky with silhouetted 
                  black grass and trees as sort of a game’s title scene or landing page and figured to make game art based on this 
                  image, thus I came up with my game art theme. I made my animation frames for the player, enemy and an item to 
@@ -848,7 +848,7 @@ end`
             </p>
 
             <p>
-                Working through further Phaser tutorials with <a href='https://academy.zenva.com/' target="_blank">Zenva</a><br/>I found a great 
+                Working through further Phaser tutorials with <a href='https://academy.zenva.com/' target="_blank" rel="noreferrer">Zenva</a><br/>I found a great 
                 deal of tilemap based games with a great deal of examples of different elements to add to a game and different 
                 playing styles. I had planned to add a few more such as NPC’s and different scene or level transitions, but in the 
                 interest of time I left it to one, at least for now.
@@ -859,8 +859,8 @@ end`
                 the requirements, but I’m glad I ventured into some processes of game making in collaboration with web 
                 development.
             </p>
-            <a className='anchors' href='https://youtu.be/MamqFgSoqq8' target="_blank">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/a-cats-dream' target="_blank">GitHub</a>
+            <a className='anchors' href='https://youtu.be/MamqFgSoqq8' target="_blank" rel="noreferrer">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/a-cats-dream' target="_blank" rel="noreferrer">GitHub</a>
         </div>,
         date: '1/4/2020',
         tags: ['Flatiron', 'Bootcamp', 'JavaScript', 'Ruby', 'Ruby on Rails', 'DOM', 'Vanilla JS', 'Phaser'],
@@ -900,12 +900,12 @@ end`
                 <p>For this blog I think I’m going to just do a simple listing of things accomplished or features used:</p>
 
                 <p>
-                    <strong><a href='https://www.npmjs.com/package/react-day-picker' target="_blank">React-day-picker:</a></strong> <br/>What seems most popular is 
+                    <strong><a href='https://www.npmjs.com/package/react-day-picker' target="_blank" rel="noreferrer">React-day-picker:</a></strong> <br/>What seems most popular is 
                     the integration of a calendar view with user selected dates or date ranges is airbnb’s react-dates npm package. And 
                     yeah it’s fine. I tried 4 different calendar view packages in a separate program to see which one I liked working with 
                     best. Another reason my project took so long, more than likely! I ended up choosing, what I think part of react-dates 
                     uses actually is react-day-picker. I came across this while browsing hotel websites to see what they used, or to see 
-                    if I found any calendar integration that I favored, on <a href='https://www.loewshotels.com/' target="_blank">Loews Hotels</a>. The understanding of how to 
+                    if I found any calendar integration that I favored, on <a href='https://www.loewshotels.com/' target="_blank" rel="noreferrer">Loews Hotels</a>. The understanding of how to 
                     style this calendar, enable the user to select a date range and, set dates disabled, I happened to find a little 
                     more straightforward to use. Also with easy access and I plan to integrate it eventually, is the ability to add 
                     data to each calendar day. The original Loew’s hotel calendar I stumbled upon had prices and hotel availability 
@@ -914,7 +914,7 @@ end`
                 </p>
             </div>
 
-            <p><strong><a href='https://guides.rubyonrails.org/action_mailer_basics.html target="_blank"'>Action Mailer:</a></strong> <br/>Action Mailer, is a 
+            <p><strong><a href='https://guides.rubyonrails.org/action_mailer_basics.html' target="_blank" rel="noreferrer">Action Mailer:</a></strong> <br/>Action Mailer, is a 
                 good time. A little tricky to get setup so you can see that you have actually sent out an email, once all the 
                 settings are correct, it is easily integrated into other actions in the controllers. It was a lot of fun after 
                 sitting at my computer for hours seeing an email that came from my localhost:3000. Currently, I have it set up 
@@ -950,8 +950,8 @@ end`
                 future!
             </p>
             
-            <a className='anchors' href='https://www.youtube.com/G4u_KgDfBYI' target="_blank">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/FauxtelHotels' target="_blank">GitHub Repo</a>
+            <a className='anchors' href='https://www.youtube.com/G4u_KgDfBYI' target="_blank" rel="noreferrer">YouTube Demonstration</a>
+            <a className='anchors' href='https://github.com/Tsunamins/FauxtelHotels' target="_blank" rel="noreferrer">GitHub Repo</a>
         </div>,
         date: '5/23/2020',
         tags: ['Flatiron', 'Bootcamp', 'JavaScript', 'Ruby', 'Ruby on Rails', 'DOM', 'React', 'Redux', 'Final Project' ],
@@ -968,8 +968,9 @@ end`
 
                 <p className=''>
                     I found I didn't get as much practice as I would have liked in my bootcamp like the coding exercises found on <em>
-                    <a href="https://marketing.hackerrank.com/" target="_blank">Hacker Rank</a>
-                    </em> and <em><a href="https://www.codewars.com/" target="_blank">Codewars</a> </em>during the length of my self-paced bootcamp.  
+                    <a href="https://marketing.hackerrank.com/" target="_blank" rel="noreferrer">Hacker Rank</a>
+                    </em> and <em><a href="https://www.codewars.com/" target="_blank" rel="noreferrer">Codewars</a></em>during the length of my 
+                    self-paced bootcamp.  
                     The work-school game, plus labs and projects hanging over my head, often left me with a lack of dedicated time, 
                     or semantically, anxiety of time dedication. However, now that I am graduated, I have more time!  Coding exercise 
                     can be fun again, and a necessary step in light of potential, upcoming interviews.
@@ -980,7 +981,7 @@ end`
                 I dabbled in Hacker Rank's <em>10 Days of JavaScript</em> and then moved onto 
                 <em> Interview Prep</em>, starting with the 
                 <em>
-                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges" target="_blank"> Warm-Up Challenges</a>
+                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges" target="_blank" rel="noreferrer"> Warm-Up Challenges</a>
                 </em>.  
                 So I thought I would highlight any setbacks, key points, maybe some initial thinking vs. finalized 
                 thinking, etc.  I suppose my plan with these types of posts will be to go in and occasionally optimize code or 
@@ -990,7 +991,8 @@ end`
             <h3 className='core-subsection'>
                 <a 
                     href="https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer">
                     Sock Merchant
                 </a>
             </h3>
@@ -1062,7 +1064,8 @@ array.reduce((acc, val) =&gt;
             <h3 className='core-subsection'>
                 <a 
                     href="https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer">
                     Counting Valleys
                 </a>
             </h3>
@@ -1171,7 +1174,8 @@ function handleAltitude(step, alt){
             <h3 className='core-subsection'>
                 <a 
                     href="https://www.hackerrank.com/challenges/repeated-string/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer">
                     Repeated String
                 </a>
             </h3>
@@ -1308,7 +1312,8 @@ function calculateA(n, sLength, a_Count){
             <h3 className='core-subsection'>
                 <a 
                     href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer">
                     Jumping on Clouds
                 </a>
             </h3>
@@ -1399,173 +1404,448 @@ function calculateA(n, sLength, a_Count){
         tags: ['JavaScript', 'practice'],
         blogURL: 'interview-prep-warmups',
     },
-    // {
-    //     title: 'Blog Inspiration, Interview Prep - Array Manipulation',
-    //     content:
-//         <div className='blog-content-read-wrapper'>
+    {
+        title: 'Rails Project, Amateur Wine Reviewer: some reference points',
+        date: '9/6/2019',
+        blogURL: 'rails-amateur-wine',
+        tags: ['Ruby on Rails', 'Flatiron School', 'CRUD', 'REST', 'MVC', 'Bcrypt', 'SSO', 'Google Sign In', 'Auths'],
+        content:
+        <div className='blog-content-read-wrapper'>
+            <p>
+                Rails added some excitement and dynamic features to the developer learning process. It was also a long 4 
+                weeks worth of work. So for this blog about this post I’m going to make a sheet of references for frequently 
+                forgotten or frequently used code snippets, terminal commands and any other relevant items of interest; I will 
+                explain their importance where applicable.
+            </p>
+            
+            <h3 className='core-subsection'>
+                Generating a new skeleton of a Rails app, still frequently forgotten for now:
+            </h3>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>
+                        rails new &lt;filename-here&gt;
+                    </code>
+                </p>
+            </blockquote>
+            
+             <ul className='ul-squares'>
+                <li className='li-squares'>
+                    Why it’s important: creates nearly all the file structure necessary within the rails app, 
+                    includes most needed gems and dependencies, and allows easy inclusion for reference to images 
+                    and css sheets, among others.
+                </li>
+            </ul>
+            <h3 className='core-subsection'>
+                Git local directory vs. rails command to build a new application:
+            </h3>
+            
+            <p>
+                It was tricky to get my local environment file structure on the same page after git cloning my repository down 
+                but also initiating a new rails app, tried restarting the process several times to consistently end up with 
+                a project folder within a project folder.
+            </p>
+            
+            <p><strong>My solution, instead of re-starting a new directory and new rails app:</strong></p>
+            
+            <ol className='numbered-blog'>
+                <li>Moved the files in the file explorer up one directory</li>
+                <li>git Commit command</li>
+            </ol>
+            
+            <p><code className='code-block'>git commit - m “message here”</code></p>
+            
+            <ol className='numbered-blog' start={3}>
+                <li>
+                    <em>Error message: untracked files</em>
+                </li>
+                <li>Git track files/add files command <br/>
+                    <code className='code-block'>git add &lt;filename&gt;/</code> <br/>
+                    (In this case I added all the files listed as untracked, individually)
+                </li>
+            </ol>
+            
+            <ol className='numbered-blog' start={5}>
+                <li>
+                    All the files were in the same directory now, in both local and remote environments. One last push:
+                </li>
+            </ol>
+            
+            <p><code className='code-block'>git push -u origin master</code></p>
+            
+            <ul className='ul-squares'>
+                <li className='li-squares'>
+                    Push all the changes to the master branch that have been tracked/staged/committed/etc
+                </li>
+            </ul>
+            
+            <h3 className='core-subsection'>Frequently used, and finally not too frequently forgotten</h3>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>
+                        rake db:migrate
+                    </code>
+                </p>
+            </blockquote>
+            
+            <ul className='ul-squares'>
+                <li className='li-squares'>
+                    run migrations on all the migrate files recently created
+                </li>
+            </ul>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>rake routes</code>
+                </p>
+            </blockquote>
+            
+            <ul className='ul-squares'>
+                <li className='li-squares'>find all available routes as are currently defined in config/routes.rb</li>
+            </ul>
+            
+            <h3 className='core-subsection'>Links and redirects within rails</h3>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>
+                        redirect_to &lt;some_named_path&gt;(optional variable depending)
+                    </code>
+                </p>
+            </blockquote>
+            
+            <ul className='ul-squares'>
+                <li className='li-squares'>
+                    If the path has an :id, then a variable will need to be placed as a parameter
+                </li>
+            </ul>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>
+                        &lt;%= link_to “What you want the link to say”, &lt;some_named_path&gt;(variable depending) %&gt;
+                    </code>
+                </p>
+            </blockquote>
+            
+            <p>Variation<br/>If the link needs to say what’s stored in a variable:</p>
+            
+            <blockquote className="wp-block-quote">
+                <p>
+                    <code className='code-block'>
+                        &lt;%= link_to post.title, &lt;some_named_path&gt;(variable depending) %&gt;
+                    </code>
+                </p>
+            </blockquote>
+            
+            <h3 className='core-subsection'>Various Migrations</h3>
+            
+            <p>
+                <strong>Basic table creations: with a variety of types</strong><br/>
+                Within -class CreateTableName &lt; ActiveRecord::Migration[5.2]
+            </p>
+            
+            <pre className="pre-code code-block jsx">
+            {
+                `            def change
+                create_table :table_name do |t|
+                t.string :name
+                t.string :password_digest
+                t.date :today 
+                    t.boolean :yes-or-no 
+                    t.integer :quantity 
+                    t.belongs_to :user, index: true, foreign_key: true
+                t.references :favorited, polymorphic: true, index: true
+                end
+                end`
 
-    //         <p>Well.............This is the intro to this problem:</p>
+            }
+</pre>
+            
+            <p><strong>Table additions, subractions and changes, within def change:</strong></p>
+            
+            <p>Drop table:</p>
+            
+            <blockquote className="block-quote">
+                <p><code className='code-block'>drop_table :table_name</code></p>
+            </blockquote>
+            
+            <p>Add column:</p>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>add_column :table_name, :column_name, :column_type</code>
+                </p>
+            </blockquote>
+            
+            <p>Delete column:</p>
+            
+            <blockquote className="block-quote">
+                <p><code className='code-block'>remove_column :table_name, :column_name</code></p>
+            </blockquote>
+            
+            <p>Change column type:</p>
+            
+            <blockquote className="block-quote">
+                <p><code className='code-block'>change_column :table_name, :column_name, :new_type</code></p>
+            </blockquote>
+            
+            <h3 className='core-subsection'>
+                Explanation of Associations, as it applies to my project, * The Amateur Wine Reviewer *
+            </h3>
+            
+            <p>4 models were needed to ensure I was covering all the requirements, or so I thought, as I went along 
+                checking them off. The models are 
+                <code className='code-block'>wine</code>, 
+                <code className='code-block'>review</code>, 
+                <code className='code-block'>user</code> and 
+                <code className='code-block'>liked_review</code>. 
+                <code className='code-block'>liked_review</code> 
+                was added last in case review to user to wine was not sufficient enough for 2 of the 
+                requirements for the project<br/>
+                <em>I adapted this example from the following resource on stackoverflow: 
+                    <a href="https://stackoverflow.com/questions/13240109/implement-add-to-favorites-in-rails-3-4" target='_blank' rel="noreferrer">
+                    Stackoverflow: Add Favorites Rails
+                    </a>
+                </em>
+            </p>
+            
+            <pre className="pre-code code-block jsx">
+                {`in: class User
+            has_many :reviews    
+            has_many :wines, through: :reviews  
+            has_many :liked_reviews
+            has_many :likes, through: :liked_reviews, source: :review
+                `}
+                </pre>
+            
+            <pre className="pre-code code-block jsx">
+                {`            in: class LikedReview
+            belongs_to :user
+            belongs_to :review`}
+    </pre>
+            
+            <pre className="pre-code code-block jsx">
+                {`in: class Review
+            belongs_to :user
+            belongs_to :wine 
+            has_many :liked_reviews
+            has_many :liked_by, through: :liked_reviews, source: :user`}
+   </pre>
+            
+            <pre className="pre-code code-block jsx">
+                {`                in: class Wine
+            has_many :reviews  
+            has_many :users, through: :reviews`}
+                
+</pre>
+            
+            <p>
+                I knew I had enough nearly enough association requirements met between 
+                <code className='code-block'>User</code>, 
+                <code className='code-block'>Wine</code> and 
+                <code className='code-block'>Review</code>, 
+                however, I wasn’t sure about user submittable attributes so I added in the dynamic source based associations 
+                with <code className='code-block'>LikedReview</code>, 
+                this allowed to change the tense of the has_many through 
+                the liked_reviews to allow a differentiation in chaining agains users vs. reviews themselves, 
+                all via the opposite source.
+            </p>
+            
+            <p>
+                <strong>This required a couple other modifications</strong><br/>
+                Instead of a 
+                <code className='code-block'>LikedReviews controller</code>, 
+                <code className='code-block'>#like</code> was added to the 
+                <code className='code-block'>ReviewsController</code> as its own method:
+            </p>
+            
+            <pre className="pre-code code-block jsx">
+            {`            def like
+            @review = Review.find(params[:id])
+            type = params[:type]
+            if type == "like"
+        
+                current_user.likes &lt;&lt; @review
+                redirect_to like_review_path(current_user)
+        
+            elsif type == "unlike"
+                current_user.likes.delete(@review)          
+            end
+        end`}
+</pre>
+            
+            <p>**Additionally a new nested path was built specifying additional routes: **</p>
+            
+            <pre className="pre-code code-block jsx">
+                {`                 resources :reviews do
+                put :like, on: :member
+                get :like, on: :member
+            end`}
+</pre>
+            
+            <ul className='ul-squares'>
+                < li className='li-squares'>
+                    This added 2 routes necessary:
+                </li>
+            </ul>
+            
+            <pre className="pre-code code-block jsx">
+                {`like_review PUT    /reviews/:id/like(.:format)   reviews#like 
+            
+            GET    /reviews/:id/like(.:format)   reviews#like`}
+          </pre>
+            
+            <ul>
+                <li>
+                    PUT was used in /reviews/show.html.erb:<br/>
+                    To add the “like” or “unlike” functions that were sent back to reviews#like<br/>
+                    And essntially become the user submittable attribute upon a review created
+                </li>
+                <li>
+                    GET was used in /reviews/like.html.erb<br/>
+                    To visit the current users liked reviews with the url /reviews/:id/like<br/>
+                    Can of course do much more with it, however I was ready to turn the project in
+                </li>
+            </ul>
+            
+            <h3 className='core-subsection'>Places OmniAuth must appear:</h3>
+            
+            <p>
+                <em>And also noteworthy this is my quick summary, but I didn’t remember or discover all this on my own, I was 
+                referred to the following resource, describing most of these steps in greater detail at: 
+                <a href="https://medium.com/@rachel.hawa/google-authentication-strategy-for-rails-5-application-cd37947d2b1b" target='_blank' rel="noreferrer">
+                    Google Authentication Strategy
+                </a>
+                </em>
+            </p>
+            
+            <p><strong>In this case google based login:</strong></p>
+            
+            <ol className='numbered-blog'>
+                <li>
+                    Setting this up with google at, approximately <a href="https://console.developers.google.com" target='_blank' rel="noreferrer">Google Developers</a>
+                </li>
+                <li>
+                    Generally speaking create a new app and work with the omniauth tabs, there’s more to it than that, but that’s the gist
+                </li>
+                <li>Gemfile - needs three things added:</li>
+            </ol>
+            
+            <blockquote className="block-quote">
+                <p><code className='code-block'>Gem ‘omniauth’</code></p>
+                <p><code className='code-block'>gem 'dotenv-rails'</code></p>
+                <p><code className='code-block'>Gem 'omniauth-google-oauth2'</code></p>
+            </blockquote>
+            
+            <ol className='numbered-blog' start={4}>
+                <li>
+                    Create a <code className='code-block'>.env</code> file in the <code className='code-block'>root</code> of the app to add the google client_id and client_secret, found while setting new app within google developers console
+                </li>
+            </ol>
+            
+            <pre className="pre-code code-block jsx">
+                {`                So within the new .env file:
+            
+            GOOGLE_CLIENT_ID=&lt;generated number from google here&gt;'\u0300'
+            
+            GOOGLE_CLIENT_SECRET=&lt;generated number from google here&gt;'\u0300'`}
+                
 
-    //         <blockquote className="block-quote">
-    //             <p>
-    //                 Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each 
-    //                 of the array element between two given indices, inclusive. Once all operations have been performed, return 
-    //                 the maximum value in your array.
-    //             </p>
-    //         </blockquote>
+            </pre>
+            
+            <p>5) add .env to .gitignore file, just type in</p>
+            
+            <blockquote className="block-quote"><p><code className='code-block'>.env</code></p></blockquote>
+            
+            <ul className='ul-squares'><li className='li-squares'>add to the list of items ignored by github</li></ul>
+            
+            <p>6) Create a omniauth.rb in /config/initializers, add all of this:</p>
+            
+            <pre className="pre-code code-block jsx">
+                {`            Rails.application.config.middleware.use OmniAuth::Builder do
+                provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"],ENV["GOOGLE_CLIENT_SECRET"], skip_jwt: true
+            end
+            `}    
+            
+</pre>
+            
+            <p>7) In routes.rb add:</p>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>get '/auth/:provider/callback' =&gt; 'sessions#omniauth'</code>
+                </p>
+            </blockquote>
+            
+            <p>8) In user.rb</p>
+            
+            <pre className="pre-code code-block jsx">
+                {`def self.from_omniauth(auth)
+                where(email: auth.info.email).first_or_initialize do |user|
+                    user.username = auth.info.name
+                    user.email = auth.info.email
+                    user.password = SecureRandom.hex
+                end
+                end`}
+                
+</pre>
+            
+            <p>9) In SessionsController</p>
+            
+            <pre className="pre-code code-block jsx">
+                {`                def omniauth
+                @user = User.from_omniauth(auth)
+                @user.save
+                session[:user_id] = @user.id
+                redirect_to user_path(@user)
+                end
+                `}      
+</pre>
+            
+            <p>as well as:</p>
+            
+            <pre className="pre-code code-block jsx">
+                {`private
+            
+            def auth
+            request.env['omniauth.auth']
+            end`}</pre>
+            
+            <p>9) Basic link to use this to make a login/signup with google, placed wherever necessary:</p>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>
+                        &lt;%= link_to "Log In with Google", '/auth/google_oauth2' %&gt;
+                    </code>
+                </p>
+            </blockquote>
+            
+            <p>10) Optional: I found the branding icons at</p>
+            
+            <p><a href="https://developers.google.com/identity/branding-guidelines" target='_blank' rel="noreferrer">Google Branding Guidelines</a></p>
+            
+            <ul className='ul-squares'>
+                <li className='li-squares'>With a set of downloads of different types of google images and instructions for use</li>
+            </ul>
+            
+            <h3 className='core-subsection'>Speaking of logging, in don’t forget about in user.rb</h3>
+            
+            <blockquote className="block-quote">
+                <p>
+                    <code className='code-block'>has_secure_password</code>
+                </p>
+            </blockquote>
+            
+            <figure className="">
+                <img src="/blog/bottlewitheffects.png" alt="" className="" />
+                <figcaption>Also had fun in a photo editor!</figcaption>
+            </figure>
+        </div>,
 
-    //         <p>
-    //             Hmmm, ok.....After first reading through the intro, I wasn't sure what it was saying.  So I continued onto the 
-    //             illustrated example, which usually clarifies things:
-    //         </p>
-
-    //         <blockquote className="block-quote">
-    //             <p>
-    //                 For example, the length of your array of zeros n=10&nbsp;. Your list of queries is as follows:
-    //             </p>
-    //         </blockquote>
-
-    //         <pre className="">    
-    //             a b k
-    //             1 5 3
-    //             4 8 7
-    //             6 9 1
-    //         </pre>
-
-    //         <blockquote className="block-quote">
-    //             <p>
-    //                 Add the values of&nbsp;&nbsp;between the indices&nbsp;&nbsp;and&nbsp;&nbsp;inclusive:
-    //             </p>
-    //         </blockquote>
-
-    //         <pre className="">
-    //             index-&gt;	 1 2 3  4  5 6 7 8 9 10
-    //             [0,0,0, 0, 0,0,0,0,0, 0]
-    //             [3,3,3, 3, 3,0,0,0,0, 0]
-    //             [3,3,3,10,10,7,7,7,0, 0]
-    //             [3,3,3,10,10,8,8,8,1, 0]
-    //         </pre>
-
-    //         <blockquote className="block-quote">
-    //             <p>The largest value is 10&nbsp;&nbsp;after all operations are performed.</p>
-    //             <cite>
-    //                 <a href="https://www.hackerrank.com/challenges/crush/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=arrays">
-    //                     https://www.hackerrank.com/challenges/crush/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=arrays
-    //                 </a>
-    //             </cite>
-    //         </blockquote>
-
-    //         <p>
-    //             For whatever reason, when I first read through all this I didn't understand what it was saying.  So, just in case 
-    //             I thought I'd provide my own explanation to elaborate on the examples illustration:
-    //         </p>
-
-
-    //         <div className="">
-    //             <figure className="">
-    //                 {/* todo add image */}
-    //             </figure>
-    //         </div>
-
-    //         <p>
-    //             This was the part of the problem expressing "list of operations, for each operation add a value to each of the 
-    //             array element between two given indices, inclusive," and "list of queries."
-    //         </p>
-
-    //         <p></p>
-
-    //         <div className="">
-    //             <figure className="">
-    //                 {/* todo add image */}
-    //             </figure>
-    //         </div>
-
-    //         <p>
-    //             Column k is meant to be added to the array of 0's at the 1-indexed indices starting from column a and continuing on 
-    //             through column b. So column k are the "operations" the problem discusses, and column a b are the ranges, I suppose 
-    //             together one could classify each sub-array as the 'query.'
-    //         </p>
-
-    //         <p>The illustration provided was referencing each step of the query and the operation to be performed, in effect, but 
-    //             I made my own version below, with the example of n=10:   So as in the example n = 10:
-    //         </p>
-
-    //         <figure className="">
-    //             {/* todo add image */}
-    //             <figcaption>
-    //                 The reference to the 1-indexed array, meaning, in theory, if the array was indexed starting at 1 instead of 0. The second 
-    //                 line, referred to what the problem would be "Starting with a 1-indexed array of zeros...," this being defined in the 
-    //                 problem by n.
-    //             </figcaption>
-    //         </figure>
-
-    //         <p>The rest of the illustration comes from incorporating the first sub array, query, then adds the next, then the final,
-    //              etc. As I highlighted  more below:
-    //         </p>
-
-    //         <figure className="">
-    //             {/* todo add image */}
-    //             <figcaption>
-    //                 So from the first row queries and operations where k = 3 and a b = 1, 5; add 3 to each index 1 through 5
-    //             </figcaption>
-    //         </figure>
-
-    //         <figure className="">
-    //             {/* todo add image */}
-    //             <figcaption>
-    //                 Next row, where k = 7 and a, b = 4, 8; add 7 to each
-    //             </figcaption>
-    //         </figure>
-
-    //         <figure className="">
-    //             {/* todo add image */}
-    //             <figcaption>And finally, I won't describe, but</figcaption>
-    //         </figure>
-
-    //         <p>
-    //             So the final modification to the original array of 0's is arr = [3, 3, 3, 10, 10, 8, 8, 8, 1, 0].  The actual goal 
-    //             of the problem was to find the highest number within here, that being 10.
-    //         </p>
-
-    //         <p>So, onto, solving...Well I'll add it here tonight or tomorrow, I forgot I have followers and they might read it!  
-    //             I've gotten sleepy and hungry!
-    //         </p>
-
-    //         <h4>My Initial thoughts...</h4>
-
-    //         <p>
-    //             Once I figured out what the problem meant the solution seemed simple.  I would need some means of looping through 
-    //             each sub array, iterating through each sub arrays indices and adding on the value of k to that index.
-    //         </p>
-
-    //         <p>
-    //             My first solution, passed the initial tests and half of the tests or so in the final submission. The rest of the 
-    //             tests failed, because my code processing exceeded the time limits.  I went back to the drawing board and came up 
-    //             with a completely different solution, that also passed half the tests, and failed for time.  I kind of didn't think 
-    //             the second solution would have passed for time either, but I thought it was fun that I had two different approaches 
-    //             work, not sure why I find that fun since it didn't pass all the tests, but in case you want to know more:
-    //         </p>
-
-    //         <h4>What I used #1:</h4>
-
-    //         <p>In either case I started by filling an empty array of n length and filled it with 0's</p>
-    //     </div>,
-    //     date: '6/28/2020',
-    //     tags: ['JavaScript', 'practice'],
-    //     blogURL: 'interview-prep-arrays',
-    // },
-
+    }
+    
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
