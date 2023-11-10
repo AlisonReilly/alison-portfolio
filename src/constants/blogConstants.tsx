@@ -1430,16 +1430,8 @@ function calculateA(n, sLength, a_Count){
                 Generating a new skeleton of a Rails app, still frequently forgotten for now:
             </h3>
             
-            <blockquote className="block-quote">
-                <p>
-                    <pre className='pre-block'>
-                        <code className='code-block'>
-                            rails new &lt;filename-here&gt;
-                        </code>
-                    </pre>
-                </p>
-            </blockquote>
-            
+            <div className='code-block-snippet'>rails new &lt;filename-here&gt;</div>
+                            
              <ul className='ul-squares'>
                 <li className='li-squares'>
                     Why it’s important: creates nearly all the file structure necessary within the rails app, 
@@ -1464,14 +1456,14 @@ function calculateA(n, sLength, a_Count){
                 <li>git Commit command</li>
             </ol>
             
-            <div className="code-block-large">git commit - m “message here”</div>
+            <div className="code-block-snippet">git commit - m “message here”</div>
             
             <ol className='numbered-blog' start={3}>
                 <li>
                     <em>Error message: untracked files</em>
                 </li>
                 <li>Git track files/add files command <br/>
-                    <div className="code-block-large">git add &lt;filename&gt;/</div><br/>
+                    <div className="code-block-snippet">git add &lt;filename&gt;/</div><br/>
                     (In this case I added all the files listed as untracked, individually)
                 </li>
             </ol>
@@ -1482,7 +1474,7 @@ function calculateA(n, sLength, a_Count){
                 </li>
             </ol>
             
-            <div className="code-block-large">git push -u origin master</div>
+            <div className="code-block-snippet">git push -u origin master</div>
             
             <ul className='ul-squares'>
                 <li className='li-squares'>
@@ -1492,13 +1484,9 @@ function calculateA(n, sLength, a_Count){
             
             <h3 className='core-subsection'>Frequently used, and finally not too frequently forgotten</h3>
             
-            <blockquote className="block-quote">
-                <p>
-                    <code className='pre-block code-block'>
+            <div className="code-block-snippet">
                         rake db:migrate
-                    </code>
-                </p>
-            </blockquote>
+            </div>
             
             <ul className='ul-squares'>
                 <li className='li-squares'>
@@ -1507,7 +1495,7 @@ function calculateA(n, sLength, a_Count){
             </ul>
             
 
-            <div className="code-block-large">rake routes</div>
+            <div className="code-block-snippet">rake routes</div>
 
             
             <ul className='ul-squares'>
@@ -1516,15 +1504,9 @@ function calculateA(n, sLength, a_Count){
             
             <h3 className='core-subsection'>Links and redirects within rails</h3>
             
-            <blockquote className="block-quote">
-                <p>
-                    <pre className='pre-block'>
-                        <code className='code-block'>
-                            redirect_to &lt;some_named_path&gt;(optional variable depending)
-                        </code>
-                    </pre>
-                </p>
-            </blockquote>
+            <div className="code-block-snippet">
+                redirect_to &lt;some_named_path&gt;(optional variable depending)
+            </div>
             
             <ul className='ul-squares'>
                 <li className='li-squares'>
@@ -1532,27 +1514,15 @@ function calculateA(n, sLength, a_Count){
                 </li>
             </ul>
             
-            <blockquote className="block-quote">
-                <p>
-                    <pre className='pre-block'>
-                        <code className='code-block'>
-                            &lt;%= link_to “What you want the link to say”, &lt;some_named_path&gt;(variable depending) %&gt;
-                        </code>
-                    </pre>
-                </p>
-            </blockquote>
+            <div className="code-block-snippet">
+                &lt;%= link_to “What you want the link to say”, &lt;some_named_path&gt;(variable depending) %&gt;
+            </div>
             
             <p>Variation<br/>If the link needs to say what’s stored in a variable:</p>
             
-            <blockquote className="block-quote">
-                <p>
-                    <pre className='pre-block'>
-                        <code className='code-block'>
-                            &lt;%= link_to post.title, &lt;some_named_path&gt;(variable depending) %&gt;
-                        </code>
-                    </pre>
-                </p>
-            </blockquote>
+            <div className="code-block-snippet">
+                &lt;%= link_to post.title, &lt;some_named_path&gt;(variable depending) %&gt;
+            </div>
             
             <h3 className='core-subsection'>Various Migrations</h3>
             
@@ -1561,7 +1531,7 @@ function calculateA(n, sLength, a_Count){
                 Within -class CreateTableName &lt; ActiveRecord::Migration[5.2]
             </p>
             
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `def change
     create_table :table_name do |t|
         t.string :name
@@ -1575,27 +1545,27 @@ function calculateA(n, sLength, a_Count){
 end`
 
             }
-</pre>
+</div>
             
             <p><strong>Table additions, subractions and changes, within def change:</strong></p>
             
             <p>Drop table:</p>
     
-            <div className="code-block-large">drop_table :table_name</div>
+            <div className="code-block-snippet">drop_table :table_name</div>
 
             <p>Add column:</p>
             
-            <div className="code-block-large">add_column :table_name, :column_name, :column_type</div>
+            <div className="code-block-snippet">add_column :table_name, :column_name, :column_type</div>
 
             
             <p>Delete column:</p>
             
-            <div className="code-block-large">remove_column :table_name, :column_name</div>
+            <div className="code-block-snippet">remove_column :table_name, :column_name</div>
 
             
             <p>Change column type:</p>
             
-            <div className="code-block-large">change_column :table_name, :column_name, :new_type</div>
+            <div className="code-block-snippet">change_column :table_name, :column_name, :new_type</div>
 
             <h3 className='core-subsection'>
                 Explanation of Associations, as it applies to my project, * The Amateur Wine Reviewer *
@@ -1603,11 +1573,11 @@ end`
             
             <p>4 models were needed to ensure I was covering all the requirements, or so I thought, as I went along 
                 checking them off. The models are 
-                <div className="code-block-large">wine</div>, 
-                <div className="code-block-large">review</div>, 
-                <div className="code-block-large">user</div> and 
-                <div className="code-block-large">liked_review</div>. 
-                <div className="code-block-large">liked_review</div>
+                <div className="code-block-snippet">wine</div> 
+                <div className="code-block-snippet">review</div> 
+                <div className="code-block-snippet">user</div>
+                <div className="code-block-snippet">liked_review</div>
+                <div className="code-block-snippet">liked_review</div>
                 was added last in case review to user to wine was not sufficient enough for 2 of the 
                 requirements for the project<br/>
                 <em>I adapted this example from the following resource on stackoverflow: 
@@ -1653,11 +1623,11 @@ has_many :users, through: :reviews`}
             
             <p>
                 I knew I had enough nearly enough association requirements met between 
-                <div className="code-block-large">User</div>, 
-                <div className="code-block-large">Wine</div> and 
-                <div className="code-block-large">Review</div>, 
+                <div className="code-block-snippet">User</div>, 
+                <div className="code-block-snippet">Wine</div> and 
+                <div className="code-block-snippet">Review</div>, 
                 however, I wasn’t sure about user submittable attributes so I added in the dynamic source based associations 
-                with <div className="code-block-large">LikedReview</div>,
+                with <div className="code-block-snippet">LikedReview</div>,
                 this allowed to change the tense of the has_many through 
                 the liked_reviews to allow a differentiation in chaining against users vs. reviews themselves, 
                 all via the opposite source.
@@ -1666,13 +1636,12 @@ has_many :users, through: :reviews`}
             <p>
                 <strong>This required a couple other modifications</strong><br/>
                 Instead of a 
-                <div className="code-block-large">
-                <code className='code-block'>LikedReviews controller</code>, 
-                <code className='code-block'>#like</code> was added to the 
-                <code className='code-block'>ReviewsController</code> as its own method:</div>
+                <div className="code-block-snippet">LikedReviews controller</div>
+                <div className="code-block-snippet">#like</div> was added to the 
+                <div className="code-block-snippet">ReviewsController</div> as its own method:
             </p>
             
-            <pre className="pre-block code-block jsx">
+            <div className='code-block-large'>
             {`def like
     @review = Review.find(params[:id])
     type = params[:type]
@@ -1685,7 +1654,7 @@ has_many :users, through: :reviews`}
         current_user.likes.delete(@review)          
     end
 end`}
-</pre>
+</div>
             
             <p>**Additionally a new nested path was built specifying additional routes: **</p>
             
@@ -1708,13 +1677,13 @@ PUT /reviews/:id/like(.:format)   reviews#like
 GET /reviews/:id/like(.:format)   reviews#like`}
           </div>
             
-            <ul>
-                <li>
+            <ul className='ul-squares'>
+                <li className='li-squares'>
                     PUT was used in /reviews/show.html.erb:<br/>
                     To add the “like” or “unlike” functions that were sent back to reviews#like<br/>
                     And essentially become the user submittable attribute upon a review created
                 </li>
-                <li>
+                <li className='li-squares'>
                     GET was used in /reviews/like.html.erb<br/>
                     To visit the current users liked reviews with the url /reviews/:id/like<br/>
                     Can of course do much more with it, however I was ready to turn the project in
@@ -1745,15 +1714,15 @@ GET /reviews/:id/like(.:format)   reviews#like`}
             </ol>
             
             <blockquote className="block-quote">
-                <div className="code-block-large">Gem ‘omniauth’</div>
-                <div className="code-block-large">gem 'dotenv-rails'</div>
-                <div className="code-block-large">Gem 'omniauth-google-oauth2'</div>
+                <div className="code-block-snippet">Gem ‘omniauth’</div>
+                <div className="code-block-snippet">gem 'dotenv-rails'</div>
+                <div className="code-block-snippet">Gem 'omniauth-google-oauth2'</div>
             </blockquote>
             
             <ol className='numbered-blog' start={4}>
                 <li>
                     Create an {" "} 
-                    <span className='code-block-large'>.env</span> 
+                    <span className='inline-code-emphasis'>.env</span> 
                     {" "} root of the app to add the google client_id and client_secret, 
                         found while setting new app within google developers console
                 </li>
@@ -1771,7 +1740,7 @@ GOOGLE_CLIENT_SECRET=&lt;generated number from google here&gt;'\u0300'`}
             
             <p>5) add .env to .gitignore file, just type in</p>
             
-            <div className="code-block-large">.env</div>
+            <div className="code-block-snippet">.env</div>
             
             <ul className='ul-squares'><li className='li-squares'>add to the list of items ignored by github</li></ul>
             
@@ -1787,7 +1756,7 @@ end
             
             <p>7) In routes.rb add:</p>
             
-                <div className='code-block-large'>get '/auth/:provider/callback' =&gt; 'sessions#omniauth'</div>
+                <div className='code-block-snippet'>get '/auth/:provider/callback' =&gt; 'sessions#omniauth'</div>
             
             <p>8) In user.rb</p>
             
@@ -1816,7 +1785,7 @@ end
             
             <p>as well as:</p>
             
-            <div className="code-block-large">
+            <div className="code-block-snippet">
             {`private
             
 def auth
@@ -1842,10 +1811,10 @@ end`}
             
             <h3 className='core-subsection'>Speaking of logging, in don’t forget about in user.rb</h3>
             
-            <div className="code-block-large">has_secure_password</div>
+            <div className="code-block-snippet">has_secure_password</div>
             
             <figure className="">
-                <img src="/blog/bottlewitheffects.png" alt="artistic wine bottle" className="" />
+                <img src="/blog/bottlewitheffects.png" alt="artistic wine bottle" className="feature-image" />
                 <figcaption className='caption'>Also had fun in a photo editor!</figcaption>
             </figure>
         </div>,
