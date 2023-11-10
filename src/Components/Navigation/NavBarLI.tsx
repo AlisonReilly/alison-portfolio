@@ -10,11 +10,12 @@ import { Link } from 'react-router-dom';
 
 type NavBarLIProps = {
     mainNav: NavItem;
+    liIndex: number;
 }
 
 
 export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>> = ({
-    mainNav,
+    liIndex, mainNav,
     ...htmlProps}) => { 
     const [isSubOpen, setIsSubOpen] = useState<boolean>(false);
     const LIRef = createRef<HTMLLIElement>();
@@ -40,7 +41,7 @@ export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>>
     }
 
     return (
-        <li key={`${mainNav.name}-main`} ref={LIRef} id='increment' className={`main-li ${location.pathname === '/blog' ? 'blog-style-border' : 'primary-style-border'}`} tabIndex={mainNav.subNav ? 0 : -1} onClick={handleClick}>
+        <li key={`${liIndex}-main`} ref={LIRef} id='increment' className={`main-li ${location.pathname === '/blog' ? 'blog-style-border' : 'primary-style-border'}`} tabIndex={mainNav.subNav ? 0 : -1} onClick={handleClick}>
             <span id='small-tick' className={`${location.pathname === '/blog' ? 'blog-tick' : 'primary-tick'}`}>
                 {'| '.repeat(mainNav.name.replace(/\s/g, '').length * 1.75 + 4)}
             </span>
@@ -52,8 +53,8 @@ export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>>
                 <ul  className={`glass sub-nav-ul ${isSubOpen ? 'sub-nav-ul-open' : 'sub-nav-ul-closed'}`}>
                     {mainNav.subNav.map((si, k) => 
                         <>
-                            <li key={`${si.name}-sub`}  id='MainNavColor' className='flexrow bracket-wrapper'>
-                                <Link className='modern-link flexrow primary-sub' to={si.href ? si.href : ''}><span className='bracket'>[ </span><span className='bracket-text'>{si.name}</span></Link>    
+                            <li key={`${k}-sub`} id={`${k}-sub`} className='flexrow bracket-wrapper MainNavColor'>
+                                <Link key={`${k}-link`} id={`${k}-link`} className='modern-link flexrow primary-sub' to={si.href ? si.href : ''}><span className='bracket'>[ </span><span className='bracket-text'>{si.name}</span></Link>    
                             </li>
                         </>
                     )}

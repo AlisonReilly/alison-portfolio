@@ -20,7 +20,7 @@ export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = (
             <ul className={`horizontal-nav ${location.pathname === '/blog' ? 'blog-style' : 'primary-style'}`}>
             {MainNavItems.map((i, k) =>
                 <>
-                    <NavBarLI key={`${k}-top-nav`} mainNav={i} />
+                    <NavBarLI key={`${k}-top-nav`} id={`${k}-top-nav`} liIndex={k} mainNav={i} />
                 </>
             )}
             </ul>

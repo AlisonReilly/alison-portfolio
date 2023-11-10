@@ -1,10 +1,7 @@
 import React from 'react';
-// import { ProfileHeader } from '../Components/ProfileHeader';
-// import { NavBar } from '../Components/Navigation/NavBar';
 import '../../Styles/Resume.css';
-import { Education, ResumeEntries } from '../../constants/dataConstants';
-// import { MobileNav } from '../Components/Navigation/MobileNavUL';
-  
+import { ResumeEntries } from '../../constants/dataConstants';
+
 
 type ExperienceProps = {
     text?: string;

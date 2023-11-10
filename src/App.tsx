@@ -28,7 +28,7 @@ function App() {
         <Route path="/resume" element={<Resume/>}/>
         <Route path="/blog" element={<Blog posts={CurrentBlogPosts}/>}/>
         {CurrentBlogPosts && CurrentBlogPosts.map((p, i) => 
-            <Route path={`/${p.blogURL}`} element={<BlogRead title={p.title} blogContent={p.content}/>}/>
+            <Route key={`${i}-${p.blogURL}`} path={`/${p.blogURL}`} element={<BlogRead title={p.title} blogContent={p.content}/>}/>
         )}
       </Routes>
       <Outlet />

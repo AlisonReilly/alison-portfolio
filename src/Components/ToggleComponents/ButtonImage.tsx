@@ -16,11 +16,13 @@ export const ButtonImage: React.FC<ButtonImageProps & React.HTMLProps<HTMLDivEle
     className, externalLink, internalBlog, link, linkText, image, linkTextColor }) => { 
     return (<div className='flexcolumn' style={{ rowGap: '10px' }}>
                 <a 
+                    aria-hidden='true'
                     className={`modern-link ${className}`} 
                     href={link} 
                     style={{ backgroundImage: `URL(${image})`, backgroundSize: 'contain'}} 
                     target={externalLink ? '_blank' : ''}
-                    />
+                    rel={externalLink ? 'noreferrer' : ''}
+                    > </a>
                 {internalBlog 
                 ? 
                 <a 

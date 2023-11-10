@@ -19,15 +19,15 @@
     font-family: 'Michroma', sans-serif;
 }
 
-#MainNavColor {
+.MainNavColor {
     color: #E49273;
 }
 
-#MainNavColor:visited {
+.MainNavColor:visited {
     color: #E49273;
 }
 
-#MainNavColor:hover, #MainNavColor:active {
+.MainNavColor:hover, .MainNavColor:active {
     color: white;
 }
 

@@ -15,13 +15,7 @@ export const VideoDisplay: React.FC<VideoDisplayProps & React.HTMLProps<HTMLDivE
                 height="200" 
                 src={video}
                 title="YouTube video player" 
-                allow="accelerometer; 
-                    autoplay; 
-                    clipboard-write; 
-                    encrypted-media; 
-                    gyroscope; 
-                    picture-in-picture; 
-                    web-share" 
+                allow="web-share" 
                 allowFullScreen 
             />
         </div>
