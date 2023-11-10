@@ -16,7 +16,7 @@ p {
 .ul-squares {
     display: inline-block;
     margin-left: 40px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .li-squares {
@@ -44,18 +44,29 @@ p {
     color: #90868B;
 }
 
-.blog-read-content p {
-
-}
-
-.pre-code {
+.pre-block {
     padding: 10px;
     background-color: grey;
     width: fit-content;
+    overflow-x: scroll;
+
 }
 
-.jsx {
-    
+.code-block {
+    font-size: 16px;
+    color: black;
+    overflow-x: scroll;
+}
+
+.code-block-large {
+    font-size: 16px;
+    white-space: pre;
+    width: 90vw;
+    overflow-x: scroll;
+    background-color: grey;
+    color: black;
+    font-family: monospace;
+    padding: 10px;
 }
 
 .anchors {
@@ -68,10 +79,7 @@ p {
 
 }
 
-.code-block {
-    font-size: 22px;
-    color: black;
-}
+
 
 .caption {
     /* float: right; */
@@ -85,7 +93,7 @@ p {
 }
 
 .numbered-blog {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .quote-block {
@@ -111,6 +119,18 @@ p {
     }
 
     .anchors {
+        font-size: 25px;
+    }
+
+    .code-block {
+        font-size: 22px;
+    }
+
+    .ul-squares {
+        font-size: 25px;
+    }
+
+    .numbered-blog {
         font-size: 25px;
     }
 }

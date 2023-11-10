@@ -270,9 +270,9 @@ export const CurrentBlogPosts: BlogPost[] = [
                 to utilize web scraping with nokogiri, the main focus of the project:
             </p>
             
-            <p>
-                <pre className='pre-code'><code className='code-block'>spec.add_development_dependency "pry" | spec.add_development_dependency "nokogiri"</code></pre>
-            </p>
+            <div className="code-block-large">
+                spec.add_development_dependency "pry" | spec.add_development_dependency "nokogiri"
+            </div>
             
             
             <h3 className='core-subsection'>Config or environment files:</h3>
@@ -380,33 +380,33 @@ export const CurrentBlogPosts: BlogPost[] = [
             
             <h3 className='core-subsection'>File Setup - first things, first</h3>
 
-            <pre className='pre-code jsx code-block'>{
+            <div className="code-block-large">{
                 `                if ActiveRecord::Migrator.needs_migration?
                 raise 'Migrations are pending.
                 Run rake 'db:migrate' to resolve the issue.'
             End`
             }
 
-            </pre>
+            </div>
 
             <p>To this:</p>
 
-            <pre className='pre-code jsx code-block'>{
+            <div className="code-block-large">{
                 `                if ActiveRecord::Base.connection.migration_context.needs_migration?
                 raise 'Migrations are pending. Run 'rake db:migrate' to resolve the issue.'
                 End`
             }
-            </pre>
+            </div>
 
             <p>At the moment I don’t remember the error code, but if I can reproduce it or find it, I will add it here.</p>
             <p>Excellent, everything is setup and a little test to see that everything is in place:</p>
 
-            <pre className='pre-code jsx code-block'>{
+            <div className="code-block-large">{
 
                 `get '/' do
                 "Hello World, Can this App Start?"
                 End`}
-            </pre>
+            </div>
             
             <p>Run shotgun in the terminal and…No. It can't start.</p>
             <p className='example or emphasis-block'>
@@ -483,14 +483,14 @@ export const CurrentBlogPosts: BlogPost[] = [
                 A variety of solutions are presented to find the processes that are causing the problem within the terminal:
             </p>
             
-            <p className='pre-code code-block jsx'>$ ps</p>
-            <p className='pre-code code-block jsx'>$ ps ax | grep rails</p>
-            <p className='pre-code code-block jsx'>$ ps ax | grep thin</p>
-            <p className='pre-code code-block jsx'>$ ps ax | grep ruby</p>
+            <div className="code-block-large">$ ps</div>
+            <div className="code-block-large">$ ps ax | grep rails</div>
+            <div className="code-block-large">$ ps ax | grep thin</div>
+            <div className="code-block-large">$ ps ax | grep ruby</div>
 
             <p>All of these return some type of numbers, the solution next to enter in the terminal:</p>
 
-            <p className='pre-code code-block jsx'>$ kill -9 #one of the numbers here</p>
+            <div className="code-block-large">$ kill -9 #one of the numbers here</div>
 
             <p>
                 I ran into the problem a couple of times while working and found that the most relevant to my current setup was 
@@ -532,14 +532,14 @@ export const CurrentBlogPosts: BlogPost[] = [
                 <li>
                     Including the <strong>gem 'bcrypt'</strong> in the Gemfile<br/>example:
                     <br/>
-                    <pre className='pre-code'><code className='code-block'>gem 'bcrypt', '~&gt; 3.1.7'</code></pre>
+                    <div className="code-block-large">gem 'bcrypt', '~&gt; 3.1.7'</div>
                 </li>
                 <li>
                     Incorporating a string based attribute in the User table called “<strong>password_digest</strong>”
                     <br/>example:
                     <br/>within a migration file:
                     <br/>
-                    <pre className='pre-code'><code className='code-block'>t.string "password_digest"</code></pre>
+                    <div className="code-block-large">t.string "password_digest"</div>
                 </li>
                 <li>
                     Adding/calling the method <strong>has_secure_password</strong> within the User model
@@ -547,7 +547,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </li>
             </ol>
 
-            <pre className='pre-code'> <code className="code-block">
+            <pre className='pre-block'> <code className="code-block">
                 class User &lt; ActiveRecord::Base<br/>
                     has_secure_password<br/>
                 end
@@ -559,7 +559,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                     Using the method <strong>.authenticate()</strong> in a sessions controller while checking the validity of the password 
                     in combination with the user’s username or other identifier
                     <br/>Example<br/>In the <code className='code-block'>def create</code> of a sessions controller:<br/>
-                    <pre className='pre-code'>
+                    <pre className='pre-block'>
                         <code className='code-block'>if @user &amp;&amp; 
                         @user.authenticate(params[:user][:password])
                         </code>
@@ -640,7 +640,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 described a bit more complexly than simply <code className='code-block'>has_secure_password</code>, for example:
             </p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
                 `require 'bcrypt'
 
     class User &lt; ActiveRecord::Base
@@ -675,7 +675,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 look:
             </p>
 
-            <pre className='code-block pre-code jsx'>{
+            <pre className='code-block pre-block jsx'>{
             `#File activemodel/lib/active_model/secure_password.rb, line 61
 
     def has_secure_password(attribute = :password, validations: true)
@@ -728,7 +728,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 Authenticating a session has one more reference to bcrypt, this built method also refers to bcrypt within its definition:
             </p>
             
-            <pre className="code-block pre-code jsx">{
+            <pre className="code-block pre-block jsx">{
             `#File activemodel/lib/active_model/secure_password.rb, line 96
 def authenticate(unencrypted_password)
     BCrypt::Password.new(password_digest).is_password?(unencrypted_password) &amp;&amp; self
@@ -1021,11 +1021,11 @@ end`
 
             <p>Isolate each color type, by filtering unique numbers with <strong>Set</strong>:</p>
 
-            <pre className="pre-code"><code className="code-block">let unique = &#091;...new Set(ar)]</code></pre>
+            <pre className="pre-block"><code className="code-block">let unique = &#091;...new Set(ar)]</code></pre>
 
             <p>Count occurrence of each unique sock color with <strong>reducer</strong>:</p>
 
-            <pre className="pre-code">
+            <pre className="pre-block">
                 <code className="code-block">
                     (array, number) =&gt; array.reduce((acc, val) =&gt; (val === number ? acc + 1 : acc), 0);
                 </code>
@@ -1033,7 +1033,7 @@ end`
 
             <p>Add the reducer to a <strong>for loop</strong>, passing in the iterated unique socks array:</p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
             `for (let i = 0; i &lt; unique.length; i++) {
     let count = (countUnique(ar, unique&#091;i]))
 }`
@@ -1041,13 +1041,13 @@ end`
 
             <p>Round down  unique sock count divided by 2, in case of an odd number with <strong>Math.floor()</strong></p>
 
-            <pre className="pre-code"><code className="code-block">let detMatchQty = Math.floor(count/2)</code></pre>
+            <pre className="pre-block"><code className="code-block">let detMatchQty = Math.floor(count/2)</code></pre>
 
             <p>Cool! I have matching socks, unlike my sock drawer!</p>
 
             <p>Full code if a reader might like:</p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
             `function sockMerchant(n, ar) {
     let matchCount = 0
     let unique = [...new Set(ar)]
@@ -1116,7 +1116,7 @@ array.reduce((acc, val) =&gt;
                 <strong> .split()</strong>:
             </p>
 
-            <pre className='pre-code'>
+            <pre className='pre-block'>
                 <code className='code-block'>
                     let enteredValley = 0;<br/>
                     let altitude = 0;<br/>
@@ -1126,7 +1126,7 @@ array.reduce((acc, val) =&gt;
 
             <p>I used a helper function to track altitude:</p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
             `function handleAltitude(step, alt){
     if(step === "D"){
         alt--
@@ -1142,7 +1142,7 @@ array.reduce((acc, val) =&gt;
                 the next step === "D"
             </p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
             `for (let i = 0; i &lt; steps.length; i++){
     if (altitude === 0 &amp;&amp; steps&#091;i] === "D"){
         enteredValley++
@@ -1152,7 +1152,7 @@ array.reduce((acc, val) =&gt;
 
             <p>And...eventually, I tracked some valley hiking!</p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
             `function countingValleys(n, s) {
     let enteredValley = 0
     let altitude = 0
@@ -1238,14 +1238,14 @@ function handleAltitude(step, alt){
 
             <p>I counted the a's in the given string with .match(regex) and .length</p>
             
-            <pre className="pre-code"><code className='code-block'>const a_Count = (s.match(/a/g)||&#091;]).length</code></pre>
+            <pre className="pre-block"><code className='code-block'>const a_Count = (s.match(/a/g)||&#091;]).length</code></pre>
 
             <p>
                 Used an if/else to go ahead and calculate if n % string.length === 0 and called the following external function, 
                 calculateA() if it was:
             </p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
              `function calculateA(n, sLength, a_Count){
     const stringRepeat = Math.floor(n / sLength) 
     return a_Count * stringRepeat
@@ -1258,7 +1258,7 @@ function handleAltitude(step, alt){
                 would be needed, keeping it in the variable leftOver:
             </p>
 
-            <pre className="pre-code">
+            <pre className="pre-block">
                 <code className='code-block'>
                     const roundRepeat = Math.floor(n / sLength) <br/>
                     const leftOver = n - (roundRepeat * sLength)
@@ -1270,7 +1270,7 @@ function handleAltitude(step, alt){
                 regex/match to count the a's within the new string:
             </p>
 
-            <pre className="pre-code">
+            <pre className="pre-block">
                 <code className='code-block'>
                     const addPortion = s.slice(0, leftOver)<br/>
                     const additionalAs = (addPortion.match(/a/g)||&#091;]).length
@@ -1282,7 +1282,7 @@ function handleAltitude(step, alt){
                 additional As to the answer:
             </p>
 
-            <pre className="pre-code">
+            <pre className="pre-block">
                 <code className='code-block'>
                     let roundedAnswer = calculateA(n, sLength, a_Count)<br/>
                     answer = additionalAs + roundedAnswer
@@ -1291,7 +1291,7 @@ function handleAltitude(step, alt){
 
             <p>So that, is, my version of this exercise and the whole code below:</p>
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
             `function repeatedString(s, n) {
     let answer;
     const sLength = s.length
@@ -1364,7 +1364,7 @@ function calculateA(n, sLength, a_Count){
 
             <p>I set a jumps and position variable to 0 outside the loops:</p>
 
-            <pre className="pre-code">
+            <pre className="pre-block">
                 <code className='code-block'>
                     let jumps = 0;<br/>
                     let position = 0;
@@ -1373,7 +1373,7 @@ function calculateA(n, sLength, a_Count){
 
             <p>I used a <strong>while loop</strong> that set iteration condition based on the changing position:</p>
 
-            <pre className="pre-code">
+            <pre className="pre-block">
                 <code className='code-block'>
                     {`while (position &lt; c.length - 1) {`}
                 </code>
@@ -1386,7 +1386,7 @@ function calculateA(n, sLength, a_Count){
             </p>
 
 
-            <pre className="pre-code code-block jsx">{
+            <pre className="pre-block code-block jsx">{
             `function jumpingOnClouds(c) {
     let jumps = 0;
     let position = 0;
@@ -1432,7 +1432,7 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <pre className='pre-code'>
+                    <pre className='pre-block'>
                         <code className='code-block'>
                             rails new &lt;filename-here&gt;
                         </code>
@@ -1464,14 +1464,14 @@ function calculateA(n, sLength, a_Count){
                 <li>git Commit command</li>
             </ol>
             
-            <p><pre className='pre-code'><code className='code-block'>git commit - m “message here”</code></pre></p>
+            <div className="code-block-large">git commit - m “message here”</div>
             
             <ol className='numbered-blog' start={3}>
                 <li>
                     <em>Error message: untracked files</em>
                 </li>
                 <li>Git track files/add files command <br/>
-                    <pre className='pre-code'><code className='code-block'>git add &lt;filename&gt;/</code></pre><br/>
+                    <div className="code-block-large">git add &lt;filename&gt;/</div><br/>
                     (In this case I added all the files listed as untracked, individually)
                 </li>
             </ol>
@@ -1482,7 +1482,7 @@ function calculateA(n, sLength, a_Count){
                 </li>
             </ol>
             
-            <p><pre className='pre-code'><code className='code-block'>git push -u origin master</code></pre>v</p>
+            <div className="code-block-large">git push -u origin master</div>
             
             <ul className='ul-squares'>
                 <li className='li-squares'>
@@ -1494,7 +1494,7 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <code className='code-block'>
+                    <code className='pre-block code-block'>
                         rake db:migrate
                     </code>
                 </p>
@@ -1506,11 +1506,9 @@ function calculateA(n, sLength, a_Count){
                 </li>
             </ul>
             
-            <blockquote className="block-quote">
-                <p>
-                    <pre className='pre-code'><code className='code-block'>rake routes</code></pre>
-                </p>
-            </blockquote>
+
+            <div className="code-block-large">rake routes</div>
+
             
             <ul className='ul-squares'>
                 <li className='li-squares'>find all available routes as are currently defined in config/routes.rb</li>
@@ -1520,7 +1518,7 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <pre className='pre-code'>
+                    <pre className='pre-block'>
                         <code className='code-block'>
                             redirect_to &lt;some_named_path&gt;(optional variable depending)
                         </code>
@@ -1536,7 +1534,7 @@ function calculateA(n, sLength, a_Count){
             
             <blockquote className="block-quote">
                 <p>
-                    <pre className='pre-code'>
+                    <pre className='pre-block'>
                         <code className='code-block'>
                             &lt;%= link_to “What you want the link to say”, &lt;some_named_path&gt;(variable depending) %&gt;
                         </code>
@@ -1546,9 +1544,9 @@ function calculateA(n, sLength, a_Count){
             
             <p>Variation<br/>If the link needs to say what’s stored in a variable:</p>
             
-            <blockquote className="wp-block-quote">
+            <blockquote className="block-quote">
                 <p>
-                    <pre className='pre-code'>
+                    <pre className='pre-block'>
                         <code className='code-block'>
                             &lt;%= link_to post.title, &lt;some_named_path&gt;(variable depending) %&gt;
                         </code>
@@ -1563,19 +1561,18 @@ function calculateA(n, sLength, a_Count){
                 Within -class CreateTableName &lt; ActiveRecord::Migration[5.2]
             </p>
             
-            <pre className="pre-code code-block jsx">
-            {
-                `            def change
-                create_table :table_name do |t|
-                t.string :name
-                t.string :password_digest
-                t.date :today 
-                    t.boolean :yes-or-no 
-                    t.integer :quantity 
-                    t.belongs_to :user, index: true, foreign_key: true
-                t.references :favorited, polymorphic: true, index: true
-                end
-                end`
+            <pre className="pre-block code-block jsx">{
+            `def change
+    create_table :table_name do |t|
+        t.string :name
+        t.string :password_digest
+        t.date :today 
+        t.boolean :yes-or-no 
+        t.integer :quantity 
+        t.belongs_to :user, index: true, foreign_key: true
+        t.references :favorited, polymorphic: true, index: true
+    end
+end`
 
             }
 </pre>
@@ -1583,42 +1580,34 @@ function calculateA(n, sLength, a_Count){
             <p><strong>Table additions, subractions and changes, within def change:</strong></p>
             
             <p>Drop table:</p>
-            
-            <blockquote className="block-quote">
-                <p><pre className='pre-code'><code className='code-block'>drop_table :table_name</code></pre></p>
-            </blockquote>
-            
+    
+            <div className="code-block-large">drop_table :table_name</div>
+
             <p>Add column:</p>
             
-            <blockquote className="block-quote">
-                <p>
-                    <pre className='pre-code'><code className='code-block'>add_column :table_name, :column_name, :column_type</code></pre>
-                </p>
-            </blockquote>
+            <div className="code-block-large">add_column :table_name, :column_name, :column_type</div>
+
             
             <p>Delete column:</p>
             
-            <blockquote className="block-quote">
-                <p><pre className='pre-code'><code className='code-block'>remove_column :table_name, :column_name</code></pre></p>
-            </blockquote>
+            <div className="code-block-large">remove_column :table_name, :column_name</div>
+
             
             <p>Change column type:</p>
             
-            <blockquote className="block-quote">
-                <p><pre className='pre-code'><code className='code-block'>change_column :table_name, :column_name, :new_type</code></pre></p>
-            </blockquote>
-            
+            <div className="code-block-large">change_column :table_name, :column_name, :new_type</div>
+
             <h3 className='core-subsection'>
                 Explanation of Associations, as it applies to my project, * The Amateur Wine Reviewer *
             </h3>
             
             <p>4 models were needed to ensure I was covering all the requirements, or so I thought, as I went along 
                 checking them off. The models are 
-                <pre className='pre-code'><code className='code-block'>wine</code>, 
-                <code className='code-block'>review</code>, 
-                <code className='code-block'>user</code> and 
-                <code className='code-block'>liked_review</code>. 
-                <code className='code-block'>liked_review</code> </pre>
+                <div className="code-block-large">wine</div>, 
+                <div className="code-block-large">review</div>, 
+                <div className="code-block-large">user</div> and 
+                <div className="code-block-large">liked_review</div>. 
+                <div className="code-block-large">liked_review</div>
                 was added last in case review to user to wine was not sufficient enough for 2 of the 
                 requirements for the project<br/>
                 <em>I adapted this example from the following resource on stackoverflow: 
@@ -1628,43 +1617,47 @@ function calculateA(n, sLength, a_Count){
                 </em>
             </p>
             
-            <pre className="pre-code code-block jsx">
-                {`in: class User
-            has_many :reviews    
-            has_many :wines, through: :reviews  
-            has_many :liked_reviews
-            has_many :likes, through: :liked_reviews, source: :review
+            <div className="code-block-large">{
+            `in: class User
+
+has_many :reviews    
+has_many :wines, through: :reviews  
+has_many :liked_reviews
+has_many :likes, through: :liked_reviews, source: :review
                 `}
-                </pre>
+                </div>
             
-            <pre className="pre-code code-block jsx">
-                {`            in: class LikedReview
-            belongs_to :user
-            belongs_to :review`}
-    </pre>
+                <div className="code-block-large">
+            {`in: class LikedReview
+
+belongs_to :user
+belongs_to :review`}
+    </div>
             
-            <pre className="pre-code code-block jsx">
-                {`in: class Review
-            belongs_to :user
-            belongs_to :wine 
-            has_many :liked_reviews
-            has_many :liked_by, through: :liked_reviews, source: :user`}
-   </pre>
+    <div className="code-block-large">
+            {`in: class Review
+
+belongs_to :user
+belongs_to :wine 
+has_many :liked_reviews
+has_many :liked_by, through: :liked_reviews, source: :user`}
+   </div>
             
-            <pre className="pre-code code-block jsx">
-                {`                in: class Wine
-            has_many :reviews  
-            has_many :users, through: :reviews`}
+   <div className="code-block-large">
+            {`in: class Wine
+
+has_many :reviews  
+has_many :users, through: :reviews`}
                 
-</pre>
+</div>
             
             <p>
                 I knew I had enough nearly enough association requirements met between 
-                <pre className='pre-code'><code className='code-block'>User</code>, 
-                <code className='code-block'>Wine</code> and 
-                <code className='code-block'>Review</code>, 
+                <div className="code-block-large">User</div>, 
+                <div className="code-block-large">Wine</div> and 
+                <div className="code-block-large">Review</div>, 
                 however, I wasn’t sure about user submittable attributes so I added in the dynamic source based associations 
-                with <code className='code-block'>LikedReview</code>, </pre>
+                with <div className="code-block-large">LikedReview</div>,
                 this allowed to change the tense of the has_many through 
                 the liked_reviews to allow a differentiation in chaining against users vs. reviews themselves, 
                 all via the opposite source.
@@ -1673,35 +1666,35 @@ function calculateA(n, sLength, a_Count){
             <p>
                 <strong>This required a couple other modifications</strong><br/>
                 Instead of a 
-                <pre className='pre-code'>
+                <div className="code-block-large">
                 <code className='code-block'>LikedReviews controller</code>, 
                 <code className='code-block'>#like</code> was added to the 
-                <code className='code-block'>ReviewsController</code> as its own method:</pre>
+                <code className='code-block'>ReviewsController</code> as its own method:</div>
             </p>
             
-            <pre className="pre-code code-block jsx">
-            {`            def like
-            @review = Review.find(params[:id])
-            type = params[:type]
-            if type == "like"
-        
-                current_user.likes &lt;&lt; @review
-                redirect_to like_review_path(current_user)
-        
-            elsif type == "unlike"
-                current_user.likes.delete(@review)          
-            end
-        end`}
+            <pre className="pre-block code-block jsx">
+            {`def like
+    @review = Review.find(params[:id])
+    type = params[:type]
+    if type == "like"
+
+        current_user.likes &lt;&lt; @review
+        redirect_to like_review_path(current_user)
+
+    elsif type == "unlike"
+        current_user.likes.delete(@review)          
+    end
+end`}
 </pre>
             
             <p>**Additionally a new nested path was built specifying additional routes: **</p>
             
-            <pre className="pre-code code-block jsx">
-                {`                 resources :reviews do
-                put :like, on: :member
-                get :like, on: :member
-            end`}
-</pre>
+            <div className="code-block-large">
+                {`resources :reviews do
+    put :like, on: :member
+    get :like, on: :member
+end`}
+</div>
             
             <ul className='ul-squares'>
                 < li className='li-squares'>
@@ -1709,17 +1702,17 @@ function calculateA(n, sLength, a_Count){
                 </li>
             </ul>
             
-            <pre className="pre-code code-block jsx">
-                {`like_review PUT    /reviews/:id/like(.:format)   reviews#like 
-            
-            GET    /reviews/:id/like(.:format)   reviews#like`}
-          </pre>
+            <div className="code-block-large">
+                {`like_review 
+PUT /reviews/:id/like(.:format)   reviews#like 
+GET /reviews/:id/like(.:format)   reviews#like`}
+          </div>
             
             <ul>
                 <li>
                     PUT was used in /reviews/show.html.erb:<br/>
                     To add the “like” or “unlike” functions that were sent back to reviews#like<br/>
-                    And essntially become the user submittable attribute upon a review created
+                    And essentially become the user submittable attribute upon a review created
                 </li>
                 <li>
                     GET was used in /reviews/like.html.erb<br/>
@@ -1743,7 +1736,7 @@ function calculateA(n, sLength, a_Count){
             
             <ol className='numbered-blog'>
                 <li>
-                    Setting this up with google at, approximately <a href="https://console.developers.google.com" target='_blank' rel="noreferrer">Google Developers</a>
+                    Setting this up with google at, approximately <a className='anchors' href="https://console.developers.google.com" target='_blank' rel="noreferrer">Google Developers</a>
                 </li>
                 <li>
                     Generally speaking create a new app and work with the omniauth tabs, there’s more to it than that, but that’s the gist
@@ -1752,99 +1745,92 @@ function calculateA(n, sLength, a_Count){
             </ol>
             
             <blockquote className="block-quote">
-                <p><pre className='pre-code'><code className='code-block'>Gem ‘omniauth’</code></pre></p>
-                <p><pre className='pre-code'><code className='code-block'>gem 'dotenv-rails'</code></pre></p>
-                <p><pre className='pre-code'><code className='code-block'>Gem 'omniauth-google-oauth2'</code></pre></p>
+                <div className="code-block-large">Gem ‘omniauth’</div>
+                <div className="code-block-large">gem 'dotenv-rails'</div>
+                <div className="code-block-large">Gem 'omniauth-google-oauth2'</div>
             </blockquote>
             
             <ol className='numbered-blog' start={4}>
                 <li>
-                    Create a <pre className='pre-code'>
-                        <code className='code-block'>.env</code> file in the 
-                        <code className='code-block'>root</code> of the app to add the google client_id and client_secret, 
-                        found while setting new app within google developers console</pre>
+                    Create an {" "} 
+                    <span className='code-block-large'>.env</span> 
+                    {" "} root of the app to add the google client_id and client_secret, 
+                        found while setting new app within google developers console
                 </li>
             </ol>
             
-            <pre className="pre-code code-block jsx">
-                {`                So within the new .env file:
+            <div className="code-block-large">
+                {`So within the new .env file:
             
-            GOOGLE_CLIENT_ID=&lt;generated number from google here&gt;'\u0300'
-            
-            GOOGLE_CLIENT_SECRET=&lt;generated number from google here&gt;'\u0300'`}
+GOOGLE_CLIENT_ID=&lt;generated number from google here&gt;'\u0300'
+
+GOOGLE_CLIENT_SECRET=&lt;generated number from google here&gt;'\u0300'`}
                 
 
-            </pre>
+            </div>
             
             <p>5) add .env to .gitignore file, just type in</p>
             
-            <blockquote className="block-quote"><p><pre className='pre-code'><code className='code-block'>.env</code></pre></p></blockquote>
+            <div className="code-block-large">.env</div>
             
             <ul className='ul-squares'><li className='li-squares'>add to the list of items ignored by github</li></ul>
             
             <p>6) Create a omniauth.rb in /config/initializers, add all of this:</p>
             
-            <pre className="pre-code code-block jsx">
-                {`            Rails.application.config.middleware.use OmniAuth::Builder do
-                provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"],ENV["GOOGLE_CLIENT_SECRET"], skip_jwt: true
-            end
-            `}    
+            <div className="code-block-large">
+            {`Rails.application.config.middleware.use OmniAuth::Builder do
+    provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"],ENV["GOOGLE_CLIENT_SECRET"], skip_jwt: true
+end
+`}    
             
-</pre>
+</div>
             
             <p>7) In routes.rb add:</p>
             
-            <blockquote className="block-quote">
-                <p>
-                <pre className='pre-code'><code className='code-block'>get '/auth/:provider/callback' =&gt; 'sessions#omniauth'</code></pre>
-                </p>
-            </blockquote>
+                <div className='code-block-large'>get '/auth/:provider/callback' =&gt; 'sessions#omniauth'</div>
             
             <p>8) In user.rb</p>
             
-            <pre className="pre-code code-block jsx">
+            <div className="code-block-large">
                 {`def self.from_omniauth(auth)
-                where(email: auth.info.email).first_or_initialize do |user|
-                    user.username = auth.info.name
-                    user.email = auth.info.email
-                    user.password = SecureRandom.hex
-                end
-                end`}
+    where(email: auth.info.email).first_or_initialize do |user|
+        user.username = auth.info.name
+        user.email = auth.info.email
+        user.password = SecureRandom.hex
+    end
+end`}
                 
-</pre>
+</div>
             
             <p>9) In SessionsController</p>
             
-            <pre className="pre-code code-block jsx">
-                {`                def omniauth
-                @user = User.from_omniauth(auth)
-                @user.save
-                session[:user_id] = @user.id
-                redirect_to user_path(@user)
-                end
-                `}      
-</pre>
+            <div className="code-block-large">
+                {`def omniauth
+    @user = User.from_omniauth(auth)
+    @user.save
+    session[:user_id] = @user.id
+    redirect_to user_path(@user)
+end
+`}      
+</div>
             
             <p>as well as:</p>
             
-            <pre className="pre-code code-block jsx">
-                {`private
+            <div className="code-block-large">
+            {`private
             
-            def auth
-            request.env['omniauth.auth']
-            end`}</pre>
+def auth
+    request.env['omniauth.auth']
+end`}
+            </div>
             
             <p>9) Basic link to use this to make a login/signup with google, placed wherever necessary:</p>
+
+            <div className='code-block-large'>&lt;%= link_to "Log In with Google", '/auth/google_oauth2' %&gt;</div>
             
-            <blockquote className="block-quote">
-                <p>
-                    <pre className='pre-code'>
-                        <code className='code-block'>
-                            &lt;%= link_to "Log In with Google", '/auth/google_oauth2' %&gt;
-                        </code>
-                    </pre>
-                </p>
-            </blockquote>
+            <div className="code-block-large">
+                &lt;%= link_to "Log In with Google", '/auth/google_oauth2' %&gt;
+            </div>
             
             <p>10) Optional: I found the branding icons at</p>
             
@@ -1856,11 +1842,7 @@ function calculateA(n, sLength, a_Count){
             
             <h3 className='core-subsection'>Speaking of logging, in don’t forget about in user.rb</h3>
             
-            <blockquote className="block-quote">
-                <p>
-                <pre className='pre-code'><code className='code-block'>has_secure_password</code></pre>
-                </p>
-            </blockquote>
+            <div className="code-block-large">has_secure_password</div>
             
             <figure className="">
                 <img src="/blog/bottlewitheffects.png" alt="artistic wine bottle" className="" />
