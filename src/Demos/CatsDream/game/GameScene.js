@@ -39,6 +39,12 @@ class GameScene extends Phaser.Scene {
         this.load.image('magic', '/magicb.png');
         this.load.spritesheet('enemy', 'enemyspritesheet.png', { frameWidth: 32, frameHeight: 32 });
         this.load.spritesheet('firefly', 'fireflyspritesheet.png', { frameWidth: 17, frameHeight: 17 });
+
+        // this adds the joystick, see below for todos
+        // should tech (I think be able to add this in a more traditional way since installed)
+        var url;
+        url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js';
+        this.load.plugin('rexvirtualjoystickplugin', url, true);
     }
 
     create(){
@@ -156,8 +162,24 @@ class GameScene extends Phaser.Scene {
           this.collectff++;
           this.collectText.setText(`Fireflies collected: ${this.collectff}`);
       })
-     
 
+
+        // todo, adds mobile joystick approx as expected
+        // but need to make sure always bottom left corner
+        // need to add a 'fire' button
+        // need to hookup to cat
+        // also shouldn't necessarily have to preload in the method in this preload since
+        // installed
+        this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
+            x: 50,
+            y: 300,
+            radius: 100,
+            base: this.add.circle(0, 0, 50, 0x888888),
+            thumb: this.add.circle(0, 0, 20, 0xcccccc),
+            // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
+            // forceMin: 16,
+            // enable: true
+        })
     }
 
     update(){
