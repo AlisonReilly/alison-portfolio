@@ -2,8 +2,6 @@ import React from 'react';
 import '../Styles/About.css';
 
 
-  
-
 type AboutProps = {
     text?: string;
     classNames?: string;
@@ -12,10 +10,7 @@ type AboutProps = {
 
 export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = ({
     classNames, pageLoading, text, ...htmlProps}) => { 
-
     return (
-    
-
         <div id='About' className='main-wrapper'>
             {!pageLoading 
             ? 
