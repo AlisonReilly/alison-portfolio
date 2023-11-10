@@ -24,7 +24,7 @@ export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDi
                         <div className='single-line date left'>{r.date}</div>
                         <div className='single-line location'>{r.location}</div>
                     </div>
-                    <div className='whole-grid'>{r.description}</div>       
+                    <div className='desc-summary'>{r.description}</div>       
                     <ul className='bullets experience-details whole-grid'>{r.achieved && r.achieved.map((a, i) => 
                         <li>{a}</li>
                     )}

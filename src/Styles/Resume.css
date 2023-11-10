@@ -15,7 +15,7 @@
     flex-direction: column;
 }
 
-.description {
+.desc-summary {
     max-width: 90vw;
     margin-right: 10px;
 }
@@ -33,11 +33,12 @@
     margin-right: 20px;
     justify-content: center;
     max-width: 95vw;
+    font-size: 18px;
 }
 
 .org {
     font-weight: 900;
-    font-size: 18px;
+    font-size: 20px;
     width: 100px;
 }
 
@@ -79,7 +80,7 @@
 
 .each-skill {
     padding: 5px;
-    border: 1px solid #F18F01
+    border: 1px solid #F18F01;
 }
 
 .experience-details {
@@ -87,7 +88,6 @@
     margin-right: 20px;
     display: block;
     max-width: 800px;
-
 }
 
 .single-line {
@@ -142,6 +142,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        font-size: 22px;
 
     }
 
@@ -163,8 +164,21 @@
         display: unset;
     }
 
-    .description {
-        min-width: 850px;
+    .desc-summary{
+        /* min-width: 850px; */
+        max-width: 950px;
+    }
+
+    .desc-summary-edu {
+        min-width: 950px;
+    }
+
+    .org {
+        font-size: 25px;
+    }
+
+    .section-header {
+        font-size: 30px;
     }
 
 }

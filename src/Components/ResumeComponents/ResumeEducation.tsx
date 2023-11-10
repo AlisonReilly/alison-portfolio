@@ -23,7 +23,7 @@ export const ResumeEducation: React.FC<EduProps & React.HTMLProps<HTMLDivElement
                         <div className='single-line date left'>{r.date}</div>
                         <div className='single-line location'>{r.location}</div>
                     </div>
-                    <div className='whole-grid description'>{r.description}</div>       
+                    <div className='desc-summary-edu'>{r.description}</div>       
                     <ul className='bullets experience-details whole-grid'>{r.achieved && r.achieved.map((a, i) => 
                         <li>{a}</li>
                     )}
