@@ -1,6 +1,7 @@
 #Blog {
-    background: rgb(162,120,68);
-    background: linear-gradient(243deg, rgba(162,120,68,1) 3%, rgba(245,234,217,1) 35%, rgba(255,232,207,1) 54%, rgba(158,121,66,1) 100%); 
+    /* background: rgb(162,120,68);
+    background: linear-gradient(243deg, rgba(162,120,68,1) 3%, rgba(245,234,217,1) 35%, rgba(255,232,207,1) 54%, rgba(158,121,66,1) 100%);  */
+    background-image: url('../../public/BGDiagramSteamPunk.png');
     margin-top: -50px;
     display: flex;
     flex-direction: column;
@@ -30,12 +31,12 @@
 
 .glassBlog {
     /* From https://css.glass */
-    background: rgba(15, 226, 255, 0.2);
+    background: rgba(198, 110, 154, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.6px);
-    -webkit-backdrop-filter: blur(7.6px);
-    border: 1px solid rgba(15, 227, 255, 0.471);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(81, 27, 79, 0.722);
 }
 
 .blog-preview-title {

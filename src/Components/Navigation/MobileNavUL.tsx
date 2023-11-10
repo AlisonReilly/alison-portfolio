@@ -1,4 +1,5 @@
 import React, { createRef, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { MainNavItems, NavItem } from '../../constants/dataConstants';
 import '../../Styles/MobileNav.css';
 import { MobileNavItem } from './MoblieNavLI';
@@ -12,6 +13,8 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
     menuItemData, text, ...htmlProps}) => { 
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const NavRef = createRef<HTMLElement>();
+
+    let location = useLocation();
 
     useEffect(() => {
         const handleClickOutside = (event: any) => {

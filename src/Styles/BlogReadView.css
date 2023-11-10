@@ -41,6 +41,7 @@ p {
     box-sizing: border-box;
     width: 100%;
     overflow-x: hidden;
+    color: #90868B;
 }
 
 .blog-read-content p {
@@ -59,10 +60,17 @@ p {
 
 .anchors {
     font-size: 25px;
+    color: #160d07;
+}
+
+.anchors:hover, .anchors:visited, .anchors:active {
+    color: #C19377;
+
 }
 
 .code-block {
     font-size: 22px;
+    color: black;
 }
 
 .caption {

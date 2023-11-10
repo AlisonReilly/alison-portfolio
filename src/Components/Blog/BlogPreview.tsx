@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../Styles/Blog.css';
-import { Link, Route, Routes } from 'react-router-dom';
-import { CurrentBlogPosts } from '../../constants/blogConstants';
-import { BlogRead } from './BlogRead';
+import { Link } from 'react-router-dom';
+
 
 type BlogPreviewProps = {
     altText?: string;
@@ -18,7 +17,7 @@ export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivEle
     blogURL, image, blogContent, title, date, tags, altText }) => {
 
     return (
-        <div id='BlogPreview' className=''>
+        <div id='BlogPreview' className='glassBlog'>
             <h2 className='blog-preview-title'>{title}</h2>
             <div className='blog-preview-date'>{date}</div>
             <div className='blog-preview-content'>{blogContent}</div>

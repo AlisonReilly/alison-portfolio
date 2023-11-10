@@ -87,7 +87,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 to be left to chance.”
             </p>
             
-            <a className='reference' href='www.random.org/quotations' rel="noreferrer" target='_blank'>www.random.org/quotations</a>
+            <a className='reference anchors' href='www.random.org/quotations' rel="noreferrer" target='_blank'>www.random.org/quotations</a>
 
             <p>
                 One of my first favorite topics and exercises in my Introduction to Computer Science class was producing a 
@@ -579,7 +579,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 <p>
                     “bcrypt() is a sophisticated and secure hash algorithm designed by The OpenBSD project for hashing passwords. The 
                     bcrypt Ruby gem provides a simple wrapper for safely handling passwords” 
-                    (<a href='https://rubygems.org/gems/bcrypt/versions/3.1.12' target='_blank' rel="noreferrer">Bcrypt, Ruby Gem</a>).
+                    (<a className='anchors' href='https://rubygems.org/gems/bcrypt/versions/3.1.12' target='_blank' rel="noreferrer">Bcrypt, Ruby Gem</a>).
                     </p>
             </blockquote>
 
@@ -589,7 +589,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             <blockquote className="block-quote">
                 <p>“Hash algorithms take a chunk of data (e.g., your user's password) and create a "digital fingerprint," or hash, 
                     of it. Because this process is not reversible, there's no way to go from the hash back to the password”
-                    <br/>(<a href='https://github.com/codahale/bcrypt-ruby' target='_blank' rel="noreferrer">Codahale Github, Bcrypt</a>).
+                    <br/>(<a className='anchors' href='https://github.com/codahale/bcrypt-ruby' target='_blank' rel="noreferrer">Codahale Github, Bcrypt</a>).
                 </p>
             </blockquote>
 
@@ -611,7 +611,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             <p>
                 So Bcrypt essentially uses a mathematical function called hashing to scramble up passwords, nearly irreversibly. 
                 There are several different types of hashing functions or techniques, mathematically speaking. Several are listed 
-                here: <a href='https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data' target='_blank' rel="noreferrer">Wiki Hash function</a>. In this context, it doesn’t always 
+                here: <a className='anchors' href='https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data' target='_blank' rel="noreferrer">Wiki Hash function</a>. In this context, it doesn’t always 
                 refer to security encryption, but is relevant, or at least interesting to me, to read about some of these 
                 processes, but a bit too much to go into for this blog purpose.
             </p>
@@ -659,7 +659,7 @@ export const CurrentBlogPosts: BlogPost[] = [
 
             }</pre>
              
-            <p>-From: <a href='https://github.com/codahale/bcrypt-ruby' target='_blank' rel="noreferrer">Github Bcrypt</a></p>
+            <p>-From: <a className='anchors' href='https://github.com/codahale/bcrypt-ruby' target='_blank' rel="noreferrer">Github Bcrypt</a></p>
              
             <p>
                 Their documentation goes onto mention, however, that later versions of rails incorporate this process within 
@@ -713,7 +713,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             </pre>
              
             <p>
-                -From: <a href='https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password' target='_blank' rel="noreferrer">Has Secure Password</a>
+                -From: <a className='anchors' href='https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password' target='_blank' rel="noreferrer">Has Secure Password</a>
             </p>
             
 
@@ -736,7 +736,7 @@ end`
             }</pre>
             <p>
                 -From: 
-                <a href='https://apidock.com/rails/ActiveModel/SecurePassword/InstanceMethodsOnActivation/authenticate' target='_blank' rel="noreferrer">
+                <a className='anchors' href='https://apidock.com/rails/ActiveModel/SecurePassword/InstanceMethodsOnActivation/authenticate' target='_blank' rel="noreferrer">
                     Secure Password Instance Methods
                 </a>
             </p>
@@ -770,13 +770,13 @@ end`
 
             <blockquote className="block-quote">
                 <p>
-                    <a href='https://www.youtube.com/channel/UCzQvgRgjjxhzEORvefubDPw' target="_blank" rel="noreferrer">JavaScript Teacher</a>
+                    <a className='anchors' href='https://www.youtube.com/channel/UCzQvgRgjjxhzEORvefubDPw' target="_blank" rel="noreferrer">JavaScript Teacher</a>
                 </p>
                 <p>
-                    <a href='https://www.youtube.com/channel/UCHpHBzk4fz3oeQ31hmCreGg' target="_blank" rel="noreferrer">Technologies4me</a>
+                    <a className='anchors' href='https://www.youtube.com/channel/UCHpHBzk4fz3oeQ31hmCreGg' target="_blank" rel="noreferrer">Technologies4me</a>
                 </p>
                 <p>
-                    <a href='https://www.youtube.com/channel/UCdS3ojA8RL8t1r18Gj1cl6w' target="_blank" rel="noreferrer">PothOnProgramming</a>
+                    <a className='anchors' href='https://www.youtube.com/channel/UCdS3ojA8RL8t1r18Gj1cl6w' target="_blank" rel="noreferrer">PothOnProgramming</a>
                 </p>
             </blockquote>
 
@@ -798,7 +798,7 @@ end`
 
             <blockquote className="block-quote">
                 <p>
-                    <a href='https://www.youtube.com/channel/UCr-5TdGkKszdbboXXsFZJTQ' target="_blank" rel="noreferrer">GamesFromScratch</a>
+                    <a className='anchors' href='https://www.youtube.com/channel/UCr-5TdGkKszdbboXXsFZJTQ' target="_blank" rel="noreferrer">GamesFromScratch</a>
                 </p>
             </blockquote>
 
@@ -818,7 +818,7 @@ end`
 
             <p>I eventually went onto Phaser’s website</p>
 
-            <blockquote className="block-quote"><p><a href='https://phaser.io/' target="_blank" rel="noreferrer">Phaser</a></p></blockquote>
+            <blockquote className="block-quote"><p><a className='anchors' href='https://phaser.io/' target="_blank" rel="noreferrer">Phaser</a></p></blockquote>
 
             <p>
                 They have a great introduction to their engine on their website including a very simple tutorial on how to make a 
@@ -837,9 +837,9 @@ end`
             </p>
 
             <p>I discovered other game making resources, free to use game art, for example, from 
-            <a href='https://opengameart.org/' target="_blank" rel="noreferrer">Open Game Art</a>.<br/>However, I couldn’t help but want to make my own art, got a little 
+            <a className='anchors' href='https://opengameart.org/' target="_blank" rel="noreferrer">Open Game Art</a>.<br/>However, I couldn’t help but want to make my own art, got a little 
                 stuck on what my game art theme and game may even be, so, while working through various phaser tutorials I 
-                started attempting my own game art, primarily on <a href='https://www.pixilart.com/draw#' target="_blank" rel="noreferrer">PixilArt</a><br/>I
+                started attempting my own game art, primarily on <a className='anchors' href='https://www.pixilart.com/draw#' target="_blank" rel="noreferrer">PixilArt</a><br/>I
                  eventually decided to use a random image I drew with Krita drawing software, a pink night sky with silhouetted 
                  black grass and trees as sort of a game’s title scene or landing page and figured to make game art based on this 
                  image, thus I came up with my game art theme. I made my animation frames for the player, enemy and an item to 
@@ -854,7 +854,7 @@ end`
             </p>
 
             <p>
-                Working through further Phaser tutorials with <a href='https://academy.zenva.com/' target="_blank" rel="noreferrer">Zenva</a><br/>I found a great 
+                Working through further Phaser tutorials with <a className='anchors' href='https://academy.zenva.com/' target="_blank" rel="noreferrer">Zenva</a><br/>I found a great 
                 deal of tilemap based games with a great deal of examples of different elements to add to a game and different 
                 playing styles. I had planned to add a few more such as NPC’s and different scene or level transitions, but in the 
                 interest of time I left it to one, at least for now.
@@ -906,12 +906,12 @@ end`
                 <p>For this blog I think I’m going to just do a simple listing of things accomplished or features used:</p>
 
                 <p>
-                    <strong><a href='https://www.npmjs.com/package/react-day-picker' target="_blank" rel="noreferrer">React-day-picker:</a></strong> <br/>What seems most popular is 
+                    <strong><a className='anchors' href='https://www.npmjs.com/package/react-day-picker' target="_blank" rel="noreferrer">React-day-picker:</a></strong> <br/>What seems most popular is 
                     the integration of a calendar view with user selected dates or date ranges is airbnb’s react-dates npm package. And 
                     yeah it’s fine. I tried 4 different calendar view packages in a separate program to see which one I liked working with 
                     best. Another reason my project took so long, more than likely! I ended up choosing, what I think part of react-dates 
                     uses actually is react-day-picker. I came across this while browsing hotel websites to see what they used, or to see 
-                    if I found any calendar integration that I favored, on <a href='https://www.loewshotels.com/' target="_blank" rel="noreferrer">Loews Hotels</a>. The understanding of how to 
+                    if I found any calendar integration that I favored, on <a className='anchors' href='https://www.loewshotels.com/' target="_blank" rel="noreferrer">Loews Hotels</a>. The understanding of how to 
                     style this calendar, enable the user to select a date range and, set dates disabled, I happened to find a little 
                     more straightforward to use. Also with easy access and I plan to integrate it eventually, is the ability to add 
                     data to each calendar day. The original Loew’s hotel calendar I stumbled upon had prices and hotel availability 
@@ -920,7 +920,7 @@ end`
                 </p>
             </div>
 
-            <p><strong><a href='https://guides.rubyonrails.org/action_mailer_basics.html' target="_blank" rel="noreferrer">Action Mailer:</a></strong> <br/>Action Mailer, is a 
+            <p><strong><a className='anchors' href='https://guides.rubyonrails.org/action_mailer_basics.html' target="_blank" rel="noreferrer">Action Mailer:</a></strong> <br/>Action Mailer, is a 
                 good time. A little tricky to get setup so you can see that you have actually sent out an email, once all the 
                 settings are correct, it is easily integrated into other actions in the controllers. It was a lot of fun after 
                 sitting at my computer for hours seeing an email that came from my localhost:3000. Currently, I have it set up 
@@ -974,8 +974,8 @@ end`
 
                 <p className=''>
                     I found I didn't get as much practice as I would have liked in my bootcamp like the coding exercises found on <em>
-                    <a href="https://marketing.hackerrank.com/" target="_blank" rel="noreferrer">Hacker Rank</a>
-                    </em> and <em><a href="https://www.codewars.com/" target="_blank" rel="noreferrer">Codewars</a></em>during the length of my 
+                    <a className='anchors' href="https://marketing.hackerrank.com/" target="_blank" rel="noreferrer">Hacker Rank</a>
+                    </em> and <em><a className='anchors' href="https://www.codewars.com/" target="_blank" rel="noreferrer">Codewars</a></em> during the length of my 
                     self-paced bootcamp.  
                     The work-school game, plus labs and projects hanging over my head, often left me with a lack of dedicated time, 
                     or semantically, anxiety of time dedication. However, now that I am graduated, I have more time!  Coding exercise 
@@ -987,7 +987,7 @@ end`
                 I dabbled in Hacker Rank's <em>10 Days of JavaScript</em> and then moved onto 
                 <em> Interview Prep</em>, starting with the 
                 <em>
-                    <a href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges" target="_blank" rel="noreferrer"> Warm-Up Challenges</a>
+                    <a className='anchors' href="https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges" target="_blank" rel="noreferrer"> Warm-Up Challenges</a>
                 </em>.  
                 So I thought I would highlight any setbacks, key points, maybe some initial thinking vs. finalized 
                 thinking, etc.  I suppose my plan with these types of posts will be to go in and occasionally optimize code or 
@@ -996,6 +996,7 @@ end`
 
             <h3 className='core-subsection'>
                 <a 
+                    className='anchors'
                     href="https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
                     target="_blank"
                     rel="noreferrer">
@@ -1069,6 +1070,7 @@ array.reduce((acc, val) =&gt;
 
             <h3 className='core-subsection'>
                 <a 
+                    className='anchors'
                     href="https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
                     target="_blank"
                     rel="noreferrer">
@@ -1179,6 +1181,7 @@ function handleAltitude(step, alt){
 
             <h3 className='core-subsection'>
                 <a 
+                    className='anchors'
                     href="https://www.hackerrank.com/challenges/repeated-string/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
                     target="_blank"
                     rel="noreferrer">
@@ -1317,6 +1320,7 @@ function calculateA(n, sLength, a_Count){
             
             <h3 className='core-subsection'>
                 <a 
+                    className='anchors'
                     href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&amp;playlist_slugs%5B%5D=interview-preparation-kit&amp;playlist_slugs%5B%5D=warmup"
                     target="_blank"
                     rel="noreferrer">
@@ -1620,7 +1624,7 @@ function calculateA(n, sLength, a_Count){
                 was added last in case review to user to wine was not sufficient enough for 2 of the 
                 requirements for the project<br/>
                 <em>I adapted this example from the following resource on stackoverflow: 
-                    <a href="https://stackoverflow.com/questions/13240109/implement-add-to-favorites-in-rails-3-4" target='_blank' rel="noreferrer">
+                    <a className='anchors' href="https://stackoverflow.com/questions/13240109/implement-add-to-favorites-in-rails-3-4" target='_blank' rel="noreferrer">
                     Stackoverflow: Add Favorites Rails
                     </a>
                 </em>
@@ -1731,7 +1735,7 @@ function calculateA(n, sLength, a_Count){
             <p>
                 <em>And also noteworthy this is my quick summary, but I didn’t remember or discover all this on my own, I was 
                 referred to the following resource, describing most of these steps in greater detail at: 
-                <a href="https://medium.com/@rachel.hawa/google-authentication-strategy-for-rails-5-application-cd37947d2b1b" target='_blank' rel="noreferrer">
+                <a className='anchors' href="https://medium.com/@rachel.hawa/google-authentication-strategy-for-rails-5-application-cd37947d2b1b" target='_blank' rel="noreferrer">
                     Google Authentication Strategy
                 </a>
                 </em>
@@ -1846,7 +1850,7 @@ function calculateA(n, sLength, a_Count){
             
             <p>10) Optional: I found the branding icons at</p>
             
-            <p><a href="https://developers.google.com/identity/branding-guidelines" target='_blank' rel="noreferrer">Google Branding Guidelines</a></p>
+            <p><a className='anchors' href="https://developers.google.com/identity/branding-guidelines" target='_blank' rel="noreferrer">Google Branding Guidelines</a></p>
             
             <ul className='ul-squares'>
                 <li className='li-squares'>With a set of downloads of different types of google images and instructions for use</li>
