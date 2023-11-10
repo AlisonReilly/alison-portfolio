@@ -34,7 +34,7 @@
 
 .action-button {
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 22px;
     background-color: transparent;
     cursor: pointer;
     color: black;
@@ -108,4 +108,8 @@
         flex-direction: row;
         column-gap: 40px;
     }
+
+    .action-button {
+      font-size: 24px;
+  }
 }
