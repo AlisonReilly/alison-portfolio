@@ -1861,8 +1861,8 @@ function calculateA(n, sLength, a_Count){
             </blockquote>
             
             <figure className="">
-                <img src="/blog/bottlewitheffects.png" alt="" className="" />
-                <figcaption>Also had fun in a photo editor!</figcaption>
+                <img src="/blog/bottlewitheffects.png" alt="artistic wine bottle" className="" />
+                <figcaption className='caption'>Also had fun in a photo editor!</figcaption>
             </figure>
         </div>,
 
