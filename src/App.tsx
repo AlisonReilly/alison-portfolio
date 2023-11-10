@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './Styles/App.css';
 import { HeaderSection } from './Containers/HeaderSection';
 import { Outlet, Route, Routes } from 'react-router-dom';
@@ -14,6 +15,26 @@ import { Connect } from './Containers/Connect';
 
 
 function App() {
+  const [pageLoading, setPageLoading] = useState<boolean>(true);
+
+
+  useEffect(() => {
+    // callback function to call when event triggers
+    const onPageLoad = () => {
+      console.log('page loaded');
+      setPageLoading(false)
+      // do something else
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad, false);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
   return (
     <div id='app-inner-div'>
       <HeaderSection/>
@@ -21,7 +42,7 @@ function App() {
         {/* todo error page isn't working in this setup */}
         <Route path="*" errorElement={<ErrorPage />} />
         <Route index path="/" element={<HeroSection />}/>
-        <Route path="/about" element={<About />}/>
+        <Route path="/about" element={<About pageLoading={pageLoading}/>}/>
         <Route path="/connect" element={<Connect />}/>
         <Route path="/projects" element={<Projects />}/>
         <Route path="/live-demos" element={<GameDemo />}/>

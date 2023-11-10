@@ -7,13 +7,18 @@ import '../Styles/About.css';
 type AboutProps = {
     text?: string;
     classNames?: string;
+    pageLoading: boolean;
 }
 
 export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, text, ...htmlProps}) => { 
-   
+    classNames, pageLoading, text, ...htmlProps}) => { 
+
     return (
+    
+
         <div id='About' className='main-wrapper'>
+            {!pageLoading 
+            ? 
             <div className='main-content glassAbout'>
                 <div className='p-div'>
                     After dabbling with a WordPress site, once upon a time, with a free stock template, I realized I wanted to learn 
@@ -45,7 +50,10 @@ export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = ({
                     activities such as salsa dancing and inline skating.
                 </div>
             </div>
+            : null 
+            }
         </div>
+
    
     ); 
 } 
