@@ -10,13 +10,13 @@
 
 /* the individual preview item going into the main list */
 #BlogPreview {
-    /* padding: 50px; */
+    padding: 10px;
 }
 
 .blog-preview-content {
     overflow: clip;
     height: 300px;
-    font-size: 25px;
+    font-size: 20px;
     padding-bottom: 10px;
 
 }
@@ -25,7 +25,7 @@
 .main-blog-list {
     font-family: 'Goudy Bookletter 1911', serif;
     padding-top: 100px;
-    width: 75vw;
+    width: 90vw;
     color: rgb(48, 28, 4);
 }
 
@@ -40,11 +40,11 @@
 }
 
 .blog-preview-title {
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .read-more-link {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 @media only screen and (min-width: 1250px) {
@@ -70,5 +70,21 @@
     .blog-read-container {
         padding: 100px 200px 50px 200px;
 
+    }
+
+    .blog-preview-content {
+        overflow: clip;
+        height: 300px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    
+    }
+
+    .read-more-link {
+        font-size: 25px;
+    }
+
+    .blog-preview-title {
+        font-size: 30px;
     }
 }

@@ -967,8 +967,6 @@ end`
         title: 'Blog Inspiration, Interview Prep Warm-ups',
         content:
         <div className='blog-content-read-wrapper'>
-            <span>Reflection on problem solving</span>
-
             <div  className=''>
                 <img className='accent-image-right' src='/blog/keyboard.png' alt='backlit keyboard'></img>
 

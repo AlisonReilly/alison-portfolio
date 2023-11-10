@@ -3,12 +3,12 @@
 }
 
 p {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .accent-image-right {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     float: right;
     margin-left: 15px;
 }
@@ -59,7 +59,7 @@ p {
 }
 
 .anchors {
-    font-size: 25px;
+    font-size: 20px;
     color: #160d07;
 }
 
@@ -97,5 +97,20 @@ p {
     .blog-read-container {
         padding: 100px 250px 50px 250px;
 
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    .accent-image-right {
+        height: 250px;
+        width: 250px;
+        float: right;
+        margin-left: 15px;
+    }
+
+    .anchors {
+        font-size: 25px;
     }
 }
