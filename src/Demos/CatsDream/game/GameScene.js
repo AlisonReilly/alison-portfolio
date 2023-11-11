@@ -49,7 +49,12 @@ class GameScene extends Phaser.Scene {
     }
 
     create(){
+        // console.log('window inner height: ', window.innerHeight)
+        // console.log('document ?? ', document.body.clientHeight)
         const isTouch = window.TouchEvent ? true : false;
+        console.log('browser', this.sys.game.device.os)
+        // console.log('window in game: ? ', window)
+        // console.log('@@ get game title: ', this.game)
 
         //create map
         this.map = this.make.tilemap({key: 'map'});
@@ -148,10 +153,11 @@ class GameScene extends Phaser.Scene {
         this.cameras.main.followOffset.set(-200, 100);
         this.cameras.main.setBounds(0, 0, cameraBoundsWidth, 640);
         
+        // todo go over objects and show whatever info is true or has a value
+        // const OS = this.sys.game.device.os
+        // this.browser = this.sys.game.device.browser
 
-
-
-    
+        // this.mobileHelperText = this.add.text(25, 25, `OS: ${OS}, browser: ${browser}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'})
         this.attackText = this.add.text(400, 0, `Enemies banished: ${this.attack}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
         this.collectText = this.add.text(0, 0, `Fireflies collected: ${this.collectff}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
         // this.scoreText = this.add.text(12, 12, `Score: `, { fontSize: '32px', fill: '#fff' });

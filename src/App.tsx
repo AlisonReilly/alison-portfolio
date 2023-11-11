@@ -16,6 +16,7 @@ import { Connect } from './Containers/Connect';
 
 function App() {
   const [pageLoading, setPageLoading] = useState<boolean>(true);
+  const [pointerType, setPointerType] = useState<string>();
 
 
   useEffect(() => {
@@ -35,6 +36,20 @@ function App() {
       return () => window.removeEventListener('load', onPageLoad);
     }
   }, []);
+
+  useEffect(() => {
+    const checkPointerType = (event: any) => {
+        if (event.pointerType === "mouse") { setPointerType('mouse')}
+        if (event.pointerType === "touch") { setPointerType('touch')}
+        if (event.pointerType === "pen") { setPointerType('pen')}
+    }
+    window.addEventListener('pointerdown', checkPointerType)
+    return () => {
+        window.removeEventListener('resize', checkPointerType);
+    };
+}, [])
+
+
   return (
     <div id='app-inner-div'>
       <HeaderSection/>
@@ -45,7 +60,7 @@ function App() {
         <Route path="/about" element={<About pageLoading={pageLoading}/>}/>
         <Route path="/connect" element={<Connect />}/>
         <Route path="/projects" element={<Projects />}/>
-        <Route path="/live-demos" element={<GameDemo />}/>
+        <Route path="/live-demos" element={<GameDemo pointerType={pointerType}/>}/>
         <Route path="/resume" element={<Resume/>}/>
         <Route path="/blog" element={<Blog posts={CurrentBlogPosts}/>}/>
         {CurrentBlogPosts && CurrentBlogPosts.map((p, i) => 
