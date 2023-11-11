@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import VirtualJoystick from 'phaser3-rex-plugins/plugins/virtualjoystick.js';
 
 import Player from './Player.js';
 import Magic from './Magic.js';
@@ -42,12 +43,16 @@ class GameScene extends Phaser.Scene {
 
         // this adds the joystick, see below for todos
         // should tech (I think be able to add this in a more traditional way since installed)
-        var url;
-        url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js';
-        this.load.plugin('rexvirtualjoystickplugin', url, true);
+        // var url;
+        // url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js';
+        // this.load.plugin('rexvirtualjoystickplugin', url, true);
     }
 
     create(){
+        console.log('window contain touch.name??: ', window.TouchEvent)
+        
+        const isTouch = window.TouchEvent ? true : false;
+
         //create map
         this.map = this.make.tilemap({key: 'map'});
         this.tiles = this.map.addTilesetImage('pinktilesheet', 'tiles');
@@ -144,9 +149,7 @@ class GameScene extends Phaser.Scene {
         this.cameras.main.followOffset.set(-200, 100);
         this.cameras.main.setBounds(0, 0, cameraBoundsWidth, 640);
         
-        // create input
-        this.pointer = this.input.activePointer;
-        this.cursors = this.input.keyboard.createCursorKeys();
+
 
 
     
@@ -163,23 +166,45 @@ class GameScene extends Phaser.Scene {
           this.collectText.setText(`Fireflies collected: ${this.collectff}`);
       })
 
+        // create input - todo moved, make sure this doesn't make a difference
+        // also prob remove pointer if joystick is successful
+        if (isTouch) {
+                    // todo, adds mobile joystick approx as expected
+            // but need to make sure always bottom left corner
+            // need to add a 'fire' button
+            // need to hookup to cat
+            // also shouldn't necessarily have to preload in the method in this preload since
+            // installed
+            // this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
+                // x: 50,
+                // y: 300,
+                // radius: 100,
+                // base: this.add.circle(0, 0, 50, 0x888888),
+                // thumb: this.add.circle(0, 0, 20, 0xcccccc),
+                // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
+                // forceMin: 16,
+                // enable: true
+            // })
+            // this.cursors = this.joystick.createCursorKeys();
 
-        // todo, adds mobile joystick approx as expected
-        // but need to make sure always bottom left corner
-        // need to add a 'fire' button
-        // need to hookup to cat
-        // also shouldn't necessarily have to preload in the method in this preload since
-        // installed
-        this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
-            x: 50,
-            y: 300,
-            radius: 100,
-            base: this.add.circle(0, 0, 50, 0x888888),
-            thumb: this.add.circle(0, 0, 20, 0xcccccc),
-            // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
-            // forceMin: 16,
-            // enable: true
-        })
+            this.joystick = new VirtualJoystick(this, {
+                x: 50, 
+                y: 300,
+                radius: 100,
+                base: this.add.circle(0, 0, 50, 0x888888),
+                thumb: this.add.circle(0, 0, 20, 0xcccccc),
+                // dir: '8dir',
+                // forceMin: 16,
+                // fixed: true,
+                // enable: true
+            });
+
+            this.cursors = this.joystick.createCursorKeys();
+        } else {
+            // this.pointer = this.input.activePointer;
+            this.cursors = this.input.keyboard.createCursorKeys();
+        }
+
     }
 
     update(){
@@ -187,10 +212,10 @@ class GameScene extends Phaser.Scene {
         //keyboard movement called from Player class
      
         //mouse/touch event added in case mobile
-        if(this.pointer.isDown){
-            this.player.x += (this.pointer.x - this.player.x) * 0.05;
-            this.player.y += (this.pointer.y - this.player.y) * 0.05;
-        }
+        // if(this.pointer.isDown){
+        //     this.player.x += (this.pointer.x - this.player.x) * 0.05;
+        //     this.player.y += (this.pointer.y - this.player.y) * 0.05;
+        // }
 
         this.player.update(this.cursors, this, this.enemies);
 

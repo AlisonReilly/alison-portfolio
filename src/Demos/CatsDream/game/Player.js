@@ -30,60 +30,59 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
 
   
     create(){
-
+        console.log('touch event player class: ', window.TouchEvent)
     }
 
 //update(cursors)
 //update(cursors, scene, enemies)
 update(cursors, scene, enemies){
-    if(cursors.left.isDown){
-        this.flipX = true;
-        this.setVelocityX(-160);
-        this.anims.play('walking', true);
+        if(cursors.left.isDown){
+            this.flipX = true;
+            this.setVelocityX(-160);
+            this.anims.play('walking', true);
 
-    } else if (cursors.right.isDown){
-        this.flipX = false;
-        this.setVelocityX(160);
-        this.anims.play('walking', true);
-    } else { 
-        this.setVelocityX(0);
-        this.anims.play('turn', true);
-    };
+        } else if (cursors.right.isDown){
+            this.flipX = false;
+            this.setVelocityX(160);
+            this.anims.play('walking', true);
+        } else { 
+            this.setVelocityX(0);
+            this.anims.play('turn', true);
+        };
 
-    if(cursors.up.isDown){
-        this.setVelocityY(-160);
-        this.anims.play('walking', true);
+        if(cursors.up.isDown){
+            this.setVelocityY(-160);
+            this.anims.play('walking', true);
 
-    } else if (cursors.down.isDown){
-        this.setVelocityY(160);
-        this.anims.play('walking', true);
-    } else {   
-        this.setVelocityY(0); 
-    };
+        } else if (cursors.down.isDown){
+            this.setVelocityY(160);
+            this.anims.play('walking', true);
+        } else {   
+            this.setVelocityY(0); 
+        };
 
-    //firing section
-    if (cursors.space.isDown) {
-        //firing animation for cat not working yet
+        //firing section
+        // todo temp comment out until button added/mobile check completed
+        // if (cursors.space && cursors.space.isDown) {
+        //     // todo - have to use a button to the right for this, not the joystick
+        //     this.setVelocity(0);
+        //     this.anims.play('fire', true);
 
-        this.setVelocity(0);
-        this.anims.play('fire', true);
+        //     var magic = scene.magics.get();
+        //     magic.setActive(true);
+        //     magic.setVisible(true);
 
-        var magic = scene.magics.get();
-        console.log(scene.magics.get())
-        magic.setActive(true);
-        magic.setVisible(true);
+        //     if (magic) {   
+        //         magic.fire(this);
 
-        if (magic) {   
-            magic.fire(this);
+        //         //doesn't work
+        //         //scene.physics.add.collider(magic, this.layer_collision);
 
-            //doesn't work
-            //scene.physics.add.collider(magic, this.layer_collision);
-
-            //works
-            scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
-        } 
+        //         //works
+        //         scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
+        //     } 
+        // }
     }
-}
 
     hitAnEnemy(magic, enemy){
        // this.attack += 1;
@@ -92,5 +91,5 @@ update(cursors, scene, enemies){
       
         enemy.disableBody(true, true);
         this.events.emit('attack');
-      };  
+    };  
 }
