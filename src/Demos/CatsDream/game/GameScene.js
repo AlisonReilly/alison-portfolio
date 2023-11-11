@@ -49,8 +49,6 @@ class GameScene extends Phaser.Scene {
     }
 
     create(){
-        console.log('window contain touch.name??: ', window.TouchEvent)
-        
         const isTouch = window.TouchEvent ? true : false;
 
         //create map
@@ -67,8 +65,9 @@ class GameScene extends Phaser.Scene {
 
         //create player from Tiled definitions
         this.map.findObject('objects', (obj) => {
+            console.log('obj x: ', obj.x)
             if (obj.type === 'player'){
-                this.player = new Player(this, obj.x, obj.y)
+                this.player = new Player(this, obj.x + 75, window.innerHeight - (window.innerHeight* .70))
             }  
         });
 
@@ -188,11 +187,11 @@ class GameScene extends Phaser.Scene {
             // this.cursors = this.joystick.createCursorKeys();
 
             this.joystick = new VirtualJoystick(this, {
-                x: 50, 
-                y: 300,
+                x: 75, 
+                y: window.innerHeight - 50,
                 radius: 100,
-                base: this.add.circle(0, 0, 50, 0x888888),
-                thumb: this.add.circle(0, 0, 20, 0xcccccc),
+                base: this.add.circle(0, 0, 50, 0x888888, 0.6),
+                thumb: this.add.circle(0, 0, 20, 0xcccccc, 0.6),
                 // dir: '8dir',
                 // forceMin: 16,
                 // fixed: true,
