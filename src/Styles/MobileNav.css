@@ -78,6 +78,22 @@
 
 }
 
+.game-demo-nav {
+    /* display: flex;
+    flex-direction: column; */
+    z-index: 1;
+    /* align-items: flex-end;
+    justify-content: flex-end; */
+    /* margin-top: -100px; */
+    position: fixed;
+    margin-right: 0;
+    float: right;
+    display: block;
+    background-color: rgb(56, 37, 7);
+    border-radius: 10px;
+
+}
+
 @media only screen and (min-width: 775px) {
     .mobile-nav {
         display: none;

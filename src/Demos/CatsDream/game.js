@@ -16,10 +16,10 @@ export let config = {
           debug: false
       },
     },
-    scale: {
-      mode: Phaser.Scale.FIT,
-      autoCenter: Phaser.Scale.CENTER_BOTH
-    },
+    // scale: {
+    //   mode: Phaser.Scale.FIT,
+    //   autoCenter: Phaser.Scale.CENTER_BOTH
+    // },
     scene: [TitleScene, GameScene]
   };
 

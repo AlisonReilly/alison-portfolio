@@ -6,15 +6,16 @@ import { MobileNav } from '../Components/Navigation/MobileNavUL';
   
 
 type HeaderSectionProps = {
+    isTouchScreen?: boolean;
     text?: string;
 }
 
-export const HeaderSection: React.FC<HeaderSectionProps & React.HTMLProps<HTMLDivElement>> = () => { 
+export const HeaderSection: React.FC<HeaderSectionProps & React.HTMLProps<HTMLDivElement>> = ({isTouchScreen}) => {
     return (
         <div id='HeaderSection'>
-            <ProfileHeader/>
-            <MobileNav/>
-            <NavBar />
+            <ProfileHeader isTouchScreen={isTouchScreen}/>
+            <MobileNav isTouchScreen={isTouchScreen}/>
+            <NavBar isTouchScreen={isTouchScreen}/>
         </div>
     ); 
 } 

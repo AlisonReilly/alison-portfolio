@@ -52,11 +52,9 @@ export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>>
             {mainNav.subNav && 
                 <ul  className={`glass sub-nav-ul ${isSubOpen ? 'sub-nav-ul-open' : 'sub-nav-ul-closed'}`}>
                     {mainNav.subNav.map((si, k) => 
-                        <>
                             <li key={`${k}-sub`} id={`${k}-sub`} className='flexrow bracket-wrapper MainNavColor'>
                                 <Link key={`${k}-link`} id={`${k}-link`} className='modern-link flexrow primary-sub' to={si.href ? si.href : ''}><span className='bracket'>[ </span><span className='bracket-text'>{si.name}</span></Link>    
                             </li>
-                        </>
                     )}
                 </ul>
             }

@@ -5,12 +5,13 @@ import '../../Styles/MobileNav.css';
 import { MobileNavItem } from './MoblieNavLI';
 
 type MobileNavProps = {
+    isTouchScreen?: boolean;
     menuItemData?: NavItem[];
     text?: string;
 }
 
 export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement>> = ({
-    menuItemData, text, ...htmlProps}) => { 
+    isTouchScreen, menuItemData, text, ...htmlProps}) => { 
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const NavRef = createRef<HTMLElement>();
 
@@ -30,7 +31,7 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
     }, [NavRef])
     
     return (
-        <nav ref={NavRef} id='PrimaryMobileNav' className='mobile-nav' role="navigation" aria-label="Main menu">
+        <nav ref={NavRef} id='PrimaryMobileNav' className={`${isTouchScreen && location.pathname.includes('live-demo') ? 'game-demo-nav' : 'mobile-nav'}`} role="navigation" aria-label="Main menu">
             <button  id='mobile-nav-button' aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}/>
             <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
             {isOpen && MainNavItems.map((i, k) =>

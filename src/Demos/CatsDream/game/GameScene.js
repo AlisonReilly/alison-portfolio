@@ -49,13 +49,8 @@ class GameScene extends Phaser.Scene {
     }
 
     create(){
-        // console.log('window inner height: ', window.innerHeight)
-        // console.log('document ?? ', document.body.clientHeight)
-        const isTouch = window.TouchEvent ? true : false;
-        console.log('os', this.sys.game.device.os)
-        console.log('window in game: ? ', window)
-        console.log('window is touch: ', isTouch)
-        // console.log('@@ get game title: ', this.game)
+        const isTouchScreen = window.TouchEvent ? true : false;
+
 
         //create map
         this.map = this.make.tilemap({key: 'map'});
@@ -156,40 +151,31 @@ class GameScene extends Phaser.Scene {
 
 
         
-        // todo go over objects and show whatever info is true or has a value
-        // const OS = this.sys.game.device.os
-        // this.browser = this.sys.game.device.browser
-        const OS = Object.entries(this.sys.game.device.os)
-        const browser = Object.entries(this.sys.game.device.browser)
-        let deviceInfo = [isTouch]
-        OS.map((n, v) => {
+        // initial isTouchScreen value, os and browser, using for debugging
+        // const OS = Object.entries(this.sys.game.device.os)
+        // const browser = Object.entries(this.sys.game.device.browser)
+        // let deviceInfo = [isTouchScreen]
+        // OS.map((n, v) => { n[1] === true && deviceInfo.push(n[0])});
+        // browser.map((n, v) => n[1] === true && deviceInfo.push(n[0]))
+        // const deviceSummary = deviceInfo.join(" ")
 
-            n[1] === true && deviceInfo.push(n[0])
-        } );
-        browser.map((n, v) => n[1] === true && deviceInfo.push(n[0]))
-
-        const deviceSummary = deviceInfo.join(" ")
-        console.log(deviceSummary)
-
- 
-
-        this.mobileHelperText = this.add.text(25, 25, `Device Info: ${deviceSummary}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'})
-        this.attackText = this.add.text(400, 0, `Enemies banished: ${this.attack}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
-        this.collectText = this.add.text(0, 0, `Fireflies collected: ${this.collectff}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
+        // this.mobileHelperText = this.add.text(25, 25, `Device Info: ${deviceSummary}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'})
+        this.attackText = this.add.text(700, 0, `Enemies: ${this.attack}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5' });
+        this.collectText = this.add.text(200, 0, `Fireflies: ${this.collectff}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5' });
         // this.scoreText = this.add.text(12, 12, `Score: `, { fontSize: '32px', fill: '#fff' });
         this.events.on('attack', () => {
             this.attack++;
-            this.attackText.setText(`Enemies banished: ${this.attack}`);
+            this.attackText.setText(`Enemies: ${this.attack}`);
         });
 
         this.events.on('collectff', () => {
           this.collectff++;
-          this.collectText.setText(`Fireflies collected: ${this.collectff}`);
+          this.collectText.setText(`Fireflies: ${this.collectff}`);
       })
 
         // create input - todo moved, make sure this doesn't make a difference
         // also prob remove pointer if joystick is successful
-        if (isTouch) {
+        if (isTouchScreen) {
                     // todo, adds mobile joystick approx as expected
             // but need to make sure always bottom left corner
             // need to add a 'fire' button
@@ -252,9 +238,9 @@ class GameScene extends Phaser.Scene {
     
         });
   
-        this.attackText.setX(this.camera.midPoint.x + 100);
+        this.attackText.setX(this.camera.midPoint.x + 200);
         this.attackText.setY(this.camera.midPoint.y - 300);
-        this.collectText.setX(this.camera.midPoint.x - 375);
+        this.collectText.setX(this.camera.midPoint.x - 275);
         this.collectText.setY(this.camera.midPoint.y - 300);
 
         if (this.attack === this.gameEnemies && this.collectff === this.gameFF){

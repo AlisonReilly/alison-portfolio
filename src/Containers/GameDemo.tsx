@@ -3,42 +3,45 @@ import React, { useEffect, useState } from 'react';
 import '../Styles/Game.css';
 import GameScene from '../Demos/CatsDream/game/GameScene';
 import TitleScene from '../Demos/CatsDream/game/TitleScene';
-import { config } from '../Demos/CatsDream/game';
 
 
 type GameDemoProps = {
-    text?: string;
     pointerType?: string;
 }
 
-export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>> = ({
-    pointerType, text }) => { 
+export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>> = ({ pointerType }) => { 
         const [currentGame, setCurrentGame] = useState<Phaser.Game>();
-        const [currentConfig, setCurrentConfig] = useState<Phaser.Types.Core.GameConfig>(config);
-        const [gameReady, setGameReady] = useState(false);
-        const [dimensions, setDimensions] = React.useState({ 
-            width: window.innerWidth,
-            height: window.innerHeight
-          });
         const [_pointerType, setPointerType] = useState<string>(pointerType || 'mouse');
-        const [isLandscape, setIsLandscape] = useState<boolean>(window.innerWidth > window.innerHeight)
+        const [isLandscape, setIsLandscape] = useState<boolean>(window.innerWidth > window.innerHeight);
 
+        let isIPhone = navigator.userAgent.toLowerCase().includes('iphone');
 
-        // if(window.innerWidth < 800) {
-
-        // }
-
-        // console.log('tracking window resize currentConfig: ', currentConfig)
+        let width = _pointerType === 'mouse' ? 800 : window.innerWidth < window.innerHeight ? window.innerHeight : window.innerWidth;
+        let height = _pointerType === 'mouse' ? 600 : window.innerHeight < window.innerWidth ? window.innerHeight : window.innerWidth;
         
-        // todo, may or may not need to track window resize
-        // if offering a feature that will say to turn phone or device then will need
+
+        let gameConfig = {
+            type: Phaser.AUTO, 
+            width: width,
+            height: height,
+            parent: 'canvas',
+            pixelArt: true,
+            physics: {
+              default: 'arcade',
+              arcade: {
+                  gravity: { y: 0 },
+                  debug: false
+              },
+            },
+            scale: {
+              mode: Phaser.Scale.FIT,
+              autoCenter: Phaser.Scale.CENTER_BOTH
+            },
+            scene: [TitleScene, GameScene]
+          };
+
         useEffect(() => {
             const handleResize = () => {
-              setDimensions({
-                height: window.innerHeight,
-                width: window.innerWidth
-              })
-              setCurrentConfig({...currentConfig, height: window.innerHeight, width: window.innerWidth})
               setIsLandscape(window.innerWidth > window.innerHeight)
             }
         
@@ -46,7 +49,6 @@ export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>>
             return () => {
                 window.removeEventListener('resize', handleResize);
             };
-            
         }, [])
 
         useEffect(() => {
@@ -59,32 +61,22 @@ export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>>
             return () => {
                 window.removeEventListener('resize', checkPointerType);
             };
-        }, [])
+        }, []);
 
-
-        // useEffect(() => {
-        //     if (window.innerWidth >= 800 || window.innerWidth === currentConfig.width) {
-        //         setGameReady(true)
-        //     }
-        // }, [currentConfig.width])
-
-        // game resize itself now handled by game config in scale property
-
-        // one other aspect will be to move the canvas to cover the header if we have
-        // tilted the game - or do some type of open in external link
-        // or not sure...
         useEffect(() => {
             if (!currentGame) {
-                setCurrentGame(new Phaser.Game(config))
+                setCurrentGame(new Phaser.Game(gameConfig))
             }
-        }, [currentGame, gameReady]);
+        }, [currentGame]);
     
 
     return (
         !isLandscape && _pointerType === 'touch' 
-        ? <div className='rotate-message'>
+        ? 
+        <div className='rotate-message'>
             Rotate your screen to landscape/horizontal
-        </div> : 
-        <div id='canvas'/>
+        </div> 
+        : 
+        <div id='canvas' className={`${_pointerType === 'touch' ? 'canvas-mobile' : 'canvas-desktop'}`}/>
     ); 
 } 

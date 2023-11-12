@@ -6,6 +6,14 @@
     z-index: 1;
 }
 
+#NavGameDemo {
+  /* height: 43px;
+  position: relative;
+  display: none;
+  z-index: 1; */
+  display: none;
+}
+
 /* the first ul of this nav */
 .horizontal-nav {
     border-radius: 3px;
@@ -139,5 +147,12 @@
         display: flex;
         justify-content: center;
         margin-top: -15px;
+    }
+
+    #NavGameDemo {
+      /* display: flex;
+      justify-content: center;
+      margin-top: -100px;
+      margin-right: -200px; */
     }
 }

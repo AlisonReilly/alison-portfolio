@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div id='app-inner-div'>
-      <HeaderSection/>
+      <HeaderSection isTouchScreen={pointerType === 'touch'}/>
       <Routes>
         {/* todo error page isn't working in this setup */}
         <Route path="*" errorElement={<ErrorPage />} />

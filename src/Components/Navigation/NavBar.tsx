@@ -7,17 +7,19 @@ import { NavBarLI } from './NavBarLI';
 
 
 type NavBarProps = {
+    isTouchScreen?: boolean;
     menuItemData?: NavItem[];
     styleClass?: string;
 }
 
 export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = ({
-    menuItemData, styleClass, ...htmlProps }) => { 
-    let location = useLocation();
+    isTouchScreen, menuItemData, styleClass, ...htmlProps }) => { 
+    let navLocation = useLocation();
+    console.log('location here: ', navLocation)
 
     return ( 
-        <nav id='PrimarySiteNav'>
-            <ul className={`horizontal-nav ${location.pathname === '/blog' ? 'blog-style' : 'primary-style'}`}>
+        <nav id={`${isTouchScreen && navLocation.pathname.includes('live-demos') ? 'NavGameDemo' : 'PrimarySiteNav'}`}>
+            <ul className={`horizontal-nav ${navLocation.pathname === '/blog' ? 'blog-style' : 'primary-style'}`}>
             {MainNavItems.map((i, k) =>
                 <>
                     <NavBarLI key={`${k}-top-nav`} id={`${k}-top-nav`} liIndex={k} mainNav={i} />
