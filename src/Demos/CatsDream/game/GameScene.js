@@ -52,8 +52,9 @@ class GameScene extends Phaser.Scene {
         // console.log('window inner height: ', window.innerHeight)
         // console.log('document ?? ', document.body.clientHeight)
         const isTouch = window.TouchEvent ? true : false;
-        console.log('browser', this.sys.game.device.os)
-        // console.log('window in game: ? ', window)
+        console.log('os', this.sys.game.device.os)
+        console.log('window in game: ? ', window)
+        console.log('window is touch: ', isTouch)
         // console.log('@@ get game title: ', this.game)
 
         //create map
@@ -152,12 +153,27 @@ class GameScene extends Phaser.Scene {
         this.camera = this.cameras.main.startFollow(this.player);
         this.cameras.main.followOffset.set(-200, 100);
         this.cameras.main.setBounds(0, 0, cameraBoundsWidth, 640);
+
+
         
         // todo go over objects and show whatever info is true or has a value
         // const OS = this.sys.game.device.os
         // this.browser = this.sys.game.device.browser
+        const OS = Object.entries(this.sys.game.device.os)
+        const browser = Object.entries(this.sys.game.device.browser)
+        let deviceInfo = [isTouch]
+        OS.map((n, v) => {
 
-        // this.mobileHelperText = this.add.text(25, 25, `OS: ${OS}, browser: ${browser}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'})
+            n[1] === true && deviceInfo.push(n[0])
+        } );
+        browser.map((n, v) => n[1] === true && deviceInfo.push(n[0]))
+
+        const deviceSummary = deviceInfo.join(" ")
+        console.log(deviceSummary)
+
+ 
+
+        this.mobileHelperText = this.add.text(25, 25, `Device Info: ${deviceSummary}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'})
         this.attackText = this.add.text(400, 0, `Enemies banished: ${this.attack}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
         this.collectText = this.add.text(0, 0, `Fireflies collected: ${this.collectff}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
         // this.scoreText = this.add.text(12, 12, `Score: `, { fontSize: '32px', fill: '#fff' });

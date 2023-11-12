@@ -22,10 +22,6 @@ export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>>
           });
         const [_pointerType, setPointerType] = useState<string>(pointerType || 'mouse');
         const [isLandscape, setIsLandscape] = useState<boolean>(window.innerWidth > window.innerHeight)
-        console.log('pointerType: ', _pointerType)
-        console.log('isLandscape: ', isLandscape)
-        console.log('value of cond statement: ', !isLandscape && _pointerType === 'touch')
-
 
 
         // if(window.innerWidth < 800) {
@@ -85,16 +81,10 @@ export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>>
     
 
     return (
-        <>
-            {!isLandscape && _pointerType === 'touch' ? 
-                <div className='rotate-message'>
-                    Rotate your screen to landscape/horizontal
-                </div>
-                :
-                <div id='canvas'/>
-            }
-            
-            
-        </>
+        !isLandscape && _pointerType === 'touch' 
+        ? <div className='rotate-message'>
+            Rotate your screen to landscape/horizontal
+        </div> : 
+        <div id='canvas'/>
     ); 
 } 
