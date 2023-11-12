@@ -14,7 +14,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps & React.HTMLProps<HTMLDi
     let location = useLocation();
     return ( 
         <>
-            {isTouchScreen && location.pathname.includes('live-demo') ? <></> :
+            {isTouchScreen || navigator.userAgent.toLowerCase().includes('mobile') && location.pathname.includes('live-demo') ? <></> :
                 <header id='ProfileHeader' className={`${location.pathname === '/blog' ? 'blog-header-bg' : 'primary-header-bg'}`} > 
 
                     <div className='flexrow'>

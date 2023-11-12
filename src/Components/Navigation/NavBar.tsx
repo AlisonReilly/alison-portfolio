@@ -18,12 +18,10 @@ export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = (
     console.log('location here: ', navLocation)
 
     return ( 
-        <nav id={`${isTouchScreen && navLocation.pathname.includes('live-demos') ? 'NavGameDemo' : 'PrimarySiteNav'}`}>
+        <nav id={`${(isTouchScreen || navigator.userAgent.toLowerCase().includes('mobile')) && navLocation.pathname.includes('live-demos') ? 'NavGameDemo' : 'PrimarySiteNav'}`}>
             <ul className={`horizontal-nav ${navLocation.pathname === '/blog' ? 'blog-style' : 'primary-style'}`}>
             {MainNavItems.map((i, k) =>
-                <>
                     <NavBarLI key={`${k}-top-nav`} id={`${k}-top-nav`} liIndex={k} mainNav={i} />
-                </>
             )}
             </ul>
         </nav>

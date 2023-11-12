@@ -31,7 +31,7 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
     }, [NavRef])
     
     return (
-        <nav ref={NavRef} id='PrimaryMobileNav' className={`${isTouchScreen && location.pathname.includes('live-demo') ? 'game-demo-nav' : 'mobile-nav'}`} role="navigation" aria-label="Main menu">
+        <nav ref={NavRef} id='PrimaryMobileNav' className={`${(isTouchScreen || navigator.userAgent.toLowerCase().includes('mobile')) && location.pathname.includes('live-demo') ? 'game-demo-nav' : 'mobile-nav'}`} role="navigation" aria-label="Main menu">
             <button  id='mobile-nav-button' aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}/>
             <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
             {isOpen && MainNavItems.map((i, k) =>
