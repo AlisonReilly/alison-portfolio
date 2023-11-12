@@ -116,12 +116,9 @@ p {
 }
 
 
+
+
 @media only screen and (min-width: 775px) {
-    .blog-read-container {
-        padding: 100px 250px 50px 250px;
-
-    }
-
     p {
         font-size: 25px;
     }
@@ -148,4 +145,11 @@ p {
     .numbered-blog {
         font-size: 25px;
     }
+}
+
+@media only screen and (min-width: 776px) and (max-width: 1150px)  {
+    .blog-read-container {
+        padding: 100px 100px 50px 100px;
+    }
+
 }
