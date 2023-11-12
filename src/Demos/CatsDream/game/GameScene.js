@@ -195,8 +195,8 @@ class GameScene extends Phaser.Scene {
             // this.cursors = this.joystick.createCursorKeys();
 
             this.joystick = new VirtualJoystick(this, {
-                x: 75, 
-                y: window.innerHeight - 50,
+                x: 80, 
+                y: window.innerHeight - (window.innerHeight * .20),
                 radius: 100,
                 base: this.add.circle(0, 0, 50, 0x888888, 0.6),
                 thumb: this.add.circle(0, 0, 20, 0xcccccc, 0.6),
