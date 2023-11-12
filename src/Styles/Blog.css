@@ -1,5 +1,6 @@
 #Blog {
     background-image: url('../../public/BGDiagramSteamPunk.png');
+    background-color: #607293;
     margin-top: -50px;
     display: flex;
     flex-direction: column;

@@ -32,6 +32,7 @@
 body {
   /* background-color: #343C55; */
   background: linear-gradient(330deg, #343C55  60%, #6A77A0), url(https://grainy-gradients.vercel.app/noise.svg);
+  background-color: #343C55;
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
