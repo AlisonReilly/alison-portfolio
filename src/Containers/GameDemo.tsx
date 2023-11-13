@@ -34,8 +34,8 @@ export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>>
               },
             },
             scale: {
-            //   mode: _pointerType === 'mouse' || !navigator.userAgent.toLowerCase().includes('mobile') ? undefined : Phaser.Scale.FIT,
-            //   autoCenter: _pointerType === 'mouse' || !navigator.userAgent.toLowerCase().includes('mobile') ? undefined : Phaser.Scale.CENTER_BOTH
+            //  mode: _pointerType === 'mouse' || !navigator.userAgent.toLowerCase().includes('mobile') ? undefined : Phaser.Scale.FIT,
+            //  autoCenter: _pointerType === 'mouse' || !navigator.userAgent.toLowerCase().includes('mobile') ? undefined : Phaser.Scale.CENTER_BOTH
             },
             scene: [TitleScene, GameScene]
           };

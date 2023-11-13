@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-
+import Button from 'phaser3-rex-plugins/plugins/button.js';
 export default class Player extends Phaser.Physics.Arcade.Sprite{
     constructor(scene, x, y){
         super(scene, x, y, 'player');
@@ -8,7 +8,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
         this.scene.add.existing(this);
         this.setCollideWorldBounds(true);
         this.scene.anims.create({
-            //changed from left to walking to apply flipX instead
+            // changed from left to walking to apply flipX instead
             key: 'walking',
             frames: this.scene.anims.generateFrameNumbers('player', { start: 0, end: 2 }),
             frameRate: 10,
@@ -31,13 +31,15 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
   
     create(){
 
+        this.scene.FireButton = new Button(this.scene.FireButtonSetup, {
+            enable: true,
+            mode: 'press',
+            clickInterval: 8,
+            threshold: undefined
+        });
     }
 
-//update(cursors)
-//update(cursors, scene, enemies)
-update(cursors, scene, enemies){
-    if(this.scene.joystick) console.log('scene: ', this.scene.FireButton)
-    
+    update(cursors, scene, enemies){
         if(cursors.left.isDown){
             this.flipX = true;
             this.setVelocityX(-160);
@@ -63,8 +65,10 @@ update(cursors, scene, enemies){
             this.setVelocityY(0); 
         };
 
-        if(this.scene.FireButton.down) {
-            this.setVelocity(0);
+
+        if (this.scene.FireButton){
+            this.scene.FireButton.on('click', () => {
+                this.setVelocity(0);
                 this.anims.play('fire', true);
 
                 var magic = scene.magics.get();
@@ -73,14 +77,12 @@ update(cursors, scene, enemies){
 
                 if (magic) {   
                     magic.fire(this);
-
                     scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
                 } 
+            })
         }
 
-        if(!this.scene.joystick){
-
-            //firing section
+        if (!this.scene.joystick){
             if (cursors.space && cursors.space.isDown) {
                 this.setVelocity(0);
                 this.anims.play('fire', true);
@@ -92,10 +94,10 @@ update(cursors, scene, enemies){
                 if (magic) {   
                     magic.fire(this);
 
-                    //doesn't work, keeping as a note or reference
-                    //scene.physics.add.collider(magic, this.layer_collision);
+                    // doesn't work, keeping as a note or reference
+                    // scene.physics.add.collider(magic, this.layer_collision);
 
-                    //works
+                    // works
                     scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
                 } 
             }
@@ -103,10 +105,10 @@ update(cursors, scene, enemies){
     }
 
     hitAnEnemy(magic, enemy){
-       // this.attack += 1;
-       // console.log(this.attack)
-       // this.attackText.setText('Enemies banished: ' + this.attack);
-      
+        // this.attack += 1;
+        // console.log(this.attack)
+        // this.attackText.setText('Enemies banished: ' + this.attack);
+        
         enemy.disableBody(true, true);
         this.events.emit('attack');
     };  

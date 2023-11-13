@@ -26,19 +26,14 @@ class GameScene extends Phaser.Scene {
         this.load.image('magic', '/magicb.png');
         this.load.spritesheet('enemy', 'enemyspritesheet.png', { frameWidth: 32, frameHeight: 32 });
         this.load.spritesheet('firefly', 'fireflyspritesheet.png', { frameWidth: 17, frameHeight: 17 });
-
-        // this adds the joystick, see below for todos
-        // should tech (I think be able to add this in a more traditional way since installed)
-        // var url;
-        // url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js';
-        // this.load.plugin('rexvirtualjoystickplugin', url, true);
     }
 
     create(){
+        // todo can maybe just check if desktip with this.sys.game.os or similar checking for desktop true
         const isTouchScreen = window.TouchEvent ? true : false;
 
 
-        //create map
+        // create map
         this.map = this.make.tilemap({key: 'map'});
         this.tiles = this.map.addTilesetImage('pinktilesheet', 'tiles');
         this.layer_background = this.map.createLayer('background', this.tiles, 0, 0);
@@ -50,14 +45,14 @@ class GameScene extends Phaser.Scene {
         this.layer_collision.setCollisionByExclusion([-1], true, this);
         this.physics.world.setBounds(0, 0, 960, 640);
 
-        //create player from Tiled definitions
+        // create player from Tiled definitions
         this.map.findObject('objects', (obj) => {
             if (obj.type === 'player'){
                 this.player = new Player(this, obj.x + 75, window.innerHeight - (window.innerHeight* .70))
             }  
         });
 
-        //add enemies group for now
+        // add enemies group for now
         this.enemies = this.physics.add.group({
             key: 'enemy',
             repeat: Phaser.Math.Between(9, 19),
@@ -76,8 +71,8 @@ class GameScene extends Phaser.Scene {
             enemy.health = 3;
         });
 
-        //add enemy animations here for now
-        //+ remember actual animation occurs in update
+        // add enemy animations here for now
+        // + remember actual animation occurs in update
         this.anims.create({
             //changed from left to walking to apply flipX
             key: 'enemy-walk',
@@ -86,7 +81,7 @@ class GameScene extends Phaser.Scene {
             repeat: -1
           });
 
-        //add fireflies group
+        // add fireflies group
         this.fireflies = this.physics.add.group({
             key:'firefly',
             repeat: Phaser.Math.Between(9, 19),  
@@ -116,7 +111,7 @@ class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.enemies, this.layer_collision);
         this.physics.add.overlap(this.player, this.fireflies, this.collectFirefly, null, this);
 
-        //create magic
+        // create magic
         this.magics = this.physics.add.group({ classType: Magic, runChildUpdate: true });
         this.physics.world.enable(this.magics);
       
@@ -134,15 +129,6 @@ class GameScene extends Phaser.Scene {
         this.cameras.main.followOffset.set(-200, 100);
         this.cameras.main.setBounds(0, 0, cameraBoundsWidth, 640);
 
-        // keeping as reference for now
-        // initial isTouchScreen value, os and browser, using for debugging
-        // const OS = Object.entries(this.sys.game.device.os)
-        // const browser = Object.entries(this.sys.game.device.browser)
-        // let deviceInfo = [isTouchScreen]
-        // OS.map((n, v) => { n[1] === true && deviceInfo.push(n[0])});
-        // browser.map((n, v) => n[1] === true && deviceInfo.push(n[0]))
-        // const deviceSummary = deviceInfo.join(" ")
-        // this.mobileHelperText = this.add.text(25, 25, `Device Info: ${deviceSummary}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
 
         this.attackText = this.add.text(700, 0, `Enemies: ${this.attack}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5' });
         this.collectText = this.add.text(200, 0, `Fireflies: ${this.collectff}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5' });
@@ -157,27 +143,7 @@ class GameScene extends Phaser.Scene {
           this.collectText.setText(`Fireflies: ${this.collectff}`);
       })
 
-        // create input - todo moved, make sure this doesn't make a difference
-        // also prob remove pointer if joystick is successful
         if (isTouchScreen) {
-                    // todo, adds mobile joystick approx as expected
-            // but need to make sure always bottom left corner
-            // need to add a 'fire' button
-            // need to hookup to cat
-            // also shouldn't necessarily have to preload in the method in this preload since
-            // installed
-            // this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
-                // x: 50,
-                // y: 300,
-                // radius: 100,
-                // base: this.add.circle(0, 0, 50, 0x888888),
-                // thumb: this.add.circle(0, 0, 20, 0xcccccc),
-                // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
-                // forceMin: 16,
-                // enable: true
-            // })
-            // this.cursors = this.joystick.createCursorKeys();
-
             this.joystick = new VirtualJoystick(this, {
                 x: 80, 
                 y: window.innerHeight - (window.innerHeight * .20),
@@ -202,30 +168,22 @@ class GameScene extends Phaser.Scene {
 
             this.FireButton = new Button(this.FireButtonSetup, {
                 enable: true,
-                mode: 0,
+                mode: 'press',
                 clickInterval: 8,
                 threshold: undefined
             });
+
+
         } else {
-            // this.pointer = this.input.activePointer;
             this.cursors = this.input.keyboard.createCursorKeys();
         }
 
     }
 
     update(){
-        //if(this.isTerminating) return;
-        //keyboard movement called from Player class
-     
-        //mouse/touch event added in case mobile
-        // if(this.pointer.isDown){
-        //     this.player.x += (this.pointer.x - this.player.x) * 0.05;
-        //     this.player.y += (this.pointer.y - this.player.y) * 0.05;
-        // }
-
         this.player.update(this.cursors, this, this.enemies);
 
-        //update enemy animations
+        // update enemy animations
         this.enemies.children.iterate(function (child){
             child.setVelocity = 150;
             child.anims.play('enemy-walk', true);       
@@ -254,7 +212,7 @@ class GameScene extends Phaser.Scene {
         // fade out
         this.cameras.main.fade(500);    
         this.cameras.main.on('camerafadeoutcomplete', function(camera, effect){
-          //will prob need to change this to a gameOver Scene, and allow new game to be made based on current user and call to adapter
+          // will prob need to change this to a gameOver Scene, and allow new game to be made based on current user and call to adapter
           this.scene.start('TitleScene');
         }, this);
     };

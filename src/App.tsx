@@ -14,15 +14,29 @@ import { Resume } from './Containers/Resume';
 import { Connect } from './Containers/Connect';
 
 
+
 function App() {
-  const [pageLoading, setPageLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [pointerType, setPointerType] = useState<string>();
+
+  const cacheImages = async (images: string[]) => {
+      const promises = await images.map((src) => {
+        return new Promise((resolve: any, reject: any) => {
+            const img: HTMLImageElement = new Image();
+            img.src = src;
+            img.onload = resolve();
+            img.onerror = reject();
+        })
+      })
+      await Promise.all(promises)
+      setIsLoading(false)
+  }
 
 
   useEffect(() => {
     // callback function to call when event triggers
     const onPageLoad = () => {
-      setPageLoading(false)
+      setIsLoading(false)
       // do something else
     };
 
@@ -35,6 +49,19 @@ function App() {
       return () => window.removeEventListener('load', onPageLoad);
     }
   }, []);
+
+  useEffect(() => {
+    const images = [
+        '../public/BGDiagramSteamPunk.png',
+        '../public/FansArtDecoBG.png',
+        '../public/In-White-96.png',
+        '../public/EmailIcon.png',
+        '../public/TempDownloadIcon.png',
+        '../public/github-mark-white.svg',
+        '../src/assets/images/buttonscale100.png'
+    ]
+    cacheImages(images)
+  })
 
   useEffect(() => {
     const checkPointerType = (event: any) => {
@@ -56,11 +83,11 @@ function App() {
         {/* todo error page isn't working in this setup */}
         <Route path="*" errorElement={<ErrorPage />} />
         <Route index path="/" element={<HeroSection />}/>
-        <Route path="/about" element={<About pageLoading={pageLoading}/>}/>
-        <Route path="/connect" element={<Connect />}/>
-        <Route path="/projects" element={<Projects />}/>
+        <Route path="/about" element={<About isLoading={isLoading}/>}/>
+        <Route path="/connect" element={<Connect isLoading={isLoading}/>}/>
+        <Route path="/projects" element={<Projects isLoading={isLoading}/>}/>
         <Route path="/live-demos" element={<GameDemo pointerType={pointerType}/>}/>
-        <Route path="/resume" element={<Resume/>}/>
+        <Route path="/resume" element={<Resume isLoading={isLoading}/>}/>
         <Route path="/blog" element={<Blog posts={CurrentBlogPosts}/>}/>
         {CurrentBlogPosts && CurrentBlogPosts.map((p, i) => 
             <Route key={`${i}-${p.blogURL}`} path={`/${p.blogURL}`} element={<BlogRead title={p.title} blogContent={p.content}/>}/>

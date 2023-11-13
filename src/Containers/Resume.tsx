@@ -8,10 +8,11 @@ import { ResumeEducation } from '../Components/ResumeComponents/ResumeEducation'
   
 
 type ResumeProps = {
+    isLoading: boolean;
     text?: string;
 }
 
-export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = () => { 
+export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = ({ isLoading }) => { 
 
     const onDownload = () => {
         const pdfUrl = "aReillyDownload.pdf";
@@ -24,6 +25,9 @@ export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = (
     };
 
     return (
+        <>
+        {isLoading ? <></>
+        :
         <div id='Resume'>
             <div className='resume-content flexcolumn'>
                 <h1 className='resume-header-title'>Resume</h1>
@@ -52,5 +56,7 @@ export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = (
                 <ResumeEducation/>
             </div>
         </div>
+    }
+    </>
     ); 
 } 

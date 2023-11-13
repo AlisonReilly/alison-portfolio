@@ -9,11 +9,12 @@ import { BlogPost } from '../constants/blogConstants';
 type BlogProps = {
     text?: string;
     classNames?: string;
+    isLoading?: boolean;
     posts: BlogPost[];
 }
 
 export const Blog: React.FC<BlogProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, posts, text, ...htmlProps}) => { 
+    classNames, isLoading, posts, text, ...htmlProps}) => { 
     const [orderedPosts, setOrderedPosts] = useState<BlogPost[]>();
     
     useEffect(() => {
@@ -23,23 +24,28 @@ export const Blog: React.FC<BlogProps & React.HTMLProps<HTMLDivElement>> = ({
 
             if (key1 > key2) {
                 return -1;
-            } else if (key1 == key2) {
+            } else if (key1 === key2) {
                 return 0;
             } else {
                 return 1;
             }
         }))
-    }, [])
+    }, [posts])
 
     return (
-        <div id='Blog'>
-            <div className='main-blog-list'>
-                {orderedPosts && orderedPosts.map((p, i) => 
-                    <BlogPreview key={`${i}-preview`} blogContent={p.content} title={p.title} blogURL={p.blogURL} />
-                )}
+        <>{!isLoading ? 
+            <div id='Blog'>
+                <div className='main-blog-list'>
+                    {orderedPosts && orderedPosts.map((p, i) => 
+                        <BlogPreview key={`${i}-preview`} blogContent={p.content} title={p.title} blogURL={p.blogURL} />
+                    )}
 
+                </div>
             </div>
-        </div>
+            :
+            <></>
+            }
+        </>
    
     ); 
 } 

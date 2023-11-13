@@ -5,13 +5,13 @@ import '../Styles/About.css';
 type AboutProps = {
     text?: string;
     classNames?: string;
-    pageLoading: boolean;
+    isLoading: boolean;
 }
 
 export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, pageLoading, text, ...htmlProps}) => { 
+    classNames, isLoading, text, ...htmlProps}) => { 
     return (
-        <> {!pageLoading 
+        <> {!isLoading 
             ? 
             <div id='About' className='main-wrapper'>
                 <div className='main-content glassAbout'>

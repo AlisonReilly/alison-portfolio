@@ -20,13 +20,13 @@ var Magic = new Phaser.Class({
           this.setPosition(player.x, player.y);
           if (player.flipX)
           {
-              //face left
+              // face left
               this.speed = Phaser.Math.GetSpeed(-1000, 1);
               
           }
           else
           {
-              //face right
+              // face right
               this.speed = Phaser.Math.GetSpeed(1000, 1);
               
           }

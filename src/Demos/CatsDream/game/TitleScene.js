@@ -23,7 +23,7 @@ class TitleScene extends Phaser.Scene {
     }
 
     update(){
-        //console.log(this.sys.canvas.width)
+        // console.log(this.sys.canvas.width)
     }
 }
 

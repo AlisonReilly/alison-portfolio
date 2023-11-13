@@ -7,16 +7,6 @@
 }
 
 .canvas-mobile {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-    /* margin-top: 50px; */
-    /* margin-top: -50px;
-    position: relative; */
-    /* position: relative; */
-    /* float: right; */
-    /* width: 100vw;
-    height: 100vh; */
 }
 
 .rotate-message {
@@ -25,7 +15,6 @@
     padding-right: 20%;
     font-size: 5vw;
     color: white;
-    z-index: 1;
     height: 100vh;
     position: absolute;
 }
