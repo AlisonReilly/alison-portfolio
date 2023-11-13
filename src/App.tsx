@@ -22,7 +22,6 @@ function App() {
   useEffect(() => {
     // callback function to call when event triggers
     const onPageLoad = () => {
-      console.log('page loaded');
       setPageLoading(false)
       // do something else
     };

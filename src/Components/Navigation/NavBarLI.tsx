@@ -21,7 +21,6 @@ export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>>
     const LIRef = createRef<HTMLLIElement>();
 
     let location = useLocation();
-    console.log('location: ', location.pathname)
 
     useEffect(() => {
         const handleClickOutside = (event: any) => {

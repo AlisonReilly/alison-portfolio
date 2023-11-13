@@ -1,29 +1,15 @@
 import Phaser from 'phaser';
 import VirtualJoystick from 'phaser3-rex-plugins/plugins/virtualjoystick.js';
-
+import Button from 'phaser3-rex-plugins/plugins/button.js';
 import Player from './Player.js';
 import Magic from './Magic.js';
-//import Enemies from './Enemies.js';
-// import Enemy from './Enemy.js';
-// import pinktilesheet from '../assets/maps/pinktilesheet.png';
-// import largermap from '../../../../public/largermap.json';
-// import catspritesheet from '../assets/images/catspritesheet.png';
-// import magicb from '../assets/images/magicb.png';
-// import enemyspritesheet from '../assets/images/enemyspritesheet.png';
-// import fireflyspritesheet from '../assets/images/fireflyspritesheet.png';
 
 
 class GameScene extends Phaser.Scene {
     constructor(){
         super({
             key: 'GameScene'
-        })
-        // this.player; 
-        // this.cursors;
-        // this.pointer;
-        // this.enemies;
-        // this.fireflies;
-        // this.magics;     
+        })  
     }
 
     init () {
@@ -66,7 +52,6 @@ class GameScene extends Phaser.Scene {
 
         //create player from Tiled definitions
         this.map.findObject('objects', (obj) => {
-            console.log('obj x: ', obj.x)
             if (obj.type === 'player'){
                 this.player = new Player(this, obj.x + 75, window.innerHeight - (window.innerHeight* .70))
             }  
@@ -149,8 +134,7 @@ class GameScene extends Phaser.Scene {
         this.cameras.main.followOffset.set(-200, 100);
         this.cameras.main.setBounds(0, 0, cameraBoundsWidth, 640);
 
-
-        
+        // keeping as reference for now
         // initial isTouchScreen value, os and browser, using for debugging
         // const OS = Object.entries(this.sys.game.device.os)
         // const browser = Object.entries(this.sys.game.device.browser)
@@ -158,11 +142,11 @@ class GameScene extends Phaser.Scene {
         // OS.map((n, v) => { n[1] === true && deviceInfo.push(n[0])});
         // browser.map((n, v) => n[1] === true && deviceInfo.push(n[0]))
         // const deviceSummary = deviceInfo.join(" ")
+        // this.mobileHelperText = this.add.text(25, 25, `Device Info: ${deviceSummary}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'});
 
-        // this.mobileHelperText = this.add.text(25, 25, `Device Info: ${deviceSummary}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5'})
         this.attackText = this.add.text(700, 0, `Enemies: ${this.attack}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5' });
         this.collectText = this.add.text(200, 0, `Fireflies: ${this.collectff}`, { fontSize: '25px', fill: '#000',  backgroundColor: '#cebff5' });
-        // this.scoreText = this.add.text(12, 12, `Score: `, { fontSize: '32px', fill: '#fff' });
+
         this.events.on('attack', () => {
             this.attack++;
             this.attackText.setText(`Enemies: ${this.attack}`);
@@ -207,6 +191,21 @@ class GameScene extends Phaser.Scene {
             });
 
             this.cursors = this.joystick.createCursorKeys();
+            // this is prob somethin glike this.scene.add or this.add: 
+            this.FireButtonSetup = this.add
+                .circle(window.innerWidth - (window.innerHeight * .20), window.innerHeight - (window.innerHeight * .10), 30, 0x888888, 0.6)
+                .setScrollFactor(0)
+                .setAlpha(this.alphaOn)
+                .setOrigin(0.5, 1)
+                .setStrokeStyle(2, this.inner)
+                .setDepth(99);
+
+            this.FireButton = new Button(this.FireButtonSetup, {
+                enable: true,
+                mode: 0,
+                clickInterval: 8,
+                threshold: undefined
+            });
         } else {
             // this.pointer = this.input.activePointer;
             this.cursors = this.input.keyboard.createCursorKeys();

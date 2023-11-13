@@ -30,12 +30,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
 
   
     create(){
-        console.log('touch event player class: ', window.TouchEvent)
+
     }
 
 //update(cursors)
 //update(cursors, scene, enemies)
 update(cursors, scene, enemies){
+    if(this.scene.joystick) console.log('scene: ', this.scene.FireButton)
+    
         if(cursors.left.isDown){
             this.flipX = true;
             this.setVelocityX(-160);
@@ -61,27 +63,43 @@ update(cursors, scene, enemies){
             this.setVelocityY(0); 
         };
 
-        //firing section
-        // todo temp comment out until button added/mobile check completed
-        // if (cursors.space && cursors.space.isDown) {
-        //     // todo - have to use a button to the right for this, not the joystick
-        //     this.setVelocity(0);
-        //     this.anims.play('fire', true);
+        if(this.scene.FireButton.down) {
+            this.setVelocity(0);
+                this.anims.play('fire', true);
 
-        //     var magic = scene.magics.get();
-        //     magic.setActive(true);
-        //     magic.setVisible(true);
+                var magic = scene.magics.get();
+                magic.setActive(true);
+                magic.setVisible(true);
 
-        //     if (magic) {   
-        //         magic.fire(this);
+                if (magic) {   
+                    magic.fire(this);
 
-        //         //doesn't work
-        //         //scene.physics.add.collider(magic, this.layer_collision);
+                    scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
+                } 
+        }
 
-        //         //works
-        //         scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
-        //     } 
-        // }
+        if(!this.scene.joystick){
+
+            //firing section
+            if (cursors.space && cursors.space.isDown) {
+                this.setVelocity(0);
+                this.anims.play('fire', true);
+
+                var magic = scene.magics.get();
+                magic.setActive(true);
+                magic.setVisible(true);
+
+                if (magic) {   
+                    magic.fire(this);
+
+                    //doesn't work, keeping as a note or reference
+                    //scene.physics.add.collider(magic, this.layer_collision);
+
+                    //works
+                    scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
+                } 
+            }
+        }
     }
 
     hitAnEnemy(magic, enemy){

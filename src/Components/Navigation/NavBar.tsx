@@ -15,7 +15,6 @@ type NavBarProps = {
 export const NavBar: React.FC<NavBarProps & React.HTMLProps<HTMLDivElement>> = ({
     isTouchScreen, menuItemData, styleClass, ...htmlProps }) => { 
     let navLocation = useLocation();
-    console.log('location here: ', navLocation)
 
     return ( 
         <nav id={`${(isTouchScreen || navigator.userAgent.toLowerCase().includes('mobile')) && navLocation.pathname.includes('live-demos') ? 'NavGameDemo' : 'PrimarySiteNav'}`}>

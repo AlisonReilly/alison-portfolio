@@ -72,7 +72,7 @@ export const GameDemo: React.FC<GameDemoProps & React.HTMLProps<HTMLDivElement>>
                 setCurrentGame(game)
             }
 
-        }, [currentGame]);
+        }, [currentGame, gameReady]);
     
 
     return (
