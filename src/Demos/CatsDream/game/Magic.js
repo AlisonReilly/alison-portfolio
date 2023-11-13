@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-
+// todo maybe try to make a new projectile feature
+// maybe using the other phaser example that uses an arcade sprite class
 var Magic = new Phaser.Class({
     Extends: Phaser.GameObjects.Sprite,
     initialize:

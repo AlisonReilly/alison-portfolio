@@ -24,19 +24,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
         this.scene.anims.create({
             key: 'fire',
             frames: [ { key: 'player', frame: 4 } ],
-            framesRate: 20
+            framesRate: 20,
         });
     }
 
   
     create(){
-
-        this.scene.FireButton = new Button(this.scene.FireButtonSetup, {
-            enable: true,
-            mode: 'press',
-            clickInterval: 8,
-            threshold: undefined
-        });
     }
 
     update(cursors, scene, enemies){
@@ -65,7 +58,8 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
             this.setVelocityY(0); 
         };
 
-
+        // todo, buttons should be relatively simple to add to add a circle to the screen and add some onclick/on touch 
+        // function so maybe do this instead
         if (this.scene.FireButton){
             this.scene.FireButton.on('click', () => {
                 this.setVelocity(0);
@@ -78,7 +72,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
                 if (magic) {   
                     magic.fire(this);
                     scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
-                } 
+                }
             })
         }
 
@@ -110,6 +104,10 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
         // this.attackText.setText('Enemies banished: ' + this.attack);
         
         enemy.disableBody(true, true);
+        // adding these seems to keep a line in the screen where enemies disappear instead
+        // magic.setActive(false)
+        // magic.setVisible(false)
+
         this.events.emit('attack');
     };  
 }
