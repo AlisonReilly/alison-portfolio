@@ -157,21 +157,23 @@ class GameScene extends Phaser.Scene {
             });
 
             this.cursors = this.joystick.createCursorKeys();
-            // this is prob somethin glike this.scene.add or this.add: 
-            this.FireButtonSetup = this.add
-                .circle(window.innerWidth - (window.innerHeight * .20), window.innerHeight - (window.innerHeight * .10), 30, 0x888888, 0.6)
-                .setScrollFactor(0)
-                .setAlpha(this.alphaOn)
-                .setOrigin(0.5, 1)
-                .setStrokeStyle(2, this.inner)
-                .setDepth(99);
+            // this is prob something like this.scene.add or this.add: 
+            // this.FireButtonSetup = this.add
+            //     .circle(window.innerWidth - (window.innerHeight * .20), window.innerHeight - (window.innerHeight * .10), 30, 0x888888, 0.6)
+            //     .setScrollFactor(0)
+            //     .setAlpha(this.alphaOn)
+            //     .setOrigin(0.5, 1)
+            //     .setStrokeStyle(2, this.inner)
+            //     .setDepth(99);
 
-            this.FireButton = new Button(this.FireButtonSetup, {
-                enable: true,
-                mode: 'press',
-                clickInterval: 8,
-                threshold: undefined
-            });
+            // this.FireButton = new Button(this.FireButtonSetup, {
+            //     enable: true,
+            //     mode: 'press',
+            //     clickInterval: 8,
+            //     threshold: undefined
+            // });
+
+            this.pointer = this.input.activePointer;
 
 
         } else {

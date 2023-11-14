@@ -1,23 +1,17 @@
-import React, { RefObject, useState } from 'react';
+import React, { RefObject, useEffect, useRef, useState } from 'react';
 import '../../Styles/Projects.css';
 
 type VideoDisplayProps = {
-    iFrameRef?: RefObject<HTMLIFrameElement>;
     video?: string;
 }
 
 export const VideoDisplay: React.FC<VideoDisplayProps & React.HTMLProps<HTMLDivElement>> = ({
-    iFrameRef, video }) => { 
-        const [iFrameLoaded, setIFrameLoaded] = useState(false);
+    video }) => {
 
-        const handleIFrameLoad = () => {
-            setIFrameLoaded(true)
-        }
     return (
-        <> {iFrameLoaded ? 
             <div>
-                <iframe 
-                    ref={iFrameRef}
+                <iframe
+                    id='video-iframe'
                     className='youtubeIframe'
                     width="400" 
                     height="200" 
@@ -25,12 +19,7 @@ export const VideoDisplay: React.FC<VideoDisplayProps & React.HTMLProps<HTMLDivE
                     title="YouTube video player" 
                     allow="web-share" 
                     allowFullScreen
-                    onLoad={handleIFrameLoad}
                 />
             </div>
-            :
-            <></>
-        }
-        </>
     ); 
 } 

@@ -12,24 +12,6 @@ type ProjectProps = {
 }
 
 export const Projects: React.FC<ProjectProps & React.HTMLProps<HTMLDivElement>> = ({isLoading}) => { 
-    
-    // todo this set of ideas is not really working to check on more than one at a time
-    // would prob need to create refs in the map and do something to check if all of them are loaded and then
-    // reflect all are loaded to change the state
-    // for now will try to handle individual states only, this will create separate loaders but maybe not so bad
-    const iFrameRef = useRef<HTMLIFrameElement>(null);
-    const [isIFrameLoaded, setIFrameLoaded] = useState<boolean>(false);
-    const iframeCurrent = iFrameRef.current;
-
-    useEffect(() => {
-        iframeCurrent?.addEventListener('load', () => setIFrameLoaded(true));
-        return () => {
-            iframeCurrent?.removeEventListener('load', () => setIFrameLoaded(true));
-        };
-      }, [iframeCurrent]);
-      console.log('regular isLoading: ', isLoading)
-      console.log('is iframe loaded?? ', isIFrameLoaded)
-      console.log('iframe current: ', iframeCurrent)
 
 
     return (
@@ -43,7 +25,7 @@ export const Projects: React.FC<ProjectProps & React.HTMLProps<HTMLDivElement>> 
                         <div className='project-title'>{p.title}</div>
                         <span className='project-diagram-vertical'>|</span>
                         {p.demoType === 'video' 
-                            ? <VideoDisplay iFrameRef={iFrameRef} video={p.href} />
+                            ? <VideoDisplay video={p.href} />
                             : <ImageDisplay image={p.href} altText={p.title} /> 
                         }
                         <div className='project-description'><span>Fig. {AlphaDiagramMap[i]} - </span>{p.description}</div>
