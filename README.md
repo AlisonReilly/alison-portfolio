@@ -2,6 +2,7 @@
 
 ### Run locally
 $ npm i
+
 $ npm start
 
 #### Project created with the following, so may need to adjust for local use:
@@ -13,5 +14,5 @@ Typescript: 4.9.5
 
 #### Usage
 This repository is for portfolio code viewing/demo purposes only
-Although I'd be flattered if anyone took any snippets of code for their own use
-The project, otherwise, as a whole, should not be copied or reproduced
+
+Always feel free to grab snippets and examples, but never reproduce or copy in whole, please
