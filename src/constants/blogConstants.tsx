@@ -747,7 +747,7 @@ end`
             <pre className="code-block-large">{
                 `require 'bcrypt'
 
-    class User &lt; ActiveRecord::Base
+    class User < ActiveRecord::Base
         #users.password_hash in the database is a :string
         include BCrypt
 
@@ -835,7 +835,7 @@ end`
             <div className="code-block-large">{
             `#File activemodel/lib/active_model/secure_password.rb, line 96
 def authenticate(unencrypted_password)
-    BCrypt::Password.new(password_digest).is_password?(unencrypted_password) &amp;&amp; self
+    BCrypt::Password.new(password_digest).is_password?(unencrypted_password) && self
 end`
             }</div>
             <p>
@@ -1136,8 +1136,8 @@ end`
             <p>Add the reducer to a <strong>for loop</strong>, passing in the iterated unique socks array:</p>
 
             <div className='code-block-large'>{
-            `for (let i = 0; i &lt; unique.length; i++) {
-    let count = (countUnique(ar, unique&#091;i]))
+            `for (let i = 0; i < unique.length; i++) {
+    let count = (countUnique(ar, unique[i]))
 }`
             }</div>
 
@@ -1153,9 +1153,9 @@ end`
             `function sockMerchant(n, ar) {
     let matchCount = 0
     let unique = [...new Set(ar)]
-    for(let i = 0; i &lt; unique.length; i++){
+    for(let i = 0; < unique.length; i++){
         let count = (countUnique(ar, unique[i]))
-        if(count &gt; 1){
+        if(count > 1){
             let detMatchQty = Math.floor(count/2)
             matchCount = matchCount + detMatchQty
         }
@@ -1163,8 +1163,8 @@ end`
     return matchCount
 }
 
-const countUnique = (array, number) =&gt; 
-array.reduce((acc, val) =&gt; 
+const countUnique = (array, number) =>; 
+array.reduce((acc, val) =>; 
 (val === number ? acc + 1 : acc), 0);`
         }</div>
 
@@ -1243,8 +1243,8 @@ array.reduce((acc, val) =&gt;
             </p>
 
             <div className='code-block-large'>{
-            `for (let i = 0; i &lt; steps.length; i++){
-    if (altitude === 0 &amp;&amp; steps&#091;i] === "D"){
+            `for (let i = 0; i < steps.length; i++){
+    if (altitude === 0 && steps[i] === "D"){
         enteredValley++
     }
 }`
@@ -1258,8 +1258,8 @@ array.reduce((acc, val) =&gt;
     let altitude = 0
     let steps = s.split("");
             
-    for (let i = 0; i &lt; steps.length; i++){
-        if (altitude === 0 &amp;&amp; steps[i] === "D"){
+    for (let i = 0; i < steps.length; i++){
+        if (altitude === 0 && steps[i] === "D"){
             enteredValley++
         }
         altitude = handleAltitude(steps[i], altitude)
@@ -1466,7 +1466,7 @@ function calculateA(n, sLength, a_Count){
             <p>I used a <strong>while loop</strong> that set iteration condition based on the changing position:</p>
 
             <div className='code-block-snippet'>
-                    {`while (position &lt; c.length - 1) {`}
+                    {`while (position < c.length - 1) {`}
             </div>
             <p>
                 I checked for the ability to change position with a jump of 2 first, and if not a jump of 1, during each logic 
@@ -1479,7 +1479,7 @@ function calculateA(n, sLength, a_Count){
             `function jumpingOnClouds(c) {
     let jumps = 0;
     let position = 0;
-    while (position &lt; c.length - 1) {
+    while (position < c.length - 1) {
         if (c[position + 2] == 0) {
             position = position + 2;
             jumps++;
