@@ -136,8 +136,8 @@ export const PortfolioItems: PortfolioItem[] = [
     { 
         title: 'The Wall',
         href: WallMedCrop,
-        description: 'Learned Python along with Python Flask for backend REST api creation. The project demonstrates authentication/authorization and basic CRUD operations, tied to a React UI.',
-        tags: ['Self Study', 'Python', 'Flask', 'REST API', 'Auths', 'React'],
+        description: 'Learned Python along with Python Django for backend REST api creation. The project demonstrates authentication/authorization and basic CRUD operations, tied to a React UI.',
+        tags: ['Self Study', 'Python', 'Django', 'REST API', 'Auths', 'React'],
         githubURL: ['https://github.com/Tsunamins/wall-client', 'https://github.com/Tsunamins/wall-back'],
         projectAssociation: 'Self Study',
         demoType: 'image'
