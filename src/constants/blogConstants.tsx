@@ -362,8 +362,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 it is an environment or configuration type of file seen in other Ruby programs and setup. For example, I was 
                 used to the environment.rb file in a config folder from exercises I completed in the past. While researching 
                 other file setups for a gem CLI project I came across this particular setup: a <span className='inline-code-emphasis'>/config</span> folder is added, an 
-                <span className='inline-code-emphasis'>environment.rb</span> includes the necessary files to be used in the program and the 
-                <span className='inline-code-emphasis'>lib/miami_venues.rb</span> includes 
+                {` `}<span className='inline-code-emphasis'>environment.rb</span> includes the necessary files to be used in the program and the 
+                {` `}<span className='inline-code-emphasis'>lib/miami_venues.rb</span> includes 
                 the environment file. There are a other, more concise examples to follow, but also interesting to see exactly 
                 how that file structure is initially created while creating a new gem, and good to know how all those files 
                 work together.
@@ -378,19 +378,29 @@ export const CurrentBlogPosts: BlogPost[] = [
                  as well. So, I had to research the ruby date methods. In order to use various the predefined date class and its 
                  methods, require ‘date’ had to be included at the top of the file along with pry, nokogiri and open-uri. 
                  Three date methods were extremely useful, <span className='inline-code-emphasis'>DateTime.Parse()</span>, <span className='inline-code-emphasis'>.strftime()</span> and 
-                 <span className='inline-code-emphasis'>Time.new</span>:
+                 {` `}<span className='inline-code-emphasis'>Time.new</span>:
             </p>
             <p>
             <span className='inline-code-emphasis'>DateTime.parse(‘date here in almost any format’)</span>, changes a date such as January, 1 2018 and makes the value a 
                 standardized version of time:
             </p> 
-            <figure className="block-image"><img src="https://i.imgur.com/4Tki4Ww.jpg/" alt="" /></figure>
+
+            <div className='figure-pres'>
+                <div>
+                    <img className='outlet' src="https://i.imgur.com/4Tki4Ww.jpg/" alt="" />
+                </div>
+            </div>
             
             <p>
                 Once this date was standardized a specific formatted output can be returned with <span className='inline-code-emphasis'>.strftime(“'%a %d %b %Y'”)</span>, 
                 these representing name value of the day, numerical value of the day, month and year, respectively :
             </p>
-            <figure className="block-image"><img src="https://i.imgur.com/40DVLJ7.jpg" alt="" /></figure>
+
+            <div className='figure-pres'>
+                <div>
+                    <img className='outlet' src="https://i.imgur.com/40DVLJ7.jpg" alt="" />
+                </div>
+            </div>
             
             <p>
                 These methods were included in a helper method to pass in any date data gathered from the website and process 
@@ -402,9 +412,17 @@ export const CurrentBlogPosts: BlogPost[] = [
                 I utilized <span className='inline-code-emphasis'>.strftime()</span> to standardize the format of the user's date to easily match with event dates:
             </p>
 
-            <figure className="block-image"><img src="https://i.imgur.com/1SFcCVD.jpg" alt="" /></figure>
-
-            <figure className="block-image"><img src="https://i.imgur.com/5TW5UGL.jpg" alt="" /></figure>
+            <div className='figure-pres'>
+                <div>
+                    <img className='outlet' src="https://i.imgur.com/1SFcCVD.jpg" alt="" />
+                </div>
+            </div>
+            <div className='figure-pres'>
+                <div>
+                    <img className='outlet' src="https://i.imgur.com/5TW5UGL.jpg" alt="" />
+                </div>
+            </div>
+            
                         
             <h3 className='core-subsection'>Self.ishness:</h3>
             <p>
@@ -412,15 +430,15 @@ export const CurrentBlogPosts: BlogPost[] = [
                 and what the difference is, etc. I generally understood what it was doing in labs but hadn't yet put it into my 
                 own words. So, once I tried to combine my classes together and get everything functioning in the CLI, I was 
                 getting errors and why, oh, that’s why without defining my scraper methods as <span className='inline-code-emphasis'>self.scrape_something</span>, and just 
-                <span className='inline-code-emphasis'>scrape_something</span>: trying
+                {` `}<span className='inline-code-emphasis'>scrape_something</span>: trying
             </p>
             <p>
                 <span className='inline-code-emphasis'>find_scraped_items.scrape_something</span> was returning an error. After changing to 
-                <span className='inline-code-emphasis'>self.</span>, I could successfully 
+                {` `}<span className='inline-code-emphasis'>self.</span>, I could successfully 
                 interact my CLI, my Events class and my Scraper class together, setting variables equal to interacting objects. 
                 Also, learned that unless called in a very specific way, you can’t call an instance method within a class method, 
                 suddenly my date changing method I had worked on earlier wasn’t working, however just calling this 
-                <span className='inline-code-emphasis'>self.change_date_format</span>, and making that modification within the call to itself fixed this quickly.
+                {` `}<span className='inline-code-emphasis'>self.change_date_format</span>, and making that modification within the call to itself fixed this quickly.
             </p>
 
             <h3 className='core-subsection'>I discovered an em dash:</h3>
@@ -432,7 +450,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 are attempting to make something such as <span className='inline-code-emphasis'>.split(“-“)</span> find a split, in my example a date range, work when 
                 there is actually an em or en dash in the middle, ruby won’t catch it. I tried to look up character encoding 
                 and how I may use that, none of that was clear so I decided to see if I could use regex somehow. By inserting 
-                <span className='inline-code-emphasis'>/\W[^ ,A-Z,1-9]/</span> into <span className='inline-code-emphasis'>.split(/\W[^ ,A-Z,1-9]/)</span>, I was able to exclude every 
+                {` `}<span className='inline-code-emphasis'>/\W[^ ,A-Z,1-9]/</span> into <span className='inline-code-emphasis'>.split(/\W[^ ,A-Z,1-9]/)</span>, I was able to exclude every 
                 character necessary except anything 
                 resembling a hyphen or dash and was finally able to proceed hours later!!!! Regex is really a good time!
             </p>
@@ -467,10 +485,10 @@ export const CurrentBlogPosts: BlogPost[] = [
             <h3 className='core-subsection'>File Setup - first things, first</h3>
 
             <div className="code-block-large">{
-                `                if ActiveRecord::Migrator.needs_migration?
-                raise 'Migrations are pending.
-                Run rake 'db:migrate' to resolve the issue.'
-            End`
+                `if ActiveRecord::Migrator.needs_migration?
+    raise 'Migrations are pending.
+    Run rake 'db:migrate' to resolve the issue.'
+End`
             }
 
             </div>
@@ -478,20 +496,19 @@ export const CurrentBlogPosts: BlogPost[] = [
             <p>To this:</p>
 
             <div className="code-block-large">{
-                `                if ActiveRecord::Base.connection.migration_context.needs_migration?
-                raise 'Migrations are pending. Run 'rake db:migrate' to resolve the issue.'
-                End`
+                `if ActiveRecord::Base.connection.migration_context.needs_migration?
+    raise 'Migrations are pending. Run 'rake db:migrate' to resolve the issue.'
+End`
             }
             </div>
 
             <p>At the moment I don’t remember the error code, but if I can reproduce it or find it, I will add it here.</p>
             <p>Excellent, everything is setup and a little test to see that everything is in place:</p>
 
-            <div className="code-block-large">{
-
+            <div className="code-block-snippet">{
                 `get '/' do
-                "Hello World, Can this App Start?"
-                End`}
+    "Hello World, Can this App Start?"
+End`}
             </div>
             
             <p>Run shotgun in the terminal and…No. It can't start.</p>
@@ -558,7 +575,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 following error after working a while, or something similar.
             </p>
             
-            <p className='quote-block'>
+            <p className='block-quote'>
                 start_tcp_server': no acceptor (port is in use or requires root privileges) (RuntimeError)
             </p>
 
@@ -569,14 +586,14 @@ export const CurrentBlogPosts: BlogPost[] = [
                 A variety of solutions are presented to find the processes that are causing the problem within the terminal:
             </p>
             
-            <div className="code-block-large">$ ps</div>
-            <div className="code-block-large">$ ps ax | grep rails</div>
-            <div className="code-block-large">$ ps ax | grep thin</div>
-            <div className="code-block-large">$ ps ax | grep ruby</div>
+            <div className="code-block-snippet">$ ps</div>
+            <div className="code-block-snippet">$ ps ax | grep rails</div>
+            <div className="code-block-snippet">$ ps ax | grep thin</div>
+            <div className="code-block-snippet">$ ps ax | grep ruby</div>
 
             <p>All of these return some type of numbers, the solution next to enter in the terminal:</p>
 
-            <div className="code-block-large">$ kill -9 #one of the numbers here</div>
+            <div className="code-block-snippet">$ kill -9 #one of the numbers here</div>
 
             <p>
                 I ran into the problem a couple of times while working and found that the most relevant to my current setup was 
@@ -618,14 +635,14 @@ export const CurrentBlogPosts: BlogPost[] = [
                 <li>
                     Including the <strong>gem 'bcrypt'</strong> in the Gemfile<br/>example:
                     <br/>
-                    <div className="code-block-large">gem 'bcrypt', '~&gt; 3.1.7'</div>
+                    <div className="code-block-snippet">gem 'bcrypt', '~&gt; 3.1.7'</div>
                 </li>
                 <li>
                     Incorporating a string based attribute in the User table called “<strong>password_digest</strong>”
                     <br/>example:
                     <br/>within a migration file:
                     <br/>
-                    <div className="code-block-large">t.string "password_digest"</div>
+                    <div className="code-block-snippet">t.string "password_digest"</div>
                 </li>
                 <li>
                     Adding/calling the method <strong>has_secure_password</strong> within the User model
@@ -633,23 +650,22 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </li>
             </ol>
 
-            <pre className='pre-block'> <code className="code-block">
-                class User &lt; ActiveRecord::Base<br/>
-                    has_secure_password<br/>
-                end
-                </code> 
-            </pre>
+            <div className="code-block-snippet">{
+                `class User < ActiveRecord::Base
+    has_secure_password
+end`
+            }
+
+             </div>
 
             <ol className='numbered-blog' start={4}>
                 <li>
                     Using the method <strong>.authenticate()</strong> in a sessions controller while checking the validity of the password 
                     in combination with the user’s username or other identifier
-                    <br/>Example<br/>In the <code className='code-block'>def create</code> of a sessions controller:<br/>
-                    <pre className='pre-block'>
-                        <code className='code-block'>if @user &amp;&amp; 
+                    <br/>Example<br/>In the <span className='inline-code-emphasis'>def create</span> of a sessions controller:<br/>
+                    <div className='code-block-large'>if @user &amp;&amp; 
                         @user.authenticate(params[:user][:password])
-                        </code>
-                    </pre>
+                    </div>
                 </li>
             </ol>
              
@@ -691,7 +707,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 far (I do but not in this blog). However, after some light reading, the process of hashing involves mapping 
                 (creating a relationship between objects), data of random size, to another object of a fixed size. The idea of 
                 these functions, or why they are advantageous to using within encryption, is that they are very difficult to 
-                reverse, the are considered “one-way functions” (<a href='https://en.wikipedia.org/wiki/Cryptographic_hash_function' target='_blank' rel="noreferrer">Wiki Cryptographic Hash Function</a>).
+                reverse, the are considered “one-way functions” (<a className='anchors' href='https://en.wikipedia.org/wiki/Cryptographic_hash_function' target='_blank' rel="noreferrer">Wiki Cryptographic Hash Function</a>).
             </p>
              
             <p>
@@ -706,27 +722,29 @@ export const CurrentBlogPosts: BlogPost[] = [
              
             <p><code className='code-block'>password_digest</code> is a requirement specific to bcrypt, likely a word chosen from and whatever way the 
                 developers of bcrypt wanted to name the handling of password attributes. However, it is interesting that the output 
-                of mathematical hash functions can be referred to as: hash values, hashes, digests or message digests, among others 
-                (https://en.wikipedia.org/wiki/Cryptographic_hash_function &amp; 
-                https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data). Also noteworthy, according to the 
-                documentation it has to be <code className='code-block'>someword_digest</code> in terms of calling has_secure_password, as it is looking 
-                for _digest, in particular and is the topic of the next section (https://github.com/codahale/bcrypt-ruby).
+                of mathematical hash functions can be referred to as: hash values, hashes, digests or message digests, among other
+                (<a className='anchors' href='https://en.wikipedia.org/wiki/Cryptographic_hash_function' target='_blank' rel="noreferrer">Wiki Cryptographic Hash Function</a> &
+                <a className='anchors' href='https://en.wikipedia.org/wiki/Hash_function#Hashing_variable-length_data' target='_blank' rel="noreferrer">Wiki Hashing Variable Length Data</a>
+                ) 
+   . Also noteworthy, according to the 
+                documentation it has to be <code className='inline-code-emphasis'>someword_digest</code> in terms of calling has_secure_password, as it is looking 
+                for _digest, in particular and is the topic of the next section (<a className='anchors' href='https://github.com/codahale/bcrypt-ruby' target='_blank' rel="noreferrer">Github Ruby Bcrypt</a>).
             </p>
              
-            <h3 className='core-subsection'><code className='code-block'>has_secure_password</code>, is it really that easy, is that all I have to do?</h3>
+            <h3 className='core-subsection'><code className='inline-code-emphasis'>has_secure_password</code>, is it really that easy, is that all I have to do?</h3>
 
             <p>
                 There was a reading on it describing it, linking to documentation about it, etc. However, to move forward, I 
-                generalized <code className='code-block'>has_secure_password</code>, and put it on the back burner as something I should just go with 
+                generalized <code className='inline-code-emphasis'>has_secure_password</code>, and put it on the back burner as something I should just go with 
                 and place into a User model, accepted it and called it a day.
             </p>
              
             <p>
                 Reading further on bcrypt's github page, I discovered that the initial way to incorporate bcrypt into ruby is 
-                described a bit more complexly than simply <code className='code-block'>has_secure_password</code>, for example:
+                described a bit more complexly than simply <code className='inline-code-emphasis'>has_secure_password</code>, for example:
             </p>
 
-            <pre className="pre-block code-block jsx">{
+            <pre className="code-block-large">{
                 `require 'bcrypt'
 
     class User &lt; ActiveRecord::Base
@@ -749,54 +767,54 @@ export const CurrentBlogPosts: BlogPost[] = [
              
             <p>
                 Their documentation goes onto mention, however, that later versions of rails incorporate this process within 
-                <code className='code-block'>ActiveModel::SecurePassword</code>, allowing usage of <code className='code-block'>has_secure_password</code>. Oh so that’s why, 
+                <code className='inline-code-emphasis'>ActiveModel::SecurePassword</code>, allowing usage of <code className='inline-code-emphasis'>has_secure_password</code>. Oh so that’s why, 
                 but how does that work exactly, what does it do?
             </p>
              
             <p>
-                The definition of <code className='code-block'>has_secure_password</code>, incorporates a great deal necessary for password handling, 
+                The definition of <code className='inline-code-emphasis'>has_secure_password</code>, incorporates a great deal necessary for password handling, 
                 including active record validations for the usage of an attribute with digest and password length, as there are 
                 limitations to the byte size a password should be for this algorithm. I found it a great deal more interesting to 
-                view the source/definition of <code className='code-block'>has_secure_password</code>, maybe that should be obvious, but I don't always 
+                view the source/definition of <code className='inline-code-emphasis'>has_secure_password</code>, maybe that should be obvious, but I don't always 
                 look:
             </p>
 
-            <pre className='code-block pre-block jsx'>{
+            <div className='code-block-large'>{
             `#File activemodel/lib/active_model/secure_password.rb, line 61
 
-    def has_secure_password(attribute = :password, validations: true)
-    #Load bcrypt gem only when has_secure_password is used.
-    #This is to avoid ActiveModel (and by extension the entire framework)
-    #being dependent on a binary library.
+def has_secure_password(attribute = :password, validations: true)
+#Load bcrypt gem only when has_secure_password is used.
+#This is to avoid ActiveModel (and by extension the entire framework)
+#being dependent on a binary library.
 
-        begin
-            require "bcrypt"
-        rescue LoadError
-            $stderr.puts "You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install"
-            raise
-        end
+    begin
+        require "bcrypt"
+    rescue LoadError
+        $stderr.puts "You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install"
+        raise
+    end
 
-        include InstanceMethodsOnActivation.new(attribute)
+    include InstanceMethodsOnActivation.new(attribute)
 
-        if validations
-            include ActiveModel::Validations
+    if validations
+        include ActiveModel::Validations
 
-            #This ensures the model has a password by checking whether the password_digest
-            #is present, so that this works with both new and existing records. However,
-            #when there is an error, the message is added to the password attribute instead
-            #so that the error message will make sense to the end-user.
+        #This ensures the model has a password by checking whether the password_digest
+        #is present, so that this works with both new and existing records. However,
+        #when there is an error, the message is added to the password attribute instead
+        #so that the error message will make sense to the end-user.
 
-                validate do |record|
+        validate do |record|
             record.errors.add(attribute, :blank) unless record.send("#attribute_digest").present?
-            end
-
-            validates_length_of attribute, maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED
-            validates_confirmation_of attribute, allow_blank: true
         end
-    end`
+
+        validates_length_of attribute, maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED
+        validates_confirmation_of attribute, allow_blank: true
+    end
+end`
             }
                 
-            </pre>
+            </div>
              
             <p>
                 -From: <a className='anchors' href='https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password' target='_blank' rel="noreferrer">Has Secure Password</a>
@@ -814,12 +832,12 @@ export const CurrentBlogPosts: BlogPost[] = [
                 Authenticating a session has one more reference to bcrypt, this built method also refers to bcrypt within its definition:
             </p>
             
-            <pre className="code-block pre-block jsx">{
+            <div className="code-block-large">{
             `#File activemodel/lib/active_model/secure_password.rb, line 96
 def authenticate(unencrypted_password)
     BCrypt::Password.new(password_digest).is_password?(unencrypted_password) &amp;&amp; self
 end`
-            }</pre>
+            }</div>
             <p>
                 -From: 
                 <a className='anchors' href='https://apidock.com/rails/ActiveModel/SecurePassword/InstanceMethodsOnActivation/authenticate' target='_blank' rel="noreferrer">
@@ -1440,14 +1458,14 @@ function calculateA(n, sLength, a_Count){
 
             <p>I set a jumps and position variable to 0 outside the loops:</p>
 
-            <div className='code-block-large'>
+            <div className='code-block-snippet'>
                     let jumps = 0;<br/>
                     let position = 0;
              </div>
 
             <p>I used a <strong>while loop</strong> that set iteration condition based on the changing position:</p>
 
-            <div className='code-block-large'>
+            <div className='code-block-snippet'>
                     {`while (position &lt; c.length - 1) {`}
             </div>
             <p>
@@ -1694,11 +1712,11 @@ has_many :users, through: :reviews`}
             
             <p>
                 I knew I had enough nearly enough association requirements met between 
-                <div className="code-block-snippet">User</div>, 
-                <div className="code-block-snippet">Wine</div> and 
-                <div className="code-block-snippet">Review</div>, 
+                <span className="inline-code-emphasis">User</span>, 
+                <span className="inline-code-emphasis">Wine</span> and 
+                <span className="inline-code-emphasis">Review</span>, 
                 however, I wasn’t sure about user submittable attributes so I added in the dynamic source based associations 
-                with <div className="code-block-snippet">LikedReview</div>,
+                with <span className="code-block-snippet">LikedReview</span>,
                 this allowed to change the tense of the has_many through 
                 the liked_reviews to allow a differentiation in chaining against users vs. reviews themselves, 
                 all via the opposite source.
@@ -1718,7 +1736,7 @@ has_many :users, through: :reviews`}
     type = params[:type]
     if type == "like"
 
-        current_user.likes &lt;&lt; @review
+        current_user.likes <<; @review
         redirect_to like_review_path(current_user)
 
     elsif type == "unlike"
@@ -1802,9 +1820,9 @@ GET /reviews/:id/like(.:format)   reviews#like`}
             <div className="code-block-large">
                 {`So within the new .env file:
             
-GOOGLE_CLIENT_ID=&lt;generated number from google here&gt;'\u0300'
+GOOGLE_CLIENT_ID=<generated number from google here>'\u0300'
 
-GOOGLE_CLIENT_SECRET=&lt;generated number from google here&gt;'\u0300'`}
+GOOGLE_CLIENT_SECRET=<generated number from google here>'\u0300'`}
                 
 
             </div>
