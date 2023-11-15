@@ -1,10 +1,10 @@
 /* todo this file - blog read view is a little wrecked on large screens */
-.header1 {
-    font-size: 30px;
-}
-
 p {
     font-size: 20px;
+}
+
+.blog-read-title {
+    font-size: 35px;
 }
 
 .accent-image-right {
@@ -38,7 +38,6 @@ p {
 .blog-read-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 50px 20px 50px 20px;
     box-sizing: border-box;
@@ -85,18 +84,32 @@ p {
     border-radius: 2px;
 }
 
+.figure-pres {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.caption-pres {
+    font-size: 20px;
+}
+
+.output {
+    width: 97%;
+}
+
 .anchors {
     font-size: 20px;
     color: #160d07;
 }
 
 .anchors:hover, .anchors:visited, .anchors:active {
-    color: #C19377;
+    color: #160d07;;
 
 }
 
 .caption {
-    /* float: right; */
     font-size: 20px;
     text-align: center;
 }
@@ -144,6 +157,15 @@ p {
 
     p {
         font-size: 25px;
+    }
+
+    .figure-pres {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .output {
+        width: unset;
     }
 
     .accent-image-right {

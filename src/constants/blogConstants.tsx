@@ -96,20 +96,25 @@ export const CurrentBlogPosts: BlogPost[] = [
             <h3 className='core-subsection'>C++ Random</h3>
             {/* todo these images are stored in imgur but eventually add them here or in firestore or somewhere else */}
             <p>In C++, <span className='inline-code-emphasis'>rand()</span>, is used to generate seemingly random numbers. Below is the general code and result: </p>
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>Code</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/aJrFodB.jpg" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+            
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>Code</figcaption>
+                    <img src="https://i.imgur.com/aJrFodB.jpg" alt=""/>
+                </div>
+            </div>
 
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>Run 1</th><th>Run 2</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/tuOFLW6.jpg?1" alt=""/></td><td><img src="https://i.imgur.com/tuOFLW6.jpg?1" alt=""/></td></tr>
-                    </tbody>
-                </table>
-            </figure>
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>Run 1</figcaption>
+                    <img className='output' src="https://i.imgur.com/tuOFLW6.jpg?1" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>Run 2</figcaption>
+                    <img className='output' src="https://i.imgur.com/tuOFLW6.jpg?1" alt=""/>
+                </div>
+            </div>
+
             <p>
                 Overall, the numbers seem random on execution 1, however, running this executable program file again produces 
                 the exact same result, therefore this isn’t exactly what is thought of a random experience in life or statistics 
@@ -121,23 +126,29 @@ export const CurrentBlogPosts: BlogPost[] = [
                 <span className='inline-code-emphasis'>srand(somenumberyouwanthere)</span>:
             </p>
             
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>Code</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/Z28p5h6.jpg" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>Code</figcaption>
+                    <img src="https://i.imgur.com/Z28p5h6.jpg" alt=""/>
+                </div>
+            </div>
             
             <p>
                 However the result is a different series of numbers, running the program again has the same resulting numbers.
             </p>
             
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>Run 1</th><th>Run 2</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/G26RRcS.jpg?1" alt=""/></td><td><img src="https://i.imgur.com/G26RRcS.jpg?1" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>Run 1</figcaption>
+                    <img className='output' src="https://i.imgur.com/G26RRcS.jpg?1" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>Run 2</figcaption>
+                    <img className='output' src="https://i.imgur.com/G26RRcS.jpg?1" alt=""/>
+                </div>
+            </div>
             
             <p>
                 A do while loop in C++ using <span className='inline-code-emphasis'>rand()</span> can generate a different looking set 
@@ -146,11 +157,13 @@ export const CurrentBlogPosts: BlogPost[] = [
                 into this but would have the similar conundrum noted above.
             </p>
             
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>Code</th></tr></thead><tbody><tr><td><img src="https://i.imgur.com/uklE5uM.jpg" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>Code</figcaption>
+                    <img className='output' src="https://i.imgur.com/uklE5uM.jpg" alt=""/>
+                </div>
+            </div>
             
             <p>
                 Compilers are built on various logic and mathematical reasoning, so the interesting part is, at least for the 
@@ -181,14 +194,27 @@ export const CurrentBlogPosts: BlogPost[] = [
                 parameter.
             </p>
             
-            <figure className="block-image"><img src="https://i.imgur.com/O6WEiB7.jpg" alt="" /></figure>
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>Code</figcaption>
+                    <img src="https://i.imgur.com/O6WEiB7.jpg" alt="" />
+                </div>
+            </div>
 
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>Run 1</th><th>Run 2</th><th>Run 3</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/nebsV1b.jpg?1" alt=""/></td><td><img src="https://i.imgur.com/g04Q0r7.jpg?1" alt=""/></td><td><img src="https://i.imgur.com/kloEnWM.jpg?1" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>Run 1</figcaption>
+                    <img className='output' src="https://i.imgur.com/nebsV1b.jpg?1" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>Run 2</figcaption>
+                    <img className='output' src="https://i.imgur.com/g04Q0r7.jpg?1" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>Run 3</figcaption>
+                    <img className='output' src="https://i.imgur.com/kloEnWM.jpg?1" alt=""/>
+                </div>
+            </div>
             
             <p>Wouldn’t it be wonderful now, to go off on some tangent regarding physics having no concept of time beyond elapsed time for calculation? That would be a lot of fun, but for now, I’ll have to move on to how random works in Ruby.</p>
             
@@ -200,20 +226,29 @@ export const CurrentBlogPosts: BlogPost[] = [
                 typically <span className='inline-code-emphasis'>rand(1000)</span>, for example, will generate a random number between 
                 0 and 1000. I tried to find a general maximum number available as in C++ but was unsuccessful so far.
             </p>
-            
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>rand - no specification</th><th>float result</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/q2jf4gv.jpg" alt=""/></td><td><img src="https://i.imgur.com/pDlwa3u.jpg" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
 
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>rand - with integer range</th><th>integer result</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/yHfAvla.jpg" alt=""/></td><td><img src="https://i.imgur.com/Himv9Kd.jpg" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>rand - no specification</figcaption>
+                    <img src="https://i.imgur.com/q2jf4gv.jpg" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>float result</figcaption>
+                    <img src="https://i.imgur.com/pDlwa3u.jpg" alt=""/>
+                </div>
+
+            </div>
+
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>rand - with integer range</figcaption>
+                    <img src="https://i.imgur.com/yHfAvla.jpg" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>integer result</figcaption>
+                    <img src="https://i.imgur.com/Himv9Kd.jpg" alt=""/>
+                </div>
+            </div>
 
             <p>In contrast to C++, Ruby <span className='inline-code-emphasis'>rand</span> methods are already setup to refer to a 
                 timestamp along with “the process id, and a sequence number” <em>(ruby-doc.org)</em>. In order to get a series of 10 random 
@@ -221,22 +256,32 @@ export const CurrentBlogPosts: BlogPost[] = [
                 <span className='inline-code-emphasis'>rand(1000)</span> is sufficient in a while loop:
             </p>
 
-            <figure className="block-table">
-                <table>
-                    <tbody><tr><td><strong>rand in a loop and called twice</strong></td><td><strong>result - different numbers</strong></td></tr><tr><td><img src="https://i.imgur.com/BE3qlJr.jpg" alt=""/></td><td><img src="https://i.imgur.com/wPj6uuJ.jpg" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>rand in a loop and called twice</figcaption>
+                    <img src="https://i.imgur.com/BE3qlJr.jpg" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>result - different numbers</figcaption>
+                    <img className='output' src="https://i.imgur.com/wPj6uuJ.jpg" alt=""/>
+                </div>
+            </div>
 
             <p>Similar to C++, <span className='inline-code-emphasis'>srand(somenumberhere)</span>, will cause a repeat of the same 
                 series each time a program is started or method is called once again. So, in Ruby, in particular, 
                 <span className='inline-code-emphasis'>srand()</span> is helpful if one would like to repeat the same values by some seed.
             </p>
-            <figure className="block-table">
-                <table>
-                    <thead><tr><th>srand used with parameter</th><th>result - same numbers</th></tr></thead>
-                    <tbody><tr><td><img src="https://i.imgur.com/9TC1hZE.jpg" alt=""/></td><td><img src="https://i.imgur.com/JgYTTYu.jpg" alt=""/></td></tr></tbody>
-                </table>
-            </figure>
+
+            <div className='figure-pres'>
+                <div>
+                    <figcaption className='caption-pres'>srand used with parameter</figcaption>
+                    <img src="https://i.imgur.com/9TC1hZE.jpg" alt=""/>
+                </div>
+                <div>
+                    <figcaption className='caption-pres'>result - same numbers</figcaption>
+                    <img className='output' src="https://i.imgur.com/JgYTTYu.jpg" alt=""/>
+                </div>
+            </div>
             
             <p>I enjoy the C++ version slightly better as you can see exactly how that code is taking place and manipulating the 
                 values, why C++ is my favorite language all around, however. C++ brings out the philosophical nature a little 
@@ -1062,23 +1107,21 @@ end`
 
             <p>Isolate each color type, by filtering unique numbers with <strong>Set</strong>:</p>
 
-            <pre className="pre-block"><code className="code-block">let unique = &#091;...new Set(ar)]</code></pre>
+            <div className='code-block-snippet'>let unique = &#091;...new Set(ar)]</div>
 
             <p>Count occurrence of each unique sock color with <strong>reducer</strong>:</p>
 
-            <pre className="pre-block">
-                <code className="code-block">
+            <div className='code-block-large'>
                     (array, number) =&gt; array.reduce((acc, val) =&gt; (val === number ? acc + 1 : acc), 0);
-                </code>
-            </pre>
+            </div>
 
             <p>Add the reducer to a <strong>for loop</strong>, passing in the iterated unique socks array:</p>
 
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `for (let i = 0; i &lt; unique.length; i++) {
     let count = (countUnique(ar, unique&#091;i]))
 }`
-            }</pre>
+            }</div>
 
             <p>Round down  unique sock count divided by 2, in case of an odd number with <strong>Math.floor()</strong></p>
 
@@ -1088,7 +1131,7 @@ end`
 
             <p>Full code if a reader might like:</p>
 
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `function sockMerchant(n, ar) {
     let matchCount = 0
     let unique = [...new Set(ar)]
@@ -1105,7 +1148,7 @@ end`
 const countUnique = (array, number) =&gt; 
 array.reduce((acc, val) =&gt; 
 (val === number ? acc + 1 : acc), 0);`
-        }</pre>
+        }</div>
 
             <h3 className='core-subsection'>
                 <a 
@@ -1157,17 +1200,15 @@ array.reduce((acc, val) =&gt;
                 <strong> .split()</strong>:
             </p>
 
-            <pre className='pre-block'>
-                <code className='code-block'>
+            <div className='code-block-snippet'>
                     let enteredValley = 0;<br/>
                     let altitude = 0;<br/>
                     let steps = s.split("");
-                </code>
-            </pre>
+            </div>
 
             <p>I used a helper function to track altitude:</p>
 
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `function handleAltitude(step, alt){
     if(step === "D"){
         alt--
@@ -1176,24 +1217,24 @@ array.reduce((acc, val) =&gt;
     }
     return alt++
 }`
-                }</pre>
+                }</div>
 
             <p>
                 Then I tracked the steps in a <strong>for loop</strong> incrementing 'enteredValley' when altitude was at 0 &amp;&amp; 
                 the next step === "D"
             </p>
 
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `for (let i = 0; i &lt; steps.length; i++){
     if (altitude === 0 &amp;&amp; steps&#091;i] === "D"){
         enteredValley++
     }
 }`
-            }</pre>
+            }</div>
 
             <p>And...eventually, I tracked some valley hiking!</p>
 
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `function countingValleys(n, s) {
     let enteredValley = 0
     let altitude = 0
@@ -1216,7 +1257,7 @@ function handleAltitude(step, alt){
     }
     return alt++
 }`
-        }</pre>
+        }</div>
 
             <h3 className='core-subsection'>
                 <a 
@@ -1279,7 +1320,7 @@ function handleAltitude(step, alt){
 
             <p>I counted the a's in the given string with .match(regex) and .length</p>
             
-            <pre className="pre-block"><code className='code-block'>const a_Count = (s.match(/a/g)||&#091;]).length</code></pre>
+            <div className='code-block-large'>const a_Count = (s.match(/a/g)||&#091;]).length</div>
 
             <p>
                 Used an if/else to go ahead and calculate if n % string.length === 0 and called the following external function, 
@@ -1299,40 +1340,34 @@ function handleAltitude(step, alt){
                 would be needed, keeping it in the variable leftOver:
             </p>
 
-            <pre className="pre-block">
-                <code className='code-block'>
+            <div className='code-block-large'>
                     const roundRepeat = Math.floor(n / sLength) <br/>
                     const leftOver = n - (roundRepeat * sLength)
-                </code>
-            </pre>
+            </div>
 
             <p>
                 I then used .slice(start, end), to cut string segment to the needed portion and followed up with another 
                 regex/match to count the a's within the new string:
             </p>
 
-            <pre className="pre-block">
-                <code className='code-block'>
+            <div className='code-block-large'>
                     const addPortion = s.slice(0, leftOver)<br/>
                     const additionalAs = (addPortion.match(/a/g)||&#091;]).length
-                </code>
-            </pre>
+            </div>
 
             <p>
                 Then called stored the returned value of calculateA() in a variable, followed by adding the amount of 
                 additional As to the answer:
             </p>
 
-            <pre className="pre-block">
-                <code className='code-block'>
+            <div className='code-block-large'>
                     let roundedAnswer = calculateA(n, sLength, a_Count)<br/>
                     answer = additionalAs + roundedAnswer
-                </code>
-            </pre>
+             </div>
 
             <p>So that, is, my version of this exercise and the whole code below:</p>
 
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `function repeatedString(s, n) {
     let answer;
     const sLength = s.length
@@ -1355,7 +1390,7 @@ function calculateA(n, sLength, a_Count){
     const stringRepeat = Math.floor(n / sLength)
     return a_Count * stringRepeat
 }`
-        }</pre>
+        }</div>
             
             <h3 className='core-subsection'>
                 <a 
@@ -1405,21 +1440,16 @@ function calculateA(n, sLength, a_Count){
 
             <p>I set a jumps and position variable to 0 outside the loops:</p>
 
-            <pre className="pre-block">
-                <code className='code-block'>
+            <div className='code-block-large'>
                     let jumps = 0;<br/>
                     let position = 0;
-                </code>
-            </pre>
+             </div>
 
             <p>I used a <strong>while loop</strong> that set iteration condition based on the changing position:</p>
 
-            <pre className="pre-block">
-                <code className='code-block'>
+            <div className='code-block-large'>
                     {`while (position &lt; c.length - 1) {`}
-                </code>
-            </pre>
-
+            </div>
             <p>
                 I checked for the ability to change position with a jump of 2 first, and if not a jump of 1, during each logic 
                 check, I incremented a jump by 1, and thus the rest of the code.  Break keyword I don't think is actually 
@@ -1427,7 +1457,7 @@ function calculateA(n, sLength, a_Count){
             </p>
 
 
-            <pre className="pre-block code-block jsx">{
+            <div className='code-block-large'>{
             `function jumpingOnClouds(c) {
     let jumps = 0;
     let position = 0;
@@ -1444,7 +1474,7 @@ function calculateA(n, sLength, a_Count){
     }
     return jumps;
 }`
-        }</pre>
+        }</div>
 
             <p>So, that, was interview warm-ups!</p>
 
