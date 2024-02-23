@@ -126,7 +126,7 @@ export const PortfolioItems: PortfolioItem[] = [
         href: "https://www.youtube.com/embed/IZuhB9wp3Wo",
         description: 'First project for the Flatiron School. CLI project using Ruby and Nokogiri to scrape web pages for list data contained in web page elements. ' + 
         'This project utilized the websites of Perez Art Museum and Frost Science Museum\'s Laser Fridays events to demonstrate code ability and nokogiri functionality.',
-        tags: ['Flatiron School', 'Ruby', 'CLI', 'Nokogiri', 'Webscraping'],
+        tags: ['Flatiron School', 'Ruby', 'CLI', 'Nokogiri', 'Web scraping'],
         githubURL: 'https://github.com/Tsunamins/miami_venues.git',
         blogURL: 'https://tsunamins.github.io/cli_project_noteworthy_points',
         projectAssociation: 'Flatiron School',
