@@ -155,10 +155,10 @@ export const ResumeEntries: ResumeEntry[] = [
         achieved: [
             'Built a front end component library with React and Typescript, improving development speed and UI standardization',
             'Increased reliability and safeguarded future changes by writing unit tests with React testing-library and Jest',
-            'Demoed components in Storybook and added documentation to communicate updates and implementation instructions',
-            'Promoted and further developed engineer adoption by attending other team meetings to consult on needs and concerns'
+            'Integrated on an additional team, learning Java and Spring Boot for background services and full stack applications',
+            'Created new API endpoints with Spring Boot, Hibernate and Lombok, modified database with Liquibase'
         ],
-        description: 'Created a company wide, front end, component library for an electronic and automated credentialing organization.',
+        description: 'Created a company wide, front end, component library for an electronic and automated credentialing organization. Worked on additional full stack application team with Java and Spring Boot.',
         location: 'Remote'
     },
     {
@@ -168,10 +168,10 @@ export const ResumeEntries: ResumeEntry[] = [
         orgURL: 'https://www.americanexpress.com/',
         skills: ['JavaScript', 'React', 'Python', 'Flask', 'Golang', 'Redis', 'Selenium', 'Jest', 'Enzyme', 'Docker', 'Kafka'],
         achieved: [
-            'Added frontend features for enterprise automations platform using React and company design library',
+            'Added front end features for an enterprise automations platform using React and company design library',
             'Implemented API routes in Golang and Python with Flask, concentrating on value add reporting for leadership',
-            'Integrated a Redis Client into backend, speeding up reporting and other endpoint times',
-            'Improved automated UI testing coverage by adding pipeline Selenium Browser tests through automated gitlab pipeline'
+            'Integrated a Redis Client speeding up reporting and other endpoint processing times',
+            'Improved automated UI testing coverage by adding Gitlab pipeline Selenium Browser tests'
         ],
         description: 'A team focusing on building a robust automations platform for the company wide adoption.',
         location: 'Remote'    
