@@ -151,7 +151,7 @@ export const ResumeEntries: ResumeEntry[] = [
         title: 'Software Engineer I',
         date: '9/2022 - present',
         orgURL: 'https://www.parchment.com/',
-        skills: ['TypeScript', 'React', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook', 'Accessibility'],
+        skills: ['TypeScript', 'React', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook', 'Accessibility', 'Java', 'Liquibase', 'Spring Boot'],
         achieved: [
             'Built a front end component library with React and Typescript, improving development speed and UI standardization',
             'Increased reliability and safeguarded future changes by writing unit tests with React testing-library and Jest',

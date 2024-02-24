@@ -29,8 +29,7 @@ class GameScene extends Phaser.Scene {
     }
 
     create(){
-        // todo can maybe just check if desktip with this.sys.game.os or similar checking for desktop true
-        const isTouchScreen = window.TouchEvent ? true : false;
+        const isDesktop = this.game.device.os.desktop;
 
 
         // create map
@@ -143,7 +142,7 @@ class GameScene extends Phaser.Scene {
           this.collectText.setText(`Fireflies: ${this.collectff}`);
       })
 
-        if (isTouchScreen) {
+        if (!isDesktop) {
             this.joystick = new VirtualJoystick(this, {
                 x: 80, 
                 y: window.innerHeight - (window.innerHeight * .20),
@@ -159,18 +158,18 @@ class GameScene extends Phaser.Scene {
             this.cursors = this.joystick.createCursorKeys();
             // this is prob something like this.scene.add or this.add: 
             // this.FireButtonSetup = this.add
-            //     .circle(window.innerWidth - (window.innerHeight * .20), window.innerHeight - (window.innerHeight * .10), 30, 0x888888, 0.6)
-            //     .setScrollFactor(0)
-            //     .setAlpha(this.alphaOn)
-            //     .setOrigin(0.5, 1)
-            //     .setStrokeStyle(2, this.inner)
-            //     .setDepth(99);
+                //     .circle(window.innerWidth - (window.innerHeight * .20), window.innerHeight - (window.innerHeight * .10), 30, 0x888888, 0.6)
+                //     .setScrollFactor(0)
+                //     .setAlpha(this.alphaOn)
+                //     .setOrigin(0.5, 1)
+                //     .setStrokeStyle(2, this.inner)
+                //     .setDepth(99);
 
             // this.FireButton = new Button(this.FireButtonSetup, {
-            //     enable: true,
-            //     mode: 'press',
-            //     clickInterval: 8,
-            //     threshold: undefined
+                //     enable: true,
+                //     mode: 'press',
+                //     clickInterval: 8,
+                //     threshold: undefined
             // });
 
             this.pointer = this.input.activePointer;
