@@ -33,14 +33,22 @@ var Magic = new Phaser.Class({
           }
           this.born = 0;
       },
-      update: function (time, delta)
+      // todo still need to work on slow animation issue when on mobile .destroy() helped a little
+      update: function (time, delta, enemies)
       { 
           this.x += this.speed * delta;      
-          this.born += delta;   
-          if (this.born > 1000)
-          {    
+          this.born += delta;
+          this.scene.events.on('attack', () => {
+            this.setActive(false);
+            this.setVisible(false);
+            this.destroy();
+
+            });
+          if (this.born > 1000 || this.x > 800)
+          {
               this.setActive(false);
               this.setVisible(false);
+              this.destroy();
           }
       }
     });

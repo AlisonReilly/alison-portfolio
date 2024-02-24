@@ -62,7 +62,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
         // function so maybe do this instead
         if (this.scene.FireButton){
             this.scene.FireButton.on('click', () => {
-                this.setVelocity(0);
+                // this.setVelocity(0);
                 this.anims.play('fire', true);
 
                 var magic = scene.magics.get();
@@ -78,36 +78,30 @@ export default class Player extends Phaser.Physics.Arcade.Sprite{
 
         if (!this.scene.joystick){
             if (cursors.space && cursors.space.isDown) {
-                this.setVelocity(0);
+                // this.setVelocity(0);
                 this.anims.play('fire', true);
 
                 var magic = scene.magics.get();
                 magic.setActive(true);
                 magic.setVisible(true);
 
+
                 if (magic) {   
                     magic.fire(this);
-
-                    // doesn't work, keeping as a note or reference
-                    // scene.physics.add.collider(magic, this.layer_collision);
-
-                    // works
                     scene.physics.add.overlap(magic, enemies, this.hitAnEnemy, null, scene);
                 } 
             }
         }
     }
 
-    hitAnEnemy(magic, enemy){
-        // this.attack += 1;
-        // console.log(this.attack)
-        // this.attackText.setText('Enemies banished: ' + this.attack);
-        
+    hitAnEnemy(magic, enemy)    {
         enemy.disableBody(true, true);
-        // adding these seems to keep a line in the screen where enemies disappear instead
+        // adding these seems to keep a line in the screen, once an enemy has disappeared from that area
+        // it sort of makes a 'void' in the map and things disappear there, maybe intermittent
         // magic.setActive(false)
         // magic.setVisible(false)
 
         this.events.emit('attack');
+
     };  
 }

@@ -9,7 +9,7 @@ class GameScene extends Phaser.Scene {
     constructor(){
         super({
             key: 'GameScene'
-        })  
+        })
     }
 
     init () {
@@ -111,7 +111,7 @@ class GameScene extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.fireflies, this.collectFirefly, null, this);
 
         // create magic
-        this.magics = this.physics.add.group({ classType: Magic, runChildUpdate: true });
+        this.magics = this.physics.add.group({ classType: Magic, runChildUpdate: true, frameQuantity: 5,  });
         this.physics.world.enable(this.magics);
       
         // create cameras
@@ -121,7 +121,7 @@ class GameScene extends Phaser.Scene {
         let cameraBoundsHeight = 640;
 
         if (window.innerWidth < 400){
-          cameraBoundsWidth = 400
+            cameraBoundsWidth = 400
         }
         
         this.camera = this.cameras.main.startFollow(this.player);
@@ -157,20 +157,20 @@ class GameScene extends Phaser.Scene {
 
             this.cursors = this.joystick.createCursorKeys();
             // this is prob something like this.scene.add or this.add: 
-            // this.FireButtonSetup = this.add
-                //     .circle(window.innerWidth - (window.innerHeight * .20), window.innerHeight - (window.innerHeight * .10), 30, 0x888888, 0.6)
-                //     .setScrollFactor(0)
-                //     .setAlpha(this.alphaOn)
-                //     .setOrigin(0.5, 1)
-                //     .setStrokeStyle(2, this.inner)
-                //     .setDepth(99);
+            this.FireButtonSetup = this.add
+                    .circle(window.innerWidth - (window.innerHeight * .20), window.innerHeight - (window.innerHeight * .10), 30, 0x888888, 0.6)
+                    .setScrollFactor(0)
+                    .setAlpha(this.alphaOn)
+                    .setOrigin(0.5, 1)
+                    .setStrokeStyle(2, this.inner)
+                    .setDepth(99);
 
-            // this.FireButton = new Button(this.FireButtonSetup, {
-                //     enable: true,
-                //     mode: 'press',
-                //     clickInterval: 8,
-                //     threshold: undefined
-            // });
+            this.FireButton = new Button(this.FireButtonSetup, {
+                    enable: true,
+                    mode: 'press',
+                    clickInterval: 8,
+                    threshold: undefined
+            });
 
             this.pointer = this.input.activePointer;
 
