@@ -5,6 +5,8 @@ import { ImageDisplay } from '../Components/ProjectComponents/ImageDisplay';
 import { VideoDisplay } from '../Components/ProjectComponents/VideoDisplay';
 import { ButtonImage } from '../Components/ToggleComponents/ButtonImage';
 import buttonscale100 from '../assets/images/buttonscale100.png';
+import { getProjectDetails } from '../services/firebaseGet';
+
 
 type ProjectProps = {
     isLoading: boolean;
@@ -12,7 +14,13 @@ type ProjectProps = {
 }
 
 export const Projects: React.FC<ProjectProps & React.HTMLProps<HTMLDivElement>> = ({isLoading}) => { 
+    const [projectDetails, setProjectDetails] = useState([]);
 
+    useEffect(()=>{
+        getProjectDetails(projectDetails, setProjectDetails);
+    }, [])
+
+    console.log('project details in comp: ', projectDetails)
 
     return (
         <>
