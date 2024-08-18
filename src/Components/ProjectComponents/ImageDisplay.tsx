@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/Projects.css';
 
-type ImageDisplayProps = {
+interface ImageDisplayProps {
     image?: any;
     altText?: string;
 }

@@ -5,7 +5,7 @@ import '../Styles/Header.css';
 import { MobileNav } from '../Components/Navigation/MobileNavUL';
   
 
-type HeaderSectionProps = {
+interface HeaderSectionProps {
     isTouchScreen?: boolean;
     text?: string;
 }

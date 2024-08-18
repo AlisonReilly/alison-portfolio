@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
   
 
-type NavBarLIProps = {
+interface NavBarLIProps {
     mainNav: NavItem;
     liIndex: number;
 }

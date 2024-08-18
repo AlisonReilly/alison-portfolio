@@ -4,7 +4,7 @@ import { MainNavItems, NavItem } from '../../constants/dataConstants';
 import '../../Styles/MobileNav.css';
 import { MobileNavItem } from './MoblieNavLI';
 
-type MobileNavProps = {
+interface MobileNavProps {
     isTouchScreen?: boolean;
     menuItemData?: NavItem[];
     text?: string;

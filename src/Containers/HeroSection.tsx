@@ -5,7 +5,7 @@ import { BasicDiagram } from '../Components/Diagramming/BasicDiagram';
 import { Link } from 'react-router-dom';
   
 
-type HeroProps = {
+interface HeroProps {
     text?: string;
     classNames?: string;
     removeMS?: number;

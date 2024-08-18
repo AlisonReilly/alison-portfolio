@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/Diagramming.css';
 
-type BasicDiagramProps = {
+interface BasicDiagramProps {
     figureNumber?: string;
 }
 

@@ -4,7 +4,7 @@ import '../Styles/Projects.css';
 import { BasicDiagram } from '../Components/Diagramming/BasicDiagram';
   
 
-type ProjectListProps = {
+interface ProjectListProps {
     text?: string;
 
 

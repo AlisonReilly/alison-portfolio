@@ -2,7 +2,7 @@ import React from 'react';
 import '../../Styles/Projects.css';
 import { Link } from 'react-router-dom';
 
-type ButtonImageProps = {
+interface ButtonImageProps {
     image?: any;
     className?: string;
     link?: string;

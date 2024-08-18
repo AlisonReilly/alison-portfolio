@@ -1,5 +1,5 @@
 import '../Styles/BlogReadView.css';
-export type BlogPost = {
+export interface BlogPost {
     title: string;
     content: React.ReactNode;
     date: Date | string;

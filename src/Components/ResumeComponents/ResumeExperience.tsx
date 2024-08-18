@@ -3,7 +3,7 @@ import '../../Styles/Resume.css';
 import { ResumeEntries } from '../../constants/dataConstants';
 
 
-type ExperienceProps = {
+interface ExperienceProps {
     text?: string;
 }
 

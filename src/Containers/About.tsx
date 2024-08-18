@@ -2,7 +2,7 @@ import React from 'react';
 import '../Styles/About.css';
 
 
-type AboutProps = {
+interface AboutProps {
     text?: string;
     classNames?: string;
     isLoading: boolean;

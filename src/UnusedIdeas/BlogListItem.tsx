@@ -3,7 +3,7 @@ import '../../Styles/Blog.css';
 import { Link } from 'react-router-dom';
 import { CurrentBlogPosts } from '../constants/blogConstants';
 
-type BlogListItemProps = {
+interface BlogListItemProps {
     altText?: string;
     image?: any;
     content?: string;

@@ -6,7 +6,7 @@ import { Education } from '../../constants/dataConstants';
 // import { MobileNav } from '../Components/Navigation/MobileNavUL';
   
 
-type EduProps = {
+interface EduProps {
     text?: string;
 }
 

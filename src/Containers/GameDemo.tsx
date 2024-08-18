@@ -5,7 +5,7 @@ import GameScene from '../Demos/CatsDream/game/GameScene';
 import TitleScene from '../Demos/CatsDream/game/TitleScene';
 
 
-type GameDemoProps = {
+interface GameDemoProps {
     pointerType?: string;
 }
 

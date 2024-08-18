@@ -6,7 +6,7 @@ import { BlogPost } from '../constants/blogConstants';
 
   
 
-type BlogProps = {
+interface BlogProps {
     text?: string;
     classNames?: string;
     isLoading?: boolean;

@@ -3,7 +3,7 @@ import '../../Styles/Blog.css';
 import '../../Styles/BlogReadView.css';
 
 
-type BlogReadProps = {
+interface BlogReadProps {
     altText?: string;
     image?: any;
     blogContent?: React.ReactNode;

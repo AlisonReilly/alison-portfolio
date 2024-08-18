@@ -2,13 +2,13 @@
 import WallMedCrop from '../assets/images/WallMedCrop.png';
 
 
-export type NavItem = {
+export interface NavItem {
     name: string;
     href?: string,
     subNav?: NavItem[]
 }
 
-export type PortfolioItem = {
+export interface PortfolioItem {
     title: string;
     href?: string;
     description: string;
@@ -20,7 +20,7 @@ export type PortfolioItem = {
     youTubeURL?: string;
 }
 
-export type ResumeEntry = {
+export interface ResumeEntry {
     organization: string;
     orgURL?: string;
     skills?: string[];

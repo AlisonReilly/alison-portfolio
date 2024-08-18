@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
   
 
-type MobileNavItemProps = {
+interface MobileNavItemProps {
     isOpen: boolean;
     navName?: string;
     navSubItems?: NavItem[];

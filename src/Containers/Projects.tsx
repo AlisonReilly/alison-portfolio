@@ -8,7 +8,7 @@ import buttonscale100 from '../assets/images/buttonscale100.png';
 import { getProjectDetails } from '../services/firebaseGet';
 
 
-type ProjectProps = {
+interface ProjectProps {
     isLoading: boolean;
 
 }

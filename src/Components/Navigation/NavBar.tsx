@@ -6,7 +6,7 @@ import '../../Styles/GlassDropdown.css'
 import { NavBarLI } from './NavBarLI';
 
 
-type NavBarProps = {
+interface NavBarProps {
     isTouchScreen?: boolean;
     menuItemData?: NavItem[];
     styleClass?: string;

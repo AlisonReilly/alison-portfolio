@@ -6,7 +6,7 @@ import '../Styles/Resume.css';
 
   
 
-type ConnectProps = {
+interface ConnectProps {
     isLoading: boolean;
     text?: string;
 }

@@ -4,7 +4,7 @@ import { BasicDiagram } from './Diagramming/BasicDiagram';
 import { TextType } from './TextEffects/TextType';
 import { Link } from 'react-router-dom';
 
-type ProfileHeaderProps = {
+interface ProfileHeaderProps {
     isTouchScreen?: boolean;
     text?: string;
 }

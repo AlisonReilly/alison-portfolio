@@ -7,7 +7,7 @@ import { ResumeEducation } from '../Components/ResumeComponents/ResumeEducation'
 // import { MobileNav } from '../Components/Navigation/MobileNavUL';
   
 
-type ResumeProps = {
+interface ResumeProps {
     isLoading: boolean;
     text?: string;
 }

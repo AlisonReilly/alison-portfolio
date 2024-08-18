@@ -1,7 +1,7 @@
 import React, { RefObject, useEffect, useRef, useState } from 'react';
 import '../../Styles/Projects.css';
 
-type VideoDisplayProps = {
+interface VideoDisplayProps {
     video?: string;
 }
 

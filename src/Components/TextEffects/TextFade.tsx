@@ -3,7 +3,7 @@ import '../../Styles/TextFade.css';
   
 
 
-type TextFadeProps = {
+interface TextFadeProps {
     /** string to display the text */
     text?: string;
     /** class name string to specify text purpose and fade style */
