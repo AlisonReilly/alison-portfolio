@@ -3,6 +3,7 @@ import { ProfileHeader } from '../Components/ProfileHeader';
 import { NavBar } from '../Components/Navigation/NavBar';
 import '../Styles/Header.css';
 import { MobileNav } from '../Components/Navigation/MobileNavUL';
+import { MenuUL } from '../Components/Navigation/MenuUL';
   
 
 interface HeaderSectionProps {
@@ -15,7 +16,8 @@ export const HeaderSection: React.FC<HeaderSectionProps & React.HTMLProps<HTMLDi
         <div id='HeaderSection'>
             <ProfileHeader isTouchScreen={isTouchScreen}/>
             <MobileNav isTouchScreen={isTouchScreen}/>
-            <NavBar isTouchScreen={isTouchScreen}/>
+            {/* <NavBar isTouchScreen={isTouchScreen}/> */}
+            <MenuUL isTouchScreen={isTouchScreen}/>
         </div>
     ); 
 } 

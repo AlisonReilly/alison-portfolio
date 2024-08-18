@@ -26,10 +26,11 @@
 
 .glassAbout {
     /* From https://css.glass */
-    background: rgba(105, 49, 77, 0.61);
+    background: rgba(61, 19, 40, 0.794);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
+    /* cannot use backdrop filter with glass dropdown backdrop-filter, hides dropdown */
+    /* backdrop-filter: blur(5px); */
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(81, 27, 79, 0.722);
 }
@@ -37,7 +38,7 @@
 
 @media only screen and (min-width: 775px) {
     #About {
-        margin-top: -28px;
+        margin-top: -37px;
     }
 
     .main-content {

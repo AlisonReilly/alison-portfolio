@@ -31,8 +31,22 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
     }, [NavRef])
     
     return (
-        <nav ref={NavRef} id='PrimaryMobileNav' className={`${(isTouchScreen || navigator.userAgent.toLowerCase().includes('mobile')) && location.pathname.includes('live-demo') ? 'game-demo-nav' : 'mobile-nav'}`} role="navigation" aria-label="Main menu">
-            <button  id='mobile-nav-button' aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}/>
+        <nav 
+            ref={NavRef} 
+            id='PrimaryMobileNav' 
+            className={`${(isTouchScreen || navigator.userAgent.toLowerCase().includes('mobile')) && location.pathname.includes('live-demo') 
+                ? 'game-demo-nav' 
+                : 'mobile-nav'}`
+            } 
+            role="navigation" aria-label="Main menu"
+        >
+            <button 
+                id='mobile-nav-button'
+                className='glassMainMenu' 
+                aria-expanded={isOpen} 
+                onClick={() => setIsOpen(!isOpen)}>
+                    <span className='material-icons'>apps</span>
+            </button>
             <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
             {isOpen && MainNavItems.map((i, k) =>
                 <MobileNavItem navHref={i.href} navName={i.name} navSubItems={i.subNav} isOpen={isOpen} setIsOpen={setIsOpen}/>
