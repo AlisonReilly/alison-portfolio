@@ -26,7 +26,7 @@
 
   .blog-style {
     /* background-image: linear-gradient(360deg, #423f30 10%, #7B7554 100%); */
-    background-image: linear-gradient(360deg, #726da8 10%, #4e5469 100%);
+    background-image: linear-gradient(360deg, #251605 10%, #4e5469 100%);
 
   }
 
@@ -36,8 +36,8 @@
   }
 
   .blog-style-text {
-    color: #343231;
-    text-shadow: 0 2px #7f7b8b;
+    color: #4b4847;
+    text-shadow: 0 2px #333234;
 
   }
 
