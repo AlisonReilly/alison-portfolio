@@ -1,12 +1,11 @@
-import React, { RefObject, useEffect, useRef, useState } from 'react';
+import React from 'react';
 import '../../Styles/Projects.css';
 
 interface VideoDisplayProps {
     video?: string;
 }
 
-export const VideoDisplay: React.FC<VideoDisplayProps & React.HTMLProps<HTMLDivElement>> = ({
-    video }) => {
+export const VideoDisplay: React.FC<VideoDisplayProps & React.HTMLProps<HTMLDivElement>> = ({ video }) => {
 
     return (
             <div>

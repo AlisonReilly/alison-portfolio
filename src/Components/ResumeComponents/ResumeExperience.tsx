@@ -8,11 +8,10 @@ interface ExperienceProps {
 }
 
 export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDivElement>> = () => { 
-    // const combined = ResumeEntries.push(Education)
     return (
         <div id='Experience'>
             {ResumeEntries.map((r, i) => 
-                <div className='entry'>
+                <div key={`resume-jobs-${i}`} className='entry'>
                     <div className='org-details'>
                         <div className='single-line job-title left'>{r.title}</div>
                         <div className='org single-line company'>{r.organization}</div>
@@ -23,12 +22,11 @@ export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDi
                     </div>
                     <div className='desc-summary'>{r.description}</div>       
                     <ul className='bullets experience-details whole-grid'>{r.achieved && r.achieved.map((a, i) => 
-                        <li>{a}</li>
+                        <li key={`resume-jobs-details-${i}`}>{a}</li>
                     )}
                     </ul>
-                    
                     <ul className='skills whole-grid'>{r.skills && r.skills.map((s, i) => 
-                        <li className='each-skill single-line'>{s}</li>
+                        <li key={`resume-jobs-skills-${i}`} className='each-skill single-line'>{s}</li>
                     )}
                     </ul>
                 </div>

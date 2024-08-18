@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../../Styles/TextFade.css';
   
 
-
 interface TextFadeProps {
-    /** string to display the text */
     text?: string;
-    /** class name string to specify text purpose and fade style */
     classNames?: string;
-
 }
 
-export const TextFade: React.FC<TextFadeProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, text, ...htmlProps}) => { 
+export const TextFade: React.FC<TextFadeProps & React.HTMLProps<HTMLDivElement>> = (
+    { classNames, text, ...props }) => { 
     return (
-        <div id={htmlProps.id} className={classNames}>{text}</div>
+        <div id={props.id} className={classNames}>{text}</div>
     ); 
 } 

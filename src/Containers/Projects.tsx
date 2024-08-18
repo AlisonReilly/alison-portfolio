@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/Projects.css';
 import { AlphaDiagramMap, PortfolioItems } from '../constants/dataConstants';
 import { ImageDisplay } from '../Components/ProjectComponents/ImageDisplay';
@@ -13,14 +13,12 @@ interface ProjectProps {
 
 }
 
-export const Projects: React.FC<ProjectProps & React.HTMLProps<HTMLDivElement>> = ({isLoading}) => { 
+export const Projects: React.FC<ProjectProps & React.HTMLProps<HTMLDivElement>> = ({ isLoading }) => { 
     const [projectDetails, setProjectDetails] = useState([]);
 
     useEffect(()=>{
         getProjectDetails(projectDetails, setProjectDetails);
     }, [])
-
-    console.log('project details in comp: ', projectDetails)
 
     return (
         <>

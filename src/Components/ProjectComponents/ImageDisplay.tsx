@@ -6,8 +6,8 @@ interface ImageDisplayProps {
     altText?: string;
 }
 
-export const ImageDisplay: React.FC<ImageDisplayProps & React.HTMLProps<HTMLDivElement>> = ({
-    altText, image, }) => { 
+export const ImageDisplay: React.FC<ImageDisplayProps & React.HTMLProps<HTMLDivElement>> = (
+    { altText, image, }) => { 
     return (
         <div id='ImageDisplay'>  
             <img src={image} alt={altText}/>

@@ -8,8 +8,8 @@ interface AboutProps {
     isLoading: boolean;
 }
 
-export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, isLoading, text, ...htmlProps}) => { 
+export const About: React.FC<AboutProps & React.HTMLProps<HTMLDivElement>> = (
+    { isLoading }) => { 
     return (
         <> {!isLoading 
             ? 

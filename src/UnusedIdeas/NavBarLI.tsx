@@ -1,6 +1,6 @@
 import React, { createRef, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { NavItem } from '../../constants/dataConstants';
+import { NavItem } from '../constants/dataConstants';
 import '../../Styles/MobileNav.css';
 import '../../Styles/GlassDropdown.css';
 import '../../Styles/NavBar.css';
@@ -14,9 +14,8 @@ interface NavBarLIProps {
 }
 
 
-export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>> = ({
-    liIndex, mainNav,
-    ...htmlProps}) => { 
+export const NavBarLI: React.FC<NavBarLIProps & React.HTMLProps<HTMLDivElement>> = (
+    { liIndex, mainNav }) => { 
     const [isSubOpen, setIsSubOpen] = useState<boolean>(false);
     const LIRef = createRef<HTMLLIElement>();
 

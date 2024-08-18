@@ -1,6 +1,5 @@
 import React from 'react';
 import { ProfileHeader } from '../Components/ProfileHeader';
-import { NavBar } from '../Components/Navigation/NavBar';
 import '../Styles/Header.css';
 import { MobileNav } from '../Components/Navigation/MobileNavUL';
 import { MenuUL } from '../Components/Navigation/MenuUL';

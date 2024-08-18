@@ -13,8 +13,8 @@ interface BlogReadProps {
     tags?: string[];
 }
 
-export const BlogRead: React.FC<BlogReadProps & React.HTMLProps<HTMLDivElement>> = ({
-    blogURL, image, blogContent, title, date, tags, altText, ...props }) => { 
+export const BlogRead: React.FC<BlogReadProps & React.HTMLProps<HTMLDivElement>> = (
+    { blogURL, image, blogContent, title, date, tags, altText, ...props }) => { 
     return (
         <div id={blogURL} className='blog-read-container'>
             <div className='blog-read-title'>{title}</div>

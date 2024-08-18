@@ -10,8 +10,8 @@ interface MobileNavProps {
     text?: string;
 }
 
-export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement>> = ({
-    isTouchScreen, menuItemData, text, ...htmlProps}) => { 
+export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement>> = (
+    { isTouchScreen }) => { 
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const NavRef = createRef<HTMLElement>();
 
@@ -48,9 +48,14 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
                     <span className='material-icons'>apps</span>
             </button>
             <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
-            {isOpen && MainNavItems.map((i, k) =>
-                <MobileNavItem navHref={i.href} navName={i.name} navSubItems={i.subNav} isOpen={isOpen} setIsOpen={setIsOpen}/>
-            )}
+                {isOpen && MainNavItems.map((i, k) =>
+                    <MobileNavItem 
+                        key={`mobile-main-level-${k}`} 
+                        navHref={i.href} navName={i.name} 
+                        navSubItems={i.subNav} 
+                        isOpen={isOpen} 
+                        setIsOpen={setIsOpen}/>
+                )}
             </ul>
         </nav>
     ); 

@@ -10,11 +10,9 @@ interface HeroProps {
     classNames?: string;
     removeMS?: number;
     waitMS?: number;
-
 }
 
-export const HeroSection: React.FC<HeroProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, removeMS, text, waitMS, ...htmlProps}) => { 
+export const HeroSection: React.FC<HeroProps & React.HTMLProps<HTMLDivElement>> = () => { 
     const [welcomeTimingMet, setWelcomeTimingMet] = useState<boolean>(false);
     const [skillsTimingMet, setSkillsTimingMet] = useState<boolean>(false);
     const [titleTimingMet, setTitleTimingMet] = useState<boolean>(false);

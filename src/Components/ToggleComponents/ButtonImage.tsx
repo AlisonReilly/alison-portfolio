@@ -12,8 +12,8 @@ interface ButtonImageProps {
     internalBlog?: boolean;
 }
 
-export const ButtonImage: React.FC<ButtonImageProps & React.HTMLProps<HTMLDivElement>> = ({
-    className, externalLink, internalBlog, link, linkText, image, linkTextColor }) => { 
+export const ButtonImage: React.FC<ButtonImageProps & React.HTMLProps<HTMLDivElement>> = (
+    { className, externalLink, internalBlog, link, linkText, image, linkTextColor }) => { 
     return (<div className='flexcolumn' style={{ rowGap: '10px' }}>
                 <a 
                     aria-hidden='true'

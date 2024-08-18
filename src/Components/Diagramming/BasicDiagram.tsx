@@ -6,7 +6,7 @@ interface BasicDiagramProps {
 }
 
 export const BasicDiagram: React.FC<BasicDiagramProps & React.HTMLProps<HTMLDivElement>> = ({
-    figureNumber, ...htmlProps}) => { 
+    figureNumber }) => { 
     
     return (
         <span className='diagram-text'>Fig. {figureNumber}</span>

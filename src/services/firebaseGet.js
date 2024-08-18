@@ -13,7 +13,6 @@ import { db } from "..";
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id:doc.id }));
                 setProjectDetails(newData);                
-                console.log(projectDetails, newData);
             })
        
     }

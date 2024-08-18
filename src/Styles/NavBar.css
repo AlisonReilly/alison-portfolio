@@ -44,140 +44,28 @@
   color: #e89f9f ;
 }
 
-/* previous ruler styling */
-/* Overall css for the Main Ruler Navigation */
-#PrimarySiteNav {
-  height: 43px;
-  position: relative;
+.sub-nav-ul-closed {
   display: none;
+}
+
+.primary-sub {
+  color: #E49273;
+}
+
+.primary-sub:hover {
+  color: white;
+}
+
+/* initially don't display the sub ul on hover of the main li */
+.sub-nav-ul-open {
+  width: fit-content;
+  padding: 10px;
+  position: absolute;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
   z-index: 1;
 }
-
-/* the first ul of this nav */
-.horizontal-nav {
-    border-radius: 3px;
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    height: 100%;
-    padding: 0 10px 15px 10px;
-}
-
-  .primary-style {
-    background-image: linear-gradient(360deg, #9c6b5c 10%, #e5b7a7 100%);
-  }
-
-  .blog-style {
-    /* background-image: linear-gradient(360deg, #423f30 10%, #7B7554 100%); */
-    background-image: linear-gradient(360deg, #251605 10%, #4e5469 100%);
-
-  }
-
-  .primary-style-text {
-    color: #53311a;
-    text-shadow: 0 2px #ddb3a6;
-  }
-
-  .blog-style-text {
-    color: #4b4847;
-    text-shadow: 0 2px #333234;
-
-  }
-
-  .blog-tick {
-    color: #2b2929;
-  }
-
-  .primary-tick {
-    color: #835648;
-  }
-
-  /* small, individual lines per each menu item, zen loop specifically provides a thin '|' */
-  #small-tick {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-family: 'Zen Loop', cursive;
-  }
-  /* how the text for each menu item will appear */
-  #main-name-link {
-    display: flex;
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
-    font-weight: 700;
-    justify-content: center;
-    padding: 0 10px 15px 10px;
-  }
-
-  /* when there is dropdown content available using button */
-  #main-name-button {
-    display: flex;
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
-    font-weight: 700;
-    justify-content: center;
-    padding: 0 10px 15px 10px;
-    background-color: inherit;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* change the color on hover of all */
-  #main-name-button:hover, #main-name-link:hover{
-    color: #dab5aa;
-    text-shadow: 0 2px #a37567;
-  }
-
-  /* designate each li increment styling, column to align small ticks with text underneath */
-  #increment {
-    display: flex;
-    flex-direction: column;
-    background-color: #00000000;
-    cursor: pointer;
-  }
-  
-  /* borders per each incremental navigation */
-  .blog-style-border {
-    border-left: 1px solid #2b2929;
-
-  }
-
-  .primary-style-border {
-    border-left: 1px solid #94685a;
-
-  }
-
-  .blog-style-border:last-child {
-    border-right: 1px solid #2b2929;
-  }
-
-  .primary-style-border:last-child {
-    border-right: 1px solid #94685a;
-  }
-
-
-  .sub-nav-ul-closed {
-    display: none;
-  }
-
-  .primary-sub {
-    color: #E49273;
-  }
-
-  .primary-sub:hover {
-    color: white;
-  }
-
-
-  /* initially don't display the sub ul on hover of the main li */
-  .sub-nav-ul-open {
-    width: fit-content;
-    padding: 10px;
-    position: absolute;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-  }
 
 
 /* responsive, full nav bar not shown until 775 */
@@ -192,12 +80,5 @@
       margin-top: -15px;
       display: flex;
 
-    }
-
-    #NavGameDemo {
-      /* display: flex;
-      justify-content: center;
-      margin-top: -100px;
-      margin-right: -200px; */
     }
 }

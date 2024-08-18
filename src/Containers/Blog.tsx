@@ -13,8 +13,8 @@ interface BlogProps {
     posts: BlogPost[];
 }
 
-export const Blog: React.FC<BlogProps & React.HTMLProps<HTMLDivElement>> = ({
-    classNames, isLoading, posts, text, ...htmlProps}) => { 
+export const Blog: React.FC<BlogProps & React.HTMLProps<HTMLDivElement>> = (
+    { isLoading, posts, text }) => { 
     const [orderedPosts, setOrderedPosts] = useState<BlogPost[]>();
     
     useEffect(() => {

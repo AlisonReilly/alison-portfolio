@@ -4,14 +4,7 @@ import '../Styles/Projects.css';
 import { BasicDiagram } from '../Components/Diagramming/BasicDiagram';
   
 
-interface ProjectListProps {
-    text?: string;
-
-
-}
-
-export const Projects: React.FC<ProjectListProps & React.HTMLProps<HTMLDivElement>> = ({
-    text, ...htmlProps}) => { 
+export const Projects: React.FC<React.HTMLProps<HTMLDivElement>> = () => { 
     const [welcomeTimingMet, setWelcomeTimingMet] = useState<boolean>(false);
 
 

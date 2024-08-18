@@ -9,8 +9,8 @@ interface ProfileHeaderProps {
     text?: string;
 }
   
-export const ProfileHeader: React.FC<ProfileHeaderProps & React.HTMLProps<HTMLDivElement>> = ({
-    isTouchScreen, ...htmlProps}) => { 
+export const ProfileHeader: React.FC<ProfileHeaderProps & React.HTMLProps<HTMLDivElement>> = (
+    { isTouchScreen }) => { 
     let location = useLocation();
     return ( 
         <>

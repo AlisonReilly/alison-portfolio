@@ -13,9 +13,8 @@ interface BlogPreviewProps {
     tags?: string[];
 }
 
-export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivElement>> = ({
-    blogURL, image, blogContent, title, date, tags, altText }) => {
-
+export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivElement>> = (
+    { blogURL, image, blogContent, title, date, tags, altText }) => {
     return (
         <div id='BlogPreview' className='blogPreviewPane'>
             <h2 className='blog-preview-title'>{title}</h2>

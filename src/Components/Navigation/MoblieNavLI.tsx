@@ -5,7 +5,6 @@ import '../../Styles/GlassDropdown.css';
 import { Link } from 'react-router-dom';
 
   
-
 interface MobileNavItemProps {
     isOpen: boolean;
     navName?: string;
@@ -21,7 +20,7 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     navName, 
     navSubItems,
     setIsOpen,
-    ...htmlProps}) => { 
+}) => { 
     const [isSubOpen, setIsSubOpen] = useState<boolean>(false);
 
     // styling concerns:

@@ -8,8 +8,8 @@ interface TextTypeProps {
     removeCursor?: boolean;
 }
 
-export const TextType: React.FC<TextTypeProps & React.HTMLProps<HTMLDivElement>> = ({
-    removeCursor, text, typeEffect, ...htmlProps}) => {    
+export const TextType: React.FC<TextTypeProps & React.HTMLProps<HTMLDivElement>> = (
+    { removeCursor, text, typeEffect }) => {    
         const [animationClass, setAnimationClass] = useState('typed-out');
         const [_text, setText] = useState(text);
 
