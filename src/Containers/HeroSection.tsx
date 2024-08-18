@@ -55,8 +55,8 @@ export const HeroSection: React.FC<HeroProps & React.HTMLProps<HTMLDivElement>> 
             {/* display the skills interlude, switch to title after */}
             {skillsTimingMet ? titleTimingMet ?
                 <TextFade
-                    classNames='fade-in-only support-text support-text-adjust'
-                    text='Full Stack Software Engineer'/> :
+                    classNames='fade-in-only support-text support-text-adjust-title'
+                    text='Software Engineer'/> :
                 <TextFade
                     classNames='fade-in-out-text support-text support-text-adjust'
                     text='React TypeScript Python'/> : null
