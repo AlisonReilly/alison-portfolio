@@ -153,10 +153,15 @@ export const ResumeEntries: ResumeEntry[] = [
         orgURL: 'https://www.parchment.com/',
         skills: ['TypeScript', 'React', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook', 'Accessibility', 'Java', 'Liquibase', 'Spring Boot'],
         achieved: [
-            'Built a front end component library with React and Typescript, improving development speed and UI standardization',
-            'Increased reliability and safeguarded future changes by writing unit tests with React testing-library and Jest',
-            'Integrated on an additional team, learning Java and Spring Boot for background services and full stack applications',
-            'Created new API endpoints with Spring Boot, Hibernate and Lombok, modified database with Liquibase'
+            'Developed a React and TypeScript component library, ensuring UI consistency and improving development speed',
+            'Enhanced application reliability and safeguarded future changes writing unit tests with React Testing Library and Jest',
+            'Implemented responsive design while ensuring accessibility compliance and improving user experience',
+            'Modernized legacy code on full stack teams, integrating component library with corresponding API revisions',
+            'Created documentation in Storybook and Confluence, streamlining developer onboarding and team collaboration',
+            'Added API endpoints with Spring Boot, optimizing data access and reducing boilerplate with Hibernate and Lombok',
+            'Managed schema changes with Liquibase, ensuring seamless integration and data consistency'
+
+
         ],
         description: 'Created a company wide, front end, component library for an electronic and automated credentialing organization. Worked on additional full stack application team with Java and Spring Boot.',
         location: 'Remote'
@@ -168,10 +173,12 @@ export const ResumeEntries: ResumeEntry[] = [
         orgURL: 'https://www.americanexpress.com/',
         skills: ['JavaScript', 'React', 'Python', 'Flask', 'Golang', 'Redis', 'Selenium', 'Jest', 'Enzyme', 'Docker', 'Kafka'],
         achieved: [
-            'Added front end features for an enterprise automations platform using React and company design library',
-            'Implemented API routes in Golang and Python with Flask, concentrating on value add reporting for leadership',
-            'Integrated a Redis Client speeding up reporting and other endpoint processing times',
-            'Improved automated UI testing coverage by adding Gitlab pipeline Selenium Browser tests'
+            'Created front-end features for an internal use automations platform using React and the company design library',
+            'Developed interactive reporting UI with React, enhancing visibility of platform for the company',
+            'Enhanced front-end performance and responsiveness by integrating Redis for optimized data retrieval and caching',
+            'Built API endpoints in Golang and Python (Flask) with a focus on reporting solutions, increasing team impact',
+            'Integrated Selenium tests into GitLab pipelines, increasing platform robustness through automated UI testing',
+            'Co-hosted meetings to demonstrate product, facilitate onboarding, enhancing platform adoption and understanding'
         ],
         description: 'A team focusing on building a robust automations platform for the company wide adoption.',
         location: 'Remote'    
@@ -183,10 +190,11 @@ export const ResumeEntries: ResumeEntry[] = [
         orgURL: 'https://www.servicenow.com/',
         skills: ['JavaScript', 'Platform Debugging', 'Java', 'ServiceNow', 'Platform as a Service', 'ServiceNow Administration', 'Troubleshooting', 'Accessibility'],
         achieved: [
-            'Utilized platform debugging tools to identify conflicting security rules and other platform settings ',
-            'Employed Chrome Dev Tools, platform tools and other techniques for client side and server side debugging',
-            'Increased ticket resolution speed by coordinating consultations with Customers, team members and developers',
-            'Created knowledge base articles on findings enhancing the available support documentation for users and employees'
+            'Diagnosed UI/UX defects or misconfigurations with platform and Chrome Dev Tools, optimizing visual components',
+            'Investigated JavaScript, Angular, and React customizations, enhancing platform performance and customer satisfaction',
+            'Authored and updated knowledge base articles, driving self-service support and reducing recurring customer inquiries',
+            'Optimized and suggested platform settings, security rules and table functions, optimizing workflow experience',
+            'Accelerated ticket resolution by coordinating with customers, team and developers, streamlining problem-solving'
         ],
         description: 'Technical Support concentrating on debugging and finding root causes in the UI/UX features of the ServiceNow platform.',
         location: 'Remote'
@@ -198,9 +206,9 @@ export const ResumeEntries: ResumeEntry[] = [
         orgURL: 'https://www.weare1909.org/',
         skills: ['JavaScript', 'Node', 'Integrations', 'Salesforce API', 'Firebase', 'Webhooks', 'ExpressJS'],
         achieved: [
-            'Integrated OfficeRnd & Salesforce REST APIs using NodeJS and Firebase functions',
-            'Routed web hook response of OfficeRnd with ExpressJS ensuring separation of concerns',
-            'Communicated goals with product owner and other company associates on a bi-weekly basis to sync goals '
+            'Built middleware using Node.js and Firebase to integrate OfficeRnd and Salesforce APIs',
+            'Implemented webhook routing with Express.js for efficient data handling and clear separation of concerns',
+            'Synced goals bi-weekly with the product owner and team, ensuring alignment and progress.'
         ],
         description: 'An internship project building middleware and integrations for a local co-working space.',
         location: 'Remote'
@@ -250,22 +258,29 @@ export const Education: ResumeEntry[] = [
     {
         organization: 'Flatiron School',
         title: 'Software Engineering',
-        date: '1/2019 - 3/2020',
+        date: '6/2020',
         description: 'Learned Full Stack Software Engineering with Ruby on Rails, JavaScript, React and Redux',
         concentration: 'Full Stack Software Engineering',
         skills: ['Ruby on Rails', 'React', 'Redux', 'JavaScript'],
         location: 'Remote'
-
     },
     {
-        organization: 'LaGuardia Community college',
+        organization: 'LaGuardia Community College',
         date: '3/2013 - 8/2017',
         title: 'Math & Science',
         description: 'Enrolled in a variety of science and math courses while working full time',
         concentration: 'Math and Science',
         skills: ['Anatomy and Physiology', 'Biology', 'Chemistry', 'Calculus', 'C++', 'Writing intensive courses'],
         location: 'Long Island City, NY'
-
+    },
+    {
+        organization: 'Miami Dade College',
+        date: '12/2024',
+        title: 'Computer Science',
+        description: 'Transferred credits to complete an Associate of Arts degree, online and evening classes',
+        concentration: 'Computer Science',
+        skills: ['Physics', 'Calculus', 'Ethics'],
+        location: 'Miami, FL'
     }
 ]
 
