@@ -4,12 +4,9 @@
     align-items: center;
     height: 100%;
     padding-top: 100px;
+}
 
-
-  
-  }
-
-  /* supporting text adjusments below name */
+/* supporting text adjustments below name */
 .support-text-adjust {
     margin-top: 10px;
     margin-left: 100px;
@@ -17,7 +14,9 @@
 
 .support-text-adjust-title {
   margin-top: 10px;
-  margin-left: 400px;
+  margin-left: 35vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .main-text {
@@ -116,5 +115,9 @@
 
     .action-button {
       font-size: 24px;
-  }
+    }
+
+    .support-text-adjust-title {
+      margin-left: 20vw;
+    }
 }

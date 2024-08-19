@@ -37,7 +37,8 @@ export const Connect: React.FC<ConnectProps & React.HTMLProps<HTMLDivElement>> =
                     <img src="In-White-96.png" alt='linkedin profile'/>
                 </a>
                 <a className='modern-link github' href='https://github.com/Tsunamins' target="_blank" rel="noreferrer">
-                    <img src="github-mark-white.svg" alt='github page'/></a>
+                    <img src="github-mark-white.svg" alt='github page'/>
+                </a>
                 <div className='download' role='button' onClick={onDownload}>
                     <img src="TempDownloadIcon.png" alt='resume download'/>
                 </div>
