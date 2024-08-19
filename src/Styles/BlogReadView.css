@@ -6,6 +6,10 @@ p {
     font-size: 35px;
 }
 
+.blog-read-date {
+    margin-top: 10px;
+}
+
 .accent-image-right {
     height: 200px;
     width: 200px;
@@ -149,7 +153,7 @@ p {
     }
 
     p {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .figure-pres {
@@ -169,7 +173,7 @@ p {
     }
 
     .anchors {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .code-block {

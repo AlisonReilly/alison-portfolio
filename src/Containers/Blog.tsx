@@ -4,8 +4,6 @@ import { BlogPreview } from '../Components/Blog/BlogPreview';
 import { BlogPost } from '../constants/blogConstants';
 
 
-  
-
 interface BlogProps {
     text?: string;
     classNames?: string;
@@ -37,7 +35,12 @@ export const Blog: React.FC<BlogProps & React.HTMLProps<HTMLDivElement>> = (
             <div id='Blog'>
                 <div className='main-blog-list'>
                     {orderedPosts && orderedPosts.map((p, i) => 
-                        <BlogPreview key={`${i}-preview`} blogContent={p.content} title={p.title} blogURL={p.blogURL} />
+                        <BlogPreview 
+                        key={`${i}-preview`} 
+                        blogContent={p.content} 
+                        date={p.date.toString()} 
+                        title={p.title} 
+                        blogURL={p.blogURL} />
                     )}
 
                 </div>

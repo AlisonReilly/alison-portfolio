@@ -2,45 +2,46 @@
     background-image: url('../../public/BGDiagramSteamPunk.png');
     background-color: #607293;
     margin-top: -56px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* the individual preview item going into the main list */
 #BlogPreview {
-    padding: 10px;
+    background: #2a2928;
+    margin-bottom: 10px;
+    min-height: 504px;
+    max-height: 504px;
+    padding: 30px;
+    width: 350px;
 }
 
 .blog-preview-content {
     overflow: clip;
     height: 300px;
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 10px;
-
 }
 
 /* the whole list view with reading samples */
 .main-blog-list {
     font-family: 'Goudy Bookletter 1911', serif;
-    margin-top: 100px;
-    width: 90vw;
     color: #dfdfcc;
+    display: flex;
+    flex: 1 1 auto; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 98%;
+    min-width: 1px;
+    overflow-x: hidden;
+    padding-top: 70px;
+    position: relative;
+    width: 100%;
 }
 
-.glassBlog {
-    /* From https://css.glass */
-    background: #251605;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid #412722;
-}
-
-.blogPreviewPane {
-    background: #2a2928;
-    margin-bottom: 10px;
+.blog-preview-date {
+    color: #dfdfcc;
+    font-size: 18px;
 }
 
 .blog-preview-title {
@@ -54,30 +55,37 @@
 
 @media only screen and (min-width: 1250px) {
     .main-blog-list {
-        width: 60vw;
+        /* width: 60vw; */
     }
 }
 
 @media only screen and (min-width: 775px) {
     #Blog {
         margin-top: -37px;
+        /* flex-direction: row; */
+        /* align-items: flex-start; */
+        /* justify-content: center; */
     }
 
     #BlogPreview{
-        padding: 50px;
-
+        padding: 30px;
+        width: 350px;
     }
 
     .main-blog-list {
-        width: 75vw;
+        column-gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-top: 50px;
+
     }
 
     .blog-preview-content {
         overflow: clip;
         height: 300px;
-        font-size: 25px;
+        font-size: 20px;
         padding-bottom: 10px;
-    
     }
 
     .read-more-link {
@@ -85,6 +93,6 @@
     }
 
     .blog-preview-title {
-        font-size: 30px;
+        font-size: 25px;
     }
 }

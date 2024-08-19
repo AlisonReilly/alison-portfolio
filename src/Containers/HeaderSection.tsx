@@ -15,7 +15,6 @@ export const HeaderSection: React.FC<HeaderSectionProps & React.HTMLProps<HTMLDi
         <div id='HeaderSection'>
             <ProfileHeader isTouchScreen={isTouchScreen}/>
             <MobileNav isTouchScreen={isTouchScreen}/>
-            {/* <NavBar isTouchScreen={isTouchScreen}/> */}
             <MenuUL isTouchScreen={isTouchScreen}/>
         </div>
     ); 

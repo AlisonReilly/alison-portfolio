@@ -92,7 +92,7 @@ function App() {
                 <Route path="/resume" element={<Resume isLoading={isLoading} />} />
                 <Route path="/blog" element={<Blog posts={CurrentBlogPosts} />} />
                 {CurrentBlogPosts && CurrentBlogPosts.map((p, i) =>
-                    <Route key={`${i}-${p.blogURL}`} path={`/blog/${p.blogURL}`} element={<BlogRead title={p.title} blogContent={p.content} />} />
+                    <Route key={`${i}-${p.blogURL}`} path={`/blog/${p.blogURL}`} element={<BlogRead title={p.title} blogContent={p.content} date={p.date.toString()} />} />
                 )}
             </Routes>
             {/* <Outlet /> */}
