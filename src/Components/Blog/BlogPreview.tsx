@@ -15,7 +15,6 @@ interface BlogPreviewProps {
 
 export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivElement>> = (
     { blogURL, image, blogContent, title, date, tags, altText }) => {
-        console.log('date: ', typeof date)
     return (
         <div id='BlogPreview' className='blogPreviewPane'>
             <h2 className='blog-preview-title'>{title}</h2>

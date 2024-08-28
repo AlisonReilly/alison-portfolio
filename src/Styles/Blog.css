@@ -1,5 +1,5 @@
 #Blog {
-    background-image: url('../../public/BGDiagramSteamPunk.png');
+    background-image: url('/BGDiagramSteamPunk.png');
     background-color: #607293;
     margin-top: -56px;
 }
