@@ -53,12 +53,12 @@ function App() {
     // todo this isn't necessarily helping with background images
     useEffect(() => {
         const images = [
-            '../public/BGDiagramSteamPunk.png',
-            '../public/FansArtDecoBG.png',
-            '../public/In-White-96.png',
-            '../public/EmailIcon.png',
-            '../public/TempDownloadIcon.png',
-            '../public/github-mark-white.svg',
+            '/BGDiagramSteamPunk.png',
+            '/FansArtDecoBG.png',
+            '/In-White-96.png',
+            '/EmailIcon.png',
+            '/TempDownloadIcon.png',
+            '/github-mark-white.svg',
             '../src/assets/images/buttonscale100.png'
         ]
         cacheImages(images)
