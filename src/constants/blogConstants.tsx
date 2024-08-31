@@ -1915,10 +1915,9 @@ end`}
         content: 
         <div>
             <p>
-                For personal projects, I like to use ClickUp to track the endless ideas and “stories” for my product called a 
-                personal brand (something like that). So in light of all those ideas, choosing what's vital, over interest, keeping up appearances in code style,
-                updating funky looking elements and original design ideas, etc; I let some things like old technology fall by the way side. One that had been
-                bothering me for sometime: <span className='inline-code-emphasis'>react-scripts</span>.
+                For personal projects, I have an endless amount of ideas on new features, things to refactor or uplift, different approaches to implement, and, most of all, the
+                quirky design ideas that usually first come to mind before refining them. One that had been
+                bothering me for sometime and was a bit behind on the times: <span className='inline-code-emphasis'>react-scripts</span>.
             </p>
             <p>
                 After exploring a few options, I decided to replace react-scripts from what I reasoned as the most expedient way, at least for now, using Vite. 
