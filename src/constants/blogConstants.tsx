@@ -1,3 +1,4 @@
+import { InlineCodeEmphasis } from '../Components/Blog/BlogCore/InlineCodeEmphasis';
 import '../Styles/BlogReadView.css';
 export interface BlogPost {
     title: string;
@@ -1908,6 +1909,179 @@ end`}
             </figure>
         </div>,
 
+    },
+    {
+        title: 'Adding Vite to Replace react-scripts in a Firebase Hosted Project',
+        content: 
+        <div>
+            <p>
+                For personal projects, I like to use ClickUp to track the endless ideas and “stories” for my product called a 
+                personal brand (something like that). So in light of all those ideas, choosing what's vital, over interest, keeping up appearances in code style,
+                updating funky looking elements and original design ideas, etc; I let some things like old technology fall by the way side. One that had been
+                bothering me for sometime: <span className='inline-code-emphasis'>react-scripts</span>.
+            </p>
+            <p>
+                After exploring a few options, I decided to replace react-scripts from what I reasoned as the most expedient way, at least for now, using Vite. 
+                Noteworthy, had I deliberated on it more, it might not have gotten done at all (peculiarities of the mind). In boxing, a coach said once, 
+                you all get in your own way deciding what to do during freestyle, just hit the bag! this is the moment I realized this applied to me and my deliberations
+                in all matters. 
+                Hit the bag, install Vite. 
+            </p>
+
+            <p>Some common steps I found among various guides to get started: </p>
+
+            <ol className='numbered-blog'>
+                <li>
+                    <div className="code-block-large">npm install --save-dev vite @vitejs/plugin-react vite-tsconfig-paths vite-plugin-svgr</div>
+                </li>
+                <li>
+                Adding a vite.config.js file with the following at the root:
+                <div className="code-block-large">
+                {`import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
+import svgr from 'vite-plugin-svgr';
+
+
+export default defineConfig({
+    plugins: [
+        react(), 
+        viteTsconfigPaths(),
+        svgr({
+            include: '**/*.svg?react',
+        }),
+    ],
+});
+`}      
+</div>
+                </li>
+                <li> Move index.html to the root of the project along with some additional changes:
+                    <ul className='ul-squares'>
+                        <li className='li-squares'>
+                            Remove any uri prefixes of <InlineCodeEmphasis text='react-scripts'/>
+                        </li>
+                        <li className='li-squares'>
+                            Add a <InlineCodeEmphasis text='<script>'/> tag to the <InlineCodeEmphasis text='<body>'/>
+                            <InlineCodeEmphasis text='<script type="module" src="/src/index.tsx"></script>'/>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Change a variety of properties in tsconfig.json, under the compilerOptions parent attribute:
+                    <ul className='ul-squares'>
+                        <li className='li-squares'>
+                            "target" property from "ES5" to "ESNext"
+                            <div className='code-block-snippet'>"target": "ESNext"</div>
+                            <div className='block-quote special-note'>What is this for? This ensures using the highest JavaScript version per the current Typescript version.
+                            <a className='reference anchors' href='https://www.typescriptlang.org/tsconfig/#target' rel="noreferrer" target='_blank'>TypeScript Docs: Target</a>
+                            </div>
+                        </li>
+                        <li className='li-squares'>
+                            Add new property "types"
+                            <div className='code-block-snippet'>types": ["vite/client", "vite-plugin-svgr/client"]</div>
+                            <div className='block-quote special-note'>
+                                What are some of these for? 
+                                <br/>"vite/client" in particular can be used instead of adding a separate file called <InlineCodeEmphasis text='vite-env.d.ts'/>  with just this one line {' '}
+                                 <InlineCodeEmphasis text='/// <reference types="vite/client" />'/>. The intention of this is to stabilize "the 
+                                environment of client side code" per {' '} 
+                                <a className='reference anchors' href='https://vitejs.dev/guide/features.html#client-types' rel="noreferrer" target='_blank'>Vite Docs</a>. 
+                                To make the blog an interesting read,
+                                fun fact, they use the word "shim" to describe this, this is a device sold at the Home Depot, a retail organization I hailed from before hailing from the restaurant industry. It's a device
+                                meant to stabilize larger objects on the fly. In the restaurant industry, the next chapter of work, we called these Wobble Wedges, a common brand of restaurant table stabilization to keep 
+                                your cell phone and drink from flailing off the table, a must have to keep complaints at bay.
+                            </div>
+                        </li>
+                        <li className='li-squares'>
+                            Changed <InlineCodeEmphasis text='esModuleInterop'/> from true to false 
+                            <div className='block-quote special-note'>
+                                I saw this in many configurations, could be useful to remain true after reading the
+                                <a className='reference anchors' href='https://www.typescriptlang.org/tsconfig/#esModuleInterop' rel="noreferrer" target='_blank'>TypeScript docs</a>. 
+                                , but leaving it for now. It is meant to handle some possible misinterpretation of different
+                                styles of imports such as 'require'.
+                            </div>
+                        </li>
+                        <li className='li-squares'>
+                            Changed <InlineCodeEmphasis text='skipLibCheck'/> from true to false
+                            <div className='block-quote special-note'>
+                                This is another setting that could come in handy as true, it could make compilation time faster, it skips checks on type differentiation
+                                that could occur in perhaps your own project or numerous versions of the same package in node_modules. 
+                                <a className='reference anchors' href='https://www.typescriptlang.org/tsconfig/#skipLibCheck' rel="noreferrer" target='_blank'>Typescript skipLibCheck</a>. 
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Change the scripts property in package.json:
+                    <div className="code-block-large">
+                {`"scripts": {
+  "start": "vite",
+  "build": "tsc && vite build",
+  "serve": "vite preview"
+},
+`}      
+</div>
+
+                </li>
+            </ol>
+
+            <p>
+                After these general steps, I was on the edge of my seat waiting for this part, it’s time to npm uninstall 
+                react scripts and delete the react-app-env.d.ts file!!!
+            </p>
+
+            <p>Some noteworthy errors and warnings per my setup: </p>
+
+            <p><em>On npm start,</em> I got an error:
+            <br/>
+            <br/>
+            <div className='code-block-large'>
+            The plugin "externalize-deps" was triggered by this import
+            <br/>
+            vite.config.ts:3:30:
+            <br/>
+            3 │ import viteTsconfigPaths from 'vite-tsconfig-paths';
+            <br/>    
+            </div>
+                <div>
+                    The rest of the error noted some documentation. Essentially it reflects there's an issue loading modules with require, noteworthy the esModuleInterop
+                    property set to true might have helped with this as well, something to try later. Either way, the docs pointing to the issue recommended, as one solution,
+                    setting a property "type" to "module" in the package.json. This resolved the issue. 
+                </div>
+
+            </p>
+
+            <p><em>A new warning</em> based on the way file paths can be referenced, noted asset files such as images could have improved imports: </p>
+            <div className='code-block-large'>
+                Files in the public directory are served at the root path.
+                <br/>
+                Instead of /public/BGDiagramSteamPunk.png, use /BGDiagramSteamPunk.png.
+            </div>
+
+            <p><em>One final error,</em> needed to npm run build to firebase deploy the latest changes but: </p>
+            <div className='code-block-large'>
+                Found 1 error in node_modules/phaser/types/phaser.d.ts:9766’
+                <br/>
+                https://github.com/phaserjs/phaser/issues/4661
+                <br/>
+                This is a TypeScript requirement, not a polyfill. In your tsconfig.json file add "scripthost" in the lib array otherwise you won't get the ActiveXObject types included.
+            </div>
+            <p>So with this error, as it recommends, simply adding to the array in the "lib" property of tsconfig resolved the issue.</p>
+
+            <p><em>Wait there's more........</em></p>
+            <p>Upon writing my blog post and getting thrilled to stay relevant in society today, I discovered npm run build and firebase deploy were not showing changes to my site.
+                Apparently, there are some recommended firebase settings to coordinate this. In the end, I had to change the "public" property to "dist" and remove the items from my
+                "ignore" property array. This was noted on
+                <a className='reference anchors' href='https://vitejs.dev/guide/static-deploy.html#google-firebase' rel="noreferrer" target='_blank'>Vite Docs: Google Firebase</a>
+
+            </p>
+
+            <p>An opportunity to learn something new, uplift something quickly and get an up to date blog post out there!</p>
+        </div>,
+        date: '8/31/2024',
+        tags: ['vite', 'typescript', 'firebase', 'react-scripts', 'react'],
+        blogURL: 'replace-react-scripts'
     }
+
+
     
 ]
