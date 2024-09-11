@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 import '../../Styles/Blog.css';
+import '../../Styles/App.css';
+
 import { Link } from 'react-router-dom';
 
 
@@ -17,10 +19,10 @@ export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivEle
     { blogURL, image, blogContent, title, date, tags, altText }) => {
     return (
         <div id='BlogPreview' className='blogPreviewPane'>
-            <h2 className='blog-preview-title'>{title}</h2>
+            <div className='blog-preview-title'>{title}</div>
             <div className='blog-preview-date'>{date}</div>
             <div className='blog-preview-content'>{blogContent}</div>
-            <Link className='read-more-link' to={`/blog/${blogURL}`}>...Read More</Link>
+            <div className='read-more'><Link className='read-link' to={`/blog/${blogURL}`}>Read</Link></div>
         </div>
     ); 
 } 

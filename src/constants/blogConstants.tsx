@@ -96,7 +96,10 @@ export const CurrentBlogPosts: BlogPost[] = [
             
             <h3 className='core-subsection'>C++ Random</h3>
             {/* todo these images are stored in imgur but eventually add them here or in firestore or somewhere else */}
-            <p>In C++, <span className='inline-code-emphasis'>rand()</span>, is used to generate seemingly random numbers. Below is the general code and result: </p>
+            <p>
+                In C++, <span className='inline-code-emphasis'>rand()</span>, is used to generate seemingly random numbers. 
+                Below is the general code and result: 
+            </p>
             
             <div className='figure-pres'>
                 <div>
@@ -217,11 +220,15 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </div>
             </div>
             
-            <p>Wouldn’t it be wonderful now, to go off on some tangent regarding physics having no concept of time beyond elapsed time for calculation? That would be a lot of fun, but for now, I’ll have to move on to how random works in Ruby.</p>
+            <p>
+                Wouldn’t it be wonderful now, to go off on some tangent regarding physics having no concept of time beyond elapsed time for calculation? 
+                That would be a lot of fun, but for now, I’ll have to move on to how random works in Ruby.
+            </p>
             
             <h3 className='core-subsection'>Random Ruby</h3>
             
-            <p>Of course, in ruby, there are methods on hand and ready to go simplifying the code involved. The primary method 
+            <p>
+                Of course, in ruby, there are methods on hand and ready to go simplifying the code involved. The primary method 
                 involves the use of <span className='inline-code-emphasis'>#rand</span>. Calling 
                 <span className='inline-code-emphasis'>rand</span> by itself yields a random float. If a whole integer is desired 
                 typically <span className='inline-code-emphasis'>rand(1000)</span>, for example, will generate a random number between 
@@ -251,7 +258,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </div>
             </div>
 
-            <p>In contrast to C++, Ruby <span className='inline-code-emphasis'>rand</span> methods are already setup to refer to a 
+            <p>
+                In contrast to C++, Ruby <span className='inline-code-emphasis'>rand</span> methods are already setup to refer to a 
                 timestamp along with “the process id, and a sequence number” <em>(ruby-doc.org)</em>. In order to get a series of 10 random 
                 numbers, for now between 0 and 1000, and not repeat each time the program is started or method is called again, 
                 <span className='inline-code-emphasis'>rand(1000)</span> is sufficient in a while loop:
@@ -721,7 +729,7 @@ end`
 
             <h3 className='core-subsection'>Why Password_digest?</h3>
              
-            <p><code className='code-block'>password_digest</code> is a requirement specific to bcrypt, likely a word chosen from and whatever way the 
+            <p><span className='inline-code-emphasis'>password_digest</span> is a requirement specific to bcrypt, likely a word chosen from and whatever way the 
                 developers of bcrypt wanted to name the handling of password attributes. However, it is interesting that the output 
                 of mathematical hash functions can be referred to as: hash values, hashes, digests or message digests, among other
                 (<a className='anchors' href='https://en.wikipedia.org/wiki/Cryptographic_hash_function' target='_blank' rel="noreferrer">Wiki Cryptographic Hash Function</a> &
@@ -891,12 +899,12 @@ end`
                     <figcaption className='caption'>The Tilemap Result</figcaption>
                 </figure>
                 <p>
-                During these tutorials, I discovered the process of converting a png image into a tile map based on parsing array 
-                values into pixel based coordinates of the png image. I discovered the use of Tiled to make a tile map with a 
-                little more ease, rather than typing in the array values needed, manually. Along with this I found a lot of 
-                details about animating images based on sprite sheets with different character positions. I found an excellent 
-                tutorial on the use of the program Tiled as well
-            </p>
+                    During these tutorials, I discovered the process of converting a png image into a tile map based on parsing array 
+                    values into pixel based coordinates of the png image. I discovered the use of Tiled to make a tile map with a 
+                    little more ease, rather than typing in the array values needed, manually. Along with this I found a lot of 
+                    details about animating images based on sprite sheets with different character positions. I found an excellent 
+                    tutorial on the use of the program Tiled as well
+                </p>
             </div>
 
 
@@ -1660,8 +1668,8 @@ end`
             <h3 className='core-subsection'>
                 Explanation of Associations, as it applies to my project, * The Amateur Wine Reviewer *
             </h3>
-            
-            <p>4 models were needed to ensure I was covering all the requirements, or so I thought, as I went along 
+            <br/>
+            <div>4 models were needed to ensure I was covering all the requirements, or so I thought, as I went along 
                 checking them off. The models are 
                 <div className="code-block-snippet">wine</div> 
                 <div className="code-block-snippet">review</div> 
@@ -1675,7 +1683,7 @@ end`
                     Stackoverflow: Add Favorites Rails
                     </a>
                 </em>
-            </p>
+            </div>
             
             <div className="code-block-large">{
             `in: class User
@@ -1722,14 +1730,14 @@ has_many :users, through: :reviews`}
                 the liked_reviews to allow a differentiation in chaining against users vs. reviews themselves, 
                 all via the opposite source.
             </p>
-            
-            <p>
+            <br/>
+            <div>
                 <strong>This required a couple other modifications</strong><br/>
                 Instead of a 
                 <div className="code-block-snippet">LikedReviews controller</div>
                 <div className="code-block-snippet">#like</div> was added to the 
                 <div className="code-block-snippet">ReviewsController</div> as its own method:
-            </p>
+            </div>
             
             <div className='code-block-large'>
             {`def like
@@ -1961,23 +1969,22 @@ export default defineConfig({
                         </li>
                         <li className='li-squares'>
                             Add a <InlineCodeEmphasis text='<script>'/> tag to the <InlineCodeEmphasis text='<body>'/>
-                            <InlineCodeEmphasis text='<script type="module" src="/src/index.tsx"></script>'/>
+                            <div className="code-block-large">{`<script type="module" src="/src/index.tsx"></script>`}</div>
                         </li>
                     </ul>
                 </li>
                 <li>
                     Change a variety of properties in tsconfig.json, under the compilerOptions parent attribute:
                     <ul className='ul-squares'>
-                        <li className='li-squares'>
-                            "target" property from "ES5" to "ESNext"
+                        <li className='li-squares'>"target" property from "ES5" to "ESNext"
                             <div className='code-block-snippet'>"target": "ESNext"</div>
-                            <div className='block-quote special-note'>What is this for? This ensures using the highest JavaScript version per the current Typescript version.
+                            <div className='block-quote special-note'>What is this for? This ensures using the highest JavaScript version per the current Typescript version. {' '}
                             <a className='reference anchors' href='https://www.typescriptlang.org/tsconfig/#target' rel="noreferrer" target='_blank'>TypeScript Docs: Target</a>
                             </div>
                         </li>
                         <li className='li-squares'>
                             Add new property "types"
-                            <div className='code-block-snippet'>types": ["vite/client", "vite-plugin-svgr/client"]</div>
+                            <div className='code-block-large'>types": ["vite/client", "vite-plugin-svgr/client"]</div>
                             <div className='block-quote special-note'>
                                 What are some of these for? 
                                 <br/>"vite/client" in particular can be used instead of adding a separate file called <InlineCodeEmphasis text='vite-env.d.ts'/>  with just this one line {' '}
@@ -1993,8 +2000,8 @@ export default defineConfig({
                         <li className='li-squares'>
                             Changed <InlineCodeEmphasis text='esModuleInterop'/> from true to false 
                             <div className='block-quote special-note'>
-                                I saw this in many configurations, could be useful to remain true after reading the
-                                <a className='reference anchors' href='https://www.typescriptlang.org/tsconfig/#esModuleInterop' rel="noreferrer" target='_blank'>TypeScript docs</a>. 
+                                I saw this in many configurations, could be useful to remain true after reading the {' '}
+                                <a className='reference anchors' href='https://www.typescriptlang.org/tsconfig/#esModuleInterop' rel="noreferrer" target='_blank'>TypeScript docs</a>
                                 , but leaving it for now. It is meant to handle some possible misinterpretation of different
                                 styles of imports such as 'require'.
                             </div>
@@ -2003,7 +2010,7 @@ export default defineConfig({
                             Changed <InlineCodeEmphasis text='skipLibCheck'/> from true to false
                             <div className='block-quote special-note'>
                                 This is another setting that could come in handy as true, it could make compilation time faster, it skips checks on type differentiation
-                                that could occur in perhaps your own project or numerous versions of the same package in node_modules. 
+                                that could occur in perhaps your own project or numerous versions of the same package in node_modules. {' '}
                                 <a className='reference anchors' href='https://www.typescriptlang.org/tsconfig/#skipLibCheck' rel="noreferrer" target='_blank'>Typescript skipLibCheck</a>. 
                             </div>
                         </li>
@@ -2041,11 +2048,11 @@ export default defineConfig({
             3 │ import viteTsconfigPaths from 'vite-tsconfig-paths';
             <br/>    
             </div>
-                <div>
+                <p>
                     The rest of the error noted some documentation. Essentially it reflects there's an issue loading modules with require, noteworthy the esModuleInterop
                     property set to true might have helped with this as well, something to try later. Either way, the docs pointing to the issue recommended, as one solution,
                     setting a property "type" to "module" in the package.json. This resolved the issue. 
-                </div>
+                </p>
 
             </p>
 
@@ -2069,7 +2076,7 @@ export default defineConfig({
             <p><em>Wait there's more........</em></p>
             <p>Upon writing my blog post and getting thrilled to stay relevant in society today, I discovered npm run build and firebase deploy were not showing changes to my site.
                 Apparently, there are some recommended firebase settings to coordinate this. In the end, I had to change the "public" property to "dist" and remove the items from my
-                "ignore" property array. This was noted on
+                "ignore" property array. This was noted on {' '}
                 <a className='reference anchors' href='https://vitejs.dev/guide/static-deploy.html#google-firebase' rel="noreferrer" target='_blank'>Vite Docs: Google Firebase</a>
 
             </p>
@@ -2080,7 +2087,4 @@ export default defineConfig({
         tags: ['vite', 'typescript', 'firebase', 'react-scripts', 'react'],
         blogURL: 'replace-react-scripts'
     }
-
-
-    
 ]

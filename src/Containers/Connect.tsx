@@ -3,9 +3,6 @@ import '../Styles/Connect.css';
 import '../Styles/Resume.css';
 
 
-
-  
-
 interface ConnectProps {
     isLoading: boolean;
     text?: string;

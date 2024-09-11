@@ -55,7 +55,7 @@
 
 /* ul styling needs, position absolute keeps dropdown from interfering with other elements */
 .mobile-ul {    
-    width: 30vw;
+    width: 50vw;
     padding: 10px;
     position: absolute;
     margin-top: 55px;

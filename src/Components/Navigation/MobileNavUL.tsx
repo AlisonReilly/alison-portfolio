@@ -45,7 +45,7 @@ export const MobileNav: React.FC<MobileNavProps & React.HTMLProps<HTMLDivElement
                 className='glassMainMenu' 
                 aria-expanded={isOpen} 
                 onClick={() => setIsOpen(!isOpen)}>
-                    <img id='NavIcon' src="appsIcon.svg" alt='open navigation menu'/>
+                    <img id='NavIcon' src="/appsIcon.svg" alt='open navigation menu'/>
             </button>
             <ul className={`flexcolumn glass mobile-ul ${!isOpen ? 'closed-menu' : ''}`}>
                 {isOpen && MainNavItems.map((i, k) =>

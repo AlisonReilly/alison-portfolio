@@ -35,7 +35,7 @@ export const MobileNavItem: React.FC<MobileNavItemProps & React.HTMLProps<HTMLDi
     }
     
     return (
-        <li id={firstLIID} className='mobile-li' onClick={handleClick}>
+        <li id={firstLIID} key={firstLIID} className='mobile-li' onClick={handleClick}>
             <Link className='mobile-a modern-link' to={navHref ? navHref : ''}>
                 <span id={hasSubItems} className='bracket'>[ </span>
                 <span id={hasSubItems} className='bracket-text'>{navName}</span>

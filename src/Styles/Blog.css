@@ -6,19 +6,24 @@
 
 /* the individual preview item going into the main list */
 #BlogPreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #2a2928;
     margin-bottom: 10px;
-    min-height: 504px;
-    max-height: 504px;
-    padding: 30px;
+    min-height: 400px;
+    max-height: 400px;
+    padding: 20px;
     width: 350px;
 }
 
 .blog-preview-content {
     overflow: clip;
-    height: 300px;
+    height: 200px;
+    max-height: 250px;
+    min-height: 250px;
     font-size: 18px;
-    padding-bottom: 10px;
+    padding: 0 20px;
 }
 
 /* the whole list view with reading samples */
@@ -42,29 +47,33 @@
 .blog-preview-date {
     color: #dfdfcc;
     font-size: 18px;
+    padding-left: 20px;
 }
 
 .blog-preview-title {
-    font-size: 26px;
+    font-size: 24px;
+    padding: 0 20px;
 }
 
-.read-more-link {
-    font-size: 20px;
-    color: rgb(109, 103, 83);
+.read-more {
+    display: flex;
+    justify-content: center;
+    margin-top: -25px;
+    height: 60px;
+    min-height: 60px;
+    background-color: #444546;
+    align-items: center;
 }
 
-@media only screen and (min-width: 1250px) {
-    .main-blog-list {
-        /* width: 60vw; */
-    }
+.read-link, .read-link:visited {
+    color: rgb(79, 159, 244);
+    font-size: 18px;
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 775px) {
     #Blog {
         margin-top: -37px;
-        /* flex-direction: row; */
-        /* align-items: flex-start; */
-        /* justify-content: center; */
     }
 
     #BlogPreview{
@@ -82,17 +91,27 @@
     }
 
     .blog-preview-content {
-        overflow: clip;
+        overflow: none;
         height: 300px;
         font-size: 20px;
         padding-bottom: 10px;
     }
 
-    .read-more-link {
-        font-size: 25px;
+    .read-more {
+        height: 50px;
+        min-height: 50px;
+    }
+    .blog-preview-title {
+        font-size: 26px;
+        padding: unset;
     }
 
-    .blog-preview-title {
-        font-size: 25px;
+    .blog-preview-content {
+        padding: unset;
+
+    }
+
+    .blog-preview-date {
+        padding: unset;
     }
 }
