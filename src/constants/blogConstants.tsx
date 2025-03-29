@@ -2053,7 +2053,6 @@ export default defineConfig({
                     property set to true might have helped with this as well, something to try later. Either way, the docs pointing to the issue recommended, as one solution,
                     setting a property "type" to "module" in the package.json. This resolved the issue. 
                 </p>
-
             </p>
 
             <p><em>A new warning</em> based on the way file paths can be referenced, noted asset files such as images could have improved imports: </p>

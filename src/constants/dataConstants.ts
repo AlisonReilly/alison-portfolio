@@ -1,4 +1,3 @@
-// import WallMedCrop from './assets/images/WallMedCrop.png';
 import WallMedCrop from '../assets/images/WallMedCrop.png';
 
 
@@ -147,11 +146,11 @@ export const PortfolioItems: PortfolioItem[] = [
 
 export const ResumeEntries: ResumeEntry[] = [
     {
-        organization: 'Parchment',
+        organization: 'Instructure',
         title: 'Software Engineer I',
         date: '9/2022 - present',
         orgURL: 'https://www.parchment.com/',
-        skills: ['TypeScript', 'React', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook', 'Accessibility', 'Java', 'Liquibase', 'Spring Boot'],
+        skills: ['TypeScript', 'React', 'GraphQL', 'Styled Components', 'Jest', 'React Testing Library', 'TurboRepo', 'Storybook', 'Accessibility', 'Java', 'Liquibase', 'Spring Boot'],
         achieved: [
             'Developed a React and TypeScript component library, ensuring UI consistency and improving development speed',
             'Enhanced application reliability and safeguarded future changes writing unit tests with React Testing Library and Jest',
