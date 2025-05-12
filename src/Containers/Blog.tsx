@@ -2,53 +2,51 @@ import React, { useEffect, useState } from 'react';
 import '../Styles/Blog.css';
 import { BlogPreview } from '../Components/Blog/BlogPreview';
 import { BlogPost } from '../constants/blogConstants';
+import { BlogItem, getBlogGraphQL } from '../services/getBlog';
 
 
 interface BlogProps {
-    text?: string;
-    classNames?: string;
     isLoading?: boolean;
-    posts: BlogPost[];
 }
 
-export const Blog: React.FC<BlogProps & React.HTMLProps<HTMLDivElement>> = (
-    { isLoading, posts, text }) => { 
-    const [orderedPosts, setOrderedPosts] = useState<BlogPost[]>();
-    
-    useEffect(() => {
-        setOrderedPosts(posts.sort((a, b) => {
-            let key1 = new Date(a.date)
-            let key2 = new Date(b.date)
 
-            if (key1 > key2) {
-                return -1;
-            } else if (key1 === key2) {
-                return 0;
-            } else {
-                return 1;
-            }
-        }))
-    }, [posts])
+
+export const Blog: React.FC<BlogProps & React.HTMLProps<HTMLDivElement>> = ({ isLoading }) => {
+        const [blogPosts, setBlogPosts] = useState<BlogItem[] | []>([]);
+    
+        useEffect(() => {
+            getBlogGraphQL()
+                .then((graphqlData) => {
+                    if (graphqlData && graphqlData.length) {
+                        setBlogPosts(graphqlData);
+                    } else {
+                        // todo would have to copy the new supabase response to have a backup of this
+                        // setBlogPosts(PortfolioItems)
+                    }
+                })
+                .catch((err) => {
+                    // setblogPosts(PortfolioItems)
+                });
+        }, []);
 
     return (
-        <>{!isLoading ? 
+        <>{!isLoading && blogPosts.length > 0 ?
             <div id='Blog'>
                 <div className='main-blog-list'>
-                    {orderedPosts && orderedPosts.map((p, i) => 
-                        <BlogPreview 
-                        key={`${i}-preview`} 
-                        blogContent={p.content} 
-                        date={p.date.toString()} 
-                        title={p.title} 
-                        blogURL={p.blogURL} />
+                    {blogPosts.map((p, i) => 
+                        <BlogPreview
+                            key={`${i}-preview`}
+                            content={p.content}
+                            originalDate={new Date(p.originalDate).toLocaleDateString("en-US")}
+                            title={p.title}
+                            blogURL={p.blogURL} />
                     )}
-
                 </div>
             </div>
             :
             <></>
-            }
+        }
         </>
-   
-    ); 
+
+    );
 } 

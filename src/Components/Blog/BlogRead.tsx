@@ -6,20 +6,136 @@ import '../../Styles/BlogReadView.css';
 interface BlogReadProps {
     altText?: string;
     image?: any;
-    blogContent?: React.ReactNode;
+    content?: any;
     blogURL?: string;
     title: string;
-    date?: string;
+    originalDate?: string;
     tags?: string[];
 }
 
 export const BlogRead: React.FC<BlogReadProps & React.HTMLProps<HTMLDivElement>> = (
-    { blogURL, image, blogContent, title, date, tags, altText, ...props }) => { 
+    { blogURL, content, title, originalDate }) => { 
+
+        console.log('content: ', content)
+        const addP = (className: string, text: string) => {
+            return (
+                <p className={className}>{text}</p>
+            )
+        }
+
+        const addBasicElement = (element: string, text: string, className: string, key: string, href: string, altText: string, imageSrc: string): React.ReactNode => {
+            console.log('element: ', element)
+            console.log('text: ', text)
+            if (element === 'span') return <span key={key} className={className}>{text}</span>
+            if (element === 'div') return <div key={key} className={className}>{text}</div>
+            if (element === 'a') return <span><a key={key} className={className} href={href} rel='noreferrer' target='_blank'>{text}</a></span>
+            if (element === 'img') return <img alt={altText} className={className} src={imageSrc}></img>
+            return text
+        }
+    
+        const addRichText = (richText: any, className: string, text: string) => {
+            return (
+                <p className={className}>
+                    {text} {richText.map((e, i) => {
+                        return ( e.element === 'span' ?
+                        <span className={e.className}>{e.text}</span>
+                        : e.element === 'a' ? <a key={i} className={e.className} href={e.href} rel='noreferrer' target='_blank'>{e.text}</a>
+                        : e.text
+                        )
+                        })}
+                </p>
+            )
+        }
+    
+        const addSubElementsOl = (subElements: any, className: string, text: string, parentElement?: string) => {
+            return (
+                <ol className={className || 'numbered-blog'}>
+                    {subElements.map((e, i) => 
+                        <li key={`${i}-ol`}>
+                            {e.text}
+                            {e.codeContent && e.codeContent.length > 0 && addCodeBlockContent(e.codeContent, e.className)}
+                            {e.ul && e.ul.length > 0 && addSubElementsUl(e.ul, e.className, e.text)}
+                            {e.ol && e.ol.length > 0 && addSubElementsOl(e.ol, e.className, e.text)}
+                        </li>
+                    )}
+                </ol>
+            )
+        }
+    
+        const addSubElementsUl = (subElements: any, className: string, text: string) => {
+            return (
+                <ul className='ul-squares'>
+                    {subElements.map((e, i) => 
+                        <li key={`${i}-ul`} className='li-squares'>                            
+                            {e.text}
+                            {e.codeContent && e.codeContent.length > 0 && addCodeBlockContent(e.codeContent, e.className)}
+                            {e.ul && e.ul.length > 0 && addSubElementsUl(e.ul, e.className, e.text)}
+                            {e.ol && e.ol.length > 0 && addSubElementsOl(e.ol, e.className, e.text)}
+                            {console.log('e subelement: ', e.subElements)}
+                            {e.subElements && e.subElements.length > 0 && e.subElements.map((e, i) => e.codeContent && e.codeContent.length > 0 
+                             ? addCodeBlockContent(e.codeContent, e.className) : e.richText && e.richText.length > 0 ? addRichText(e.richText, e.className, e.text) 
+                             : addBasicElement(e.element, e.text, e.className, i, e.href, e.altText, e.imageSrc))}
+                        </li>
+                    )}
+                </ul>
+            )
+        }
+    
+        const addCodeBlockContent = (codeContent: any, className: string) => {
+                return (
+                    <div className='code-block-large'>{codeContent.map((e,i) => 
+                        e + '\n'
+                    )}</div>
+                )
+        }
+        
+        // todo combine some of this and find patterns to store the data where it has the same approach and could be done recursively
+        const renderBlog = (elementData: any, key?: React.Key): React.ReactNode => {
+            const { element, text, className, codeContent, richText, ul, ol, subElements, href } = elementData;
+          
+            const children = [];
+            if (!richText && element === 'p') {
+                children.push(<p className={className}>{text}</p>)
+            }
+
+            if (element === 'div') {
+                children.push(
+                <div>
+                    {text}
+                    {subElements && subElements.length > 0 && subElements.map((e, i) =>addBasicElement(e.element, e.text, e.className, i, e.href, e.altText, e.imageSrc))}
+                </div>)
+            }
+
+            if (element === 'a') {
+                children.push(<a href={href} className={className} rel='noreferrer' target='_blank'>{text}</a>)
+            }
+          
+            if (richText && Array.isArray(richText)) {
+              children.push(addRichText(richText, className, text))
+            }
+          
+            if (ol && Array.isArray(ol)) {
+              children.push(addSubElementsOl(ol, className, text))
+            }
+
+            if (ul && Array.isArray(ul)) {
+              children.push(addSubElementsUl(ul, className, text))
+            }
+
+            if (codeContent && codeContent.length > 0) {
+              children.push(addCodeBlockContent(codeContent, className))
+            }  
+            return children;
+          };
+          content.map((e, i) => {
+            renderBlog(e, i)
+          })
+
     return (
-        <div id={blogURL} className='blog-read-container'>
+        <div id={blogURL} className='blog-read-container'> 
             <div className='blog-read-title'>{title}</div>
-            <div className='blog-read-date'>{date}</div>
-            <div className='blog-read-content'>{blogContent}</div>
+            <div className='blog-read-date'>{originalDate}</div>
+            {content.length > 0 && content.map((e, i) => <div className='blog-content-read-wrapper'>{renderBlog(e, i)}</div>)}
         </div>
     ); 
 } 

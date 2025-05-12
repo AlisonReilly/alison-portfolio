@@ -3,7 +3,7 @@ import '../Styles/BlogReadView.css';
 export interface BlogPost {
     title: string;
     content: React.ReactNode;
-    date: Date | string;
+    originalDate: Date | string;
     tags: string[];
     blogURL: string;
 }
@@ -14,50 +14,23 @@ export const CurrentBlogPosts: BlogPost[] = [
         title: 'Why Software Development - Blog Post 1',   
         content: 
         <div className='blog-content-read-wrapper'>
-            <p>Over time, I have tried a few different industries to excel at and immerse in: writing, nursing, politics, 
-            massage therapy, etc. When none of those were panning out for a variety of life reasons, I wondered what is next then? 
-            I will keep taking classes in something, but ultimately, what do I want to do in terms of a professional career?</p>
+            <p>Over time, I’ve explored a lot of different industries: writing, nursing, politics, massage therapy, and more, trying to find something I could really immerse myself in. But for a mix of life and practical reasons, none of them quite stuck. I kept asking myself: what’s next? I knew I’d keep taking classes, but I wanted to find something that felt like a true direction for a long-term career.</p>
 
-            <p>After one more setback trying to afford a college way too expensive for my income and circumstances, I returned back
-            to my community college to keep taking general classes needed toward any science degree, as in higher level math
-            science and any missing prerequisites. I thought, any of these classes could work toward a higher level degree
-            toward a biology, physics or some engineering based degree, I\'ll take them and see what I get inspired toward.</p>
+            <p>After one more financial setback trying to afford a college that just wasn’t realistic for my income and circumstances, I returned to my community college. I focused on higher-level math and science courses, subjects that would keep the door open to any science or engineering degree. I figured, I’ll keep going and see what inspires me.</p>
 
-            <p>I really enjoyed my higher level math courses, I had always thought of myself as being a little mediocre at math 
-            unless I had some phenomenal teacher which rarely exists. I decided I could definitely handle the rest of the math
-            required for any major and continued on into Calculus I, which also went very well, it was like a math puzzle.</p>
+            <p>To my surprise, I really enjoyed the math. I had always assumed I was just “okay” at it, unless I had some extraordinary teacher (a rarity). But I found myself doing well, even in Calculus I, which started to feel more like solving a puzzle than anything else. That experience gave me confidence that I could handle whatever math was required for a STEM path.</p>
 
-            <p>In between semesters and busy times within classes, I decided to start a blog site on WordPress to post a couple
-            essays I enjoyed writing, thinking it may also, additionally, inspire me to continue writing creatively as an outlet
-            beyond academics. I still only have two posts, more to come perhaps in the future. However, what I experienced on the
-            WordPress platform inspired me to take my first computer science class.</p>
+            <p>Somewhere between semesters, I started a little WordPress blog to post a few essays I’d written. I thought it might be a fun creative outlet beyond academics. I’ve only posted two things so far—maybe more will come—but that small project turned out to be pivotal in a completely unexpected way.</p>
 
-            <p>I enjoyed the ease of use of using a pre-designed template, but always wanted to change some aspect or have the option 
-            of flexibility or more control over that template. I started looking into plugins and custom code and ftp, etc. Suddenly,
-            I was learning HTML and CSS from eBooks and YouTube tutorials, learning how to make a mock in the designs of the template
-            I had chosen for my blog. Forget blogging, from there, I enrolled in Introduction to Computer Science with C++ at my
-            community college the very next semester.</p>
+            <p>Playing with the blog design got me curious about the tech behind it. I liked using the pre-designed templates but kept wanting more flexibility—more control. That led me down a rabbit hole of plugins, FTP, HTML, and CSS. I was watching YouTube tutorials, reading eBooks, and trying to recreate custom designs for my blog just for the fun of it.</p>
             
-            <p>C++ was amazing! I noticed I got lost in time on my problems that were more difficult to solve, trying different
-            ways to make the console applications run as intended, I would forget to eat at times. Maybe that's not good, but
-            I never had any other task occupy my mind so much, it was amazing to have such an innate and intense focus. On the
-            occasion I couldn't solve a problem immediately, I'd walk away from it, go do something else, but my mind was already
-            back on the problem somehow, refreshed and ready to tackle the coding problem from some new angle I hadn't thought
-            of previously.</p>
+            <p>Pretty soon, I realized I wanted to go deeper. I enrolled in an Intro to Computer Science class using C++. That first semester was a revelation. I got so absorbed in solving problems that I’d forget to eat. I’d step away from a problem, only to find my mind was still quietly working on it, coming back with fresh ideas later. I’d never had that kind of focused engagement with anything before.</p>
 
-            <p>I thought this is amazing, I love this stuff, I would love to sit around (or stand for standing desks, I have to
-            get one of those too maybe with a treadmill, not sure) and do nothing but solve these intricate problems all
-            based on this complex network of keywords and functions that end up generating more amazing things such as
-            video games, advanced electronics, cars, planes, medical equipment and anything else that could exist in the 
-            future, not on the market yet. It is a massive and infinite industry with so many avenues.</p>
+            <p>It clicked: I loved this. I wanted to spend my time solving these intricate problems, these little puzzles that, when scaled up, power everything from video games and self-driving cars to medical devices and space tech. The potential applications are endless.</p>
 
-            <p>Ready to move out of New York City and back to warm weather I applied at Florida International University for 
-            Computer Science and got accepted. That is all fun and well expect for entering back into the work/school game endless 
-            loop; but I decided to accelerate the learning and career process by applying to the Flatiron school, here, 
-            representative of this blog post, I think because technology changes so quickly it is best just to get immersed into 
-            the career path as soon as possible and start gaining experience.</p>
+            <p>Ready to leave New York and return to warm weather, I started planning my next steps. Rather than waiting years to complete a degree, I decided to accelerate things. I applied to the Flatiron School to get hands-on and dive straight into the industry. Technology evolves quickly, and I felt the best way to keep up, and contribute, was to get involved as soon as possible.</p>
         </div>,
-        date: '1/1/2019',
+        originalDate: '1/1/2019',
         tags: ['Flatiron', 'Bootcamp', 'Coding', 'Philosophical'],
         blogURL: 'why-software',
     },
@@ -66,11 +39,7 @@ export const CurrentBlogPosts: BlogPost[] = [
         content:
         <div className='blog-content-read-wrapper'>
             <p>
-                For this blog, I really wanted to do some reading and interpreting of philosophical and mathematical significance 
-                of the concept of something being random and make a nice, healthy introduction to computer code - random. Such a 
-                reading and research opened up a can of worms that fascinated me greatly. I knew I would get stuck on that for 
-                days, so as to move forward with my learning process in software development, I will open with a couple 
-                well-rounded quotes and return to my in-depth introduction at a later time.
+            For this blog, I wanted to explore the philosophical and mathematical implications of randomness, and use that as a thoughtful, approachable entry point into the concept of randomness in computer code. What started as a quick idea turned into a deeper rabbit hole than expected. I found myself tangled in theories, interpretations, and edge cases. I knew I’d get stuck there for days if I let myself, so I’m going to save the full deep-dive for later. For now, I’ll open with a couple of quotes that captured the spirit of what I was thinking:
             </p>
 
             <p className='block-quote'>
@@ -85,20 +54,17 @@ export const CurrentBlogPosts: BlogPost[] = [
             <a className='reference anchors' href='www.random.org/quotations' rel="noreferrer" target='_blank'>www.random.org/quotations</a>
 
             <p>
-                One of my first favorite topics and exercises in my Introduction to Computer Science class was producing a 
-                random number or series of random numbers by code and understanding its implications. Computer science labs 
-                in randomness not only demonstrate the practicality of generating some random number simply for programming 
-                purposes. Randomness in computer language also innately triggers a deeper thought process on the concept of 
-                random in life, mathematics and philosophy. In order to explain this thought process further, I will reference 
-                C++ code I worked with in my Intro class and later to expand this fascination into Ruby language, I am currently 
-                learning, by exploring and reflecting on how random is accomplished in Ruby as well.
+                One of my earliest favorite topics in my Introduction to Computer Science class was randomness: how to generate it in code, and what it actually means. On the surface, it seems like a practical task, pick a number at random, but as I spent more time on it, randomness in programming began to mirror bigger questions in math and philosophy. What is random? Is anything truly random, or just outside our ability to predict?
+            </p>
+            <p>
+                To unpack this, I’ll start with how I encountered randomness in C++, then look at how Ruby handles it, which I’ve been exploring more recently.
             </p>
             
             <h3 className='core-subsection'>C++ Random</h3>
-            {/* todo these images are stored in imgur but eventually add them here or in firestore or somewhere else */}
             <p>
-                In C++, <span className='inline-code-emphasis'>rand()</span>, is used to generate seemingly random numbers. 
-                Below is the general code and result: 
+                In C++ the, 
+                <span className='inline-code-emphasis'>rand()</span> 
+                function generates a sequence of seemingly random numbers. Here’s a basic example of how it works: 
             </p>
             
             <div className='figure-pres'>
@@ -120,13 +86,11 @@ export const CurrentBlogPosts: BlogPost[] = [
             </div>
 
             <p>
-                Overall, the numbers seem random on execution 1, however, running this executable program file again produces 
-                the exact same result, therefore this isn’t exactly what is thought of a random experience in life or statistics 
-                or what experiential definition one prefers.
+            Running this code might feel random at first. But if you re-run the compiled program, you’ll get the same number every time. That’s because the underlying sequence isn’t actually random, just deterministic and hidden from view.
             </p>
             <p>
-                Alternatively, a different set of numbers can be generated by the use of{` `} 
-                <span className='inline-code-emphasis'>rand()</span> with a seed specifier in the syntax of{` `}   
+            To get a different sequence, you can use {` `} 
+                <span className='inline-code-emphasis'>rand()</span> to seed the random number generator{` `}   
                 <span className='inline-code-emphasis'>srand(somenumberyouwanthere)</span>:
             </p>
             
@@ -139,7 +103,7 @@ export const CurrentBlogPosts: BlogPost[] = [
             </div>
             
             <p>
-                However the result is a different series of numbers, running the program again has the same resulting numbers.
+            Now you’ll get a different result from before, but you’ll still get the same result every time you use the same seed. That’s a useful feature if you want predictable “randomness,” like in game design or simulations, but it’s not quite what most people mean by random.
             </p>
             
 
@@ -276,7 +240,8 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </div>
             </div>
 
-            <p>Similar to C++, <span className='inline-code-emphasis'>srand(somenumberhere)</span>, will cause a repeat of the same 
+            <p>
+                Similar to C++, <span className='inline-code-emphasis'>srand(somenumberhere)</span>, will cause a repeat of the same 
                 series each time a program is started or method is called once again. So, in Ruby, in particular, 
                 <span className='inline-code-emphasis'>srand()</span> is helpful if one would like to repeat the same values by some seed.
             </p>
@@ -292,23 +257,24 @@ export const CurrentBlogPosts: BlogPost[] = [
                 </div>
             </div>
             
-            <p>I enjoy the C++ version slightly better as you can see exactly how that code is taking place and manipulating the 
-                values, why C++ is my favorite language all around, however. C++ brings out the philosophical nature a little 
-                more by an innate sense of questioning. I do enjoy the fact that the Ruby version is very simplistic and less 
-                exhausting to write, also why I have enjoyed Ruby overall. I suppose either language is sufficient and may just 
-                depend on the project or end result. I think, at this concluding moment, the quotes I chose are perfect for the 
-                ideas at work within this post.
+            <p>
+                Personally, I like the C++ version a bit more. There’s something satisfying about seeing exactly how the randomness is being constructed—how it hinges on time, on the logic of the machine, on math underneath the surface. It pushes you to ask, What does “random” really mean?
             </p>
+            <p>Ruby, on the other hand, makes randomness effortless. You just call rand, and it works. That elegance is part of why I’ve enjoyed learning Ruby overall.</p>
+            <p>Ultimately, the best language depends on the project—but both offer a fascinating way to think about randomness in a machine-driven world. And both invite the kind of questions that go beyond syntax and into something much more human.</p>
+            <p>So I think those opening quotes were the right choice after all.</p>
+
 
             <h3 className='core-subsection'>Works Cited </h3>
             <a className='anchors' href='https://ruby-doc.org/core-2.2.0/Random.html' target="_blank" rel="noreferrer">Britt, James and Neurogami. “Random” Ruby-doc.org. https://ruby-doc.org/core-2.2.0/Random.html</a>
             <a className='anchors' href='https://www.random.org/quotations/' target="_blank" rel="noreferrer">RANDOM.ORG. https://www.random.org/quotations/</a>
         </div>
 ,
-        date: '1/4/2019',
+        originalDate: '1/4/2019',
         tags: ['Flatiron', 'Bootcamp', 'Philosophical', 'Ruby', 'C++', 'Random Numbers'],
         blogURL: 'randomness'
     },
+
     {
         title: 'CLI Project, Noteworthy Points',
         content:
@@ -472,7 +438,7 @@ export const CurrentBlogPosts: BlogPost[] = [
                 There were several other stuck points possibly worth highlighting but these seemed the most useful and interesting.
             </p>
             <a className='anchors' href='https://youtu.be/IZuhB9wp3Wo' target="_blank" rel="noreferrer">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/miami_venues.git' target="_blank" rel="noreferrer">GitHub Repo</a>
+            <a className='anchors' href='https://github.com/AlisonReilly/miami_venues.git' target="_blank" rel="noreferrer">GitHub Repo</a>
 
         </div>,
         date: '2/12/2019',
@@ -617,9 +583,9 @@ End`}
                 me up in the end.
             </p>
             <a className='anchors' href='https://youtu.be/rlPety4CSeY' target="_blank" rel="noreferrer">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/miami_rooftop_pools' target="_blank" rel="noreferrer">GitHub Repo</a>
+            <a className='anchors' href='https://github.com/AlisonReilly/miami_rooftop_pools' target="_blank" rel="noreferrer">GitHub Repo</a>
         </div>,
-        date: '6/12/2019',
+        originalDate: '6/12/2019',
         tags: ['Flatiron', 'Bootcamp', 'Sinatra', 'Ruby'],
         blogURL: 'miami-rooftop-pools'
     },
@@ -858,6 +824,7 @@ end`
         date: '10/4/2019',
         tags: ['Flatiron', 'Bootcamp', 'Bcrypt', 'Ruby', 'Ruby on Rails', 'Encryption', 'Authentication'],
         blogURL: 'bcrypt-mysteries'
+        
     },
     {
         title: 'Prototype I: A Cat\'s Dream - JS/Rails Project',
@@ -979,11 +946,12 @@ end`
                 development.
             </p>
             <a className='anchors' href='https://youtu.be/MamqFgSoqq8' target="_blank" rel="noreferrer">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/a-cats-dream' target="_blank" rel="noreferrer">GitHub</a>
+            <a className='anchors' href='https://github.com/AlisonReilly/a-cats-dream' target="_blank" rel="noreferrer">GitHub</a>
         </div>,
-        date: '1/4/2020',
+        originalDate: '1/4/2020',
         tags: ['Flatiron', 'Bootcamp', 'JavaScript', 'Ruby', 'Ruby on Rails', 'DOM', 'Vanilla JS', 'Phaser'],
         blogURL: 'a-cats-dream',
+
     },
     {
         title: 'Fauxtel Hotels - The Final Project',
@@ -1070,10 +1038,10 @@ end`
             </p>
             
             <a className='anchors' href='https://www.youtube.com/G4u_KgDfBYI' target="_blank" rel="noreferrer">YouTube Demonstration</a>
-            <a className='anchors' href='https://github.com/Tsunamins/FauxtelHotels' target="_blank" rel="noreferrer">GitHub Repo</a>
+            <a className='anchors' href='https://github.com/AlisonReilly/FauxtelHotels' target="_blank" rel="noreferrer">GitHub Repo</a>
         </div>,
-        date: '5/23/2020',
-        tags: ['Flatiron', 'Bootcamp', 'JavaScript', 'Ruby', 'Ruby on Rails', 'DOM', 'React', 'Redux', 'Final Project' ],
+        originalDate: '5/23/2020',
+        tags: ['Flatiron', 'Bootcamp', 'JavaScript', 'Ruby', 'Ruby on Rails', 'DOM', 'React', 'Redux', 'Final Project'],
         blogURL: 'fauxtel-hotels',
     },
     {
@@ -1506,13 +1474,13 @@ function calculateA(n, sLength, a_Count){
             <p>So, that, was interview warm-ups!</p>
 
         </div>,
-        date: '6/20/2020',
+        originalDate: '6/20/2020',
         tags: ['JavaScript', 'practice'],
         blogURL: 'interview-prep-warmups',
     },
     {
         title: 'Rails Project, Amateur Wine Reviewer: some reference points',
-        date: '9/6/2019',
+        originalDate: '9/6/2019',
         blogURL: 'rails-amateur-wine',
         tags: ['Ruby on Rails', 'Flatiron School', 'CRUD', 'REST', 'MVC', 'Bcrypt', 'SSO', 'Google Sign In', 'Auths'],
         content:
@@ -1915,9 +1883,11 @@ end`}
                 <img src="/blog/bottlewitheffects.png" alt="artistic wine bottle" className="feature-image" />
                 <figcaption className='caption'>Also had fun in a photo editor!</figcaption>
             </figure>
-        </div>,
+        </div>
 
     },
+
+
     {
         title: 'Adding Vite to Replace react-scripts in a Firebase Hosted Project',
         content: 
@@ -2082,7 +2052,7 @@ export default defineConfig({
 
             <p>An opportunity to learn something new, uplift something quickly and get an up to date blog post out there!</p>
         </div>,
-        date: '8/31/2024',
+        originalDate: '8/31/2024',
         tags: ['vite', 'typescript', 'firebase', 'react-scripts', 'react'],
         blogURL: 'replace-react-scripts'
     }

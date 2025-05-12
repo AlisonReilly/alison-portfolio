@@ -1,6 +1,6 @@
 #Resume {
     background-color: #465F6E;
-    color: #BCA0BC;
+    color: #F9EBE0;
     height: 100%;
     margin-top: -56px;
     display: flex;
@@ -80,7 +80,7 @@
 
 .each-skill {
     padding: 5px;
-    border: 1px solid #F18F01;
+    border: 1px solid #55D6BE;
 }
 
 .experience-details {

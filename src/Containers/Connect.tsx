@@ -33,7 +33,7 @@ export const Connect: React.FC<ConnectProps & React.HTMLProps<HTMLDivElement>> =
                 <a className='modern-link linkedin' href='https://www.linkedin.com/in/alisonreilly/' target="_blank" rel="noreferrer">
                     <img src="In-White-96.png" alt='linkedin profile'/>
                 </a>
-                <a className='modern-link github' href='https://github.com/Tsunamins' target="_blank" rel="noreferrer">
+                <a className='modern-link github' href='https://github.com/AlisonReilly' target="_blank" rel="noreferrer">
                     <img src="github-mark-white.svg" alt='github page'/>
                 </a>
                 <div className='download' role='button' onClick={onDownload}>

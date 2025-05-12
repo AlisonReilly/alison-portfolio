@@ -6,22 +6,28 @@ import { Link } from 'react-router-dom';
 
 
 interface BlogPreviewProps {
-    altText?: string;
-    image?: any;
-    blogContent?: React.ReactNode;
+    content: any;
     blogURL: string;
     title: string;
-    date?: string;
+    originalDate?: any;
     tags?: string[];
+    altText?: string;
+    image?: any;
 }
 
 export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivElement>> = (
-    { blogURL, image, blogContent, title, date, tags, altText }) => {
+    { blogURL, image, content, title, originalDate, tags, altText }) => {
+
+    const generatePreview = () => content.map((c, i) => {
+        return (
+            <p>{c.text}</p>
+        )
+    })
     return (
         <div id='BlogPreview' className='blogPreviewPane'>
             <div className='blog-preview-title'>{title}</div>
-            <div className='blog-preview-date'>{date}</div>
-            <div className='blog-preview-content'>{blogContent}</div>
+            <div className='blog-preview-date'>{originalDate}</div>
+            <div className='blog-preview-content'>{generatePreview()}</div>
             <div className='read-more'><Link className='read-link' to={`/blog/${blogURL}`}>Read</Link></div>
         </div>
     ); 

@@ -12,12 +12,30 @@ import { GameDemo } from './Containers/GameDemo';
 import ErrorPage from './Components/ErrorPage';
 import { Resume } from './Containers/Resume';
 import { Connect } from './Containers/Connect';
+import { BlogItem, getBlogGraphQL } from './services/getBlog';
 
 
 
 function App() {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [pointerType, setPointerType] = useState<string>();
+    const [blogPosts, setBlogPosts] = useState<BlogItem[] | []>([]);
+    console.log('blog posts: ', blogPosts)
+        
+    useEffect(() => {
+        getBlogGraphQL()
+            .then((graphqlData) => {
+                if (graphqlData && graphqlData.length) {
+                    setBlogPosts(graphqlData);
+                } else {
+                    // todo would have to copy the new supabase response to have a backup of this
+                    // setBlogPosts(PortfolioItems)
+                }
+            })
+            .catch((err) => {
+                // setblogPosts(PortfolioItems)
+            });
+    }, []);
 
     const cacheImages = async (images: string[]) => {
         const promises = await images.map((src) => {
@@ -34,18 +52,14 @@ function App() {
 
 
     useEffect(() => {
-        // callback function to call when event triggers
         const onPageLoad = () => {
             setIsLoading(false)
-            // do something else
         };
 
-        // Check if the page has already loaded
         if (document.readyState === 'complete') {
             onPageLoad();
         } else {
             window.addEventListener('load', onPageLoad, false);
-            // Remove the event listener when component unmounts
             return () => window.removeEventListener('load', onPageLoad);
         }
     }, []);
@@ -90,9 +104,9 @@ function App() {
                 <Route path="/projects" element={<Projects isLoading={isLoading} />} />
                 <Route path="/live-demos" element={<GameDemo pointerType={pointerType} />} />
                 <Route path="/resume" element={<Resume isLoading={isLoading} />} />
-                <Route path="/blog" element={<Blog posts={CurrentBlogPosts} />} />
-                {CurrentBlogPosts && CurrentBlogPosts.map((p, i) =>
-                    <Route key={`${i}-${p.blogURL}`} path={`/blog/${p.blogURL}`} element={<BlogRead title={p.title} blogContent={p.content} date={p.date.toString()} />} />
+                <Route path="/blog" element={<Blog />} />
+                {blogPosts.length > 0 && blogPosts.map((p, i) =>
+                    <Route key={`${i}-${p.blogURL}`} path={`/blog/${p.blogURL}`} element={<BlogRead title={p.title} content={p.content} originalDate={new Date(p.originalDate).toLocaleDateString("en-US")} />} />
                 )}
             </Routes>
             {/* <Outlet /> */}

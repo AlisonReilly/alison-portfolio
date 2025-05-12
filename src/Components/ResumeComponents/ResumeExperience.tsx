@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../Styles/Resume.css';
-import { ResumeEntries } from '../../constants/dataConstants';
+import { ResumeEntries, ResumeEntry } from '../../constants/dataConstants';
+import { getResumesGraphQL } from '../../services/getResume';
 
 
 interface ExperienceProps {
     text?: string;
 }
 
-export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDivElement>> = () => { 
+export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDivElement>> = () => {
+    const [resumeDetails, setResumeDetails] = useState<ResumeEntry[] | []>([])
+
+    useEffect(() => {
+        getResumesGraphQL()
+            .then((graphqlData) => {
+                if (graphqlData && graphqlData.length) {
+                    setResumeDetails(graphqlData);
+                } else {
+                    setResumeDetails(ResumeEntries)
+                }
+            })
+            .catch((err) => {
+                setResumeDetails(ResumeEntries)
+            });
+    }, []);
+
     return (
         <div id='Experience'>
-            {ResumeEntries.map((r, i) => 
+            {resumeDetails.map((r, i) =>
                 <div key={`resume-jobs-${i}`} className='entry'>
                     <div className='org-details'>
                         <div className='single-line job-title left'>{r.title}</div>
@@ -20,17 +37,17 @@ export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDi
                         <div className='single-line date left'>{r.date}</div>
                         <div className='single-line location'>{r.location}</div>
                     </div>
-                    <div className='desc-summary'>{r.description}</div>       
-                    <ul className='bullets experience-details whole-grid'>{r.achieved && r.achieved.map((a, i) => 
+                    <div className='desc-summary'>{r.description}</div>
+                    <ul className='bullets experience-details whole-grid'>{r.achieved && r.achieved.map((a, i) =>
                         <li key={`resume-jobs-details-${i}`}>{a}</li>
                     )}
                     </ul>
-                    <ul className='skills whole-grid'>{r.skills && r.skills.map((s, i) => 
+                    <ul className='skills whole-grid'>{r.skills && r.skills.map((s, i) =>
                         <li key={`resume-jobs-skills-${i}`} className='each-skill single-line'>{s}</li>
                     )}
                     </ul>
                 </div>
             )}
         </div>
-    ); 
+    );
 } 

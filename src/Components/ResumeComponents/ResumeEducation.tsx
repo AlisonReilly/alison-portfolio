@@ -1,9 +1,7 @@
-import React from 'react';
-// import { ProfileHeader } from '../Components/ProfileHeader';
-// import { NavBar } from '../Components/Navigation/NavBar';
+import React, { useEffect, useState } from 'react';
 import '../../Styles/Resume.css';
-import { Education } from '../../constants/dataConstants';
-// import { MobileNav } from '../Components/Navigation/MobileNavUL';
+import { Education, ResumeEntry } from '../../constants/dataConstants';
+import { getEduGraphQL } from '../../services/getResumeEdu';
   
 
 interface EduProps {
@@ -11,9 +9,25 @@ interface EduProps {
 }
 
 export const ResumeEducation: React.FC<EduProps & React.HTMLProps<HTMLDivElement>> = () => { 
+        const [resumeDetails, setResumeDetails] = useState<ResumeEntry[] | []>([])
+    
+        useEffect(() => {
+            getEduGraphQL()
+                .then((graphqlData) => {
+                    if (graphqlData && graphqlData.length) {
+                        setResumeDetails(graphqlData);
+                    } else {
+                        // setResumeDetails(Education)
+                    }
+                })
+                .catch((err) => {
+                    console.log('err ', err)
+                    // setResumeDetails(Education)
+                });
+        }, []);
     return (
         <div id='Experience'>
-            {Education.map((r, i) => 
+            {resumeDetails.map((r, i) => 
                 <div className='entry' key={`resume-edu-${i}`}>
                     <div className='org-details'>
                         <div className='single-line job-title left'>{r.title}</div>

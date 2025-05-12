@@ -1,10 +1,7 @@
 import React from 'react';
-// import { ProfileHeader } from '../Components/ProfileHeader';
-// import { NavBar } from '../Components/Navigation/NavBar';
 import '../Styles/Resume.css';
 import { ResumeExperience } from '../Components/ResumeComponents/ResumeExperience';
 import { ResumeEducation } from '../Components/ResumeComponents/ResumeEducation';
-// import { MobileNav } from '../Components/Navigation/MobileNavUL';
   
 
 interface ResumeProps {
@@ -18,11 +15,13 @@ export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = (
         const pdfUrl = "aReillyDownload.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "aReillyDownload.pdf"
+        link.download = "AlisonReillyFullStackEngineer.pdf"
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     };
+
+    // todo add a full stack icon/download option and a front end - maybe something creative to interact with it
 
     return (
         <>
@@ -44,7 +43,7 @@ export const Resume: React.FC<ResumeProps & React.HTMLProps<HTMLDivElement>> = (
                     </a>
                     <a 
                         className='modern-link github' 
-                        href='https://github.com/Tsunamins' 
+                        href='https://github.com/AlisonReilly' 
                         target="_blank" 
                         rel='noreferrer'>
                             <img src="github-mark-white.svg" alt='github logo' />
