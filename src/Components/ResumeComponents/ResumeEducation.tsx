@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../../Styles/Resume.css';
 import { Education, ResumeEntry } from '../../constants/dataConstants';
-import { getEduGraphQL } from '../../services/getResumeEdu';
   
 
 interface EduProps {
@@ -9,22 +8,8 @@ interface EduProps {
 }
 
 export const ResumeEducation: React.FC<EduProps & React.HTMLProps<HTMLDivElement>> = () => { 
-        const [resumeDetails, setResumeDetails] = useState<ResumeEntry[] | []>([])
-    
-        useEffect(() => {
-            getEduGraphQL()
-                .then((graphqlData) => {
-                    if (graphqlData && graphqlData.length) {
-                        setResumeDetails(graphqlData);
-                    } else {
-                        // setResumeDetails(Education)
-                    }
-                })
-                .catch((err) => {
-                    console.log('err ', err)
-                    // setResumeDetails(Education)
-                });
-        }, []);
+        const [resumeDetails, setResumeDetails] = useState<ResumeEntry[] | []>(Education)
+ 
     return (
         <div id='Experience'>
             {resumeDetails.map((r, i) => 

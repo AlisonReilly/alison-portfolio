@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import './Styles/App.css';
 import { HeaderSection } from './Containers/HeaderSection';
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Blog } from './Containers/Blog';
-import { CurrentBlogPosts } from './constants/blogConstants';
 import { BlogRead } from './Components/Blog/BlogRead';
 import { HeroSection } from './Containers/HeroSection';
 import { About } from './Containers/About';
@@ -12,30 +11,15 @@ import { GameDemo } from './Containers/GameDemo';
 import ErrorPage from './Components/ErrorPage';
 import { Resume } from './Containers/Resume';
 import { Connect } from './Containers/Connect';
-import { BlogItem, getBlogGraphQL } from './services/getBlog';
+import { JSON_BLOG } from './constants/jsonBlog';
 
 
 
 function App() {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [pointerType, setPointerType] = useState<string>();
-    const [blogPosts, setBlogPosts] = useState<BlogItem[] | []>([]);
-    console.log('blog posts: ', blogPosts)
+    const [blogPosts, setBlogPosts] = useState(JSON_BLOG);
         
-    useEffect(() => {
-        getBlogGraphQL()
-            .then((graphqlData) => {
-                if (graphqlData && graphqlData.length) {
-                    setBlogPosts(graphqlData);
-                } else {
-                    // todo would have to copy the new supabase response to have a backup of this
-                    // setBlogPosts(PortfolioItems)
-                }
-            })
-            .catch((err) => {
-                // setblogPosts(PortfolioItems)
-            });
-    }, []);
 
     const cacheImages = async (images: string[]) => {
         const promises = await images.map((src) => {
@@ -105,11 +89,10 @@ function App() {
                 <Route path="/live-demos" element={<GameDemo pointerType={pointerType} />} />
                 <Route path="/resume" element={<Resume isLoading={isLoading} />} />
                 <Route path="/blog" element={<Blog />} />
-                {blogPosts.length > 0 && blogPosts.map((p, i) =>
+                {blogPosts.length > 0 && blogPosts.map((p, i) => 
                     <Route key={`${i}-${p.blogURL}`} path={`/blog/${p.blogURL}`} element={<BlogRead title={p.title} content={p.content} originalDate={new Date(p.originalDate).toLocaleDateString("en-US")} />} />
                 )}
             </Routes>
-            {/* <Outlet /> */}
         </div>
     );
 }

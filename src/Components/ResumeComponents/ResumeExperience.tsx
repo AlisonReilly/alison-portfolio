@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../../Styles/Resume.css';
 import { ResumeEntries, ResumeEntry } from '../../constants/dataConstants';
-import { getResumesGraphQL } from '../../services/getResume';
 
 
 interface ExperienceProps {
@@ -9,21 +8,7 @@ interface ExperienceProps {
 }
 
 export const ResumeExperience: React.FC<ExperienceProps & React.HTMLProps<HTMLDivElement>> = () => {
-    const [resumeDetails, setResumeDetails] = useState<ResumeEntry[] | []>([])
-
-    useEffect(() => {
-        getResumesGraphQL()
-            .then((graphqlData) => {
-                if (graphqlData && graphqlData.length) {
-                    setResumeDetails(graphqlData);
-                } else {
-                    setResumeDetails(ResumeEntries)
-                }
-            })
-            .catch((err) => {
-                setResumeDetails(ResumeEntries)
-            });
-    }, []);
+    const [resumeDetails, setResumeDetails] = useState<ResumeEntry[] | []>(ResumeEntries)
 
     return (
         <div id='Experience'>

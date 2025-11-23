@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../Styles/Projects.css';
 import { AlphaDiagramMap, PortfolioItem, PortfolioItems } from '../constants/dataConstants';
 import { ImageDisplay } from '../Components/ProjectComponents/ImageDisplay';
 import { VideoDisplay } from '../Components/ProjectComponents/VideoDisplay';
 import { ButtonImage } from '../Components/ToggleComponents/ButtonImage';
 import buttonscale100 from '../assets/images/buttonscale100.png';
-import { getProjectsGraphQL } from '../services/getProjects';
 
 
 interface ProjectProps {
@@ -13,21 +12,7 @@ interface ProjectProps {
 }
 
 export const Projects: React.FC<ProjectProps & React.HTMLProps<HTMLDivElement>> = ({ isLoading }) => {
-    const [projectDetails, setProjectDetails] = useState<PortfolioItem[] | []>([]);
-
-    useEffect(() => {
-        getProjectsGraphQL()
-            .then((graphqlData) => {
-                if (graphqlData && graphqlData.length) {
-                    setProjectDetails(graphqlData);
-                } else {
-                    setProjectDetails(PortfolioItems)
-                }
-            })
-            .catch((err) => {
-                setProjectDetails(PortfolioItems)
-            });
-    }, []);
+    const [projectDetails, setProjectDetails] = useState<PortfolioItem[] | []>(PortfolioItems);
 
     return (
         <>

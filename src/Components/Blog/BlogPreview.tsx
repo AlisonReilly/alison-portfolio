@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import '../../Styles/Blog.css';
 import '../../Styles/App.css';
-
 import { Link } from 'react-router-dom';
 
 
@@ -10,13 +9,10 @@ interface BlogPreviewProps {
     blogURL: string;
     title: string;
     originalDate?: any;
-    tags?: string[];
-    altText?: string;
-    image?: any;
 }
 
 export const BlogPreview: React.FC<BlogPreviewProps & React.HTMLProps<HTMLDivElement>> = (
-    { blogURL, image, content, title, originalDate, tags, altText }) => {
+    { blogURL, content, title, originalDate }) => {
 
     const generatePreview = () => content.map((c, i) => {
         return (

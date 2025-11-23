@@ -30,70 +30,71 @@
 
 /* note may change background color so remember this is applying to all body background */
 body {
-  /* background-color: #343C55; */
-  background: linear-gradient(330deg, #343C55  60%, #6A77A0), url(https://grainy-gradients.vercel.app/noise.svg);
-  background-color: #343C55;
-  height: 100%;
-  margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  box-sizing: border-box;
-  overflow-x: hidden;
+	/* background-color: #343C55; */
+	background: linear-gradient(330deg, #343C55 60%, #6A77A0), url(https://grainy-gradients.vercel.app/noise.svg);
+	background-color: #343C55;
+	height: 100%;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 
 
 /* apply to anchor tags when no standard styling is needed */
-.modern-link, .modern-link:visited, .modern-link:hover, .modern-link:active {
-  text-decoration: none;
-  /* color: unset; */
+.modern-link,
+.modern-link:visited,
+.modern-link:hover,
+.modern-link:active {
+	text-decoration: none;
 }
 
 /* components that need a certain flex and direction applied */
 .flexrow {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .flexcolumn {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+}
+
+.flex {
+	display: flex;
 }
 
 
 /* note applying to all uls, flex will be handy and typically not using bullet points */
 ul {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 
 }
 
 .center-text {
-  text-align: center;
+	text-align: center;
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 40px;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 40px;
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
 
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+	/* Support for IE. */
+	font-feature-settings: 'liga';
 }
-
-
-
-
-
